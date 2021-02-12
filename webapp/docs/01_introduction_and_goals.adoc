@@ -51,17 +51,17 @@ Keep these excerpts as short as possible. Balance readability of this document w
 
 Two software components are taken into account:
 
-.1 Web application that runs in a server.
+.1. Web application that runs in a server.
 ****
 It will store the minimum information needed, the mobile phone localization and the timestamp in which those locations take place (all of them located in users's pods). The system will be compatible with the SOLID project <<solid>>. No personal information will be stored in a centralized way. The rest of the information, as friends; will be queried to the pods <<pods>>. It will allow users to manage and visualize locations too. Finally, it will include other admin options to manage users and monitor server status.
 ****
 
-.2  Application running in users' mobile phone.
+.2.  Application running in users' mobile phone.
 ****
 It will send the corresponding locations to the server and will receive notifications from nearby friend users.
 ****
 
-The system will be deployed from docker containers <<docker>>and it will also be deployed in a cloud service like heroku <<heroku>>.
+The system will be deployed from docker containers <<docker>> and it will also be deployed in a cloud service like heroku <<heroku>>.
 
 Unit tests, acceptance tests and load tests will be made and will be automatically runned in a continuous integration server  <<contint>.
 
@@ -120,7 +120,7 @@ Table with role names, person names, and their expectations with respect to the 
 
 The following table has the most important roles for the application:
 
-[options="header",cols="1,2,2"]
+[options="header",cols="1,2"]
 |===
 |Role/Name|Goal/Boundaries
 | _Developers_ | _Developing this application will help us learning more features about software engineering. It will also help us to improve our work group skills._
