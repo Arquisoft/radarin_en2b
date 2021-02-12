@@ -63,7 +63,7 @@ It will send the corresponding locations to the server and will receive notifica
 
 The system will be deployed from docker containers <<docker>> and it will also be deployed in a cloud service like heroku <<heroku>>.
 
-Unit tests, acceptance tests and load tests will be made and will be automatically runned in a continuous integration server  <<contint>.
+Unit tests, acceptance tests and load tests will be made and will be automatically runned in a continuous integration server <<contint>>.
 
 All those specifications where provided https://arquisoft.github.io/course2021/labAssignmentDescription.html[here].
 
