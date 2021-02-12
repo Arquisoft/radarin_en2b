@@ -11,7 +11,25 @@ Describes the relevant requirements and the driving forces that software archite
 * relevant stakeholders and their expectations
 ****
 
+The aim is to create an application called Radarin, a project in which the students of Sotware Architecture course in the University of Oviedo are enrolled.
+
+The members of the teams are:
+
+* Héctor Díaz Beltrán
+* Marcos Fernández González
+* Luis Fernández Suárez
+* Andrea García Cernuda 
+* Sara Rubín Estrada-Nora
+
+What is Radarin? 
+
+Radarin is a system to facilitate meetings between friends using new technologies.
+
+To carry out the project's aim, the application needs the mobile phone localization of the users who voluntarily activate it and allow the application to use it. The users also need to allow their friends to know when they are near them. A notification will be sent in this situation so they can get in contact
+
+
 === Requirements Overview
+
 
 [role="arc42help"]
 ****
@@ -31,7 +49,27 @@ If requirements documents exist this overview should refer to these documents.
 Keep these excerpts as short as possible. Balance readability of this document with potential redundancy w.r.t to requirements documents.
 ****
 
+Two software components are taken into account:
+
+.1 Web application that runs in a server.
+****
+It will store the minimum information needed, the mobile phone localization and the timestamp in which those locations take place (all of them located in users's pods). The system will be compatible with the SOLID project <<solid>>. No personal information will be stored in a centralized way. The rest of the information, as friends; will be queried to the pods <<pods>>. It will allow users to manage and visualize locations too. Finally, it will include other admin options to manage users and monitor server status.
+****
+
+.2  Application running in users' mobile phone.
+****
+It will send the corresponding locations to the server and will receive notifications from nearby friend users.
+****
+
+The system will be deployed from docker containers <<docker>>and it will also be deployed in a cloud service like heroku <<heroku>>.
+
+Unit tests, acceptance tests and load tests will be made and will be automatically runned in a continuous integration server  <<contint>.
+
+All those specifications where provided https://arquisoft.github.io/course2021/labAssignmentDescription.html[here].
+
+
 === Quality Goals
+
 
 [role="arc42help"]
 ****
@@ -46,7 +84,18 @@ If you as an architect do not know how the quality of your work will be judged �
 A table with quality goals and concrete scenarios, ordered by priorities
 ****
 
+[options="header",cols="1,2,2"]
+|===
+|Nr|Quality|Motivation
+| _1_ | _Usability_ | _The application must be easy to use. Users should understand how to use it at first sight._
+| _2_ | _Security_ | _Users must have all their personal data in a secure system. The use of the application must not lead to any security problem._
+| _3_ | _Privacy_ | _Data from users must be specifically used for the main purpose of the application. No data will be provided to third parties._
+| _4_ | _Mantainability_ | _The application must be well coded so that changes in the future will be easily done without touching many parts of the code._
+|===
+
+
 === Stakeholders
+
 
 [role="arc42help"]
 ****
@@ -68,9 +117,15 @@ These stakeholders determine the extent and the level of detail of your work and
 Table with role names, person names, and their expectations with respect to the architecture and its documentation.
 ****
 
+
+The following table has the most important roles for the application:
+
 [options="header",cols="1,2,2"]
 |===
-|Role/Name|Contact|Expectations
-| _<Role-1>_ | _<Contact-1>_ | _<Expectation-1>_
-| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
+|Role/Name|Goal/Boundaries
+| _Developers_ | _Developing this application will help us learning more features about software engineering. It will also help us to improve our work group skills._
+| _Teachers_ |  _They will supervise the development team by telling them some steps they have to follow and some tips in order to make the project._
+| _Other developers / classmates_ | _The can give some support to the development team by giving them advices and knowledge._
+| _Software engineers_ | _Specialized people can guide developers by giving them professional advice based on their experience and studies._
 |===
+
