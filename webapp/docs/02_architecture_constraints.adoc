@@ -24,7 +24,7 @@ _In this section we will go through the different contraints the product has, gi
 |===
 | Constraint         | Context / Motivation
 | Implementation in Javascript     | The rest api will developed in the Javascript programming language, using Express as the framework and Node.js as the execution environment
-| MongoDB used for database     | This NoSQL based technology will be used for storing data in a database. Mongose will be used to acces this data
+| MongoDB used for database     | This NoSQL based technology will be used for storing data in a database. Mongose will be used to access this data
 | Docker    | This container technology will be used for deploying the webservice, hence it will be needed
 | Monitoring the app    | For this purpose we will use two technologies. For getting the data from the server every five seconds, we will have a piece of software of Prometheus. For displaying this data in a nice looking way Grafana will do the work
 | OS independence   | No specific operating system will be needed in order to deploy the app

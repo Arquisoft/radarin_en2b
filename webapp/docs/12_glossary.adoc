@@ -26,9 +26,9 @@ Potentially more columns in case you need translations.
 [options="header"]
 |===
 | Term         | Definition
-| _[docker] Docker_ | _It is an open source project which automatizes the application deployment inside software containers._
-| _[heroku] Herouku_ |  _It is one of the most used PaaS (Platform as a Service) nowadays in business environments due to its strong focus on solving the deployment of an application._
-| _[solid] SOLID project_ | _Lets people store their data securely in decentralized data stores called pods._
-| _[pods] Users' pods_ | _Secure personal web servers for data. The owner control who and what can access the pods._
-| _[contint] Continuous integration_ | _Software Engineering practice used to make automatic integrations of a project regularly in order to detect errors sooner._
+| [[docker]] Docker | It is an open source project which automatizes the application deployment inside software containers.
+| [[heroku]] Herouku |  It is one of the most used PaaS (Platform as a Service) nowadays in business environments due to its strong focus on solving the deployment of an application.
+| [[solid]] SOLID project | Lets people store their data securely in decentralized data stores called pods.
+| [[pods]] Users' pods | Secure personal web servers for data. The owner control who and what can access the pods.
+| [[contint]] Continuous integration | Software Engineering practice used to make automatic integrations of a project regularly in order to detect errors sooner.
 |===
