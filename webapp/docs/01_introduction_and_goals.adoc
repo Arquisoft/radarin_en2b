@@ -84,13 +84,13 @@ If you as an architect do not know how the quality of your work will be judged â
 A table with quality goals and concrete scenarios, ordered by priorities
 ****
 
-[options="header",cols="1,2,2"]
+[options="header"]
 |===
 |Nr|Quality|Motivation
-| _1_ | _Usability_ | _The application must be easy to use. Users should understand how to use it at first sight._
-| _2_ | _Security_ | _Users must have all their personal data in a secure system. The use of the application must not lead to any security problem._
-| _3_ | _Privacy_ | _Data from users must be specifically used for the main purpose of the application. No data will be provided to third parties._
-| _4_ | _Mantainability_ | _The application must be well coded so that changes in the future will be easily done without touching many parts of the code._
+| 1 | Usability | The application must be easy to use. Users should understand how to use it at first sight.
+| 2 | Security | Users must have all their personal data in a secure system. The use of the application must not lead to any security problem.
+| 3 | Privacy | Data from users must be specifically used for the main purpose of the application. No data will be provided to third parties.
+| 4 | Mantainability | The application must be well coded so that changes in the future will be easily done without touching many parts of the code.
 |===
 
 
@@ -120,12 +120,12 @@ Table with role names, person names, and their expectations with respect to the 
 
 The following table has the most important roles for the application:
 
-[options="header",cols="1,2"]
+[options="header"]
 |===
 |Role/Name|Goal/Boundaries
-| _Developers_ | _Developing this application will help us learning more features about software engineering. It will also help us to improve our work group skills._
-| _Teachers_ |  _They will supervise the development team by telling them some steps they have to follow and some tips in order to make the project._
-| _Other developers / classmates_ | _The can give some support to the development team by giving them advices and knowledge._
-| _Software engineers_ | _Specialized people can guide developers by giving them professional advice based on their experience and studies._
+| Developers | Developing this application will help us learning more features about software engineering. It will also help us to improve our work group skills.
+| Teachers |  They will supervise the development team by telling them some steps they have to follow and some tips in order to make the project.
+| Other developers / classmates | The can give some support to the development team by giving them advices and knowledge.
+| Software engineers | Specialized people can guide developers by giving them professional advice based on their experience and studies.
 |===
 
