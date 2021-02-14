@@ -127,5 +127,7 @@ The following table has the most important roles for the application:
 | Teachers |  They will supervise the development team by telling them some steps they have to follow and some tips in order to make the project.
 | Other developers / classmates | The can give some support to the development team by giving them advices and knowledge.
 | Software engineers | Specialized people can guide developers by giving them professional advice based on their experience and studies.
+| Admin | They manage users and monitor server status through the Web application.
+| People with access to new technlogies | They would like to use this application whenever they hang around to meet their friends.
 |===
 
