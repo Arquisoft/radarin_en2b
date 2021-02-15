@@ -39,9 +39,42 @@ Alternatively (or additionally) you can use a table.
 The title of the table is the name of your system, the three columns contain the name of the communication partner, the inputs, and the outputs.
 ****
 
-**<Diagram or Table>**
+[plantuml, diagram-business, svg]
+....
+:User: as user
+[Radarin] << System >> as WAPI
 
-**<optionally: Explanation of external domain interfaces>**
+database Locations << System >> as DB {
+    folder "User WebID" as foldb {
+        file "Location & Timestamp" as loctmp
+    }
+}
+
+cloud "SOLID server provider" {
+    package "User pod" as pod {
+        file "Friends" as friends
+        file "Past locations and timestamps"
+    }
+}
+
+note right of foldb
+    May also need to
+    store Auth credentials
+end note
+
+user --> WAPI : send location
+WAPI --> user : recieve nearby friends
+WAPI --> DB : store current location
+WAPI <-- DB : retrieve nearby friends
+pod <-- WAPI : ask for friends
+....
+
+- Client: normal user who has installed the application in their mobile phone.
+- Admin: special user who can access the system through the web application for management purposes.
+- Mobile App: the application clients interact directly with. It relies on the web application to work as server for it.
+- Web App: its purpose is to gather all needed information from the database and PODs, through the Rest API, to be able to send it to the mobile app. It also offers an administration interface. 
+- Database: stores the minimal information needed by the app to work (locations, timestamps, webIDs and authentication keys).
+- SOLID Server: an external server where user PODs are stored. The web application, using the WebIDs, is able to access specific PODs when needed, getting the user information without storing it elsewhere, and therefore maintaining user privacy.
 
 === Technical Context
 
@@ -59,8 +92,28 @@ together with a mapping table showing the relationships between channels and inp
 
 ****
 
-**<Diagram or Table>**
+[plantuml, diagram-technical, svg]
+....
+actor Client
+actor/ Admin
+component MobileApp
+Client -- MobileApp
+cloud cloud {
+component WebApp
+component RestAPI
+database DB
+}
+Admin -- WebApp
+MobileApp -- WebApp : HTTP
+MobileApp -- RestAPI : HTTP/REST
+WebApp -- RestAPI : HTTP/REST
+RestAPI -- DB : REST
+node SolidServer {
+storage POD
+}
+RestAPI -- SolidServer : HTTP/REST
+....
 
-**<optionally: Explanation of technical interfaces>**
+The most used protocol is HTTP. Rest API communicates the application with the sources of information (database and PODs), making every interchange of information more secure. 
 
-**<Mapping Input/Output to Channels>**
+
