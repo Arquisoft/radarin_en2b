@@ -52,7 +52,7 @@ image:08-Crosscutting-Concepts-Structure-EN.png["Possible topics for crosscuttin
 
 === Domain Model
 
-Image:domainModel.png[] 
+image:domainModel.png[] 
 
 [options="header"] 
 
@@ -69,17 +69,17 @@ Image:domainModel.png[]
 === Design Patterns 
 We will use a MVC (Model-View-Controller) structure. The application will be splitted  into services (logic and domain model), views and repositories. The user will interact with the controllers which will send back the corresponding views. The controllers will communicate also with the model. The model will interact with the repositories.  
 We have wanted to use this architectural pattern in order to be able to distinguish the appearance, the business (logic) and the persistance. 
-Using MVC pattern also allows us to make the changes easier or increase the functionality 
+Using MVC pattern also allows us to make the changes easier or increase the functionality. 
 
 === Code Generation 
-We will use a platform like React or SpringBoot to develop the web application. The mobile phone app will be done with a apk generator platform as Android Studio. 
+We will use a platform like React or SpringBoot to develop the web application. The mobile phone app will be done with an apk generator platform as Android Studio. 
 
 === Security and Safety
 ****
 Security is achieved thanks to various techniques:
-- The usage of SOLID PODs, which protect all the compromising information. Only the user has access to the info
-- The application of HTTP and REST protocols, that ensure we use secure communication channels, and the authenticity and integrity of the data sent. 
-- Data validation, done by the app and the database, so that data is always consistent. 
+* The usage of SOLID PODs, which protect all the compromising information. Only the user has access to the info.
+* The application of HTTP and REST protocols, that ensure we use secure communication channels, and the authenticity and integrity of the data sent. 
+* Data validation, done by the app and the database, so that data is always consistent. 
 ****
 
 ****
