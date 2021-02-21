@@ -62,6 +62,30 @@ image:domainModel.png[]
 | Location | A location is composed by several characteristics. The development team has decided that the better way of saving it is as coordinates, with its longitude and latitude. The time the location is placed is saved too. 
 |=== 
 
+
+=== MongoDB data structure
+As we need to store the information explained in the domain model but in a mongo database the information structure is different. The objects saved will follow the next pattern:
+
+var user = {
+    "webid": "https://in..../user/asdfg",
+    "location": {
+        "type": "Point",
+        "coordinates": [43.53573, -5.66152 ] 
+    }
+    "timestamp": ISODate("2021-02-21T22:26:00.000Z"),
+    "authKey": "auth123456789"
+}
+
+The information described before is an example to understand the idea wanted to be explained. The location is GeoJSON Point <<geojson>> that corresponds with Gijón's location. The timestamp corresponds with the time the document is written: "YYYY-MM-DDThh:mm:ss.000Z".
+
+Y: year with four digits.
+M: year's month with two digits.
+D: month's day with two digits.
+h: hour of the day in 24 hour format.
+m: minute of the hour with two digits.
+s: second of the minute with two digits.
+It is possible to specify at millseconds level.
+
 === Design Patterns 
 We will use a MVC (Model-View-Controller) structure. The application will be splitted  into services (logic and domain model), views and repositories. The user will interact with the controllers which will send back the corresponding views. The controllers will communicate also with the model. The model will interact with the repositories.  
 We have wanted to use this architectural pattern in order to be able to distinguish the appearance, the business (logic) and the persistance. 
