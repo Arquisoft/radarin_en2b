@@ -24,3 +24,9 @@ Various options:
 * more detailed in form of separate sections per decision
 * ADR (architecture decision record) for every important decision
 ****
+Choices::
+In this project the main constraint is to make the application work as a webapp and as a mobile phone app. To fulfill this, we have to choose technologies, SOLID has to be used for the webapp as it is also a constraint. This left us with freedom to choose the software we want for the mobile app. Our choice was React. This choice was made for two main reasons: its compatibility with SOLID and the features it offers, that we think make our task much easier.
+Problems::
+One problem we face when choosing the technologies is that, even though we looked into them and analyzed them, we are not familiar with them. We believe in our choices and the power of decision of the group, that contrasted these technologies with others, concluding in the decisions mentioned before. 
+Solutions::
+In order to solve the problem mentioned before, what we have done is work on the basics of the new technologies, getting a lot of practice and ask questions to other members os the team, as facing issues together is much easier and a lot more enriching for all the members.
