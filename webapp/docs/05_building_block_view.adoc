@@ -2,7 +2,7 @@
 
 
 == Building Block View
-
+The application has many different parts, but all of them are connected in a way. In this point we will see how the different components are structured and how they interact with each other.
 [role="arc42help"]
 ****
 .Content
@@ -57,18 +57,14 @@ In the best case you will get away with examples or simple signatures.
 
 ****
 
-_**<Overview Diagram>**_
-
-Motivation::
-
-_<text explanation>_
-
+image:documentation_5.png[]
 
 Contained Building Blocks::
-_<Description of contained building block (black boxes)>_
+The application which allows the user to log in, add friends, look notifications and all the different options. It is also able to make the diffent levels and structures communicate in the proper way.
 
-Important Interfaces::
-_<Description of important interfaces>_
+|===
+| Radarin   | Main part of the app. The user will interact with it and it will work as a connector between all parts
+|===
 
 [role="arc42help"]
 ****
@@ -77,7 +73,7 @@ Insert your explanations of black boxes from level 1:
 If you use tabular form you will only describe your black boxes with name and
 responsibility according to the following schema:
 
-[cols="1,2" options="header"]
+[cols="1,2"]
 |===
 | **Name** | **Responsibility**
 | _<black box 1>_ | _<Text>_
@@ -89,9 +85,6 @@ responsibility according to the following schema:
 If you use a list of black box descriptions then you fill in a separate black box template for every important building block .
 Its headline is the name of the black box.
 ****
-
-
-==== <Name black box 1>
 
 [role="arc42help"]
 ****
@@ -107,36 +100,6 @@ according the the following black box template:
 
 ****
 
-_<Purpose/Responsibility>_
-
-_<Interface(s)>_
-
-_<(Optional) Quality/Performance Characteristics>_
-
-_<(Optional) Directory/File Location>_
-
-_<(Optional) Fulfilled Requirements>_
-
-_<(optional) Open Issues/Problems/Risks>_
-
-
-
-
-==== <Name black box 2>
-
-_<black box template>_
-
-==== <Name black box n>
-
-_<black box template>_
-
-
-==== <Name interface 1>
-
-...
-
-==== <Name interface m>
-
 
 
 === Level 2
@@ -150,30 +113,21 @@ Please prefer relevance over completeness. Specify important, surprising, risky,
 Leave out normal, simple, boring or standardized parts of your system
 ****
 
-==== White Box _<building block 1>_
-
 [role="arc42help"]
 ****
 ...describes the internal structure of _building block 1_.
 ****
-
-_<white box template>_
-
-==== White Box _<building block 2>_
-
-
-_<white box template>_
-
-...
-
-==== White Box _<building block m>_
-
-
-_<white box template>_
-
-
-
-=== Level 3
+image:documentation_5_2.png[]
+[options="header"]
+|===
+| Name | Responsability
+| Interface layer | It is the layer with which the user interacts with the application. In our application is composed by the menu, friends and notifications.
+| Data access layer | It provides access to solid libraries. 
+| Menu | It displays all the the options the user can do.
+| Friends | It displays all the friends of the user.
+| Notifications | Notifications are shown when a friend is nearby.
+| Solid | It provides a set of libraries with which it exchanges data with the interface layer and the user's pod.
+|===
 
 [role="arc42help"]
 ****
@@ -183,24 +137,9 @@ When you need more detailed levels of your architecture please copy this
 part of arc42 for additional levels.
 ****
 
-
-==== White Box <_building block x.1_>
-
 [role="arc42help"]
 ****
 Specifies the internal structure of _building block x.1_.
 ****
 
 
-_<white box template>_
-
-
-==== White Box <_building block x.2_>
-
-_<white box template>_
-
-
-
-==== White Box <_building block y.1_>
-
-_<white box template>_

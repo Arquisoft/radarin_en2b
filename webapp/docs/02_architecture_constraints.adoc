@@ -19,26 +19,25 @@ conventions (e.g. programming or versioning guidelines, documentation or naming 
 ****
 _In this section we will go through the different contraints the product has, giving them some kind of context and explanation._
 
-=== Technical constraints
+=== [[technology]]Technical constraints
 [options="header"]
 |===
 | Constraint         | Context / Motivation
-| Implementation in Javascript     | The rest api will developed in the Javascript programming language, using Express as the framework and Node.js as the execution environment
-| MongoDB used for database     | This NoSQL based technology will be used for storing data in a database. Mongose will be used to access this data
-| Docker    | This container technology will be used for deploying the webservice, hence it will be needed
-| Monitoring the app    | For this purpose we will use two technologies. For getting the data from the server every five seconds, we will have a piece of software of Prometheus. For displaying this data in a nice looking way Grafana will do the work
+| SOLID     | The project is compatible with the SOLID project and will store information in user's pods instead of in a centralized way
+| Docker    | This container technology will be used for deploying the application
+| Monitoring the app    | The system needs to be monitored in some kind of way, displaying the information in a user-friendly way
 | OS independence   | No specific operating system will be needed in order to deploy the app
 | Memory friendly   | The use of docker for deploying the app will make it a lighter app
 |===
 
-=== Organizational constraints
+=== [[organization]]Organizational constraints
 [options="header"]
 |===
 | Constraint  | Context / Motivation
 | Team      | Andrea García Cernuda, Hector Díaz Beltrán, Luis Fernández Suárez, Sara Rubín-Estrada Nora and Marcos Fernández González
 | Time schedule     | The development started in february 2021 with due date at the end of april 2021
 | Version control   | A public Github repository is available to check all the commits and version that this project has been through
-| Testing       | Supertest technology will be used for this purpose
+| Testing       | Testing the app is a very important part of our development. All kind of scenarios will be considered
 |===
 
 === Conventions

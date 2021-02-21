@@ -50,18 +50,53 @@ image:08-Crosscutting-Concepts-Structure-EN.png["Possible topics for crosscuttin
 ****
 
 
-=== Domain model
+=== Domain Model
 
-image:UmlDiagram.png["Example UML Diagram"]
+image:domainModel.png[] 
 
+[options="header"] 
 
+|=== 
 
-=== _<Concept 2>_
+| Name | Description 
 
-_<explanation>_
+| User | A user is identified by web id (users' pod id), its location (changes frequently as the user's position may change during the day) and an authentication key (HTTP key - web). 
 
-...
+| Location | A location is composed by several characteristics. The development team has decided that the better way of saving it is as coordinates, with its longitude and latitude. The time the location is placed is saved too. 
 
-=== _<Concept n>_
+|=== 
 
-_<explanation>_
+=== Design Patterns 
+We will use a MVC (Model-View-Controller) structure. The application will be splitted  into services (logic and domain model), views and repositories. The user will interact with the controllers which will send back the corresponding views. The controllers will communicate also with the model. The model will interact with the repositories.  
+We have wanted to use this architectural pattern in order to be able to distinguish the appearance, the business (logic) and the persistance. 
+Using MVC pattern also allows us to make the changes easier or increase the functionality. 
+
+=== Code Generation 
+We will use a platform like React or SpringBoot to develop the web application. The mobile phone app will be done with an apk generator platform as Android Studio. 
+
+=== Security and Safety
+****
+Security is achieved thanks to various techniques:
+
+* The usage of SOLID PODs, which protect all the compromising information. Only the user has access to the info.
+* The application of HTTP and REST protocols, that ensure we use secure communication channels, and the authenticity and integrity of the data sent. 
+* Data validation, done by the app and the database, so that data is always consistent. 
+****
+
+****
+Showing the location of a user is always a bit dangerous, so the app will always ask for permission to expose it. The user can hide their location at any time.
+****
+
+=== Plausibility Check and Validation 
+When saving user's location the development team must check its coordinates in order to verify that they are correct and exist. 
+The web application and the database used must check the datatypes of the information. 
+
+=== Exception and Error Handling
+The inconsistency of data and failed validation will lead to errors. These will be shown in the user interface as a message, so the user can understand what is happening and do something about it (for example, when logging in, if they have misspelled a word).
+Technical errors, such as a breakdown, will not be handled. They can lead to losing data or a crash in the app.
+
+=== Session Handling  
+The session handling will be done using JavaScript sessions. 
+
+=== Testability
+The application will be tested in several ways. We will develop unit tests, acceptance tests and load tests, which will be run automatically in a continuous integration server. This way we can be sure that our project works well.

@@ -22,3 +22,20 @@ Motivate what you have decided and why you decided that way,
 based upon your problem statement, the quality goals and key constraints.
 Refer to details in the following sections.
 ****
+To achieve the goals we have for this project, we have to take some decisions on how to approach the different problems that we know will appear during the development.
+
+Technology decisions::
+As we saw before, we have to adhere to some constraints regarding <<technology>> and <<organization>>. In order to do that, we have chosen some technologies that we think make the work much easier. Those would be:
+|===
+| Monitoring: Prometheus and Grafana    | For this purpose there are two technologies. There will be a piece of software from Prometheus that will get data every five seconds. To show this information in a nice looking way, Grafana will do the work.
+| Testing: Supertest, E2E and Gatling   | Test the correct functionality of the app is vital. For this purpose we have chosen for the rest API Supertest and for the webapp E2E and Gatling
+| React, Express and Node.js     | In order to implement the app in Javascript, we chose these technologies, that we believe will help us throug the development
+|===
+
+Quality goals::
+To achieve the <<quality>> goals:
+|===
+| Usability     | All interfaces are as easy as they can be so that it won't be a nightmare for non-experienced users
+| Securtiy and Privacy     | Pods provided by SOLID will be our secure place to store user information
+| Mantainability    | During the development of the app, preparing it for future extensions or adding features to already existing ones will be a vital part as there is always room for improvement
+|===
