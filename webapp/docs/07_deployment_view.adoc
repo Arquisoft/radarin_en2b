@@ -59,12 +59,12 @@ WebApp --> SOLID_Server : uses
 
 Motivation::
 
-Radarin is located in a cloud service (Heroku), as well as the database it uses. Users can access through the mobile application with a smartphone or tablet, and there is also the possibility of accessing through a web browser to the web app (this is only for management purposes). Radarin connects to a SOLID provider (probably Inrupt), which manages the PODs that can be in any SOLID server. 
+Radarin is located in a cloud service (Heroku <<heroku>>), as well as the database it uses. Users can access through the mobile application with a smartphone or tablet, and there is also the possibility of accessing through a web browser to the web app (this is only for management purposes). Radarin connects to a SOLID <<solid>> provider (probably Inrupt <<inrupt>>), which manages the PODs <<pods>> that can be in any SOLID <<solid>> server. 
 
 Quality and/or Performance Features::
 
 Being a web application, a network connection is needed in order for it to work. However, the app itself should not consume much bandwith, as it does not perform heavy tasks (just sends coordinates and timestamp and receives the list of friends' webIDs and their location).  
-The availability of the servers where the SOLID PODs are stored will also be key in the availability of the application itself. Implementing a cache where the friends are stored will make the app less reliant on the PODs availability, but it will still be necessary to have the option to manually force checking them again in case there are changes. 
+The availability of the servers where the SOLID <<solid>> PODs <<pods>> are stored will also be key in the availability of the application itself. Implementing a cache where the friends are stored will make the app less reliant on the PODs <<pods>> availability, but it will still be necessary to have the option to manually force checking them again in case there are changes. 
 
 Mapping of Building Blocks to Infrastructure::
 
@@ -74,7 +74,7 @@ The blocks that compose the system are:
 - The device used by the administrator to enter the web application.
 - The admin's browser, inside their device.
 - The web application.
-- The server there the web application is located.
+- The server where the web application is located.
 - The database used the the app.
-- The POD server where all PODs are stored. 
-- The user's PODs.
+- The POD <<pods>> server where all PODs <<pods>> are stored. 
+- The user's PODs <<pods>>.

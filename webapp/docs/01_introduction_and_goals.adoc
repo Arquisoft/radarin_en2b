@@ -25,7 +25,7 @@ What is Radarin?
 
 Radarin is a system to facilitate meetings between friends using new technologies.
 
-To carry out the project's aim, the application needs the mobile phone localization of the users who voluntarily activate it and allow the application to use it. The users also need to allow their friends to know when they are near them. A notification will be sent in this situation so they can get in contact
+To carry out the project's aim, the application needs the mobile phone localization of the users who voluntarily activate it and allow the application to use it. The users also need to allow their friends to know when they are near them. A notification will be sent in this situation so they can get in contact.
 
 
 === Requirements Overview
@@ -53,7 +53,7 @@ Two software components are taken into account:
 
 .1. Web application that runs in a server.
 ****
-It will store the minimum information needed, the mobile phone localization and the timestamp in which those locations take place (all of them located in users's pods). The system will be compatible with the SOLID project <<solid>>. No personal information will be stored in a centralized way. The rest of the information, as friends; will be queried to the pods <<pods>>. It will allow users to manage and visualize locations too. Finally, it will include other admin options to manage users and monitor server status.
+It will store the minimum information needed, the mobile phone localization and the timestamp in which those locations take place (all of them located in users's pods <<pods>>). The system will be compatible with the SOLID project <<solid>>. No personal information will be stored in a centralized way. The rest of the information, as friends; will be queried to the pods <<pods>>. It will allow users to manage and visualize locations too. Finally, it will include other admin options to manage users and monitor server status.
 ****
 
 .2.  Application running in users' mobile phone.
@@ -125,7 +125,7 @@ The following table has the most important roles for the application:
 |Role/Name|Goal/Boundaries
 | Developers | Developing this application will help us learning more features about software engineering. It will also help us to improve our work group skills.
 | Teachers |  They will supervise the development team by telling them some steps they have to follow and some tips in order to make the project.
-| Other developers / classmates | The can give some support to the development team by giving them advices and knowledge.
+| Other developers / classmates | They can give some support to the development team by giving them advices and knowledge.
 | Software engineers | Specialized people can guide developers by giving them professional advice based on their experience and studies.
 | Admin | They manage users and monitor server status through the Web application.
 | People with access to new technlogies | They would like to use this application whenever they hang around to meet their friends.

@@ -122,11 +122,11 @@ image:documentation_5_2.png[]
 |===
 | Name | Responsability
 | Interface layer | It is the layer with which the user interacts with the application. In our application is composed by the menu, friends and notifications.
-| Data access layer | It provides access to solid libraries. 
+| Data access layer | It provides access to solid <<solid>> libraries. 
 | Menu | It displays all the the options the user can do.
 | Friends | It displays all the friends of the user.
 | Notifications | Notifications are shown when a friend is nearby.
-| Solid | It provides a set of libraries with which it exchanges data with the interface layer and the user's pod.
+| Solid <<solid>> | It provides a set of libraries with which it exchanges data with the interface layer and the user's pod <<pods>>.
 |===
 
 [role="arc42help"]

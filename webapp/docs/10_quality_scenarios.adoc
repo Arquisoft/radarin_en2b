@@ -17,7 +17,7 @@ decisions you should know for every stakeholder what is really important to them
 concrete and measurable.
 ****
 
-As the most important quality requirement (quality goals) were described in section 1.2 here we have also some with lesser priority, which will not create high risks if they are not fully achieved.
+As the most important quality requirement (quality goals) were described in section 1.2, here we have also some with less priority, which will not create high risks if they are not fully achieved.
 
 [options="header"]
 |===

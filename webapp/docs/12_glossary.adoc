@@ -27,8 +27,19 @@ Potentially more columns in case you need translations.
 |===
 | Term         | Definition
 | [[docker]] Docker | It is an open source project which automatizes the application deployment inside software containers.
-| [[heroku]] Herouku |  It is one of the most used PaaS (Platform as a Service) nowadays in business environments due to its strong focus on solving the deployment of an application.
+| [[heroku]] Heroku |  It is one of the most used PaaS (Platform as a Service) nowadays in business environments due to its strong focus on solving the deployment of an application.
 | [[solid]] SOLID project | Lets people store their data securely in decentralized data stores called pods.
 | [[pods]] Users' pods | Secure personal web servers for data. The owner control who and what can access the pods.
 | [[contint]] Continuous integration | Software Engineering practice used to make automatic integrations of a project regularly in order to detect errors sooner.
+| [[prometheus]] Prometheus | Open source application to monitor the performance of one or more computer systems.
+| [[grafana]] Grafana | Multi-platform open source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources.
+| [[supertest]] Supertest | HTTP assertions made easy via superagent.
+| [[e2e]] E2E | End-to-end testing is a technique that tests the entire software product from beginning to end to ensure the application flow behaves as expected. It defines the product’s system dependencies and ensures all integrated pieces work together as expected.
+| [[gatling]] Gatling | Open source loading test for web applications and sites.
+| [[express]] Express | Server needed to run the web application.
+| [[node]] Node.js | Is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications.
+| [[javascript]] JavaScript | Text-based programming language used both on the client-side and server-side that allows users to make web pages interactive.
+| [[inrupt]] Inrupt | Puts individuals in control of their data, gives organizations new opportunities to create value for customers, and allows developers to thrive in an open marketplace of innovation. It is a SOLID provider.
+| [[rest]] Rest API |  Application programming interface (API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for representational state transfer.
+| [[http]] HTTP protocol | Hypertext Transfer Protocol used to transfer data over the web.
 |===

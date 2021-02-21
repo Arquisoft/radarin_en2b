@@ -23,27 +23,27 @@ _In this section we will go through the different contraints the product has, gi
 [options="header"]
 |===
 | Constraint         | Context / Motivation
-| SOLID     | The project is compatible with the SOLID project and will store information in user's pods instead of in a centralized way
-| Docker    | This container technology will be used for deploying the application
-| Monitoring the app    | The system needs to be monitored in some kind of way, displaying the information in a user-friendly way
-| OS independence   | No specific operating system will be needed in order to deploy the app
-| Memory friendly   | The use of docker for deploying the app will make it a lighter app
+| SOLID <<solid>>     | The project is compatible with the SOLID project <<solid>> and will store information in user's pods <<pods>> instead of in a centralized way.
+| Docker <<docker>>   | This container technology will be used for deploying the application.
+| Monitoring the app    | The system needs to be monitored in some kind of way, displaying the information in a user-friendly way.
+| Operating System (OS) independence   | No specific OS will be needed in order to deploy the app.
+| Memory friendly   | The use of docker <<docker>> for deploying the app will make it a lighter app.
 |===
 
 === [[organization]]Organizational constraints
 [options="header"]
 |===
 | Constraint  | Context / Motivation
-| Team      | Andrea García Cernuda, Hector Díaz Beltrán, Luis Fernández Suárez, Sara Rubín-Estrada Nora and Marcos Fernández González
-| Time schedule     | The development started in february 2021 with due date at the end of april 2021
-| Version control   | A public Github repository is available to check all the commits and version that this project has been through
-| Testing       | Testing the app is a very important part of our development. All kind of scenarios will be considered
+| Team      | Andrea García Cernuda, Héctor Díaz Beltrán, Luis Fernández Suárez, Sara Rubín Estrada-Nora and Marcos Fernández González.
+| Time schedule     | The development started in february 2021 with due date at the end of april 2021.
+| Version control   | A public Github repository is available to check all the commits and version that this project has been through.
+| Testing       | Testing the app is a very important part of our development. All kind of scenarios will be considered.
 |===
 
 === Conventions
 [options="header"]
 |===
 | Constraint    | Context / Motivation
-| Architecture documentation    | Based on arc42 version 7.0
-| Language      | English was the chosen language. The scope of this app is not only our home country (Spain) thus the decision of choosing English
+| Architecture documentation    | Based on arc42 version 7.0.
+| Language      | English was the chosen language. The scope of this app is not only our home country (Spain) thus the decision of choosing English.
 |===
