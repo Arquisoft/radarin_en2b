@@ -19,7 +19,7 @@ conventions (e.g. programming or versioning guidelines, documentation or naming 
 ****
 _In this section we will go through the different contraints the product has, giving them some kind of context and explanation._
 
-=== Technical constraints
+=== [[technology]]Technical constraints
 [options="header"]
 |===
 | Constraint         | Context / Motivation
@@ -30,7 +30,7 @@ _In this section we will go through the different contraints the product has, gi
 | Memory friendly   | The use of docker for deploying the app will make it a lighter app
 |===
 
-=== Organizational constraints
+=== [[organization]]Organizational constraints
 [options="header"]
 |===
 | Constraint  | Context / Motivation
