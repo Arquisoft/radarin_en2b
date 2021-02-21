@@ -28,7 +28,7 @@ Technology decisions::
 As we saw before, we have to adhere to some constraints regarding <<technology>> and <<organization>>. In order to do that, we have chosen some technologies that we think make the work much easier. Those would be:
 |===
 | Monitoring: Prometheus and Grafana    | For this purpose there are two technologies. There will be a piece of software from Prometheus that will get data every five seconds. To show this information in a nice looking way, Grafana will do the work.
-| Testing: Supertest   | Test the correct functionality of the app is vital. For this purpose we have chosen Supertest
+| Testing: Supertest, E2E and Gatling   | Test the correct functionality of the app is vital. For this purpose we have chosen for the rest API Supertest and for the webapp E2E and Gatling
 | React, Express and Node.js     | In order to implement the app in Javascript, we chose these technologies, that we believe will help us throug the development
 |===
 
