@@ -60,10 +60,10 @@ In the best case you will get away with examples or simple signatures.
 image:documentation_5.png[]
 
 Contained Building Blocks::
-The application which allows the user to log in, add friends, look notifications and all the different options. It is also able to make the diffent levels and structures communicate in the proper way.
+The application which allows the user to log in, add friends, look notifications and all the different options. It is also able to make the different levels and structures communicate in the proper way.
 
 |===
-| Radarin   | Main part of the app. The user will interact with it and it will work as a connector between all parts
+| Radarin   | Main part of the app. The user will interact with it and it will work as a connector between all parts.
 |===
 
 [role="arc42help"]
