@@ -91,6 +91,7 @@ A table with quality goals and concrete scenarios, ordered by priorities
 | 2 | Security | Users must have all their personal data in a secure system. The use of the application must not lead to any security problem.
 | 3 | Privacy | Data from users must be specifically used for the main purpose of the application. No data will be provided to third parties.
 | 4 | Mantainability | The application must be well coded so that changes in the future will be easily done without touching many parts of the code.
+| 5 | Availability | The application must be accesible at any time by users.
 |===
 
 
