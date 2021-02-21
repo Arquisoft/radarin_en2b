@@ -42,7 +42,7 @@ database "Bob's Pod" as pod
 u -> wa : send location and timestamp
 activate wa
 
-wa -> db : overrite old location and timestamp
+wa -> db : overwrite old location and timestamp
 wa -> pod : store log of location and timestamp
 
 wa -> u : confirmation response
