@@ -68,7 +68,7 @@ Unit tests, acceptance tests and load tests will be made and will be automatical
 All those specifications where provided https://arquisoft.github.io/course2021/labAssignmentDescription.html[here].
 
 
-=== Quality Goals
+=== [[quality]]Quality Goals
 
 
 [role="arc42help"]
