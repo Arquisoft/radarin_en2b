@@ -63,7 +63,8 @@ Radarin is located in a cloud service (Heroku), as well as the database it uses.
 
 Quality and/or Performance Features::
 
-Being a web application, performance will be dependent on the network connection of the user. The availability of the servers where the SOLID PODs are stored will also be key in the availability of the application itself.
+Being a web application, a network connection is needed in order for it to work. However, the app itself should not consume much bandwith, as it does not perform heavy tasks (just sends coordinates and timestamp and receives the list of friends' webIDs and their location).  
+The availability of the servers where the SOLID PODs are stored will also be key in the availability of the application itself. Implementing a cache where the friends are stored will make the app less reliant on the PODs availability, but it will still be necessary to have the option to manually force checking them again in case there are changes. 
 
 Mapping of Building Blocks to Infrastructure::
 
