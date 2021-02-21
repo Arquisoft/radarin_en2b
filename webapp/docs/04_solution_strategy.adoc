@@ -36,7 +36,7 @@ Quality goals::
 To achieve the <<quality>> goals:
 |===
 | Usability     | All interfaces are as easy as they can be so that it won't be a nightmare for non-experienced users.
-| Securtiy and Privacy     | Pods provided by SOLID <<solid>> will be our secure place to store user information.
+| Security and Privacy     | Pods provided by SOLID <<solid>> will be our secure place to store user information.
 | Mantainability    | During the development of the app, preparing it for future extensions or adding features to already existing ones will be a vital part as there is always room for improvement.
 | Availability    | All users should be able to use the app whenever they want.
 |===
