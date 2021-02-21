@@ -36,51 +36,44 @@ when your infrastructure is more complex.
 
 === Infrastructure Level 1
 
-[role="arc42help"]
-****
-Describe (usually in a combination of diagrams, tables, and text):
+[plantuml, diagram-business, svg]
+....
+@startuml
+rectangle "<<device>>\nSmartphone/Tablet" as Smartphone {
+node "Radarin.apk" as apk
+  }
+rectangle "<<cloud>>" as Cloud {
+node WebApp
+database DB
+  }
+rectangle "SOLID Server" as SOLID_Server {
+storage POD
+  }
+rectangle Browser
 
-*  the distribution of your system to multiple locations, environments, computers, processors, .. as well as the physical connections between them
-*  important justification or motivation for this deployment structure
-* Quality and/or performance features of the infrastructure
-*  the mapping of software artifacts to elements of the infrastructure
-
-For multiple environments or alternative deployments please copy that section of arc42 for all relevant environments.
-****
-
-_**<Overview Diagram>**_
+Browser --> WebApp : connects
+Smartphone --> WebApp : connects
+WebApp --> SOLID_Server : uses
+@enduml
+....
 
 Motivation::
 
-_<explanation in text form>_
+Radarin is located in a cloud service (Heroku), as well as the database it uses. Users can access through the mobile application with a smartphone or tablet, and there is also the possibility of accessing through a web browser to the web app (this is only for management purposes). Radarin connects to a SOLID provider (probably Inrupt), which manages the PODs that can be in any SOLID server. 
 
 Quality and/or Performance Features::
 
-_<explanation in text form>_
+Being a web application, performance will be dependent on the network connection of the user. The availability of the servers where the SOLID PODs are stored will also be key in the availability of the application itself.
 
 Mapping of Building Blocks to Infrastructure::
-_<description of the mapping>_
 
+The blocks that compose the system are:
 
-=== Infrastructure Level 2
-
-[role="arc42help"]
-****
-Here you can include the internal structure of (some) infrastructure elements from level 1.
-
-Please copy the structure from level 1 for each selected element.
-****
-
-==== _<Infrastructure Element 1>_
-
-_<diagram + explanation>_
-
-==== _<Infrastructure Element 2>_
-
-_<diagram + explanation>_
-
-...
-
-==== _<Infrastructure Element n>_
-
-_<diagram + explanation>_
+- The device used by the user to enter the mobile application.
+- The device used by the administrator to enter the web application.
+- The admin's browser, inside their device.
+- The web application.
+- The server there the web application is located.
+- The database used the the app.
+- The POD server where all PODs are stored. 
+- The user's PODs.
