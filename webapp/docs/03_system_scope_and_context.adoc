@@ -20,6 +20,12 @@ Various options:
 * Lists of communication partners and their interfaces.
 ****
 
+- Client: normal user who has installed the application in their mobile phone.
+- Admin: special user who can access the system through the web application for management purposes.
+- Mobile App: the application clients interact directly with. It relies on the web application to work as server for it.
+- Web App: its purpose is to gather all needed information from the database and PODs, through the Rest API, to be able to send it to the mobile app. It also offers an administration interface. 
+- Database: stores the minimal information needed by the app to work (locations, timestamps, webIDs and authentication keys).
+- SOLID Server: an external server where user PODs are stored. The web application, using the WebIDs, is able to access specific PODs when needed, getting the user information without storing it elsewhere, and therefore maintaining user privacy.
 
 === Business Context
 
@@ -68,13 +74,6 @@ WAPI --> DB : store current location
 WAPI <-- DB : retrieve nearby friends
 pod <-- WAPI : ask for friends
 ....
-
-- Client: normal user who has installed the application in their mobile phone.
-- Admin: special user who can access the system through the web application for management purposes.
-- Mobile App: the application clients interact directly with. It relies on the web application to work as server for it.
-- Web App: its purpose is to gather all needed information from the database and PODs, through the Rest API, to be able to send it to the mobile app. It also offers an administration interface. 
-- Database: stores the minimal information needed by the app to work (locations, timestamps, webIDs and authentication keys).
-- SOLID Server: an external server where user PODs are stored. The web application, using the WebIDs, is able to access specific PODs when needed, getting the user information without storing it elsewhere, and therefore maintaining user privacy.
 
 === Technical Context
 
