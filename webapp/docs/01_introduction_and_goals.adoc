@@ -49,21 +49,30 @@ If requirements documents exist this overview should refer to these documents.
 Keep these excerpts as short as possible. Balance readability of this document with potential redundancy w.r.t to requirements documents.
 ****
 
-Two software components are taken into account:
+[options="header"]
+|===
+| Requirement | Description
+| Two software components (at least) to take into account | A web application and an application that will run in users' mobile phone.
+| Web application | It will runs in a server and will store locations.
 
-.1. Web application that runs in a server.
-****
-It will store the minimum information needed, the mobile phone localization and the timestamp in which those locations take place (all of them located in users's pods <<pods>>). The system will be compatible with the SOLID project <<solid>>. No personal information will be stored in a centralized way. The rest of the information, as friends; will be queried to the pods <<pods>>. It will allow users to manage and visualize locations too. Finally, it will include other admin options to manage users and monitor server status.
-****
+                    It will allow the users to manage and visualize locations. 
+                    
+                    It will also include other admin options to manage users and monitor server status.
+| Application ran in users' mobile phone | It will send the corresponding locations to the server.
 
-.2.  Application running in users' mobile phone.
-****
-It will send the corresponding locations to the server and will receive notifications from nearby friend users.
-****
+                                             It will receive notifications from nearby friend users.
+| Application that runs in a server | It will store the minimal information needed about a user, the mobile phone localization and the timestamp in which those locations take place (all of them located in users's pods <<pods>>).
+                                      
+                                      The rest of users' information, as friends; will be queried to the pods <<pods>>.
+                                      
+                                      No personal information will be stored in a centralized way.
+| System compatibility | The system will be compatible with the SOLID project <<solid>>.
+| System deployment | The system will be deployed from docker containers <<docker>>.
 
-The system will be deployed from docker containers <<docker>> and it will also be deployed in a cloud service like heroku <<heroku>>.
-
-Unit tests, acceptance tests and load tests will be made and will be automatically runned in a continuous integration server <<contint>>.
+                      It will also be deployed in a cloud service like heroku <<heroku>>.
+| Testing | Unit tests, acceptance tests and load tests will be made.
+| Continuous integration server <<contint>> | The previous tests will be automatically runned on it.
+|===
 
 All those specifications where provided https://arquisoft.github.io/course2021/labAssignmentDescription.html[here].
 
