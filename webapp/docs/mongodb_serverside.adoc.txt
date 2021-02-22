@@ -1,0 +1,62 @@
+Construyendo el backend
+
+Inicialización
+Abra el terminal y cree una carpeta.
+
+mkdir backend
+Cámbiese a la carpeta creada.
+
+cd backend
+Necesita el archivo package.json en esta carpeta. Use lo siguiente:
+
+npm init -y
+Escriba en la carpeta E:\sample\backend\package.json (a modo de ejemplo):
+
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo "Error: no test specified" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+Esto creará el archivo. El archivo package.json conserva varios metadatos del proyecto. Luego puede instalar las dependencias.
+
+npm install express mongoose cors
+Asegúrse de entender que son estas dependencias instaladas.
+
+express: Es un framework para Node.js.
+mongoose: Es un modelo de documentos de objetos para MongoDB.
+cors: Usado para permitir CORS con varias opciones. 
+Por último instale nodemon.
+
+npm install -g nodemon
+Nodemon es usado para monitorear los cambios en el código fuente. Automáticamente restablece el servidor cuando cualquier cambio es encontrado.
+
+En la carpeta backend, cree un nuevo archivo de nombre "index.js". Inserte el siguiente código en él. Es la implementación básica de Node.js/Express server. 
+
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const PORT = 4000;
+app.use(cors());
+app.listen(PORT, function() {
+  console.log("Server is running on Port: " + PORT);
+});
+Con eso habrá creado un server express. También habrá agregado cors. Este servidor será accesible en el puerto 4000. Ya se puede usar nodemon.
+
+nodemon index
+[nodemon] 1.19.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] starting `node index index.js`
+Server is running on Port: 4000
+Installing MongoDB
+
+Instalación de MongoDB en Windows.
+continúa...
+
