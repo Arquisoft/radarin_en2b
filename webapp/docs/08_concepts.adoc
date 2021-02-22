@@ -64,11 +64,11 @@ image:domainModel.png[]
 
 
 === MongoDB data structure
-As we need to store the information explained in the domain model but in a mongo database the information structure is different. The objects saved will follow the next pattern:
+As we need to store the information explained in the domain model but in a mongo database, the information structure is different. The objects saved will follow the next pattern:
 
 var user = {
 
-    "webid": "https://in..../user/asdfg",
+    "webId": "https://in..../user/asdfg",
 
     "location": {
 
@@ -98,7 +98,7 @@ m: minute of the hour with two digits.
 
 s: second of the minute with two digits.
 
-It is possible to specify at millseconds level.
+It is possible to specify at milliseconds level.
 
 === Design Patterns 
 We will use a MVC (Model-View-Controller) structure. The application will be splitted  into services (logic and domain model), views and repositories. The user will interact with the controllers which will send back the corresponding views. The controllers will communicate also with the model. The model will interact with the repositories.  
