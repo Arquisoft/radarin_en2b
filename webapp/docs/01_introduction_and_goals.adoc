@@ -52,19 +52,25 @@ Keep these excerpts as short as possible. Balance readability of this document w
 [options="header"]
 |===
 | Requirement | Description
-| Two software components (at least) taken into account | A web application and an application that will run in users' mobile phone.
+| Two software components (at least) to take into account | A web application and an application that will run in users' mobile phone.
 | Web application | It will runs in a server and will store locations.
-|  | It will allow the users to manage and visualize locations. 
-|  | It will also include other admin options to manage users and monitor server status.
+
+                    It will allow the users to manage and visualize locations. 
+                    
+                    It will also include other admin options to manage users and monitor server status.
 | Application runed in users' mobile phone | It will send the corresponding locations to the server.
-|  | It will receive notifications from nearby friend users.
+
+                                             It will receive notifications from nearby friend users.
 | Application that runs in a server | It will store the minimal information needed about a user, the mobile phone localization and the timestamp in which those locations take place (all of them located in users's pods <<pods>>).
-|   | The rest of users' information, as friends; will be queried to the pods <<pods>>.
-|   | No personal information will be stored in a centralized way.
+                                      
+                                      The rest of users' information, as friends; will be queried to the pods <<pods>>.
+                                      
+                                      No personal information will be stored in a centralized way.
 | System compatibility | The system will be compatible with the SOLID project <<solid>>.
 | System deployment | The system will be deployed from docker containers <<docker>>.
-|  | It will also be deployed in a cloud service like heroku <<heroku>>.
-| Testing | Unit tests, acceptance tests and load tests will be made.
+
+                      It will also be deployed in a cloud service like heroku <<heroku>>.
+| Testing | Unit tests, acceptance tests and load tests will be made
 | Continuous integration server <<contint>> | The previous tests will be automatically runned on it.
 |===
 
