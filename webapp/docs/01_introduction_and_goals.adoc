@@ -97,8 +97,8 @@ A table with quality goals and concrete scenarios, ordered by priorities
 |===
 |Nr|Quality|Motivation
 | 1 | Usability | The application must be easy to use. Users should understand how to use it at first sight.
-| 2 | Security | Users must have all their personal data in a secure system. The use of the application must not lead to any security problem.
-| 3 | Privacy | Data from users must be specifically used for the main purpose of the application. No data will be provided to third parties.
+| 2 | Security | The use of the application must not lead to any security problem. Users must have all their personal data in a secure system. This is achieved by applying SOLID with their pods.
+| 3 | Privacy | Data from users must be specifically used for the main purpose of the application. No data will be provided to third parties. Data will be decentralized, by storing it in pods.
 | 4 | Mantainability | The application must be well coded so that changes in the future will be easily done without touching many parts of the code.
 | 5 | Availability | The application must be accesible X hours a day (to be specified).
 |===
@@ -139,5 +139,6 @@ The following table has the most important roles for the application:
 | Software engineers | Specialized people can guide developers by giving them professional advice based on their experience and studies.
 | Admin | They manage users and monitor server status through the Web application.
 | People with access to new technlogies | They would like to use this application whenever they hang around to meet their friends.
+| SOLID creators/inrupt | They are interested in having a SOLID application system.
 |===
 
