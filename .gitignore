@@ -5,6 +5,9 @@ webapp/node_modules
 /.pnp
 .pnp.js
 
+#expo
+webapp/.expo
+
 # testing
 /webapp/coverage
 
