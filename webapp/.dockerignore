@@ -1,2 +1,5 @@
 build
+web-build
 node_modules
+.expo
+.expo-shared
