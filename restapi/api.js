@@ -1,16 +1,19 @@
 const express = require("express")
 const User = require("./models/users")
-const router = express.Router()
+//const router = express.Router()
+const app = express()
+
+app.use(express.json())
 
 // Get all users
-router.get("user/list", async (req, res) => {
+app.get("/user/list", async (req, res) => {
     const users = await User.find({}).sort('webId')
-    //console.log(users)
+    console.log(users)
 	res.send(users)
 })
 
 // Register a new user
-router.post("user/add", async (req, res) => {
+app.post("/user/add", async (req, res) => {
     let webId = req.body.webId;
     let location = req.body.location;
     let authKey = req.body.authKey;
@@ -30,7 +33,7 @@ router.post("user/add", async (req, res) => {
 })
 
 // Submit user's location
-router.post("user/location/submit", async (req, res) => {
+app.post("/user/location/submit", async (req, res) => {
     let webId = req.body.webId;
     let location = req.body.location;
     let authKey = req.body.authKey;
@@ -47,7 +50,7 @@ router.post("user/location/submit", async (req, res) => {
 })
 
 // Find the user's friends that are near
-router.post("user/location/near", async (req, res) => {
+app.post("/user/location/near", async (req, res) => {
     let userLocation = req.body.userLocation;
     let userFriends = req.body.friends; // subcollection of User
     let userNearByFriends = await userFriends.find({ location: {
@@ -59,4 +62,4 @@ router.post("user/location/near", async (req, res) => {
     res.send(userNearByFriends)
 })
 
-module.exports = router
+module.exports = app
