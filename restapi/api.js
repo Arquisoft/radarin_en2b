@@ -1,26 +1,30 @@
 const express = require("express")
 const User = require("./models/users")
-//const router = express.Router()
-const app = express()
+const router = express.Router()
+const async = require("async")
 
-app.use(express.json())
+router.use(express.json())
+
+// Example to test
+router.get('/', function(req, res) {
+    res.send('Página de inicio de RestAPI')
+});
 
 // Get all users
-app.get("/user/list", async (req, res) => {
-    const users = await User.find({}).sort('webId')
-    console.log(users)
-	res.send(users)
+router.get("/users/list", async (req, res) => {
+    const users = await User.find({}).sort('_id')
+	res.json(users)
 })
 
 // Register a new user
-app.post("/user/add", async (req, res) => {
-    let webId = req.body.webId;
+router.post("/users/add", async (req, res) => {
+    let webId = req.body.webId; // supposed to be unique
     let location = req.body.location;
     let authKey = req.body.authKey;
     //Check if the user is already in the db
     let user = await User.findOne({ webId: webId })
     if (user){
-        res.send({error:"Error: This user is already registered"})
+        res.send({error: "This user is already registered"})
     }else{
         user = new User({
             webId: webId,
@@ -28,38 +32,59 @@ app.post("/user/add", async (req, res) => {
             authKey: authKey
         })
         await user.save()
-        res.send(user)
+        res.json(user)
     }
 })
 
 // Submit user's location
-app.post("/user/location/submit", async (req, res) => {
+router.post("/users/location/submit", async (req, res) => {
     let webId = req.body.webId;
     let location = req.body.location;
-    let authKey = req.body.authKey;
     //Check if the device is already in the db
     let user = await User.findOne({ webId: webId })
     if (user){
-        user.location = location
-        console.log("User's location updated")     
+        user.location = location 
     }
     // an else is not needed because when a user signs up (/user/add)
     // the user is created and the location is saved
     await user.save()
-    res.send(user)
+    res.json(user)
 })
 
 // Find the user's friends that are near
-app.post("/user/location/near", async (req, res) => {
+router.post("/users/location/near", async (req, res) => {
     let userLocation = req.body.userLocation;
-    let userFriends = req.body.friends; // subcollection of User
-    let userNearByFriends = await userFriends.find({ location: {
-                                                    $near: userLocation,
-                                                    $minDistance: 10, // meters
-                                                    $maxDistance: 100
-                                                } 
-                                            })
-    res.send(userNearByFriends)
+    let userFriends = req.body.friends; 
+    let userNearByFriends = []
+        
+    async.each(userFriends, async function(friend, callback) {
+
+                        const near = await User.findOne({
+                                                            webId: friend.webId
+                                                            , location: {
+                                                                            $near: {
+                                                                                $geometry: userLocation,
+                                                                                $minDistance: 10, // meters
+                                                                                $maxDistance: 1000
+                                                                            }   
+                                                                        }
+                                                        })
+                                                        
+                        if(near != null){
+                            console.log(near)
+                            userNearByFriends.push(near)
+                        }
+                        
+                    }, async function(err) {
+                        if(err) {
+                            console.log('A element failed to process', err)
+                            res.status(500).json(err)
+                        } else {
+                            console.log('All elements have been processed successfully')
+                            res.status(200).json(userNearByFriends) 
+                        }
+
+                })
 })
 
-module.exports = app
+module.exports = router
