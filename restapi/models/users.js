@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 require('mongoose-geojson-schema')
 
 const schema = mongoose.Schema(
@@ -13,4 +13,4 @@ const schema = mongoose.Schema(
 
 schema.index( { location: '2dsphere' } );
 
-module.exports = mongoose.model("User", schema) // User is a collection
+module.exports = mongoose.model("User", schema); // User is a collection
