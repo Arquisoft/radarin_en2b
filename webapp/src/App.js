@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 import logo from './logo.svg';
 import Welcome from './components/Welcome';
-import EmailForm from "./components/EmailForm";
-import UserList from "./components/UserList";
 import LogIn from "./components/LogIn";
 import 'bootstrap/dist/css/bootstrap.min.css';
 

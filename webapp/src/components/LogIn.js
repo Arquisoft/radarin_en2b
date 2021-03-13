@@ -1,12 +1,9 @@
 import React from 'react'
 import { handleIncomingRedirect, login, getDefaultSession } from '@inrupt/solid-client-authn-browser'
-import { Redirect } from 'react-router-dom'
 
 class LogIn extends React.Component {
     render() {
-        function renderRedirect() {
-            return <Redirect to='webapp/src/components/Home.js' />
-        }
+        
         async function myLogin() {
             // 1. Call the handleIncomingRedirect() function to complete the authentication process.
             //   If the page is being loaded after the redirect from the Solid Identity Provider
@@ -29,7 +26,6 @@ class LogIn extends React.Component {
 
                 });
             }
-            renderRedirect();
         }
         return (<div>
             <button onClick={myLogin}>Login</button>
