@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MyNavBar from './components/MyNavBar';
+import App from './App';
+import { SessionProvider } from '@inrupt/solid-ui-react';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MyNavBar />
+    <SessionProvider sessionId="radarin_en2b">
+      <App/>
+    </SessionProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
