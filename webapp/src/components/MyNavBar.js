@@ -27,39 +27,39 @@ const MyNavBar = () => {
                         <Nav className="mr-auto">
                             <Link to="/">
                                 <Navbar.Brand>
-                                    <img src={logo} className="App-logo" alt="logo"
+                                    <img src={logo} alt="logo"
                                         width="30"
                                         height="30"
-                                        className="d-inline-block align-top"
+                                        className="App-logo d-inline-block align-top"
                                     />{' '}
                                         Radarin
                                 </Navbar.Brand>
                             </Link>
                             <Link to="/login">  
                             <Navbar.Brand>
-                                <img src={bell} className="Notifications" alt="notifications"
+                                <img src={bell} alt="notifications"
                                     width="30"
                                     height="30"
-                                    className="d-inline-block align-top"
+                                    className="Notifications d-inline-block align-top"
                                 />{' '}
                             
                             </Navbar.Brand>
                             </Link>
                             <Link to="/friendList">
                                 <Navbar.Brand>
-                                    <img src={friends} className="Friends" alt="friends"
+                                    <img src={friends} alt="friends"
                                         width="30"
                                         height="30"
-                                        className="d-inline-block align-top"
+                                        className="Friends d-inline-block align-top"
                                     />{' '}
 
                                 </Navbar.Brand>
                             </Link>
                             <Navbar.Brand href="#home">
-                                <img src={map} className="Map" alt="map"
+                                <img src={map} alt="map"
                                     width="30"
                                     height="30"
-                                    className="d-inline-block align-top"
+                                    className="Map d-inline-block align-top"
                                 />{' '}
 
                             </Navbar.Brand>
