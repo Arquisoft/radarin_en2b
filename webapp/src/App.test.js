@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { queryAllByLabelText, render, screen } from '@testing-library/react';
 import App from './App';
+import { SessionProvider } from '@inrupt/solid-ui-react';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Source code/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders login when not logged to a solid pod', () => {
+  render(
+    <SessionProvider sessionId="testing-radarin_en2b">
+      <App />
+    </SessionProvider>
+  );
 });
