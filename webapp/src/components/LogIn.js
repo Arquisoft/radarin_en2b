@@ -11,7 +11,7 @@ export default function LogIn() {
     }, [setCurrentUrl]);
 
     return (
-        <div class="d-flex align-items-center min-vh-100">
+        <div className="d-flex align-items-center min-vh-100">
         <Container className="">
             <Form.Group>
                 <Form.Label>Identity Provider</Form.Label>
