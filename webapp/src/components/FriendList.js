@@ -24,7 +24,7 @@ const FriendList = () => {
             <ListGroup.Item> <p align="center">Saw </p> <p align="center"> 0,4 km away</p> </ListGroup.Item>
 
             <ListGroup.Item>
-              <Link to="/">
+              <Link to="/map">
                 <img src={lupa} alt="lupa"
                   width="50"
                   height="50"
@@ -59,7 +59,7 @@ const FriendList = () => {
             </ListGroup.Item>
             <ListGroup.Item> <p align="center">Saw </p> <p align="center"> 0,4 km away</p> </ListGroup.Item>
             <ListGroup.Item>
-              <Link to="/">
+              <Link to="/map">
                 <img src={lupa} alt="lupa"
                   width="50"
                   height="50"
@@ -92,7 +92,7 @@ const FriendList = () => {
             </ListGroup.Item>
             <ListGroup.Item> <p align="center">Batman </p> <p align="center"> 4,2 km away</p> </ListGroup.Item>
             <ListGroup.Item>
-              <Link to="/">
+              <Link to="/map">
                 <img src={lupa} alt="lupa"
                   width="50"
                   height="50"
@@ -125,7 +125,7 @@ const FriendList = () => {
             </ListGroup.Item>
             <ListGroup.Item> <p align="center">Sara </p> <p align="center"> 2,0 km away</p> </ListGroup.Item>
             <ListGroup.Item>
-              <Link to="/">
+              <Link to="/map">
                 <img src={lupa} alt="lupa"
                   width="50"
                   height="50"
