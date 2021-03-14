@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "mongoose": "^5.11.19",
-    "mongoose-geojson-schema": "^2.1.5"
-  }
-}
