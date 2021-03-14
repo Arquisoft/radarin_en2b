@@ -16,6 +16,8 @@ import {
 import FriendList from './FriendList';
 import AboutUs from './AboutUs';
 import Home from './Home';
+import Notifications from './Notifications';
+import MapView from './MapView';
 
 
 
@@ -35,7 +37,7 @@ const MyNavBar = () => {
                                         Radarin
                                 </Navbar.Brand>
                             </Link>
-                            <Link to="/login">  
+                            <Link to="/notifications">  
                             <Navbar.Brand>
                                 <img src={bell} alt="notifications"
                                     width="30"
@@ -55,7 +57,8 @@ const MyNavBar = () => {
 
                                 </Navbar.Brand>
                             </Link>
-                            <Navbar.Brand href="#home">
+                            <Link to="/map">
+                            <Navbar.Brand>
                                 <img src={map} alt="map"
                                     width="30"
                                     height="30"
@@ -63,7 +66,8 @@ const MyNavBar = () => {
                                 />{' '}
 
                             </Navbar.Brand>
-                            <Link to="aboutUs">
+                            </Link>
+                            <Link to="/aboutUs">
                             <Navbar.Brand>
                                 {' '}
                 About us
@@ -72,7 +76,7 @@ const MyNavBar = () => {
               </Link>
                         </Nav>
                         <Nav>
-                            <Navbar.Brand href="#home">
+                            <Navbar.Brand>
                                 {' '}
                 Logout
               </Navbar.Brand>
@@ -89,6 +93,12 @@ const MyNavBar = () => {
                     </Route>
                     <Route path="/aboutUs">
                         <AboutUs />
+                    </Route>
+                    <Route path="/notifications">
+                        <Notifications />
+                    </Route>
+                    <Route path="/map">
+                        <MapView />
                     </Route>
                 </Switch>
             
