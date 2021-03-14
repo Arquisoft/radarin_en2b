@@ -5,7 +5,7 @@ const async = require("async");
 
 router.use(express.json());
 
-// Example to test
+// Basic example
 router.get("/", function(req, res) {
     res.send("RestAPI welcome page");
 });
@@ -30,7 +30,7 @@ router.post("/users/add", async (req, res) => {
             webId: webId,
             location: location,
             authKey: authKey
-        })
+        });
         await user.save();
         res.json(user);
     }
