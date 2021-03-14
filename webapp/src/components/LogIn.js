@@ -1,40 +1,37 @@
-import React from 'react'
-import { handleIncomingRedirect, login, getDefaultSession } from '@inrupt/solid-client-authn-browser'
+import { LoginButton } from "@inrupt/solid-ui-react";
+import React, { useState, useEffect } from "react";
+import { Form, Button, Col, Container } from "react-bootstrap";
 
-class LogIn extends React.Component {
-    render() {
-        
-        async function myLogin() {
-            // 1. Call the handleIncomingRedirect() function to complete the authentication process.
-            //   If the page is being loaded after the redirect from the Solid Identity Provider
-            //      (i.e., part of the authentication flow), the user's credentials are stored in-memory, and
-            //      the login process is complete. That is, a session is logged in 
-            //      only after it handles the incoming redirect from the Solid Identity Provider.
-            //   If the page is not being loaded after a redirect from the Solid Identity Provider, 
-            //      nothing happens.
-            await handleIncomingRedirect();
+export default function LogIn() {
+    const [idp, setIdp] = useState("https://inrupt.net/");
+    const [currentUrl, setCurrentUrl] = useState("https://localhost:3000");
 
-            // 2. Start the Login Process if not already logged in.
-            if (!getDefaultSession().info.isLoggedIn) {
-                // The `login()` redirects the user to their identity provider;
-                // i.e., moves the user away from the current page.
-                await login({
-                    // Specify the URL of the user's Solid Identity Provider; e.g., "https://inrupt.net"
-                    oidcIssuer: "https://inrupt.net",
-                    // Specify the URL the Solid Identity Provider should redirect to after the user logs in,
-                    // e.g., the current page for a single-page app.
+    useEffect(() => {
+        setCurrentUrl(window.location.href);
+    }, [setCurrentUrl]);
 
-                });
-            }
-        }
-        return (<div>
-            <button onClick={myLogin}>Login</button>
+    return (
+        <div class="d-flex align-items-center min-vh-100">
+        <Container className="">
+            <Form.Group>
+                <Form.Label>Identity Provider</Form.Label>
+                <Form.Row >
+                    <Col>
+                        <Form.Control as="select" onChange={e => setIdp(e.target.value)}>
+                            <option value="https://inrupt.net/">Inrupt</option>
+                            <option value="https://solidcommunity.net/">Solid Community</option>
+                            <option value="https://solidweb.org/">Solid Web</option>
+                        </Form.Control>
+                    </Col>
+                    <Col> 
+                        <Form.Control onChange={e => setIdp(e.target.value)} type="text" placeholder="Your idp provider goes here..." value={idp}/>
+                    </Col>
+                </Form.Row>
+            </Form.Group>
+            <LoginButton oidcIssuer={idp} redirectUrl={currentUrl}>
+                <Button variant="primary" block>Log In</Button>{' '}
+            </LoginButton>
+        </Container>
         </div>
-        )
-    }
-
-
-
+    );
 }
-
-export default LogIn
