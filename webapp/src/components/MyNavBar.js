@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {
+    useState
+} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../logo.svg';
 import bell from '../img/bell.png';
 import friends from '../img/friends.png';
 import map from '../img/map.png';
 import Nav from 'react-bootstrap/Nav';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
     BrowserRouter as Router,
@@ -12,16 +15,25 @@ import {
     Route,
     Link
 } from "react-router-dom";
-
+import LogIn from './LogIn';
 import FriendList from './FriendList';
 import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
 import MapView from './MapView';
-
+import { useSession } from '@inrupt/solid-ui-react';
 
 
 const MyNavBar = () => {
+    const {session} = useSession();
+    const [webId, setWebId] = useState(session.info.webId);
+
+    const handleLogout = () => {
+        session.logout().then(()=>{
+            setWebId("GUEST");
+        });
+    };
+
     return (
         <Router>
                 <Navbar bg="dark" variant="dark">
@@ -75,16 +87,17 @@ const MyNavBar = () => {
               </Navbar.Brand>
               </Link>
                         </Nav>
-                        <Nav>
-                            <Navbar.Brand>
-                                {' '}
-                Logout
-              </Navbar.Brand>
-                        </Nav>
+                        <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
+                        <Link to="/login">
+                            <Button onClick={handleLogout}>Log Out</Button>
+                        </Link>
                     </Navbar.Collapse>
                 </Navbar>
 
                 <Switch>
+                    <Route path="/login">
+                        <LogIn/>
+                    </Route>
                     <Route exact path="/">
                         <Home />
                     </Route>
