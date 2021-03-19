@@ -1,60 +1,50 @@
-import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-
-const mapStyles = {
-  width: '100%',
-  height: '100%',
-  margin: '40px',
-};
+import {React, Component} from 'react';
+import {GoogleMap, withScriptjs, withGoogleMap, Marker} from 'react-google-maps';
 
 class MapView extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      lat: "",
-      lng: "",
-      userPos: "",
-    };
-  }
 
-  componentDidMount() {
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(this.currentCoords)
-    } else {
-      console.log("Location not Available");
+    this.state = {
+      nearby: []
     }
   }
 
-  currentCoords = (position) => {
-    const latitude = position.coords.latitude
-    const longitude = position.coords.longitude
-    this.setState(previous => ({
-      userPos: {...previous.userPos, 
-      lat: latitude, lng: longitude}
-    }))
-  };
-
-  render() { 
+  render() {
     return (
-      <div style={{ height: '100%', width: '100%'}}>
-        <Map
-          google={this.props.google}
-          zoom={14}
-          style={mapStyles}
-          centerAroundCurrentLocation={true}
-        >
-         <Marker
-          lat={this.props.lat}
-          lng={this.props.lng} 
-          color="red"
-          name="You"
+      <div style={{width: '100vw', height: '90vh', padding: '20px'}}>
+        <WrappedMap 
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&
+            libraries=geometry,drawing,places&key=AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY`}
+          loadingElement={<div style={{height: '100%'}} /> } 
+          containerElement={<div style={{height: '100%'}} /> }
+          mapElement={<div style={{height: '100%'}} /> }
         />
-        </Map>
       </div>
     );
   }
+
+  //Calling the RestAPI for the nearby friends
+  componentDidMount() {
+    fetch('/users/location/near')
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ nearby: data })
+    })
+    .catch(console.log)
+  }
 }
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY' //Google Maps API Key 
-})(MapView);
+function Map() {
+  return (
+    <GoogleMap defaultZoom={15} //Starting zoom and position
+      defaultCenter={{lat: 1, lng: 1}}> 
+      
+    </GoogleMap>
+  );
+}
+
+//Wrap the map so that react can handle it
+const WrappedMap = withScriptjs(withGoogleMap(Map));
+
+export default MapView;
