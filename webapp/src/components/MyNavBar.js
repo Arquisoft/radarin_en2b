@@ -16,7 +16,8 @@ import {
     Link
 } from "react-router-dom";
 import LogIn from './LogIn';
-import FriendList from './FriendList';
+//import FriendList from './FriendList';
+import NearbyFriends from './FriendList';
 import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
@@ -102,7 +103,7 @@ const MyNavBar = () => {
                         <Home />
                     </Route>
                     <Route path="/friendList">
-                        <FriendList />
+                        <NearbyFriends />
                     </Route>
                     <Route path="/aboutUs">
                         <AboutUs />
