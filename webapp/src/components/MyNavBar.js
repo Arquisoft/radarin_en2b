@@ -90,16 +90,13 @@ const MyNavBar = () => {
                                 </Link>
                             </Nav>
                             <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
-                            <Link to="/login">
-                                <Button onClick={handleLogout}>Log Out</Button>
-                            </Link>
+                            <LogoutButton>
+                                <Button>Log Out</Button>
+                            </LogoutButton>
                         </Navbar.Collapse>
                     </Navbar>
     
                     <Switch>
-                        <Route path="/login">
-                            <LogIn/>
-                        </Route>
                         <Route exact path="/">
                             <Home />
                         </Route>
@@ -175,15 +172,15 @@ const MyNavBar = () => {
                                 </Link>
                             </Nav>
                             <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
-                            <Link to="/login">
-                                <Button onClick={handleLogout}>Log Out</Button>
-                            </Link>
+                            <LogoutButton>
+                                <Button>Log Out</Button>
+                            </LogoutButton>
                         </Navbar.Collapse>
                     </Navbar>
 
                     <Switch>
                         <Route path="/login">
-                            <LogIn/>
+                            <Home />
                         </Route>
                         <Route exact path="/">
                             <Home />
@@ -204,3 +201,5 @@ const MyNavBar = () => {
             </Router>);
     }
 }
+
+export default MyNavBar;
