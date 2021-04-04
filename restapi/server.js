@@ -16,10 +16,14 @@ function connect(){
         const metricsMiddleware = promBundle({includeMethod: true});
         app.use(metricsMiddleware);
 
-        app.use(cors());
-        app.options("*", cors());
+        app.use("*", cors());
         app.use(express.json());
         app.use("/api", api);
+
+        app.use( (request, response) => {
+            request.header('Access-Control-Allow-Origin', '*');
+            response.header('Access-Control-Allow-Origin', '*');
+        })
 
         app.listen(process.env.PORT || 5000, () => {
             console.log("Node server has started running on http://localhost:5000/api");
