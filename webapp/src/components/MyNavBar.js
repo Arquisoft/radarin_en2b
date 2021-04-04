@@ -21,55 +21,71 @@ import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
 import MapView from './MapView';
-import { useSession } from '@inrupt/solid-ui-react';
+import { useSession, useEffect  } from '@inrupt/solid-ui-react';
+import { updateUserLocation, addUser } from '../api/api';
 
 
 const MyNavBar = () => {
-    const {session} = useSession();
+    const { session } = useSession();
     const [webId, setWebId] = useState(session.info.webId);
 
+    navigator.geolocation.getCurrentPosition(function (position) {
+        addUser(webId, { lat: position.coords.latitude, long: position.coords.longitude }, session.info.sessionId);
+    });
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                updateUserLocation(webId, { lat: position.coords.latitude, long: position.coords.longitude });
+            });
+        }, 30000);
+        return () => clearInterval(interval);
+    }, []);
+
+
     const handleLogout = () => {
-        session.logout().then(()=>{
+        session.logout().then(() => {
             setWebId("GUEST");
         });
     };
 
+
     return (
         <Router>
-                <Navbar bg="dark" variant="dark">
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Link to="/">
-                                <Navbar.Brand>
-                                    <img src={logo} alt="logo"
-                                        width="30"
-                                        height="30"
-                                        className="App-logo d-inline-block align-top"
-                                    />{' '}
+            <Navbar bg="dark" variant="dark">
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Link to="/">
+                            <Navbar.Brand>
+                                <img src={logo} alt="logo"
+                                    width="30"
+                                    height="30"
+                                    className="App-logo d-inline-block align-top"
+                                />{' '}
                                         Radarin
                                 </Navbar.Brand>
-                            </Link>
-                            <Link to="/notifications">  
+                        </Link>
+                        <Link to="/notifications">
                             <Navbar.Brand>
                                 <img src={bell} alt="notifications"
                                     width="30"
                                     height="30"
                                     className="Notifications d-inline-block align-top"
                                 />{' '}
-                            
-                            </Navbar.Brand>
-                            </Link>
-                            <Link to="/friendList">
-                                <Navbar.Brand>
-                                    <img src={friends} alt="friends"
-                                        width="30"
-                                        height="30"
-                                        className="Friends d-inline-block align-top"
-                                    />{' '}
 
-                                </Navbar.Brand>
-                            </Link>
-                            <Link to="/map">
+                            </Navbar.Brand>
+                        </Link>
+                        <Link to="/friendList">
+                            <Navbar.Brand>
+                                <img src={friends} alt="friends"
+                                    width="30"
+                                    height="30"
+                                    className="Friends d-inline-block align-top"
+                                />{' '}
+
+                            </Navbar.Brand>
+                        </Link>
+                        <Link to="/map">
                             <Navbar.Brand>
                                 <img src={map} alt="map"
                                     width="30"
@@ -78,43 +94,42 @@ const MyNavBar = () => {
                                 />{' '}
 
                             </Navbar.Brand>
-                            </Link>
-                            <Link to="/aboutUs">
+                        </Link>
+                        <Link to="/aboutUs">
                             <Navbar.Brand>
                                 {' '}
                 About us
-                
               </Navbar.Brand>
-              </Link>
-                        </Nav>
-                        <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
-                        <Link to="/login">
-                            <Button onClick={handleLogout}>Log Out</Button>
                         </Link>
-                    </Navbar.Collapse>
-                </Navbar>
+                    </Nav>
+                    <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
+                    <Link to="/login">
+                        <Button onClick={handleLogout}>Log Out</Button>
+                    </Link>
+                </Navbar.Collapse>
+            </Navbar>
 
-                <Switch>
-                    <Route path="/login">
-                        <LogIn/>
-                    </Route>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/friendList">
-                        <FriendList />
-                    </Route>
-                    <Route path="/aboutUs">
-                        <AboutUs />
-                    </Route>
-                    <Route path="/notifications">
-                        <Notifications />
-                    </Route>
-                    <Route path="/map">
-                        <MapView />
-                    </Route>
-                </Switch>
-            
+            <Switch>
+                <Route path="/login">
+                    <LogIn />
+                </Route>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route path="/friendList">
+                    <FriendList />
+                </Route>
+                <Route path="/aboutUs">
+                    <AboutUs />
+                </Route>
+                <Route path="/notifications">
+                    <Notifications />
+                </Route>
+                <Route path="/map">
+                    <MapView />
+                </Route>
+            </Switch>
+
         </Router>);
 }
 
