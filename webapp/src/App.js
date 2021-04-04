@@ -20,11 +20,10 @@ export default function App () {
           </Col>
         </Row>
       </Container>
-      
-    )
+      )
+    }
+    if (!loggedIn) {
+      return <LogIn/>;
+    } 
+    return <MyNavBar/>;
   }
-  if (!loggedIn) {
-    return <LogIn/>;
-  } 
-  return <MyNavBar/>;
-}

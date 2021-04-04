@@ -1,5 +1,5 @@
 import React, {
-    useState
+    useState, useEffect
 } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../logo.svg';
@@ -20,20 +20,33 @@ import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
 import MapView from './MapView';
-import { LogoutButton, useSession } from '@inrupt/solid-ui-react';
 import AdminManageUsers from './AdminManageUsers';
-import { getUserById } from '../api/api.js';
+import {  LogoutButton,useSession  } from '@inrupt/solid-ui-react';
+import { updateUserLocation, addUser, getUserById } from '../api/api';
 
 const MyNavBar = () => {
-    const {session} = useSession();
+    const { session } = useSession();
     const [webId] = useState(session.info.webId);
-
     var array = webId.split("inrupt.net/");
-    var userAuthenticated = getUserById(array[0] + "inrupt.net/");
+    var userAuthenticated = null;
+    
+    navigator.geolocation.getCurrentPosition(function (position) {
+        addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, session.info.sessionId);
+        userAuthenticated = getUserById(array[0] + "inrupt.net/");
+    });
+    
+    useEffect(() => {
+        if(userAuthenticated != null){
+            const interval = setInterval(() => {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
+                });
+            }, 30000);
+            return () => clearInterval(interval);
+        }
+    }, []);
 
-    console.log(userAuthenticated);
-
-    if(userAuthenticated.then((value) => value.role === "Admin")){
+    if(userAuthenticated != null && userAuthenticated.then((value) => value.role === "Admin")){
         return (
             <Router>
                     <Navbar bg="dark" variant="dark">
@@ -118,7 +131,6 @@ const MyNavBar = () => {
                             <MapView />
                         </Route>
                     </Switch>
-                
             </Router>);
     }else{
         return (
@@ -179,7 +191,6 @@ const MyNavBar = () => {
                             </LogoutButton>
                         </Navbar.Collapse>
                     </Navbar>
-
                     <Switch>
                         <Route exact path="/">
                             <Home />
@@ -203,5 +214,4 @@ const MyNavBar = () => {
             </Router>);
     }
 }
-
 export default MyNavBar;
