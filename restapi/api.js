@@ -10,6 +10,20 @@ router.get("/", function(req, res) {
     res.send("RestAPI welcome page");
 });
 
+// Get a specific user by its webId
+router.post("/users/getById", async (req, res) => {
+    let webId = req.body.webId;
+    let user = await User.findOne({ webId: webId });
+	res.json(user);
+});
+
+// Delete a specific user by its webId
+router.post("/users/removeById", async (req, res) => {
+    let webId = req.body.webId;
+    let user = await User.deleteOne({ webId: webId });
+	res.json(user);
+});
+
 // Get all users
 router.get("/users/list", async (req, res) => {
     const users = await User.find({}).sort("_id");
