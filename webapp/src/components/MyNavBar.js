@@ -31,6 +31,8 @@ const MyNavBar = () => {
     var array = webId.split("inrupt.net/");
     var userAuthenticated = getUserById(array[0] + "inrupt.net/");
 
+    console.log(userAuthenticated);
+
     if(userAuthenticated.then((value) => value.role === "Admin")){
         return (
             <Router>
