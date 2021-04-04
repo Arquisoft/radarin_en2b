@@ -15,25 +15,18 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import LogIn from './LogIn';
 import FriendList from './FriendList';
 import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
 import MapView from './MapView';
-import { useSession } from '@inrupt/solid-ui-react';
+import { LogoutButton, useSession } from '@inrupt/solid-ui-react';
 import AdminManageUsers from './AdminManageUsers';
 import { getUserById } from '../api/api.js';
 
 const MyNavBar = () => {
     const {session} = useSession();
-    const [webId, setWebId] = useState(session.info.webId);
-
-    const handleLogout = () => {
-        session.logout().then(()=>{
-            setWebId("GUEST");
-        });
-    };
+    const [webId] = useState(session.info.webId);
 
     var array = webId.split("inrupt.net/");
     var userAuthenticated = getUserById(array[0] + "inrupt.net/");
@@ -208,9 +201,6 @@ const MyNavBar = () => {
                             <MapView />
                         </Route>
                     </Switch>
-                
             </Router>);
     }
 }
-
-export default MyNavBar;
