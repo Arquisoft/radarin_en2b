@@ -179,14 +179,14 @@ const MyNavBar = () => {
                     </Navbar>
 
                     <Switch>
-                        <Route path="/login">
-                            <Home />
-                        </Route>
                         <Route exact path="/">
                             <Home />
                         </Route>
                         <Route path="/friendList">
                             <FriendList />
+                        </Route>
+                        <Route path="/adminManageUsers">
+                            <AdminManageUsers />
                         </Route>
                         <Route path="/aboutUs">
                             <AboutUs />
