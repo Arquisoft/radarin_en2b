@@ -109,16 +109,13 @@ const MyNavBar = () => {
                                 </Link>
                             </Nav>
                             <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
-                            <Link to="/login">
-                                <Button onClick={handleLogout}>Log Out</Button>
-                            </Link>
+                            <LogoutButton>
+                                <Button>Log Out</Button>
+                            </LogoutButton>
                         </Navbar.Collapse>
                     </Navbar>
     
                     <Switch>
-                        <Route path="/login">
-                            <LogIn/>
-                        </Route>
                         <Route exact path="/">
                             <Home />
                         </Route>
@@ -193,23 +190,22 @@ const MyNavBar = () => {
                                 </Navbar.Brand>
                                 </Link>
                             </Nav>
-                            <Navbar.Brand>Logged in as {webId}
-                            </Navbar.Brand>
-                            <Link to="/login">
-                                <Button onClick={handleLogout}>Log Out</Button>
-                            </Link>
+                            <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
+                            <LogoutButton>
+                                <Button>Log Out</Button>
+                            </LogoutButton>
                         </Navbar.Collapse>
                     </Navbar>
 
                     <Switch>
-                        <Route path="/login">
-                            <LogIn/>
-                        </Route>
                         <Route exact path="/">
                             <Home />
                         </Route>
                         <Route path="/friendList">
                             <FriendList />
+                        </Route>
+                        <Route path="/adminManageUsers">
+                            <AdminManageUsers />
                         </Route>
                         <Route path="/aboutUs">
                             <AboutUs />
