@@ -1,5 +1,5 @@
 import React, {
-    useState
+    useState, useEffect
 } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../logo.svg';
@@ -18,24 +18,22 @@ import {
 import FriendList from './FriendList';
 import AboutUs from './AboutUs';
 import Home from './Home';
+import LogIn from './LogIn';
 import Notifications from './Notifications';
 import MapView from './MapView';
-import { LogoutButton, useSession } from '@inrupt/solid-ui-react';
 import AdminManageUsers from './AdminManageUsers';
-import { getUserById } from '../api/api.js';
-import { useSession, useEffect  } from '@inrupt/solid-ui-react';
-import { updateUserLocation, addUser } from '../api/api';
+import {  LogoutButton,useSession  } from '@inrupt/solid-ui-react';
+import { updateUserLocation, addUser, getUserById } from '../api/api';
 
 const MyNavBar = () => {
     const { session } = useSession();
     const [webId, setWebId] = useState(session.info.webId);
-
-    var array = webId.split("inrupt.net/");
-    var userAuthenticated = getUserById(array[0] + "inrupt.net/");
     navigator.geolocation.getCurrentPosition(function (position) {
         addUser(webId, { lat: position.coords.latitude, long: position.coords.longitude }, session.info.sessionId);
     });
-
+    var array = webId.split("inrupt.net/");
+    var userAuthenticated = getUserById(array[0] + "inrupt.net/");
+    
     useEffect(() => {
         const interval = setInterval(() => {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -195,7 +193,8 @@ const MyNavBar = () => {
                                 </Navbar.Brand>
                                 </Link>
                             </Nav>
-                            <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
+                            <Navbar.Brand>Logged in as {webId}
+                            </Navbar.Brand>
                             <Link to="/login">
                                 <Button onClick={handleLogout}>Log Out</Button>
                             </Link>
@@ -225,3 +224,4 @@ const MyNavBar = () => {
             </Router>);
     }
 }
+export default MyNavBar
