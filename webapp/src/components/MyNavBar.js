@@ -15,6 +15,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import LogIn from './LogIn';
 import FriendList from './FriendList';
 import AboutUs from './AboutUs';
 import Home from './Home';
@@ -116,7 +117,6 @@ const MyNavBar = () => {
                             <MapView />
                         </Route>
                     </Switch>
-                
             </Router>);
     }else{
         return (
@@ -177,7 +177,6 @@ const MyNavBar = () => {
                             </LogoutButton>
                         </Navbar.Collapse>
                     </Navbar>
-
                     <Switch>
                         <Route exact path="/">
                             <Home />
