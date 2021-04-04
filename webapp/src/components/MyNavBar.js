@@ -44,7 +44,7 @@ const MyNavBar = () => {
             }, 30000);
             return () => clearInterval(interval);
         }
-    }, []);
+    }, [userAuthenticated, webId]);
 
     if(userAuthenticated != null && userAuthenticated.then((value) => value.role === "Admin")){
         return (
