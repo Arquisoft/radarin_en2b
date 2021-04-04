@@ -16,24 +16,17 @@ import {
     Link
 } from "react-router-dom";
 import LogIn from './LogIn';
-//import FriendList from './FriendList';
 import NearbyFriends from './FriendList';
 import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
 import MapView from './MapView';
-import { useSession } from '@inrupt/solid-ui-react';
+import { LogoutButton, useSession } from '@inrupt/solid-ui-react';
 
 
 const MyNavBar = () => {
     const {session} = useSession();
-    const [webId, setWebId] = useState(session.info.webId);
-
-    const handleLogout = () => {
-        session.logout().then(()=>{
-            setWebId("GUEST");
-        });
-    };
+    const [webId] = useState(session.info.webId);
 
     return (
         <Router>
@@ -89,16 +82,13 @@ const MyNavBar = () => {
               </Link>
                         </Nav>
                         <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
-                        <Link to="/login">
-                            <Button onClick={handleLogout}>Log Out</Button>
-                        </Link>
+                        <LogoutButton>
+                            <Button>Log Out</Button>
+                        </LogoutButton>
                     </Navbar.Collapse>
                 </Navbar>
 
                 <Switch>
-                    <Route path="/login">
-                        <LogIn/>
-                    </Route>
                     <Route exact path="/">
                         <Home />
                     </Route>

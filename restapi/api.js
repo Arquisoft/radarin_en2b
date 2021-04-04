@@ -64,7 +64,7 @@ router.post("/users/location/near", async (req, res) => {
                                                             , location: {
                                                                             $near: {
                                                                                 $geometry: userLocation,
-                                                                                $minDistance: 10, // meters
+                                                                                $minDistance: 0, // meters
                                                                                 $maxDistance: 1000
                                                                             }   
                                                                         }

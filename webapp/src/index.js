@@ -6,11 +6,11 @@ import App from './App';
 import { SessionProvider } from '@inrupt/solid-ui-react';
 
 ReactDOM.render(
-  <React.StrictMode>
     <SessionProvider sessionId="radarin_en2b">
-      <App/>
-    </SessionProvider>
-  </React.StrictMode>,
+      <React.StrictMode>
+        <App/>
+      </React.StrictMode>
+    </SessionProvider>,
   document.getElementById('root')
 );
 
