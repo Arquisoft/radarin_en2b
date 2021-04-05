@@ -26,6 +26,12 @@ async function getUsers(){
     return await response.json();
 };
 
+async function getNormalUsers(){
+    const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
+    let response = await fetch(apiEndPoint + "/users/normal/list");
+    return await response.json();
+};
+
 async function addUser(webId, location, authKey){
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
     let response = await fetch(apiEndPoint + "/users/add", {
@@ -56,4 +62,4 @@ async function getNearbyFriends(userLocation, friends){
     return await response.json();
 };
 
-export { getUserById, removeUserById, getUsers, addUser, updateUserLocation, getNearbyFriends }
+export { getUserById, removeUserById, getUsers, getNormalUsers, addUser, updateUserLocation, getNearbyFriends }
