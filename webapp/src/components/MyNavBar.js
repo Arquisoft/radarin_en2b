@@ -27,114 +27,23 @@ import { updateUserLocation, addUser, getUserById } from '../api/api';
 const MyNavBar = () => {
     const { session } = useSession();
     const [webId] = useState(session.info.webId);
-    var array = webId.split("inrupt.net/");
-    var userAuthenticated = null;
+    const [role, setRole] = useState(null);
     
     navigator.geolocation.getCurrentPosition(function (position) {
         addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, session.info.sessionId);
-        userAuthenticated = getUserById(array[0] + "inrupt.net/");
+        getUserById(webId).then((user) => setRole(user.role));
     });
     
     useEffect(() => {
-        if(userAuthenticated != null){
-            const interval = setInterval(() => {
-                navigator.geolocation.getCurrentPosition(function (position) {
-                    updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
-                });
-            }, 30000);
-            return () => clearInterval(interval);
-        }
-    }, [userAuthenticated, webId]);
+        const interval = setInterval(() => {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
+            });
+        }, 30000);
+        return () => clearInterval(interval);
+    });
 
-    if(userAuthenticated != null && userAuthenticated.then((value) => value.role === "Admin")){
-        return (
-            <Router>
-                    <Navbar bg="dark" variant="dark">
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className="mr-auto">
-                                <Link to="/">
-                                    <Navbar.Brand>
-                                        <img src={logo} alt="logo"
-                                            width="30"
-                                            height="30"
-                                            className="App-logo d-inline-block align-top"
-                                        />{' '}
-                                            Radarin
-                                    </Navbar.Brand>
-                                </Link>
-                                <Link to="/notifications">  
-                                <Navbar.Brand>
-                                    <img src={bell} alt="notifications"
-                                        width="30"
-                                        height="30"
-                                        className="Notifications d-inline-block align-top"
-                                    />{' '}
-                                
-                                </Navbar.Brand>
-                                </Link>
-                                <Link to="/friendList">
-                                    <Navbar.Brand>
-                                        <img src={friends} alt="friends"
-                                            width="30"
-                                            height="30"
-                                            className="Friends d-inline-block align-top"
-                                        />{' '}
-    
-                                    </Navbar.Brand>
-                                </Link>
-                                <Link to="/map">
-                                <Navbar.Brand>
-                                    <img src={map} alt="map"
-                                        width="30"
-                                        height="30"
-                                        className="Map d-inline-block align-top"
-                                    />{' '}
-                                </Navbar.Brand>
-                                </Link>
-                                <Link id="linkAdminManageUsers" to="/adminManageUsers">
-                                    <Navbar.Brand>
-                                            {' '}
-                                        Manage users
-                                    </Navbar.Brand>
-                                </Link>
-                                <Link id="linkAboutUs" to="/aboutUs">
-                                    <Navbar.Brand>
-                                        {' '}
-                                        About us
-                                    </Navbar.Brand>
-                                </Link>
-                            </Nav>
-                            <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
-                            <LogoutButton>
-                                <Button>Log Out</Button>
-                            </LogoutButton>
-                        </Navbar.Collapse>
-                    </Navbar>
-    
-                    <Switch>
-                        <Route exact path="/">
-                            <Home />
-                        </Route>
-                        <Route path="/friendList">
-                            <FriendList />
-                        </Route>
-                        <Route path="/adminManageUsers">
-                            <AdminManageUsers />
-                        </Route>
-                        <Route path="/aboutUs">
-                            <AboutUs />
-                        </Route>
-                        <Route path="/notifications">
-                            <Notifications />
-                        </Route>
-                        <Route path="/map">
-                            <MapView />
-                        </Route>
-                    </Switch>
-            </Router>);
-    }else{
-        return (
-            <Router>
+    return (<Router>
                     <Navbar bg="dark" variant="dark">
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="mr-auto">
@@ -175,9 +84,21 @@ const MyNavBar = () => {
                                         height="30"
                                         className="Map d-inline-block align-top"
                                     />{' '}
-
                                 </Navbar.Brand>
                                 </Link>
+                                {(() => {
+                                        if (role != null && role === "Admin") {
+                                            return (
+                                                <Link id="linkAdminManageUsers" to="/adminManageUsers">
+                                                <Navbar.Brand>
+                                                {' '}
+                                                Manage users
+                                                </Navbar.Brand>
+                                                </Link>
+                                        );
+                                    }
+                                })()}
+                                
                                 <Link to="/aboutUs">
                                 <Navbar.Brand>
                                     {' '}
@@ -212,6 +133,5 @@ const MyNavBar = () => {
                         </Route>
                     </Switch>
             </Router>);
-    }
 }
 export default MyNavBar;
