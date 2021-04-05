@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-google-maps';
 import mapStyles from './MapStyles.js';
-import FriendData from '../jsons/nearbyFriends.json';
-//import {getFriends} from '../services/getPodInfo.js';
+import { getNearbyFriends } from '../api/api';
+import {getFriends} from '../services/getPodInfo.js';
 
 var crd = [];
+let friends = [];
+let nearbyFriends = [];
 
 var options = {
   enableHighAccuracy: true,
@@ -12,8 +14,14 @@ var options = {
   maximumAge: 0
 };
 
-function success(pos) {
+async function nearby() {
+  friends = await getFriends();
+  nearbyFriends = getNearbyFriends(crd, friends);
+}
+
+async function success(pos) {
   crd = pos.coords;
+  nearby();
 };
 
 function error(err) {
@@ -31,14 +39,12 @@ function Map() {
       defaultCenter={{lat: crd.latitude, lng: crd.longitude}}
       defaultOptions={{styles: mapStyles}}> 
       <Marker icon={{url: '/pushpin-you.png'}} key="You" position={{lat: crd.latitude, lng: crd.longitude}}/>
-      {FriendData.map((friend) => (
+      {friends.map((friend) => (
         <Marker icon={{url: '/pushpin-friends.png'}} key={friend._id} position={{lat: friend.location.coordinates[0], 
           lng: friend.location.coordinates[1]}}
         onClick={() => {
           setSelectedFriend(friend);
-        }}
-        //icon={{url: markerImage, scaledSize: new window.google.maps.Size(1000, 1000)}}
-        />
+        }}/>
       ))}
       {selectedFriend && (
         <InfoWindow

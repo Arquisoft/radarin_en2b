@@ -1,6 +1,6 @@
 import solidAuth from 'solid-auth-client';
-import foaf from 'rdf-namespaces';
-import fetchDocument from 'tripledoc';
+import {foaf} from 'rdf-namespaces';
+import {fetchDocument} from 'tripledoc';
 
 //Returns the user that is logged in the pod
 export async function getLoggedUser() {
@@ -24,6 +24,10 @@ export async function getName(webId) {
 //Gets the friends of the logged user
 export async function getFriends() {
     let user = await getLoggedUser();
+    if (user != null) {
     let friends = await user.getAllRefs(foaf.knows);
     return friends;
+    } else {
+        return [];
+    }
 }
