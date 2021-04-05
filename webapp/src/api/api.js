@@ -1,4 +1,3 @@
-
 //REACT_APP_API_URI is an enviroment variable defined in the file .env.development or .env.production
 async function getUserById(webId){
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
