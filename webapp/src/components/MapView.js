@@ -1,14 +1,32 @@
 import React, {useState} from 'react';
 import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-google-maps';
 import FriendData from '../jsons/nearbyFriends.json';
+//import {getFriends} from '../services/getPodInfo.js';
 
 var markerImage = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/library_maps.png';
+var crd = [];
+
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  crd = pos.coords;
+};
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+};
+
+navigator.geolocation.getCurrentPosition(success, error, options);
 
 function Map() {
   const [selectedFriend, setSelectedFriend] = useState(null);
   return (
     <GoogleMap defaultZoom={15} //Starting zoom and position
-      defaultCenter={{lat: 43.36029, lng: -5.84476}}> 
+      defaultCenter={{lat: crd.latitude, lng: crd.longitude}}> 
       {FriendData.map((friend) => (
         <Marker icon={markerImage} key={friend._id} position={{lat: friend.location.coordinates[0], 
           lng: friend.location.coordinates[1]}}
