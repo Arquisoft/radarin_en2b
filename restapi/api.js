@@ -30,6 +30,12 @@ router.get("/users/list", async (req, res) => {
 	res.json(users);
 });
 
+// Get all normal users
+router.get("/users/normal/list", async (req, res) => {
+    const users = await User.find({ "role": "Normal" }).sort("_id");
+	res.json(users);
+});
+
 // Register a new user
 router.post("/users/add", async (req, res) => {
     let webId = req.body.webId; // supposed to be unique
@@ -58,11 +64,11 @@ router.post("/users/location/submit", async (req, res) => {
     let user = await User.findOne({ webId: webId });
     if (user){
         user.location = location;
+        await user.save();
+        res.json(user);
     }
-    // an else is not needed because when a user signs up (/user/add)
+    // an else is not needed because when a user firstly signs in (/user/add)
     // the user is created and the location is saved
-    await user.save();
-    res.json(user);
 });
 
 // Find the user's friends that are near
