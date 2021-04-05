@@ -1,7 +1,7 @@
 import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Button } from 'react-bootstrap';
-import { getUsers, removeUserById } from "../api/api.js";
+import { getNormalUsers, removeUserById } from "../api/api.js";
 
 class AdminManageUsers extends React.Component{
 
@@ -14,7 +14,7 @@ class AdminManageUsers extends React.Component{
 
     componentDidMount(){
         var usersList = [];
-        getUsers().then((value) => {
+        getNormalUsers().then((value) => {
             for(var i = 0; i < value.length; i++){
                 usersList[i] = value[i];
             }
@@ -27,7 +27,8 @@ class AdminManageUsers extends React.Component{
 
     deleteUserByWebId = (user) => {
         removeUserById(user.webId);
-        this.state.usersList.splice(this.state.usersList.indexOf(user));
+        this.state.usersList.splice(this.state.usersList.indexOf(user), 1);
+        console.log(this.state.usersList);
         this.setState({usersList: this.state.usersList});
     }
 

@@ -28,19 +28,21 @@ const MyNavBar = () => {
     const { session } = useSession();
     const [webId] = useState(session.info.webId);
     const [role, setRole] = useState(null);
-    
-    navigator.geolocation.getCurrentPosition(function (position) {
-        addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, session.info.sessionId);
-        getUserById(webId).then((user) => setRole(user.role));
-    });
-    
+
     useEffect(() => {
-        const interval = setInterval(() => {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
-            });
-        }, 30000);
-        return () => clearInterval(interval);
+            if(role == null){
+                navigator.geolocation.getCurrentPosition(async function (position) {
+                    await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, session.info.sessionId);
+                    await getUserById(webId).then((user) => setRole(user.role));
+                });
+            }else{
+                const interval = setInterval(() => {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
+                    });
+                }, 30000);
+                return () => clearInterval(interval);
+            }
     });
 
     return (<Router>

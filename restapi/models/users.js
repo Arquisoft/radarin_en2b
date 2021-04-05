@@ -13,7 +13,7 @@ const schema = mongoose.Schema(
             default: 'Normal'
         }
     },
-    { timestamps: true } // one hour behind
+    { timestamps: true } // UTC + 2
 );
 
 schema.index( { location: '2dsphere' } );
