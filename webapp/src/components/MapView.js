@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-google-maps';
+import mapStyles from './MapStyles.js';
 import FriendData from '../jsons/nearbyFriends.json';
 //import {getFriends} from '../services/getPodInfo.js';
 
-var markerImage = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/library_maps.png';
 var crd = [];
 
 var options = {
@@ -18,6 +18,8 @@ function success(pos) {
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
+  crd.latitude = 43.3625;
+  crd.longitude = -5.85027;
 };
 
 navigator.geolocation.getCurrentPosition(success, error, options);
@@ -26,9 +28,11 @@ function Map() {
   const [selectedFriend, setSelectedFriend] = useState(null);
   return (
     <GoogleMap defaultZoom={15} //Starting zoom and position
-      defaultCenter={{lat: crd.latitude, lng: crd.longitude}}> 
+      defaultCenter={{lat: crd.latitude, lng: crd.longitude}}
+      defaultOptions={{styles: mapStyles}}> 
+      <Marker icon={{url: '/pushpin-you.png'}} key="You" position={{lat: crd.latitude, lng: crd.longitude}}/>
       {FriendData.map((friend) => (
-        <Marker icon={markerImage} key={friend._id} position={{lat: friend.location.coordinates[0], 
+        <Marker icon={{url: '/pushpin-friends.png'}} key={friend._id} position={{lat: friend.location.coordinates[0], 
           lng: friend.location.coordinates[1]}}
         onClick={() => {
           setSelectedFriend(friend);
@@ -45,7 +49,7 @@ function Map() {
           }}
           >
           <div>
-            <h2>{selectedFriend.webId}</h2>
+            <h4>{selectedFriend.webId}</h4>
           </div>
         </InfoWindow>
       )}
