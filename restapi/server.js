@@ -8,7 +8,7 @@ const api = require("./api");
 
 function connect(){
     //The MONGO_URI variable is the connection string to MongoDB Atlas (for production). This env variable is created in heroku.
-    var mongo_uri = process.env.MONGO_URI || "mongodb://localhost:27017/myapp";
+    var mongo_uri = process.env.MONGO_URI || "mongodb://localhost:27017/api";
     mongoose.connect(mongo_uri, { useNewUrlParser: true,useUnifiedTopology: true }).then(() => {
         const app = express();
 
@@ -16,10 +16,14 @@ function connect(){
         const metricsMiddleware = promBundle({includeMethod: true});
         app.use(metricsMiddleware);
 
-        app.use(cors());
-        app.options("*", cors());
+        app.use("*", cors());
         app.use(express.json());
         app.use("/api", api);
+
+        app.use( (request, response) => {
+            request.header('Access-Control-Allow-Origin', '*');
+            response.header('Access-Control-Allow-Origin', '*');
+        })
 
         app.listen(process.env.PORT || 5000, () => {
             console.log("Node server has started running on http://localhost:5000/api");
