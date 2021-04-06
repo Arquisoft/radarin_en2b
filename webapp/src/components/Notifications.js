@@ -1,7 +1,15 @@
 import React from 'react';
+import { getNearbyFriends, getUserById } from '../api/api';
+import { useSession } from '@inrupt/solid-ui-react';
 
 const Notifications = () =>{
-    return(<h1 align="center"> Sorry! This is feature is not available at the moment </h1>)
+    const {session} = useSession();
+
+    const {user} = getUserById(session.info.webId);
+
+    console.log(user);
+
+    return(<h1>Notifications</h1>)
 }
 
 export default Notifications

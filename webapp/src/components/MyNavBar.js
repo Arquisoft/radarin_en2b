@@ -50,14 +50,14 @@ const MyNavBar = () => {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="mr-auto">
                                 <Link to="/">
-                                    <Navbar.Brand>
+                                    <Nav.Link href="/">
                                         <img src={logo} alt="logo"
                                             width="30"
                                             height="30"
                                             className="App-logo d-inline-block align-top"
                                         />{' '}
                                             Radarin
-                                    </Navbar.Brand>
+                                    </Nav.Link>
                                 </Link>
                                 <Link to="/notifications">  
                                 <Navbar.Brand>
@@ -102,10 +102,9 @@ const MyNavBar = () => {
                                 })()}
                                 
                                 <Link to="/aboutUs">
-                                <Navbar.Brand>
-                                    {' '}
+                                <Nav.Link href="/aboutUs">
                                     About us
-                                </Navbar.Brand>
+                                </Nav.Link>
                                 </Link>
                             </Nav>
                             <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
