@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { getNearbyFriends, getUserById } from '../api/api';
 import { useSession } from '@inrupt/solid-ui-react';
 
 const Notifications = () =>{
     const {session} = useSession();
+    const user = getUserById(session.info.webId);
+    const [coords, setCoords] = useState("");
+    getUserById(user.then(function (result){
+        setCoords(result.location.coordinates);
+    }));
 
-    const {user} = getUserById(session.info.webId);
-
-    console.log(user);
-
-    return(<h1>Notifications</h1>)
+    return(<h3 align="center">Right now you are in {coords}</h3>)
 }
 
 export default Notifications
