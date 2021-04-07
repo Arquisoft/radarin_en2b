@@ -7,6 +7,8 @@
     "@inrupt/solid-client-authn-browser": "^1.6.1",
     "@inrupt/solid-ui-react": "^2.1.1",
     "@inrupt/vocab-common-rdf": "^0.7.2",
+    "@solid/query-ldflex": "^2.11.3",
+    "@solid/react": "^1.10.0",
     "@solid/ui-react": "^0.3.1-featuresession-provider-tests-186989190-27.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
