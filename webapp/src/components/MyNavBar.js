@@ -15,7 +15,6 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import FriendList from './FriendList';
 import Amigos from './Amigos';
 import AboutUs from './AboutUs';
 import Home from './Home';
@@ -33,7 +32,7 @@ const MyNavBar = () => {
     useEffect(() => {
             if(role == null){
                 navigator.geolocation.getCurrentPosition(async function (position) {
-                    await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, session.info.sessionId);
+                    await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
                     await getUserById(webId).then((user) => setRole(user.role));
                 });
             }else{
@@ -44,7 +43,7 @@ const MyNavBar = () => {
                 }, 30000);
                 return () => clearInterval(interval);
             }
-    });
+    }, [webId, role]);
 
     return (<Router>
                     <Navbar bg="dark" variant="dark">

@@ -1,18 +1,13 @@
-import React from 'react';
-import {getName} from '../services/getPodInfo';
-import {  useSession  } from '@inrupt/solid-ui-react';
+
+import React from "react";
+import { Container } from "react-bootstrap";
 
 const Home = () => {
-    const { session } = useSession();
-
-    const message = "Welcome " + getName(session.info.webId) + "!";
-
     return (
-        <div>
-            <br></br>
-            <h1 align="center">Welcome!</h1>
-            </div>
-        )
+        <Container className="text-center">
+            <h2>Welcome!</h2>
+        </Container>
+    );
 }
 
 export default Home

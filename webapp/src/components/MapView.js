@@ -1,12 +1,9 @@
 import React, {useState} from 'react';
 import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-google-maps';
 import mapStyles from './MapStyles.js';
-import { getNearbyFriends } from '../api/api';
-import {getFriends} from '../services/getPodInfo.js';
 
 var crd = [];
 let friends = [];
-let nearbyFriends = [];
 
 var options = {
   enableHighAccuracy: true,
@@ -15,8 +12,7 @@ var options = {
 };
 
 async function nearby() {
-  friends = await getFriends();
-  nearbyFriends = getNearbyFriends(crd, friends);
+  //nearbyFriends = getNearbyFriends(crd, friends);
 }
 
 async function success(pos) {
@@ -29,8 +25,9 @@ function error(err) {
   crd.latitude = 43.3625;
   crd.longitude = -5.85027;
 };
-
-navigator.geolocation.getCurrentPosition(success, error, options);
+const geo = navigator.geolocation;
+if (geo)
+  geo.getCurrentPosition(success, error, options);
 
 function Map() {
   const [selectedFriend, setSelectedFriend] = useState(null);

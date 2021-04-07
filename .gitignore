@@ -21,7 +21,6 @@ restapi/data
 .eslintcache
 
 # just to avoid accidental npm commands running on the root of the project and changes geting pushed
-mode_nodules
 package.json
 package-lock.json
 node_modules
