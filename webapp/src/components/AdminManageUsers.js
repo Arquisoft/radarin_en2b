@@ -37,8 +37,8 @@ class AdminManageUsers extends React.Component{
             <div>
                 <h2>UsersList</h2>
                     {this.state.usersList.map((user) => 
-                        {return <ListGroup horizontal>
-                                    <ListGroup.Item>
+                        {return <ListGroup horizontal style={{ marginLeft: '20px', marginTop: '20px' }}>
+                                    <ListGroup.Item style={{ minWidth: '500px', textAlign: 'center' }}>
                                         {user.webId}
                                     </ListGroup.Item>
                                     <ListGroup.Item>

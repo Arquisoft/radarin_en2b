@@ -16,6 +16,7 @@ import {
     Link
 } from "react-router-dom";
 import FriendList from './FriendList';
+import Amigos from './Amigos';
 import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
@@ -50,14 +51,14 @@ const MyNavBar = () => {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="mr-auto">
                                 <Link to="/">
-                                    <Navbar.Brand>
+                                    <Nav.Link href="/">
                                         <img src={logo} alt="logo"
                                             width="30"
                                             height="30"
                                             className="App-logo d-inline-block align-top"
                                         />{' '}
                                             Radarin
-                                    </Navbar.Brand>
+                                    </Nav.Link>
                                 </Link>
                                 <Link to="/notifications">  
                                 <Navbar.Brand>
@@ -102,10 +103,9 @@ const MyNavBar = () => {
                                 })()}
                                 
                                 <Link to="/aboutUs">
-                                <Navbar.Brand>
-                                    {' '}
+                                <Nav.Link href="/aboutUs">
                                     About us
-                                </Navbar.Brand>
+                                </Nav.Link>
                                 </Link>
                             </Nav>
                             <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
@@ -119,7 +119,7 @@ const MyNavBar = () => {
                             <Home />
                         </Route>
                         <Route path="/friendList">
-                            <FriendList />
+                            <Amigos />
                         </Route>
                         <Route path="/adminManageUsers">
                             <AdminManageUsers />
