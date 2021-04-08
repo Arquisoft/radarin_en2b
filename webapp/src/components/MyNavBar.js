@@ -44,21 +44,19 @@ const MyNavBar = () => {
                 }, 30000);
                 return () => clearInterval(interval);
             }
-    });
+    }, []);
 
     return (<Router>
                     <Navbar bg="dark" variant="dark">
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="mr-auto">
                                 <Link to="/">
-                                    <Nav.Link href="/">
-                                        <img src={logo} alt="logo"
-                                            width="30"
-                                            height="30"
-                                            className="App-logo d-inline-block align-top"
-                                        />{" "}
-                                            Radarin
-                                    </Nav.Link>
+                                    <img src={logo} alt="logo"
+                                        width="30"
+                                        height="30"
+                                        className="App-logo d-inline-block align-top"
+                                    />{" "}
+                                        Radarin
                                 </Link>
                                 <Link to="/notifications">  
                                 <Navbar.Brand>
