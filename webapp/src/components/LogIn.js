@@ -6,7 +6,6 @@ export default function LogIn() {
     const [idp, setIdp] = useState("https://inrupt.net/");
     const [currentUrl, setCurrentUrl] = useState("https://localhost:3000");
 
-
     useEffect(() => {
         setCurrentUrl(window.location.href);
     }, [setCurrentUrl]);

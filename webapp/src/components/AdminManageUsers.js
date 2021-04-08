@@ -1,6 +1,6 @@
-import React from 'react';
-import ListGroup from 'react-bootstrap/ListGroup';
-import { Button } from 'react-bootstrap';
+import React from "react";
+import ListGroup from "react-bootstrap/ListGroup";
+import { Button } from "react-bootstrap";
 import { getNormalUsers, removeUserById } from "../api/api.js";
 
 class AdminManageUsers extends React.Component{
@@ -30,7 +30,7 @@ class AdminManageUsers extends React.Component{
         this.state.usersList.splice(this.state.usersList.indexOf(user), 1);
         console.log(this.state.usersList);
         this.setState({usersList: this.state.usersList});
-    }
+    };
 
     render(){
         return (
@@ -49,7 +49,7 @@ class AdminManageUsers extends React.Component{
                     )}
             </div>
         );
-    }
+    };
 
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const AboutUs = () => {
     return(<div className="m-2">
@@ -12,6 +12,6 @@ const AboutUs = () => {
         </ul>
         </div>
     );
-}
+};
 
-export default AboutUs
+export default AboutUs;

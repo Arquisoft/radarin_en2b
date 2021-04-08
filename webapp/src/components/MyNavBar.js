@@ -1,29 +1,29 @@
 import React, {
     useState, useEffect
-} from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import logo from '../logo.svg';
-import bell from '../img/bell.png';
-import friends from '../img/friends.png';
-import map from '../img/map.png';
-import Nav from 'react-bootstrap/Nav';
-import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+} from "react";
+import Navbar from "react-bootstrap/Navbar";
+import logo from "../logo.svg";
+import bell from "../img/bell.png";
+import friends from "../img/friends.png";
+import map from "../img/map.png";
+import Nav from "react-bootstrap/Nav";
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
 } from "react-router-dom";
-import FriendList from './FriendList';
-import Amigos from './Amigos';
-import AboutUs from './AboutUs';
-import Home from './Home';
-import Notifications from './Notifications';
-import MapView from './MapView';
-import AdminManageUsers from './AdminManageUsers';
-import {  LogoutButton,useSession  } from '@inrupt/solid-ui-react';
-import { updateUserLocation, addUser, getUserById } from '../api/api';
+import FriendList from "./FriendList";
+import Amigos from "./Amigos";
+import AboutUs from "./AboutUs";
+import Home from "./Home";
+import Notifications from "./Notifications";
+import MapView from "./MapView";
+import AdminManageUsers from "./AdminManageUsers";
+import {  LogoutButton,useSession  } from "@inrupt/solid-ui-react";
+import { updateUserLocation, addUser, getUserById } from "../api/api";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -56,7 +56,7 @@ const MyNavBar = () => {
                                             width="30"
                                             height="30"
                                             className="App-logo d-inline-block align-top"
-                                        />{' '}
+                                        />{" "}
                                             Radarin
                                     </Nav.Link>
                                 </Link>
@@ -66,7 +66,7 @@ const MyNavBar = () => {
                                         width="30"
                                         height="30"
                                         className="Notifications d-inline-block align-top"
-                                    />{' '}
+                                    />{" "}
                                 
                                 </Navbar.Brand>
                                 </Link>
@@ -76,7 +76,7 @@ const MyNavBar = () => {
                                             width="30"
                                             height="30"
                                             className="Friends d-inline-block align-top"
-                                        />{' '}
+                                        />{" "}
 
                                     </Navbar.Brand>
                                 </Link>
@@ -86,7 +86,7 @@ const MyNavBar = () => {
                                         width="30"
                                         height="30"
                                         className="Map d-inline-block align-top"
-                                    />{' '}
+                                    />{" "}
                                 </Navbar.Brand>
                                 </Link>
                                 {(() => {
@@ -94,7 +94,7 @@ const MyNavBar = () => {
                                             return (
                                                 <Link id="linkAdminManageUsers" to="/adminManageUsers">
                                                 <Navbar.Brand>
-                                                {' '}
+                                                {" "}
                                                 Manage users
                                                 </Navbar.Brand>
                                                 </Link>

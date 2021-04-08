@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-google-maps';
-import mapStyles from './MapStyles.js';
-import { getNearbyFriends } from '../api/api';
-import {getFriends} from '../services/getPodInfo.js';
+import React, {useState} from "react";
+import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from "react-google-maps";
+import mapStyles from "./MapStyles.js";
+import { getNearbyFriends } from "../api/api";
+import {getFriends} from "../services/getPodInfo.js";
 
 var crd = [];
 let friends = [];
@@ -17,7 +17,7 @@ var options = {
 async function nearby() {
   friends = await getFriends();
   nearbyFriends = getNearbyFriends(crd, friends);
-}
+};
 
 async function success(pos) {
   crd = pos.coords;
@@ -25,7 +25,7 @@ async function success(pos) {
 };
 
 function error(err) {
-  console.warn('ERROR(' + err.code + '): ' + err.message);
+  console.warn("ERROR(" + err.code + "): " + err.message);
   crd.latitude = 43.3625;
   crd.longitude = -5.85027;
 };
@@ -38,9 +38,9 @@ function Map() {
     <GoogleMap defaultZoom={15} //Starting zoom and position
       defaultCenter={{lat: crd.latitude, lng: crd.longitude}}
       defaultOptions={{styles: mapStyles}}> 
-      <Marker icon={{url: '/pushpin-you.png'}} key="You" position={{lat: crd.latitude, lng: crd.longitude}}/>
+      <Marker icon={{url: "/pushpin-you.png"}} key="You" position={{lat: crd.latitude, lng: crd.longitude}}/>
       {friends.map((friend) => (
-        <Marker icon={{url: '/pushpin-friends.png'}} key={friend._id} position={{lat: friend.location.coordinates[0], 
+        <Marker icon={{url: "/pushpin-friends.png"}} key={friend._id} position={{lat: friend.location.coordinates[0], 
           lng: friend.location.coordinates[1]}}
         onClick={() => {
           setSelectedFriend(friend);
@@ -61,22 +61,22 @@ function Map() {
       )}
     </GoogleMap>
   );
-}
+};
 
 //Wrap the map so that react can handle it
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export default function MapView() {
   return (
-    <div style={{width: '100vw', height: '90vh', padding: '20px'}}>
+    <div style={{width: "100vw", height: "90vh", padding: "20px"}}>
       <h1>Map</h1>
       <WrappedMap 
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&
           libraries=geometry,drawing,places&key=AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY`}
-        loadingElement={<div style={{height: '100%'}} /> } 
-        containerElement={<div style={{height: '100%'}} /> }
-        mapElement={<div style={{height: '100%'}} /> }
+        loadingElement={<div style={{height: "100%"}} /> } 
+        containerElement={<div style={{height: "100%"}} /> }
+        mapElement={<div style={{height: "100%"}} /> }
       />
     </div>
   );
-}
+};

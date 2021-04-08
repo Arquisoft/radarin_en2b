@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { LoggedIn, LoggedOut, AuthButton, Value, List, withWebId } from '@solid/react';
-import { useSession } from '@inrupt/solid-ui-react';
-
+import React, { useState } from "react";
+import { LoggedIn, LoggedOut, AuthButton, Value, List, withWebId } from "@solid/react";
+import { useSession } from "@inrupt/solid-ui-react";
 
 const Amigos = () => {
     const{ session } = useSession();
     const [activeProfile] = useState(session.info.webId);
-
 
     return (
         <div>
@@ -27,4 +25,5 @@ const Amigos = () => {
         </div>
     );
 }
+
 export default withWebId(Amigos);
