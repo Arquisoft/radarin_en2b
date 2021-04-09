@@ -40,7 +40,7 @@ const MyNavBar = () => {
                     navigator.geolocation.getCurrentPosition(function (position) {
                         updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
                     });
-                }, 30000);
+                }, 30000); // 30 seconds
                 return () => clearInterval(interval);
             }
     }, [role, webId]);

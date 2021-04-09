@@ -10,7 +10,7 @@ let nearbyFriends = [];
 
 var options = {
   enableHighAccuracy: true,
-  timeout: 5000,
+  timeout: 30000,
   maximumAge: 0
 };
 
@@ -72,7 +72,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map));
 export default function MapView() {
   return (
     <div style={{width: "100vw", height: "90vh", padding: "20px"}}>
-      <h1>Map</h1>
+      <h1 style={{color: "#356ad3" }}>Map</h1>
       <WrappedMap 
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&
           libraries=geometry,drawing,places&key=AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY`}

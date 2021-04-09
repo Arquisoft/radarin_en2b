@@ -20,10 +20,9 @@ Various options:
 * Lists of communication partners and their interfaces.
 ****
 
-- Client: normal user who has installed the application in their mobile phone.
-- Admin: special user who can access the system through the web application for management purposes.
-- Mobile App: the application clients interact directly with. It relies on the web application to work as server for it.
-- Web App: its purpose is to gather all needed information from the database and PODs <<pods>>, through the Rest API <<rest>>, to be able to send it to the mobile app. It also offers an administration interface. 
+- Client: normal user who has the web application in his/her electronic device browser.
+- Admin: special user who can access the system through the web application for management purposes. There is a unique admin account known for all team members. It was manually added to the mongo database to avoid security problems as third-parties know its credentials.
+- Web App: its purpose is to gather all needed information from the database and PODs <<pods>>, through the Rest API <<rest>>. It also offers an administration interface apart from the basic functionality.
 - Database: stores the minimal information needed by the app to work (locations, timestamps, webIDs and authentication keys).
 - SOLID <<solid>> Server: an external server where user PODs <<pods>> are stored. The web application, using the WebIDs, is able to access specific PODs <<pods>> when needed, getting the user information without storing it elsewhere, and therefore maintaining user privacy.
 
@@ -50,7 +49,7 @@ The title of the table is the name of your system, the three columns contain the
 :User: as user
 [Radarin] << System >> as WAPI
 
-database Locations << System >> as DB {
+database Users << System >> as DB {
     folder "User WebID" as foldb {
         file "Location & Timestamp" as loctmp
     }
@@ -68,11 +67,12 @@ note right of foldb
     store Auth credentials
 end note
 
-user --> WAPI : send location
-WAPI --> user : recieve nearby friends
-WAPI --> DB : store current location
-WAPI <-- DB : retrieve nearby friends
-pod <-- WAPI : ask for friends
+user --> WAPI : sends location
+WAPI --> user : receives nearby friends and locations history
+WAPI --> DB : stores current location
+WAPI <-- DB : retrieves nearby friends 
+pod --> WAPI : sends back friends and locations history
+pod <-- WAPI : asks for friends and locations history
 ....
 
 === Technical Context
@@ -95,24 +95,23 @@ together with a mapping table showing the relationships between channels and inp
 ....
 actor Client
 actor/ Admin
-component MobileApp
-Client -- MobileApp
 cloud cloud {
 component WebApp
 component RestAPI
 database DB
 }
+Client -- WebApp
 Admin -- WebApp
-MobileApp -- WebApp : HTTP
-MobileApp -- RestAPI : HTTP/REST
 WebApp -- RestAPI : HTTP/REST
-RestAPI -- DB : REST
+RestAPI -- MongoDB : REST
 node SolidServer {
 storage POD
 }
-RestAPI -- SolidServer : HTTP/REST
+WebApp -- SolidServer : HTTP
 ....
 
-The most used protocol is HTTP <<http>>. Rest API <<rest>> communicates the application with the sources of information (database and PODs <<pods>>), making every interchange of information more secure. 
+The most used protocol is HTTP <<http>>. 
 
+Rest API <<rest>> communicates the application with the database as a source of information, making this interchange of information more secure. 
 
+The web application is in charge of connecting the users, the Rest API and the PODs <<pods>>. 
