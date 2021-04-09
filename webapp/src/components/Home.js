@@ -1,6 +1,6 @@
-import React from 'react';
-import {getName} from '../services/getPodInfo';
-import {  useSession  } from '@inrupt/solid-ui-react';
+import React from "react";
+import {getName} from "../services/getPodInfo";
+import {  useSession  } from "@inrupt/solid-ui-react";
 
 const Home = () => {
     const { session } = useSession();
@@ -11,8 +11,8 @@ const Home = () => {
         <div>
             <br></br>
             <h1 align="center">Welcome!</h1>
-            </div>
-        )
-}
+        </div>
+    );
+};
 
-export default Home
+export default Home;
