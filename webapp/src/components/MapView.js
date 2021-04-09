@@ -16,6 +16,9 @@ var options = {
 
 async function nearby() {
   friends = await getFriends();
+  // As this is supposed to be used later just to pass CI
+  // the eslint unused variable warning will be disabled for now
+  // eslint-disable-next-line no-unused-vars
   nearbyFriends = getNearbyFriends(crd, friends);
 };
 

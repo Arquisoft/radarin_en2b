@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getNearbyFriends, getUserById } from "../api/api";
+import { getUserById } from "../api/api";
 import { useSession } from "@inrupt/solid-ui-react";
 import { List } from "@solid/react";
 

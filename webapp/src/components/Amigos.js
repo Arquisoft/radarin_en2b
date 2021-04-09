@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LoggedIn, LoggedOut, AuthButton, Value, List, withWebId } from "@solid/react";
+import { Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
 
 const Amigos = () => {
