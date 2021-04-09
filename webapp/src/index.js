@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import App from './App';
-import { SessionProvider } from '@inrupt/solid-ui-react';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import App from "./App";
+import { SessionProvider } from "@inrupt/solid-ui-react";
 
 ReactDOM.render(
     <SessionProvider sessionId="radarin_en2b">
@@ -11,7 +11,7 @@ ReactDOM.render(
         <App/>
       </React.StrictMode>
     </SessionProvider>,
-  document.getElementById('root')
+  document.getElementById("root");
 );
 
 // If you want to start measuring performance in your app, pass a function

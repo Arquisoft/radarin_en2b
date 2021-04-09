@@ -17,7 +17,7 @@ async function removeUserById(webId){
         body: JSON.stringify({"webId": webId})
     });
     return await response.json();
-}
+};
 
 async function getUsers(){
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
@@ -61,4 +61,4 @@ async function getNearbyFriends(userLocation, friends){
     return await response.json();
 };
 
-export { getUserById, removeUserById, getUsers, getNormalUsers, addUser, updateUserLocation, getNearbyFriends }
+export { getUserById, removeUserById, getUsers, getNormalUsers, addUser, updateUserLocation, getNearbyFriends };

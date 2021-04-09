@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-require('mongoose-geojson-schema')
+require("mongoose-geojson-schema");
 
 const schema = mongoose.Schema(
     {
@@ -9,13 +9,13 @@ const schema = mongoose.Schema(
         authKey: String,
         role: { 
             type: String,
-            enum: ['Normal','Admin'],
-            default: 'Normal'
+            enum: ["Normal","Admin"],
+            default: "Normal"
         }
     },
     { timestamps: true } // UTC + 2
 );
 
-schema.index( { location: '2dsphere' } );
+schema.index( { location: "2dsphere" } );
 
 module.exports = mongoose.model("User", schema); // User is a collection

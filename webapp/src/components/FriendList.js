@@ -7,7 +7,7 @@ import lupa from "../img/lupa.png";
 import batman from "../img/batman.webp";
 import chica from "../img/chica.png";
 import { Link } from "react-router-dom";
-import FriendData from "../jsons/friendList.json"
+import FriendData from "../jsons/friendList.json";
 
 const geolib = require("geolib");
 
