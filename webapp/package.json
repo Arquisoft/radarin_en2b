@@ -18,6 +18,7 @@
     "express": "^4.17.1",
     "geolib": "^3.3.1",
     "google-maps-react": "^2.0.6",
+    "puppeteer": "^8.0.0",
     "rdf-namespaces": "^1.9.2",
     "react": "next",
     "react-bootstrap": "^1.5.2",
@@ -62,7 +63,6 @@
     "jest-dev-server": "^4.4.0",
     "jest-environment-node": "^26.6.2",
     "jest-puppeteer": "^4.4.0",
-    "puppeteer": "^5.5.0",
     "shx": "^0.3.3"
   }
 }

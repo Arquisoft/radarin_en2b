@@ -44,7 +44,7 @@ const MyNavBar = () => {
                 }, 30000);
                 return () => clearInterval(interval);
             }
-    }, []);
+    }, [role, webId]);
 
     return (<Router>
                     <Navbar bg="dark" variant="dark">
