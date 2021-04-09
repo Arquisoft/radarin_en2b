@@ -46,17 +46,20 @@ const MyNavBar = () => {
     }, [role, webId]);
 
     return (<Router>
-                    <Navbar bg="dark" variant="dark">
+                    <Navbar bg="dark" expand="lg" variant="dark">
+                        <Link to="/">  
+                            <Navbar.Brand>
+                                <img src={logo} alt="logo"
+                                    width="30"
+                                    height="30"
+                                    className="App-logo d-inline-block align-top"
+                                />{" "}
+                                Radarin
+                            </Navbar.Brand>
+                        </Link>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className="mr-auto">
-                                <Link to="/">
-                                    <img src={logo} alt="logo"
-                                        width="30"
-                                        height="30"
-                                        className="App-logo d-inline-block align-top"
-                                    />{" "}
-                                        Radarin
-                                </Link>
+                            <Nav className="mr-auto justify-content-center" fill>
                                 <Link to="/notifications">  
                                 <Navbar.Brand>
                                     <img src={bell} alt="notifications"
@@ -100,15 +103,17 @@ const MyNavBar = () => {
                                 })()}
                                 
                                 <Link to="/aboutUs">
-                                <Nav.Link href="/aboutUs">
+                                <Navbar.Brand>
                                     About us
-                                </Nav.Link>
+                                </Navbar.Brand>
                                 </Link>
+                                <Navbar.Text>Logged in as {webId}</Navbar.Text>
+                                <Nav.Item>
+                                    <LogoutButton>
+                                        <Button>Log Out</Button>
+                                    </LogoutButton>
+                                </Nav.Item>
                             </Nav>
-                            <Navbar.Brand>Logged in as {webId}</Navbar.Brand>
-                            <LogoutButton>
-                                <Button>Log Out</Button>
-                            </LogoutButton>
                         </Navbar.Collapse>
                     </Navbar>
                     <Switch>
