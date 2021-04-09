@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-import Dropdown from 'react-bootstrap/Dropdown';
-import saw from '../img/saw.png';
-import lupa from '../img/lupa.png';
-import batman from '../img/batman.webp';
-import chica from '../img/chica.png';
-import { Link } from 'react-router-dom';
-import FriendData from '../jsons/friendList.json'
+import Dropdown from "react-bootstrap/Dropdown";
+import saw from "../img/saw.png";
+import lupa from "../img/lupa.png";
+import batman from "../img/batman.webp";
+import chica from "../img/chica.png";
+import { Link } from "react-router-dom";
+import FriendData from "../jsons/friendList.json"
 
 import { LoggedIn, LoggedOut, AuthButton, Value, List, withWebId } from '@solid/react';
 import { useSession } from '@inrupt/solid-ui-react';
@@ -24,7 +24,7 @@ const Friends = () => {
   var friendsOfUser = new Array();
   var counter = 0;
 
-  console.log('Hola');
+  /*console.log('Hola');*/
   
   /*navigator.geolocation.getCurrentPosition(async function (position) {
     await getNearbyFriends(position, friendsOfUser);
@@ -32,7 +32,7 @@ const Friends = () => {
 
   function hello(){
     return (
-      <div>
+      <div hidden>
       {activeProfile &&
       <dl>
         <List src={`[${activeProfile}].friends`}>{friend =>
@@ -61,6 +61,7 @@ const Friends = () => {
                 className="d-inline-block align-top"
               />
             </ListGroup.Item>
+            
             <ListGroup.Item style={{minWidth: '300px', minHeight: '100px'}}> 
               <p align="center">
                 {friendDetail.webId}
