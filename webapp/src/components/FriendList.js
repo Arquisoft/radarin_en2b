@@ -1,68 +1,59 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-import Dropdown from 'react-bootstrap/Dropdown';
-import saw from '../img/saw.png';
-import lupa from '../img/lupa.png';
-import batman from '../img/batman.webp';
-import chica from '../img/chica.png';
-import { Link } from 'react-router-dom';
-import FriendData from '../jsons/friendList.json'
+import Dropdown from "react-bootstrap/Dropdown";
+import saw from "../img/saw.png";
+import lupa from "../img/lupa.png";
+import batman from "../img/batman.webp";
+import chica from "../img/chica.png";
+import { Link } from "react-router-dom";
+import FriendData from "../jsons/friendList.json"
+
+import { LoggedIn, LoggedOut, AuthButton, Value, List, withWebId } from '@solid/react';
+import { useSession } from '@inrupt/solid-ui-react';
+
+import { updateUserLocation, addUser, getUserById, getNearbyFriends } from '../api/api';
 
 const geolib = require('geolib');
 
-class FriendList extends Component{
-  render(){
-    return(
-      <div className='ml-3'>
-          <h2 className='mb-3'>Nearby friends</h2>
-          {FriendData.map((friendDetail, index) => {
-            return <div>
-                <ListGroup className='mb-3'>
-                  <ListGroup horizontal style={{minWidth: '70%', maxWidth: 500, minHeight: '70%', maxHeight: 150,}}>
-                    <ListGroup.Item>
-                      <img src={saw} alt="saw"
-                        width="80"
-                        height="80"
-                        className="d-inline-block align-top"
-                      />
-                    </ListGroup.Item>
-                    <ListGroup.Item> <p align="center">{friendDetail.webId}</p><p align="center">
-                        {geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friendDetail.location.coordinates[0], longitude: friendDetail.location.coordinates[1] })}m away
-                    </p> </ListGroup.Item>
+const Friends = () => {
+  const{ session } = useSession();
+  const [activeProfile] = useState(session.info.webId);
 
-                    <ListGroup.Item>
-                      <Link to="/map">
-                        <img src={lupa} alt="lupa"
-                          width="50"
-                          height="50"
-                          className="m-2"
-                        />
-                      </Link>
-                    </ListGroup.Item>
+  var friendWebId;
+  var friendsOfUser = new Array();
+  var counter = 0;
 
-                    <ListGroup.Item >
-                      <Dropdown className='m-3'>
-                        <Dropdown.Toggle id="dropdown-basic">
+  /*console.log('Hola');*/
+  
+  /*navigator.geolocation.getCurrentPosition(async function (position) {
+    await getNearbyFriends(position, friendsOfUser);
+  });*/
 
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                          <Dropdown.Item>Delete friend</Dropdown.Item>
-                          <Dropdown.Item>Info</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </ListGroup.Item>
-                  </ListGroup>
+  function hello(){
+    return (
+      <div hidden>
+      {activeProfile &&
+      <dl>
+        <List src={`[${activeProfile}].friends`}>{friend =>
+          <li key={friend}>
+            {friendWebId = `${friend}`}
+            {friendsOfUser[counter] = friendWebId}
+            {counter++}
+          </li>}
+        </List>
+        {counter = 0}
+      </dl>}</div>);
+  }
+  
 
-                </ListGroup>
-
-
-                
-            </div>
-          })}
-          <h2 className='mb-3'>All</h2>
-          <ListGroup className='mb-3'>
-          <ListGroup horizontal>
+  return(
+    <div className='ml-3'>
+      {hello()}
+      <h2 style={{marginTop: '10px', marginLeft: '40px'}}>Nearby friends</h2>
+      {FriendData.map((friendDetail, index) => {
+        return <div>
+          <ListGroup horizontal style={{marginTop: '20px', marginLeft: '40px'}}>
             <ListGroup.Item>
               <img src={saw} alt="saw"
                 width="80"
@@ -70,18 +61,28 @@ class FriendList extends Component{
                 className="d-inline-block align-top"
               />
             </ListGroup.Item>
-            <ListGroup.Item> <p align="center">https://user.inrupt.net/</p> <p align="center"> 4m away</p> </ListGroup.Item>
-            <ListGroup.Item>
-              <Link to="/map">
-                <img src={lupa} alt="lupa"
-                  width="50"
-                  height="50"
-                  className="m-2"
-                />
-              </Link>
+            
+            <ListGroup.Item style={{minWidth: '300px', minHeight: '100px'}}> 
+              <p align="center">
+                {friendDetail.webId}
+              </p>
+              <p align="center">
+                {geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friendDetail.location.coordinates[0], longitude: friendDetail.location.coordinates[1] })}m away
+              </p>
             </ListGroup.Item>
+
+            <ListGroup.Item>
+                <Link to="/map">
+                  <img src={lupa} alt="lupa"
+                    width="50"
+                    height="50"
+                    className="m-3"
+                  />
+                </Link>
+              </ListGroup.Item>
+
             <ListGroup.Item >
-              <Dropdown className='m-3'>
+              <Dropdown className='m-4' >
                 <Dropdown.Toggle id="dropdown-basic">
 
                 </Dropdown.Toggle>
@@ -93,75 +94,53 @@ class FriendList extends Component{
             </ListGroup.Item>
           </ListGroup>
 
-        </ListGroup>
-        <ListGroup className='mb-3'>
-          <ListGroup horizontal>
-            <ListGroup.Item>
-              <img src={batman} alt="bat"
-                width="80"
-                height="80"
-                className="d-inline-block align-top"
-              />
-            </ListGroup.Item>
-            <ListGroup.Item> <p align="center">https://user.inrupt.net/</p> <p align="center"> 5m away</p> </ListGroup.Item>
-            <ListGroup.Item>
-              <Link to="/map">
-                <img src={lupa} alt="lupa"
-                  width="50"
-                  height="50"
-                  className="m-2"
-                />
-              </Link>
-            </ListGroup.Item>
-            <ListGroup.Item >
-              <Dropdown className='m-3'>
-                <Dropdown.Toggle id="dropdown-basic">
+        </div>
+        })
+      }
+      <h2 style={{marginTop: '10px', marginLeft: '40px'}}>All friends</h2>
+      {activeProfile &&
+        <div>
+          <List src={`[${activeProfile}].friends`}>{friend =>
+            <ListGroup horizontal key={friend} style={{marginTop: `20px`}}>
+              <ListGroup.Item horizontal style={{minWidth: '100px', minHeight: '100px'}}>
+                <img src={`[${friend}].image`} alt="user_image" width="80" height="80"></img>
+              </ListGroup.Item>
 
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item >Delete friend</Dropdown.Item>
-                  <Dropdown.Item>Info</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </ListGroup.Item>
-          </ListGroup>
+              <ListGroup.Item style={{minWidth: '300px', minHeight: '100px'}}>
+                <p align="center"><br></br>
+                  <Value src={`[${friend}].name`}>{`${friend}`}</Value>
+                </p>
+                <p hidden>
+                  {friendsOfUser[counter] = `[${friend}].name`}{`${friend}`}
+                </p>
+              </ListGroup.Item>
+              
+              <ListGroup.Item>
+                <Link to="/map">
+                  <img src={lupa} alt="lupa"
+                    width="50"
+                    height="50"
+                    className="m-3"
+                  />
+                </Link>
+              </ListGroup.Item>
 
-        </ListGroup>
-        <ListGroup className='mb-3'>
-          <ListGroup horizontal>
-            <ListGroup.Item>
-              <img src={chica} alt="chica"
-                width="80"
-                height="80"
-                className="d-inline-block align-top"
-              />
-            </ListGroup.Item>
-            <ListGroup.Item> <p align="center">https://user.inrupt.net/</p> <p align="center"> 2m away</p> </ListGroup.Item>
-            <ListGroup.Item>
-              <Link to="/map">
-                <img src={lupa} alt="lupa"
-                  width="50"
-                  height="50"
-                  className="m-2"
-                />
-              </Link>
-            </ListGroup.Item>
-            <ListGroup.Item >
-              <Dropdown className="m-3">
-                <Dropdown.Toggle id="dropdown-basic">
-
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item>Delete friend</Dropdown.Item>
-                  <Dropdown.Item >Info</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </ListGroup.Item>
-          </ListGroup>
-          
-        </ListGroup>
-      </div>
-    )
-  }
+              <ListGroup.Item >
+                <Dropdown className='m-4' >
+                  <Dropdown.Toggle id="dropdown-basic">
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>Delete friend</Dropdown.Item>
+                    <Dropdown.Item>Info</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </ListGroup.Item>
+            </ListGroup>
+          }
+          </List>
+        </div>
+      }
+    </div>
+  );
 }
-export default FriendList
+export default withWebId(Friends)

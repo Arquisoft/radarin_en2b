@@ -1,4 +1,4 @@
-export default [
+const style = [
     {
         "featureType": "water",
         "stylers": [
@@ -128,4 +128,5 @@ export default [
             }
         ]
     }
-]
+];
+export default style;

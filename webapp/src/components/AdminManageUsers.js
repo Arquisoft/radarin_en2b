@@ -1,6 +1,6 @@
-import React from 'react';
-import ListGroup from 'react-bootstrap/ListGroup';
-import { Button } from 'react-bootstrap';
+import  React from "react";
+import ListGroup from "react-bootstrap/ListGroup";
+import { Button } from "react-bootstrap";
 import { getNormalUsers, removeUserById } from "../api/api.js";
 
 class AdminManageUsers extends React.Component{
@@ -30,26 +30,26 @@ class AdminManageUsers extends React.Component{
         this.state.usersList.splice(this.state.usersList.indexOf(user), 1);
         console.log(this.state.usersList);
         this.setState({usersList: this.state.usersList});
-    }
+    };
 
     render(){
         return (
             <div>
                 <h2>UsersList</h2>
                     {this.state.usersList.map((user) => 
-                        {return <ListGroup horizontal>
-                                    <ListGroup.Item>
+                        {return <ListGroup horizontal style={{ margin: "20px" }}>
+                                    <ListGroup.Item style={{ minWidth: "500px", textAlign: "center" }}>
                                         {user.webId}
                                     </ListGroup.Item>
                                     <ListGroup.Item>
-                                        <Button onClick={()=>this.deleteUserByWebId(user)}>Delete</Button>
+                                        <Button data-testid={user.webId} onClick={()=>this.deleteUserByWebId(user)}>Delete</Button>
                                     </ListGroup.Item>
                                 </ListGroup>      
                         }
                     )}
             </div>
         );
-    }
+    };
 
 }
 
