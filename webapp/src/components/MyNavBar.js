@@ -15,16 +15,14 @@ import {
     Route,
     Link
 } from "react-router-dom";
-
-import FriendList from './FriendList';
-import Amigos from './Amigos';
-import AboutUs from './AboutUs';
-import Home from './Home';
-import Notifications from './Notifications';
-import MapView from './MapView';
-import AdminManageUsers from './AdminManageUsers';
-import {  LogoutButton,useSession  } from '@inrupt/solid-ui-react';
-import { updateUserLocation, addUser, getUserById } from '../api/api';
+import Amigos from "./Amigos";
+import AboutUs from "./AboutUs";
+import Home from "./Home";
+import Notifications from "./Notifications";
+import MapView from "./MapView";
+import AdminManageUsers from "./AdminManageUsers";
+import {  LogoutButton,useSession  } from "@inrupt/solid-ui-react";
+import { updateUserLocation, addUser, getUserById } from "../api/api";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -123,7 +121,7 @@ const MyNavBar = () => {
                             <Home />
                         </Route>
                         <Route path="/friendList">
-                            <FriendList />
+                            <Amigos />
                         </Route>
                         <Route path="/adminManageUsers">
                             <AdminManageUsers />
