@@ -15,14 +15,16 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import Amigos from "./Amigos";
-import AboutUs from "./AboutUs";
-import Home from "./Home";
-import Notifications from "./Notifications";
-import MapView from "./MapView";
-import AdminManageUsers from "./AdminManageUsers";
-import {  LogoutButton,useSession  } from "@inrupt/solid-ui-react";
-import { updateUserLocation, addUser, getUserById } from "../api/api";
+
+/*import FriendList from './FriendList';*/
+import Amigos from './Amigos';
+import AboutUs from './AboutUs';
+import Home from './Home';
+import Notifications from './Notifications';
+import MapView from './MapView';
+import AdminManageUsers from './AdminManageUsers';
+import {  LogoutButton,useSession  } from '@inrupt/solid-ui-react';
+import { updateUserLocation, addUser, getUserById } from '../api/api';
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -34,12 +36,12 @@ const MyNavBar = () => {
                 navigator.geolocation.getCurrentPosition(async function (position) {
                     await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
                     await getUserById(webId).then((user) => setRole(user.role));
-                });
+               });
             }else{
                 const interval = setInterval(() => {
                     navigator.geolocation.getCurrentPosition(function (position) {
                         updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
-                    });
+                   });
                 }, 30000);
                 return () => clearInterval(interval);
             }
@@ -101,7 +103,11 @@ const MyNavBar = () => {
                                         );
                                     }
                                 })()}
-                                
+                                <Link to="/myLocations">
+                                <Navbar.Brand>
+                                    My Locations
+                                </Navbar.Brand>
+                                </Link>
                                 <Link to="/aboutUs">
                                 <Navbar.Brand>
                                     About us
