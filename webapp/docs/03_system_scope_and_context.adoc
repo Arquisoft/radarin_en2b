@@ -98,7 +98,7 @@ actor/ Admin
 cloud cloud {
 component WebApp
 component RestAPI
-database DB
+database MongoDB
 }
 Client -- WebApp
 Admin -- WebApp
