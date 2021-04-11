@@ -60,7 +60,7 @@ test("check that we can move back to home view", async () => {
     fireEvent.click(getByAltText("logo"));
     expect(getByText("Welcome!")).toBeInTheDocument();
     expect(getByText("We are very pleasured to see you again")).toBeInTheDocument();
-    expect(getByText("Have a nice day and expirience :)")).toBeInTheDocument();
+    expect(getByText("Have a nice day and experience :)")).toBeInTheDocument();
 });
 
 /*

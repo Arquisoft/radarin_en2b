@@ -22,8 +22,8 @@ As the most important quality requirement (quality goals) were described in sect
 [options="header"]
 |===
 |Nr|Quality|Motivation
-| 1 | Performance | The application should perform the different operations (locate friends, send nofitications, update info and see current map, etc) fast, not taking to much time, in a range between five and fifteen seconds because otherwise the users will disagree and won't use the application.
-| 2 | Testability | As team developers we must test the functionality of the application in order to find and notify errors besides improving itself.
+| 1 | Performance | The application should perform the different operations (locate friends, send nofitications, update info and see the map, etc) fastly, not taking too much time, in a range between five and fifteen seconds because otherwise the users will be disappointed and won't use the application.
+| 2 | Testability | As team developers we must test the functionality of the application in order to find and notify errors besides improving the code.
 |===
 
 === Quality Tree
@@ -80,7 +80,7 @@ Tabular or free form text.
 ==== Usage scenarios:
 * The user is notified in less than fifteen seconds that there is a friend nearby from the moment the other person location is updated and is in a range lower of equal than 1000 meters of distance.
 * Users locations are updated to mongo database every 30 seconds.
-* The map is recharged every 30 seconds showing the current position of the loggin user and his/her nearby friends. 
+* The map is recharged every 30 seconds showing the current position of the logged in user and his/her nearby friends. 
 * Administrators can delete users in the manage users view with 1 button click.
 * When a fatal error is detected, the user is informed and the application restarts.
 	
@@ -88,7 +88,7 @@ Tabular or free form text.
 * A new friend is added to the user's friends list.
 * A new friend shows up in the nearby friends list.
 * A new notification of a nearby friends appears.
-* The account of the user is be deleted from the system.
+* The account of the user is deleted from the system.
 * A new location, the current one, is added to the POD's history location and the view is recharged showing the latest update.
 * The user deletes a past location of his/her history locations.
 * Releasing a new feature of the application.
