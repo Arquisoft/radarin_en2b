@@ -114,23 +114,24 @@ const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export default function MapView() {
   if (activeGeo) {
-  return (
-    <div style={{width: "100vw", height: "90vh", padding: "20px"}}>
-      <h1>Map</h1>
-      <WrappedMap 
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&
-          libraries=geometry,drawing,places&key=AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY`}
-        loadingElement={<div style={{height: "100%"}} /> } 
-        containerElement={<div style={{height: "100%"}} /> }
-        mapElement={<div style={{height: "100%"}} /> }
-      />
-    </div>
-  ); }
+    return (
+      <div style={{width: "100vw", height: "90vh", padding: "20px"}}>
+        <h1>Map</h1>
+        <WrappedMap 
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&
+            libraries=geometry,drawing,places&key=AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY`}
+          loadingElement={<div style={{height: "100%"}} /> } 
+          containerElement={<div style={{height: "100%"}} /> }
+          mapElement={<div style={{height: "100%"}} /> }
+        />
+      </div>
+    ); 
+  }
   else {
     return(
-    <div id="noGeo">
-      <h1>Geolocation is not active</h1>
-    </div>
+      <div id="noGeo">
+        <h1>Geolocation is not active</h1>
+      </div>
     );
   }
-}
+};
