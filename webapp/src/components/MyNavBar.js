@@ -142,6 +142,6 @@ const MyNavBar = () => {
                         </Route>
                     </Switch>
             </Router>);
-}
+};
 
 export default MyNavBar;

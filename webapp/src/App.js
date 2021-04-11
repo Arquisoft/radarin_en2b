@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import {useSession} from "@inrupt/solid-ui-react"
+import { useState } from "react";
+import { useSession } from "@inrupt/solid-ui-react";
 import MyNavBar from "./components/MyNavBar";
 import LogIn from "./components/LogIn";
 import { Col, Container, Row } from "react-bootstrap";
@@ -20,11 +20,11 @@ export default function App () {
           </Col>
         </Row>
       </Container>
-      )
+    );
   }
   
   if (!loggedIn) {
-      return <LogIn/>;
+    return <LogIn/>;
   } 
 
   return <MyNavBar/>;

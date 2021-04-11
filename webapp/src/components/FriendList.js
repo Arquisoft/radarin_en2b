@@ -7,7 +7,6 @@ import lupa from "../img/lupa.png";
 /*import batman from "../img/batman.webp";
 import chica from "../img/chica.png";*/
 import { Link } from "react-router-dom";
-//import FriendData from "../jsons/friendList.json"
 import userLogo from "../img/userLogo.jpg";
 
 import {  Value, List, withWebId } from "@solid/react";
@@ -15,7 +14,10 @@ import { useSession } from "@inrupt/solid-ui-react";
 //import { getNearbyFriends } from "../api/api";
 //import { UserComments } from "rdf-namespaces/dist/schema";
 
-//const geolib = require("geolib");
+/*const geolib = require("geolib");
+const { PathFactory } = require("ldflex");
+const { default: ComunicaEngine } = require("@ldflex/comunica");
+const { namedNode } = require("@rdfjs/data-model");*/
 
 const Friends = () => {
   const { session } = useSession();
@@ -24,12 +26,6 @@ const Friends = () => {
   /*var friendsOfUser = [];
   var friends = [];
   var pepito = [];
-
-  //////////////////////////
-
-  const { PathFactory } = require("ldflex");
-  const { default: ComunicaEngine } = require("@ldflex/comunica");
-  const { namedNode } = require("@rdfjs/data-model");
 
   // The JSON-LD context for resolving properties
   const context = {
@@ -45,7 +41,6 @@ const Friends = () => {
   const path = new PathFactory({ context, queryEngine });
 
   const pod = path.create({ subject: namedNode(session.info.webId) });
-  showPerson(pod);
 
   async function showPerson(person) {
     for await (const name of person.knows){

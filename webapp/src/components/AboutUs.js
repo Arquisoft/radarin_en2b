@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutUs = () => {
     return(<div className="m-2">
         <h2 style={{color: "#356ad3" }}>What is Radarin?</h2>
