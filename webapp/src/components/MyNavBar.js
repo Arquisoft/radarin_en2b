@@ -16,9 +16,8 @@ import {
     Link
 } from "react-router-dom";
 
-/*import FriendList from './FriendList';*/
+import FriendList from './FriendList';
 import MyLocations from "./MyLocations";
-import Amigos from './Amigos';
 import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
