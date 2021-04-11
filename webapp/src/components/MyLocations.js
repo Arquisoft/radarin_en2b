@@ -32,7 +32,7 @@ const MyLocations = () => {
             <thead>
                 <tr>
                     <th>
-                        Location
+                        Locations
                     </th>
                     <th>
                         Date and time
