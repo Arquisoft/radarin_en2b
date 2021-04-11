@@ -7,10 +7,12 @@ import lupa from "../img/lupa.png";
 /*import batman from "../img/batman.webp";
 import chica from "../img/chica.png";*/
 import { Link } from "react-router-dom";
-import FriendData from "../jsons/friendList.json"
+//import FriendData from "../jsons/friendList.json"
 
 import {  Value, List, withWebId } from '@solid/react';
 import { useSession } from '@inrupt/solid-ui-react';
+import { getNearbyFriends } from '../api/api';
+import { UserComments } from 'rdf-namespaces/dist/schema';
 
 const geolib = require('geolib');
 
@@ -19,6 +21,8 @@ const Friends = () => {
   const [activeProfile] = useState(session.info.webId);
 
   var friendsOfUser = [];
+  var friends = [];
+  var pepito = [];
 
   //////////////////////////
 
@@ -43,37 +47,22 @@ const Friends = () => {
     showPerson(pod);
 
     async function showPerson(person) {
-        //console.log(`This person is ${await person.name}`);
-        //console.log(`${await person.name} is friends with:`);
-        for await (const name of person.knows){
-          var friendWebId = `${name}`;
-          var amigo = "webId:" + friendWebId;
-          friendsOfUser.push({amigo});
-        }
-        var friends = await friendsOfUser.filter(onlyUnique);
-        await showFriends(friends);
+      for await (const name of person.knows){
+        var webId = `${name}` + "profile/card#me";
+        friendsOfUser.push({webId});
+      }
+      friends = await friendsOfUser.filter(onlyUnique);
     }
 
     async function onlyUnique(value, index, self){
       return self.indexOf(value) === index;
     }
-
-    async function showFriends(amigos){
-      for (var i=0; i<amigos.length; i++){
-        console.log("Luis is friend of " + amigos[i]);
-      }
-    }
-
-    
-
-
-  /////////////////////////
-
-  /*console.log('Hola');*/
   
-  /*navigator.geolocation.getCurrentPosition(async function (position) {
-    await getNearbyFriends(position, friendsOfUser);
-  });*/
+  navigator.geolocation.getCurrentPosition(async function (position) {
+    showPerson(pod);
+    console.log(friends);
+    await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friends).then((user) => pepito.push(user));
+  });
 
   /*function hello(){
     return (
@@ -91,11 +80,10 @@ const Friends = () => {
       </dl>}</div>);
   }*/
 
-  return(
-    
+  return(    
     <div className='ml-3'>
       <h2 style={{marginTop: '10px', marginLeft: '40px'}}>Nearby friends</h2>
-      {FriendData.map((friendDetail, index) => {
+      {pepito.map((friendDetail, index) => {
         return <div>
           <ListGroup horizontal style={{marginTop: '20px', marginLeft: '40px'}}>
             <ListGroup.Item>

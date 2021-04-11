@@ -36,7 +36,7 @@ const MyNavBar = () => {
             if(role == null){
                 navigator.geolocation.getCurrentPosition(async function (position) {
                     await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
-                    await getUserById(webId).then((user) => setRole(user.role));
+                    await console.log(getUserById(webId).then((user) => setRole(user.role)));
                });
             }else{
                 const interval = setInterval(() => {
