@@ -9,7 +9,6 @@ import chica from "../img/chica.png";*/
 import { Link } from "react-router-dom";
 //import FriendData from "../jsons/friendList.json"
 import userLogo from "../img/userLogo.jpg";
-import FriendData from "../jsons/friendList.json";
 
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
