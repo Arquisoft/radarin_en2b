@@ -1,10 +1,8 @@
 const express = require("express");
 const promBundle = require("express-prom-bundle");
-const cors = require('cors');
+const cors = require("cors");
 const mongoose = require("mongoose");
 const api = require("./api");
-
-//mongoose.cast(false);
 
 function connect(){
     //The MONGO_URI variable is the connection string to MongoDB Atlas (for production). This env variable is created in heroku.
@@ -21,15 +19,15 @@ function connect(){
         app.use("/api", api);
 
         app.use( (request, response) => {
-            request.header('Access-Control-Allow-Origin', '*');
-            response.header('Access-Control-Allow-Origin', '*');
-        })
+            request.header("Access-Control-Allow-Origin", "*");
+            response.header("Access-Control-Allow-Origin", "*");
+        });
 
         app.listen(process.env.PORT || 5000, () => {
             console.log("Node server has started running on http://localhost:5000/api");
             console.log("Using db in " + mongo_uri);
-        })
-    })
+        });
+    });
 };
 
 // Connect to MongoDB database, the wait is for giving time to mongodb to finish loading
