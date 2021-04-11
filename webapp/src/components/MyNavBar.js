@@ -16,7 +16,7 @@ import {
     Link
 } from "react-router-dom";
 
-import FriendList from './FriendList';
+/*import FriendList from './FriendList';*/
 import Amigos from './Amigos';
 import AboutUs from './AboutUs';
 import Home from './Home';
@@ -36,12 +36,12 @@ const MyNavBar = () => {
                 navigator.geolocation.getCurrentPosition(async function (position) {
                     await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
                     await getUserById(webId).then((user) => setRole(user.role));
-                });
+               });
             }else{
                 const interval = setInterval(() => {
                     navigator.geolocation.getCurrentPosition(function (position) {
                         updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
-                    });
+                   });
                 }, 30000);
                 return () => clearInterval(interval);
             }
@@ -103,7 +103,11 @@ const MyNavBar = () => {
                                         );
                                     }
                                 })()}
-                                
+                                <Link to="/myLocations">
+                                <Navbar.Brand>
+                                    My Locations
+                                </Navbar.Brand>
+                                </Link>
                                 <Link to="/aboutUs">
                                 <Navbar.Brand>
                                     About us
@@ -123,7 +127,7 @@ const MyNavBar = () => {
                             <Home />
                         </Route>
                         <Route path="/friendList">
-                            <FriendList />
+                            <Amigos />
                         </Route>
                         <Route path="/adminManageUsers">
                             <AdminManageUsers />

@@ -4,15 +4,13 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Dropdown from "react-bootstrap/Dropdown";
 import saw from "../img/saw.png";
 import lupa from "../img/lupa.png";
-import batman from "../img/batman.webp";
-import chica from "../img/chica.png";
+/*import batman from "../img/batman.webp";
+import chica from "../img/chica.png";*/
 import { Link } from "react-router-dom";
 import FriendData from "../jsons/friendList.json"
 
-import { LoggedIn, LoggedOut, AuthButton, Value, List, withWebId } from '@solid/react';
+import {  Value, List, withWebId } from '@solid/react';
 import { useSession } from '@inrupt/solid-ui-react';
-
-import { updateUserLocation, addUser, getUserById, getNearbyFriends } from '../api/api';
 
 const geolib = require('geolib');
 
@@ -21,7 +19,7 @@ const Friends = () => {
   const [activeProfile] = useState(session.info.webId);
 
   var friendWebId;
-  var friendsOfUser = new Array();
+  var friendsOfUser = [];
   var counter = 0;
 
   /*console.log('Hola');*/
