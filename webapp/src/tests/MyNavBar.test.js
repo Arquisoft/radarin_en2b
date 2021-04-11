@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import MyNavBar from "../components/MyNavBar";
-import LogIn from "../components/LogIn";
+//import LogIn from "../components/LogIn";
 
 test("check that we are in the nav bar", async () => {
     const { getByText, getByAltText } = render(<MyNavBar />);
@@ -16,17 +16,17 @@ test("check that we are in the nav bar", async () => {
     expect(getByText("Log Out")).toBeInTheDocument();
 });
 
+test("check that we can move to friends view", async () => {
+    const { getByText, getByAltText } = render(<MyNavBar />);
+    fireEvent.click(getByAltText("friends"));
+    expect(getByText("Amigos")).toBeInTheDocument();
+});
+
 test("check that we can move to notifications view", async () => {
     const { getByText, getByAltText } = render(<MyNavBar />);
     fireEvent.click(getByAltText("notifications"));
     expect(getByText("Right now you are in")).toBeInTheDocument();
     expect(getByText("All friends")).toBeInTheDocument();
-});
-
-test("check that we can move to friends view", async () => {
-    const { getByText, getByAltText } = render(<MyNavBar />);
-    fireEvent.click(getByAltText("friends"));
-    expect(getByText("Profile viewer")).toBeInTheDocument();
 });
 
 test("check that we can move to map view ", async () => {

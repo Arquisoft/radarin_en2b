@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from "react-google-maps";
+import { useState } from "react";
+import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "react-google-maps";
 import mapStyles from "./MapStyles.js";
 import { getNearbyFriends } from "../api/api";
-import {getFriends} from "../services/getPodInfo";
+import { getFriends } from "../services/getPodInfo";
 
 var crd = [];
 let friends = [];
