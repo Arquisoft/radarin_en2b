@@ -1,37 +1,26 @@
-
-import {
-    getSolidDataset,
-    getThing,
-    setStringNoLocale,
-    addStringNoLocale,
-    setThing,
-    saveSolidDatasetAt,
-} from "@inrupt/solid-client";
-import { fetch } from "@inrupt/solid-client-authn-browser";
-import { FOAF, VCARD } from "@inrupt/vocab-common-rdf";
+import React, {useEffect, useState} from "react";
 import { useSession } from "@inrupt/solid-ui-react";
+import { getLocations } from "../services/crudPod";
+
+
+
 const MyLocations = () => {
-
-
-    async function updateProfile(webId) {
-        
-        const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-        const profile = getThing(myDataset, webId);
-
-        let updatedProfile = setStringNoLocale(profile, VCARD.fn, "Marcos");
-        updatedProfile = addStringNoLocale(updatedProfile, FOAF.publications, "docs");
-        updatedProfile = addStringNoLocale(updatedProfile, FOAF.publications, "example");
-
-        const myChangedDataset = setThing(myDataset, updatedProfile);
-
-        await saveSolidDatasetAt(
-            session.info.webId.slice(0, -3),
-            myChangedDataset,
-            { fetch: fetch }
-        );
-    }
+    const [locations, setLocations] = useState([]);
     const { session } = useSession();
-    updateProfile(session.info.webId);
+    useEffect (() =>{
+        getLocations(session.info.webId).then((list) => 
+            setLocations(list)
+        )
+    });
+
+    var listItems = []
+    locations.forEach(location => listItems.push(<li>{location} <p><a href={location}>eliminar</a></p></li>))
+
+
+    return <div>
+        <ul>{listItems}</ul>
+    </div>
+
 }
 
 export default MyLocations
