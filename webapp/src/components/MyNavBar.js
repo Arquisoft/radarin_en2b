@@ -25,6 +25,7 @@ import MapView from './MapView';
 import AdminManageUsers from './AdminManageUsers';
 import {  LogoutButton,useSession  } from '@inrupt/solid-ui-react';
 import { updateUserLocation, addUser, getUserById } from '../api/api';
+import FriendList from "./FriendList";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -127,7 +128,7 @@ const MyNavBar = () => {
                             <Home />
                         </Route>
                         <Route path="/friendList">
-                            <Amigos />
+                            <FriendList />
                         </Route>
                         <Route path="/adminManageUsers">
                             <AdminManageUsers />

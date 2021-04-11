@@ -15,12 +15,59 @@ import { useSession } from '@inrupt/solid-ui-react';
 const geolib = require('geolib');
 
 const Friends = () => {
-  const{ session } = useSession();
+  const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
-  var friendWebId;
   var friendsOfUser = [];
-  var counter = 0;
+
+  //////////////////////////
+
+    const { PathFactory } = require('ldflex');
+    const { default: ComunicaEngine } = require('@ldflex/comunica');
+    const { namedNode } = require('@rdfjs/data-model');
+
+    // The JSON-LD context for resolving properties
+    const context = {
+        "@context": {
+            "@vocab": "http://xmlns.com/foaf/0.1/",
+            "friends": "knows",
+            "label": "http://www.w3.org/2000/01/rdf-schema#label",
+        }
+    };
+    // The query engine and its source
+    const queryEngine = new ComunicaEngine(session.info.webId.slice(0, -3));
+    // The object that can create new paths
+    const path = new PathFactory({ context, queryEngine });
+
+    const pod = path.create({ subject: namedNode(session.info.webId) });
+    showPerson(pod);
+
+    async function showPerson(person) {
+        //console.log(`This person is ${await person.name}`);
+        //console.log(`${await person.name} is friends with:`);
+        for await (const name of person.knows){
+          var friendWebId = `${name}`;
+          var amigo = "webId:" + friendWebId;
+          friendsOfUser.push({amigo});
+        }
+        var friends = await friendsOfUser.filter(onlyUnique);
+        await showFriends(friends);
+    }
+
+    async function onlyUnique(value, index, self){
+      return self.indexOf(value) === index;
+    }
+
+    async function showFriends(amigos){
+      for (var i=0; i<amigos.length; i++){
+        console.log("Luis is friend of " + amigos[i]);
+      }
+    }
+
+    
+
+
+  /////////////////////////
 
   /*console.log('Hola');*/
   
@@ -28,7 +75,7 @@ const Friends = () => {
     await getNearbyFriends(position, friendsOfUser);
   });*/
 
-  function hello(){
+  /*function hello(){
     return (
       <div hidden>
       {activeProfile &&
@@ -42,12 +89,11 @@ const Friends = () => {
         </List>
         {counter = 0}
       </dl>}</div>);
-  }
-  
+  }*/
 
   return(
+    
     <div className='ml-3'>
-      {hello()}
       <h2 style={{marginTop: '10px', marginLeft: '40px'}}>Nearby friends</h2>
       {FriendData.map((friendDetail, index) => {
         return <div>
@@ -107,9 +153,6 @@ const Friends = () => {
               <ListGroup.Item style={{minWidth: '300px', minHeight: '100px'}}>
                 <p align="center"><br></br>
                   <Value src={`[${friend}].name`}>{`${friend}`}</Value>
-                </p>
-                <p hidden>
-                  {friendsOfUser[counter] = `[${friend}].name`}{`${friend}`}
                 </p>
               </ListGroup.Item>
               
