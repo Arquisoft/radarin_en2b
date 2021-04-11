@@ -1,4 +1,4 @@
-import React, {
+import {
     useState, useEffect
 } from "react";
 import Navbar from "react-bootstrap/Navbar";
@@ -16,8 +16,6 @@ import {
     Link
 } from "react-router-dom";
 
-/*import FriendList from './FriendList';*/
-import Amigos from './Amigos';
 import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
@@ -25,6 +23,7 @@ import MapView from './MapView';
 import AdminManageUsers from './AdminManageUsers';
 import {  LogoutButton,useSession  } from '@inrupt/solid-ui-react';
 import { updateUserLocation, addUser, getUserById } from '../api/api';
+import FriendList from "./FriendList";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -35,7 +34,7 @@ const MyNavBar = () => {
             if(role == null){
                 navigator.geolocation.getCurrentPosition(async function (position) {
                     await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
-                    await getUserById(webId).then((user) => setRole(user.role));
+                    await console.log(getUserById(webId).then((user) => setRole(user.role)));
                });
             }else{
                 const interval = setInterval(() => {
@@ -127,7 +126,7 @@ const MyNavBar = () => {
                             <Home />
                         </Route>
                         <Route path="/friendList">
-                            <Amigos />
+                            <FriendList />
                         </Route>
                         <Route path="/adminManageUsers">
                             <AdminManageUsers />

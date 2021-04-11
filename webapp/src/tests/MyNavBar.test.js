@@ -1,4 +1,3 @@
-import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import MyNavBar from "../components/MyNavBar";
 //import LogIn from "../components/LogIn";
@@ -19,7 +18,7 @@ test("check that we are in the nav bar", async () => {
 test("check that we can move to friends view", async () => {
     const { getByText, getByAltText } = render(<MyNavBar />);
     fireEvent.click(getByAltText("friends"));
-    expect(getByText("Amigos")).toBeInTheDocument();
+    expect(getByText("All friends")).toBeInTheDocument();
 });
 
 test("check that we can move to notifications view", async () => {
