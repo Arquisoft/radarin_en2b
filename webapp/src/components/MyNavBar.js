@@ -1,4 +1,4 @@
-import React, {
+import {
     useState, useEffect
 } from "react";
 import Navbar from "react-bootstrap/Navbar";
@@ -135,7 +135,7 @@ const MyNavBar = () => {
                             <Home />
                         </Route>
                         <Route path="/friendList">
-                            <Amigos />
+                            <FriendList />
                         </Route>
                         <Route path="/adminManageUsers">
                             <AdminManageUsers />
@@ -154,5 +154,6 @@ const MyNavBar = () => {
                         </Route>
                     </Switch>
             </Router>);
-}
+};
+
 export default MyNavBar;

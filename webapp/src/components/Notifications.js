@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { getUserById } from "../api/api";
 import { useSession } from "@inrupt/solid-ui-react";
 import { List } from "@solid/react";
@@ -11,7 +11,6 @@ const Notifications = () => {
     getUserById(user.then(function (result) {
         setCoords(result.location.coordinates);
     }));
-
 
     return (<div>
         <h3 align="center">Right now you are in {coords}</h3>

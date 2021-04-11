@@ -1,5 +1,5 @@
 import { LoginButton } from "@inrupt/solid-ui-react";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Form, Button, Col, Container } from "react-bootstrap";
 
 export default function LogIn() {
@@ -35,4 +35,4 @@ export default function LogIn() {
         </Container>
         </div>
     );
-}
+};

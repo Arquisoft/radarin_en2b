@@ -1,7 +1,6 @@
-import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import AdminManageUsers from "../components/AdminManageUsers";
-import { getNormalUsers, removeUserById } from "../api/api.js";
+import { getNormalUsers } from "../api/api.js";
 
 test("check that we are in the manage users page", async () => {
     const { getByText } = render(<AdminManageUsers />);

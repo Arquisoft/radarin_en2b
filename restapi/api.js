@@ -77,7 +77,7 @@ router.post("/users/location/near", async (req, res) => {
     let userFriends = req.body.friends; 
     let userNearByFriends = [];
         
-    async.each(userFriends, async function(friend, callback) {
+    async.each(userFriends, async function(friend) {
 
                         const near = await User.findOne({
                                                             webId: friend.webId
@@ -97,10 +97,10 @@ router.post("/users/location/near", async (req, res) => {
                         
                     }, async function(err) {
                         if(err) {
-                            console.log('A element failed to process', err);
+                            console.log("A element failed to process", err);
                             res.status(500).json(err);
                         } else {
-                            console.log('All elements have been processed successfully');
+                            console.log("All elements have been processed successfully");
                             res.status(200).json(userNearByFriends);
                         }
 
