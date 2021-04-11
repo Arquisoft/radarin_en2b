@@ -17,7 +17,7 @@ If needed you can subdivide them into
 technical constraints, organizational and political constraints and
 conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
 ****
-In this section we will go through the different contraints the product has, giving them some kind of context and explanation._
+In this section we will go through the different constraints the product has, giving them some kind of context and explanation._
 
 === [[technology]]Technical constraints
 [options="header"]
