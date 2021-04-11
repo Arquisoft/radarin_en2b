@@ -16,7 +16,7 @@ import {
     Link
 } from "react-router-dom";
 
-import FriendList from './FriendList';
+/*import FriendList from './FriendList';*/
 import Amigos from './Amigos';
 import AboutUs from './AboutUs';
 import Home from './Home';
@@ -25,10 +25,6 @@ import MapView from './MapView';
 import AdminManageUsers from './AdminManageUsers';
 import {  LogoutButton,useSession  } from '@inrupt/solid-ui-react';
 import { updateUserLocation, addUser, getUserById } from '../api/api';
-import { fetchDocument, createDocument  } from 'tripledoc';
-import { foaf, space, rdf, solid, schema } from 'rdf-namespaces';
-import { MyLocationsView } from "./MyLocationsView";
-
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -131,7 +127,7 @@ const MyNavBar = () => {
                             <Home />
                         </Route>
                         <Route path="/friendList">
-                            <FriendList />
+                            <Amigos />
                         </Route>
                         <Route path="/adminManageUsers">
                             <AdminManageUsers />
@@ -144,9 +140,6 @@ const MyNavBar = () => {
                         </Route>
                         <Route path="/map">
                             <MapView />
-                        </Route>
-                        <Route path="/myLocations">
-                            <MyLocationsView />
                         </Route>
                     </Switch>
             </Router>);
