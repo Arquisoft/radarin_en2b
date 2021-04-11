@@ -26,22 +26,29 @@ import MapView from './MapView';
 import AdminManageUsers from './AdminManageUsers';
 import {  LogoutButton,useSession  } from '@inrupt/solid-ui-react';
 import { updateUserLocation, addUser, getUserById } from '../api/api';
+import { getName } from "../services/crudPod";
+import { addLocation } from "../services/crudPod";
 
 const MyNavBar = () => {
     const { session } = useSession();
     const [webId] = useState(session.info.webId);
+    const [name, setName] = useState("");
     const [role, setRole] = useState(null);
 
     useEffect(() => {
+            getName(webId).then((name) => setName(name))
             if(role == null){
                 navigator.geolocation.getCurrentPosition(async function (position) {
                     await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
                     await getUserById(webId).then((user) => setRole(user.role));
+                    await addLocation(webId, position.coords.latitude, position.coords.longitude);
                });
             }else{
                 const interval = setInterval(() => {
-                    navigator.geolocation.getCurrentPosition(function (position) {
-                        updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
+                    navigator.geolocation.getCurrentPosition(async function (position) {
+                        await updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
+                        await addLocation(webId, position.coords.latitude, position.coords.longitude);
+                        await console.log("estoy")
                    });
                 }, 30000);
                 return () => clearInterval(interval);
@@ -114,7 +121,7 @@ const MyNavBar = () => {
                                     About us
                                 </Navbar.Brand>
                                 </Link>
-                                <Navbar.Text>Logged in as {webId}</Navbar.Text>
+                                <Navbar.Text>Logged in as {name}</Navbar.Text>
                                 <Nav.Item>
                                     <LogoutButton>
                                         <Button>Log Out</Button>
