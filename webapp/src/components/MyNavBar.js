@@ -17,6 +17,7 @@ import {
 } from "react-router-dom";
 
 /*import FriendList from './FriendList';*/
+import MyLocations from "./MyLocations";
 import Amigos from './Amigos';
 import AboutUs from './AboutUs';
 import Home from './Home';
@@ -140,6 +141,9 @@ const MyNavBar = () => {
                         </Route>
                         <Route path="/map">
                             <MapView />
+                        </Route>
+                        <Route path="/myLocations">
+                            <MyLocations />
                         </Route>
                     </Switch>
             </Router>);
