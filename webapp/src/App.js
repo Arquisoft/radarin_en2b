@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {useSession} from "@inrupt/solid-ui-react"
-import MyNavBar from './components/MyNavBar';
-import LogIn from './components/LogIn';
-import { Col, Container, Row } from 'react-bootstrap';
+import MyNavBar from "./components/MyNavBar";
+import LogIn from "./components/LogIn";
+import { Col, Container, Row } from "react-bootstrap";
 
 export default function App () {
   const {session, sessionRequestInProgress} = useSession();
@@ -21,9 +21,11 @@ export default function App () {
         </Row>
       </Container>
       )
-    }
-    if (!loggedIn) {
-      return <LogIn/>;
-    } 
-    return <MyNavBar/>;
   }
+  
+  if (!loggedIn) {
+      return <LogIn/>;
+  } 
+
+  return <MyNavBar/>;
+};

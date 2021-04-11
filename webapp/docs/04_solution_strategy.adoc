@@ -22,7 +22,7 @@ Motivate what you have decided and why you decided that way,
 based upon your problem statement, the quality goals and key constraints.
 Refer to details in the following sections.
 ****
-To achieve the goals we have for this project, we have to take some decisions on how to approach the different problems that we know will appear during the development.
+To achieve the goals we have for this project, we have to take some decisions on how to approach the different problems we know that will appear during the development.
 
 Technology decisions::
 As we saw before, we have to adhere to some constraints regarding <<technology>> and <<organization>>. In order to do that, we have chosen some technologies that we think make the work much easier. Those would be:

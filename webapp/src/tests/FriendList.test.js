@@ -1,6 +1,6 @@
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import UserList from "../components/FriendList";
+//import React from "react";
+//import { render, fireEvent } from "@testing-library/react";
+//import UserList from "../components/FriendList";
 
 test('check that the list of users renders propertly', async () => {
     //antiguo test de UserList.test.js
