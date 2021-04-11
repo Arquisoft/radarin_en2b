@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 const api = require("../api");
 
 module.exports.startdb = async () => {
-    const mongod = new MongoMemoryServer({ binary: {version: "4.4.5"}, instance: { port: 27017, dbName: "testdb"}});
+    mongod = new MongoMemoryServer({ binary: {version: "4.4.5"}, instance: { port: 27017, dbName: "testdb"}});
     const mongo_uri =await mongod.getUri();
     console.log(mongo_uri);
 };
