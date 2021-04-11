@@ -64,41 +64,25 @@ image:domainModel.png[]
 
 
 === MongoDB data structure
-As we need to store the information explained in the domain model but in a mongo database, the information structure is different. The objects saved will follow the next pattern:
+As we need to store the information explained in the domain model but in a mongo database, the information structure is different. The objects saved will follow the next schema:
 
 var user = {
 
-    "webId": "https://in..../user/asdfg",
+    "webId": "https://pablo.inrupt.net/profile/card#me", // just an example
 
     "location": {
 
         "type": "Point",
 
-        "coordinates": [43.53573, -5.66152 ] 
+        "coordinates": [43.354995, -5.851354] 
 
-    }
+    },
 
-    "timestamp": ISODate("2021-02-21T22:26:00.000Z"),
-
-    "authKey": "auth123456789"
+    "authKey": "https://pablo.inrupt.net/profile/card#me" // just for the moment, deleted in case it is not needed
 
 }
 
-The information described before is an example to understand the idea wanted to be explained. The location is GeoJSON Point <<geojson>> that corresponds with Gijón's location. The timestamp corresponds with the time the document is written: "YYYY-MM-DDThh:mm:ss.000Z".
-
-Y: year with four digits.
-
-M: year's month with two digits.
-
-D: month's day with two digits.
-
-h: hour of the day in 24 hour format.
-
-m: minute of the hour with two digits.
-
-s: second of the minute with two digits.
-
-It is possible to specify at milliseconds level.
+The information described before is an example to understand the idea wanted to be explained. The location is GeoJSON Point <<geojson>> that corresponds with the Computer Science School of the University of Oviedo. There is a default role and an automatic timestamp corresponds with the time the document is written.
 
 === Design Patterns 
 We will use a MVC (Model-View-Controller) structure. The application will be splitted  into services (logic and domain model), views and repositories. The user will interact with the controllers which will send back the corresponding views. The controllers will communicate also with the model. The model will interact with the repositories.  
@@ -106,7 +90,7 @@ We have wanted to use this architectural pattern in order to be able to distingu
 Using MVC pattern also allows us to make the changes easier or increase the functionality. 
 
 === Code Generation 
-We will use a platform like React <<react>> to develop the web application and the mobile phone app. 
+We will use a platform like React <<react>> to develop the web application.
 
 === Security and Safety
 ****

@@ -9,6 +9,7 @@ import chica from "../img/chica.png";*/
 import { Link } from "react-router-dom";
 //import FriendData from "../jsons/friendList.json"
 import userLogo from "../img/userLogo.jpg";
+import FriendData from "../jsons/friendList.json";
 
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
@@ -21,7 +22,7 @@ const Friends = () => {
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
-  var friendsOfUser = [];
+  /*var friendsOfUser = [];
   var friends = [];
   var pepito = [];
 
@@ -63,14 +64,13 @@ const Friends = () => {
     showPerson(pod);
     console.log(friends);
     await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friends).then((user) => pepito.push(user));
-  });
+  });*/
 
   return(
-    
     <div className="ml-3">
       <h2 style={{marginTop: "10px", marginLeft: "40px"}}>Nearby friends</h2>
       <p style ={{marginLeft: "50px"}}>Not available yet</p>
-      {pepito.map((friendDetail, index) => {
+      {/*pepito.map((friendDetail, index) => {
         return <div>
           <ListGroup horizontal style={{marginTop: "20px", marginLeft: "40px"}}>
             <ListGroup.Item>
@@ -115,7 +115,7 @@ const Friends = () => {
 
         </div>
         })
-      }
+      */}
       <h2 style={{marginTop: "10px", marginLeft: "40px"}}>All friends</h2>
       {activeProfile &&
         <div>

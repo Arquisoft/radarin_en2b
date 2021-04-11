@@ -1,4 +1,4 @@
-import React, {
+import {
     useState, useEffect
 } from "react";
 import Navbar from "react-bootstrap/Navbar";
@@ -16,8 +16,6 @@ import {
     Link
 } from "react-router-dom";
 
-/*import FriendList from './FriendList';*/
-import Amigos from './Amigos';
 import AboutUs from './AboutUs';
 import Home from './Home';
 import Notifications from './Notifications';
@@ -145,4 +143,5 @@ const MyNavBar = () => {
                     </Switch>
             </Router>);
 }
+
 export default MyNavBar;

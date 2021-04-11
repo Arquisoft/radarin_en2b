@@ -17,7 +17,7 @@ If needed you can subdivide them into
 technical constraints, organizational and political constraints and
 conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
 ****
-_In this section we will go through the different contraints the product has, giving them some kind of context and explanation._
+In this section we will go through the different contraints the product has, giving them some kind of context and explanation._
 
 === [[technology]]Technical constraints
 [options="header"]
@@ -34,9 +34,9 @@ _In this section we will go through the different contraints the product has, gi
 [options="header"]
 |===
 | Constraint  | Context / Motivation
-| Team      | Andrea García Cernuda, Héctor Díaz Beltrán, Luis Fernández Suárez, Sara Rubín Estrada-Nora and Marcos Fernández González.
-| Time schedule     | The development started in february 2021 with due date at the end of april 2021.
-| Version control   | A public Github repository is available to check all the commits and version that this project has been through.
+| Team      | Héctor Díaz Beltrán, Marcos Fernández González, Luis Fernández Suárez, Andrea García Cernuda and Sara Rubín Estrada-Nora.
+| Time schedule     | The development started in february 2021 with due date at the middle of may 2021. The project presentation will take place at the end of may 2021.
+| Version control   | A public Github repository is available to check all the commits and the versions / releases the project has been through.
 | Testing       | Testing the app is a very important part of our development. All kind of scenarios will be considered.
 |===
 
@@ -45,5 +45,5 @@ _In this section we will go through the different contraints the product has, gi
 |===
 | Constraint    | Context / Motivation
 | Architecture documentation    | Based on arc42 version 7.0.
-| Language      | English was the chosen language. The scope of this app is not only our home country (Spain) thus the decision of choosing English.
+| Language      | English was the chosen language. The decision of choosing the specific language comes as the scope of this app is not only our home country, Spain.
 |===

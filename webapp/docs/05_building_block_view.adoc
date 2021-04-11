@@ -60,7 +60,7 @@ In the best case you will get away with examples or simple signatures.
 image:documentation_5.png[]
 
 Contained Building Blocks::
-The application which allows the user to log in, add friends, look notifications and all the different options. It is also able to make the different levels and structures communicate in the proper way.
+The application allows the user to see the coordinates of his/her current position in a map, know friends and nearyby ones, see notifications and manage and visualize own locations. It is also able to make the different levels and structures communicate in a proper way.
 
 |===
 | Radarin   | Main part of the app. The user will interact with it and it will work as a connector between all parts.
@@ -121,12 +121,12 @@ image:documentation_5_2.png[]
 [options="header"]
 |===
 | Name | Responsability
-| Interface layer | It is the layer with which the user interacts with the application. In our application is composed by the menu, friends and notifications.
+| Interface layer | It is the layer with which the user interacts with the application. In our application is composed by a nav bar that displays the following options: welcome page, notifications, all friends and nearby friends, map with locations and about us.
 | Data access layer | It provides access to solid <<solid>> libraries. 
-| Menu | It displays all the the options the user can do.
-| Friends | It displays all the friends of the user.
-| Notifications | Notifications are shown when a friend is nearby.
-| Solid <<solid>> | It provides a set of libraries with which it exchanges data with the interface layer and the user's pod <<pods>>.
+| NavBar / Menu | It displays all the the options the user can do.
+| Friends | It displays all user's friends and the ones that are nearby, in a 1000 meters radius.
+| Notifications | Notifications are displayed when a friend is nearby.
+| Solid <<solid>> | It provides a set of libraries with which exchanges data with the interface layer and the user's pod <<pods>>.
 |===
 
 [role="arc42help"]
