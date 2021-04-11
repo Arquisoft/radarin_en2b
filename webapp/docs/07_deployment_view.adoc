@@ -48,7 +48,7 @@ storage POD
   }
 rectangle Browser
 
-Smartphone --> WebApp : connects
+Browser --> WebApp : connects
 WebApp --> SOLID_Server : uses
 @enduml
 ....
