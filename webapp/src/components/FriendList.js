@@ -12,10 +12,10 @@ import userLogo from "../img/userLogo.jpg";
 
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
-import { getNearbyFriends } from "../api/api";
+//import { getNearbyFriends } from "../api/api";
 //import { UserComments } from "rdf-namespaces/dist/schema";
 
-const geolib = require("geolib");
+//const geolib = require("geolib");
 
 const Friends = () => {
   const { session } = useSession();
@@ -158,4 +158,5 @@ const Friends = () => {
     </div>
   );
 }
-export default withWebId(Friends)
+
+export default withWebId(Friends);
