@@ -58,7 +58,7 @@ image:domainModel.png[]
 
 |=== 
 | Name | Description 
-| User | A user is identified by web id (users' pod <<pods>> id), its location (changes frequently as the user's position may change during the day) and an authentication key (HTTP <<http>> key - web). 
+| User | A user is identified by their web id (users' pod <<pods>> id), location (changes frequently as the user's position may change during the day and the app updates it each 30 seconds) and an authentication key (HTTP <<http>> key - web). 
 | Location | A location is composed by several characteristics. The development team has decided that the better way of saving it is as coordinates, with its longitude and latitude. The time the location is placed is saved too. 
 |=== 
 
@@ -85,7 +85,7 @@ var user = {
 The information described before is an example to understand the idea wanted to be explained. The location is GeoJSON Point <<geojson>> that corresponds with the Computer Science School of the University of Oviedo. There is a default role and an automatic timestamp corresponds with the time the document is written.
 
 === Design Patterns 
-We will use a MVC (Model-View-Controller) structure. The application will be splitted  into services (logic and domain model), views and repositories. The user will interact with the controllers which will send back the corresponding views. The controllers will communicate also with the model. The model will interact with the repositories.  
+We will use a MVC (Model-View-Controller) structure. The application will be split  into services (logic and domain model), views and repositories. The user will interact with the controllers which will send back the corresponding views. The controllers will communicate also with the model. The model will interact with the repositories.  
 We have wanted to use this architectural pattern in order to be able to distinguish the appearance, the business (logic) and the persistance. 
 Using MVC pattern also allows us to make the changes easier or increase the functionality. 
 
@@ -106,7 +106,7 @@ Showing the location of a user is always a bit dangerous, so the app will always
 ****
 
 === Plausibility Check and Validation 
-When saving user's location the development team must check its coordinates in order to verify that they are correct and exist. 
+When saving the user's location the development team must check its coordinates in order to verify that they are correct and they exist. 
 The web application and the database used must check the datatypes of the information exchanged. 
 
 === Exception and Error Handling

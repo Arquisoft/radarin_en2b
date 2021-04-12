@@ -2,7 +2,7 @@
 
 
 == Building Block View
-The application has many different parts, but all of them are connected in a way. In this point we will see how the different components are structured and how they interact with each other.
+The application has many different parts, but all of them are connected in some way. In this point we will see how the different components are structured and how they interact with each other.
 [role="arc42help"]
 ****
 .Content
@@ -60,7 +60,7 @@ In the best case you will get away with examples or simple signatures.
 image:documentation_5.png[]
 
 Contained Building Blocks::
-The application allows the user to see the coordinates of his/her current position in a map, know friends and nearyby ones, see notifications and manage and visualize own locations. It is also able to make the different levels and structures communicate in a proper way.
+The application allows the user to see the coordinates of his/her current position in a map, see a list of their friends and nearby ones, get notifications and manage and visualize their own locations. It is also able to make the different levels and structures communicate in a proper way.
 
 |===
 | Radarin   | Main part of the app. The user will interact with it and it will work as a connector between all parts.
@@ -121,12 +121,12 @@ image:documentation_5_2.png[]
 [options="header"]
 |===
 | Name | Responsability
-| Interface layer | It is the layer with which the user interacts with the application. In our application is composed by a nav bar that displays the following options: welcome page, notifications, all friends and nearby friends, map with locations and about us.
-| Data access layer | It provides access to solid <<solid>> libraries. 
-| NavBar / Menu | It displays all the the options the user can do.
+| Interface layer | It is the layer in which the user interacts with the application. In our application it is composed by a nav bar that displays the following options: welcome page, notifications, all friends and nearby friends, map with locations and about us page.
+| Data access layer | It provides access to SOLID <<solid>> libraries. 
+| NavBar / Menu | It displays all the options the user has.
 | Friends | It displays all user's friends and the ones that are nearby, in a 1000 meters radius.
 | Notifications | Notifications are displayed when a friend is nearby.
-| Solid <<solid>> | It provides a set of libraries with which exchanges data with the interface layer and the user's pod <<pods>>.
+| Solid <<solid>> | It provides a set of libraries with which to exchange data between the interface layer and the user's pod <<pods>>.
 |===
 
 [role="arc42help"]

@@ -38,7 +38,7 @@ Potentially more columns in case you need translations.
 | [[gatling]] Gatling | Open source loading test for web applications and sites.
 | [[react]] React | Open-source, front end, JavaScript library for building user interfaces or UI components. It is used as a base in the development of single-page or mobile applications.
 | [[express]] Express | Server needed to run the web application.
-| [[node]] Node.js | Is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications.
+| [[node]] Node.js | Platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications.
 | [[javascript]] JavaScript | Text-based programming language used both on the client-side and server-side that allows users to make web pages interactive.
 | [[inrupt]] Inrupt | Puts individuals in control of their data, gives organizations new opportunities to create value for customers, and allows developers to thrive in an open marketplace of innovation. It is a SOLID provider.
 | [[rest]] Rest API |  Application programming interface (API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for representational state transfer.
