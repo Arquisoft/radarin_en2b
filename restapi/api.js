@@ -78,7 +78,6 @@ router.post("/users/location/near", async (req, res) => {
     let userNearByFriends = [];
         
     async.each(userFriends, async function(friend) {
-
                         const near = await User.findOne({
                                                             webId: friend.webId
                                                             , location: {

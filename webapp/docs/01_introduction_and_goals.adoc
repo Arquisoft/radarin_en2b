@@ -11,9 +11,9 @@ Describes the relevant requirements and the driving forces that software archite
 * relevant stakeholders and their expectations
 ****
 
-The aim is to create an application called Radarin, a project in which the students of Sotware Architecture course in the University of Oviedo are enrolled.
+The aim is to create an application called Radarin, a project in which the students of the Software Architecture course in the University of Oviedo are enrolled.
 
-The members of the teams are:
+The members of the team are:
 
 * Héctor Díaz Beltrán
 * Marcos Fernández González
@@ -25,7 +25,7 @@ What is Radarin?
 
 Radarin is a system to facilitate meetings between friends using new technologies.
 
-To carry out the project's aim, the application needs the localization of the users who voluntarily activate it and allow the application to use it. The users also need to allow their friends to know when they are near them. A notification will be sent in this situation so they can get in contact.
+To carry out the project's aim, the application needs the location of the users who voluntarily activate it and allow the application to use it. The users also need to allow their friends to know when they are near them. A notification will be sent in this situation so they can get in contact.
 
 
 === Requirements Overview
@@ -52,7 +52,7 @@ Keep these excerpts as short as possible. Balance readability of this document w
 [options="header"]
 |===
 | Requirement | Description
-| Two software components (at least) to take into account | A web application and an application that will run in users' mobile phone.
+| Two software components (at least) to take into account | A web application and an application that will run in the users' mobile phone.
 | Web application | It will run in a server and will store locations.
 
                     It will allow the users to manage and visualize locations. 
@@ -61,9 +61,9 @@ Keep these excerpts as short as possible. Balance readability of this document w
 | Application ran in users' mobile phone | It will send the corresponding locations to the server.
 
                                              It will receive notifications from nearby friend users.
-| Application that runs in a server | It will store the minimal information needed about a user, the mobile phone localization and the timestamp in which those locations take place (all of them located in users's pods <<pods>>).
+| Application that runs in a server | It will store the minimal information needed about a user, the mobile phone location and the timestamp in which those locations take place (all of them saved in the users's pods <<pods>>).
                                       
-                                      The rest of users' information, as friends; will be queried to the pods <<pods>>.
+                                      The rest of users' information, such as friends; will be queried to the pods <<pods>>.
                                       
                                       No personal information will be stored in a centralized way.
 | System compatibility | The system will be compatible with the SOLID project <<solid>>.
@@ -133,14 +133,14 @@ The following table has the most important roles for the application:
 [options="header"]
 |===
 |Role/Name|Goal/Boundaries
-| Developers | Developing this application will help us learning more features about software engineering. It will also help us to improve our work group skills.
-| Teachers |  They will supervise the development team by telling them some steps they have to follow and some tips in order to make the project.
-| Other developers / classmates | They can give some support to the development team by giving them advices and knowledge.
+| Developers | Developing this application will help us learn more features about software engineering. It will also help us to improve our group work skills.
+| Teachers |  They will supervise the development team by giving them some steps they have to follow and some tips in order to make the project.
+| Other developers / classmates | They can provide some support to the development team by giving them advices and knowledge.
 | Software engineers | Specialized people can guide developers by giving them professional advice based on their experience and studies.
-| Admin | He/she manage users and monitor server status through the Web application.
+| Admin | He/she manages users and monitors server status through the Web application.
 | People with access to new technlogies | They would like to use this application whenever they hang around to meet their friends.
 | SOLID creators / inrupt | They are interested in having a SOLID application system. 
 
-                            They could find different bugs or problems users may have thus improving their application. 
+                            They could find different bugs or problems users may have, thus improving their application. 
 |===
 
