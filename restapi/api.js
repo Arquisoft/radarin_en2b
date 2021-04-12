@@ -78,14 +78,13 @@ router.post("/users/location/near", async (req, res) => {
     let userNearByFriends = [];
         
     async.each(userFriends, async function(friend) {
-
                         const near = await User.findOne({
                                                             webId: friend.webId
                                                             , location: {
                                                                             $near: {
                                                                                 $geometry: userLocation,
                                                                                 $minDistance: 0, // meters
-                                                                                $maxDistance: 1000
+                                                                                $maxDistance: 1000000
                                                                             }   
                                                                         }
                                                         });

@@ -52,6 +52,7 @@ async function updateUserLocation(webId, location){
 };
 
 async function getNearbyFriends(userLocation, friends){
+    console.log(friends);
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
     let response = await fetch(apiEndPoint + "/users/location/near", {
         method: "POST",
