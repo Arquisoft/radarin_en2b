@@ -6,7 +6,6 @@ test("check that we are in the nav bar", async () => {
     const { getByText, getByAltText } = render(<MyNavBar />);
     expect(getByAltText("logo")).toBeInTheDocument();
     expect(getByText("Radarin")).toBeInTheDocument();
-    expect(getByAltText("notifications")).toBeInTheDocument();
     expect(getByAltText("friends")).toBeInTheDocument();
     expect(getByAltText("map")).toBeInTheDocument();
     //expect(getByText("Manage users")).toBeInTheDocument();  not possible to be checked
@@ -21,12 +20,6 @@ test("check that we can move to friends view", async () => {
     expect(getByText("All friends")).toBeInTheDocument();
 });
 
-test("check that we can move to notifications view", async () => {
-    const { getByText, getByAltText } = render(<MyNavBar />);
-    fireEvent.click(getByAltText("notifications"));
-    expect(getByText("Right now you are in")).toBeInTheDocument();
-    expect(getByText("All friends")).toBeInTheDocument();
-});
 
 test("check that we can move to map view ", async () => {
     const { getByText, getByAltText } = render(<MyNavBar />);
@@ -55,12 +48,10 @@ test("check that we can move back to home view", async () => {
     fireEvent.click(getByText("Radarin"));
     expect(getByText("Welcome!")).toBeInTheDocument();
 
-    fireEvent.click(getByAltText("notifications"));
-
     fireEvent.click(getByAltText("logo"));
     expect(getByText("Welcome!")).toBeInTheDocument();
     expect(getByText("We are very pleasured to see you again")).toBeInTheDocument();
-    expect(getByText("Have a nice day and expirience :)")).toBeInTheDocument();
+    expect(getByText("Have a nice day and experience :)")).toBeInTheDocument();
 });
 
 /*
