@@ -6,7 +6,8 @@ import {
     saveSolidDatasetAt,
     getStringNoLocaleAll,
     getStringNoLocale,
-    removeStringNoLocale
+    removeStringNoLocale,
+    getUrlAll
 } from "@inrupt/solid-client";
 import { fetch } from "@inrupt/solid-client-authn-browser";
 import { FOAF, VCARD } from "@inrupt/vocab-common-rdf";
@@ -67,4 +68,15 @@ async function deleteLocation(webId, location){
     );
 }
 
-export { addLocation, getLocations, getName, deleteLocation }
+async function getFriends(webId){
+    const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
+    const profile = getThing(myDataset, webId);
+
+    let acquaintances = new Promise((resolve, reject) => {
+        resolve(getUrlAll(profile, FOAF.knows));
+    });
+
+    return await acquaintances;
+}
+
+export { addLocation, getLocations, getName, deleteLocation, getFriends }
