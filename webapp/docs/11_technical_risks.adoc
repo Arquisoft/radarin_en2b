@@ -21,3 +21,4 @@ We will show a list of the technical risks or technical debts of the project, or
 	* Lack of time: one of the problems we may have is that we do not have time enough for working on the project due to other subjects.
 	* Lack of experience doing this type of projects: none of the members of the group are used to do this kind of projects starting from scratch. 
 	* Understanding new applications: we have to learn about new applications and technologies because we have never used them before.
+	* The solid ecosystem is still evolving, with key elements like authentication still being in a draft state and documentation being sparse.

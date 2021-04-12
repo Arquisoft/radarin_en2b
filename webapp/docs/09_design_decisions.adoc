@@ -30,3 +30,25 @@ Problems::
 One problem we face when choosing the technologies is that, even though we looked into them and analyzed them, we are not familiar with them. We believe in our choices and the power of decision of the group, that contrasted these technologies with others, concluding in the decisions mentioned before. 
 Solutions::
 In order to solve the problem mentioned before, what we have done is work on the basics of the new technologies, getting a lot of practice and ask questions to other members os the team, as facing issues together is much easier and a lot more enriching for all the members.
+
+=== Don't create a mobile application
+
+==== Status
+
+Accepted
+
+==== Context
+
+The mobile application was a requirement for the project, but creating one in the current SOLID ecosystem was far harder than we expected. We didn't manage to create a prototype that was able to log in to a pod, something that was required to confirm the user identity.
+
+==== Decision
+
+Don't develope a native mobile application.
+
+Focus on adding all the functionality to the webapp.
+
+==== Consequences
+
+Users don't enjoy the benefits of a mobile app.
+
+No need to deal with react-native.
