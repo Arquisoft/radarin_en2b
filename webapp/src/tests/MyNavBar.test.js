@@ -21,13 +21,21 @@ test("check that we can move to friends view", async () => {
 });
 
 
-test("check that we can move to map view ", async () => {
+test("check that we can move to map view", async () => {
     const { getByText, getByAltText } = render(<MyNavBar />);
     fireEvent.click(getByAltText("map"));
     expect(getByText("Map")).toBeInTheDocument();
 });
 
 // test -> check that we can move to manage users view, it is not possible
+
+test("check that we can move to my locations page", async () => {
+    const { getByText, getByAltText } = render(<MyNavBar />);
+    fireEvent.click(getByText("My Locations"));
+    expect(getByText("Locations")).toBeInTheDocument();
+    expect(getByText("Date and time")).toBeInTheDocument();
+    expect(getByText("Actions")).toBeInTheDocument();
+});
 
 test("check that we can move to about us view", async () => {
     const { getByText } = render(<MyNavBar />);

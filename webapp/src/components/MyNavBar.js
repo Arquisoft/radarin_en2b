@@ -76,8 +76,8 @@ const MyNavBar = () => {
                         height="30"
                         className="App-logo d-inline-block align-top"
                     />{" "}
-                                Radarin
-                            </Navbar.Brand>
+                    Radarin
+                </Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -89,7 +89,6 @@ const MyNavBar = () => {
                                 height="30"
                                 className="Notifications d-inline-block align-top"
                             />{" "}
-
                         </Navbar.Brand>
                     </Link>
                     <Link to="/friendList">
@@ -99,7 +98,6 @@ const MyNavBar = () => {
                                 height="30"
                                 className="Friends d-inline-block align-top"
                             />{" "}
-
                         </Navbar.Brand>
                     </Link>
                     <Link to="/map">
@@ -117,8 +115,8 @@ const MyNavBar = () => {
                                 <Link id="linkAdminManageUsers" to="/adminManageUsers">
                                     <Navbar.Brand>
                                         {" "}
-                                                Manage users
-                                                </Navbar.Brand>
+                                        Manage users
+                                    </Navbar.Brand>
                                 </Link>
                             );
                         }
@@ -126,12 +124,12 @@ const MyNavBar = () => {
                     <Link to="/myLocations">
                         <Navbar.Brand>
                             My Locations
-                                </Navbar.Brand>
+                        </Navbar.Brand>
                     </Link>
                     <Link to="/aboutUs">
                         <Navbar.Brand>
                             About us
-                                </Navbar.Brand>
+                        </Navbar.Brand>
                     </Link>
                     <Navbar.Text>Logged in as {name}</Navbar.Text>
                     <Nav.Item>
