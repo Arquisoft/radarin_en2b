@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
 import Dropdown from "react-bootstrap/Dropdown";
@@ -11,29 +11,25 @@ import userLogo from "../img/userLogo.jpg";
 
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
-//import { getNearbyFriends } from "../api/api";
-//import { UserComments } from "rdf-namespaces/dist/schema";
+import { getNearbyFriends } from "../api/api";
 
-/*const geolib = require("geolib");
+const geolib = require("geolib");
 const { PathFactory } = require("ldflex");
 const { default: ComunicaEngine } = require("@ldflex/comunica");
-const { namedNode } = require("@rdfjs/data-model");*/
+const { namedNode } = require("@rdfjs/data-model");
 
 const Friends = () => {
+
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
-  /*var friendsOfUser = [];
-  var friends = [];
-  var pepito = [];
-
   // The JSON-LD context for resolving properties
   const context = {
-      "@context": {
-          "@vocab": "http://xmlns.com/foaf/0.1/",
-          "friends": "knows",
-          "label": "http://www.w3.org/2000/01/rdf-schema#label",
-      }
+    "@context": {
+        "@vocab": "http://xmlns.com/foaf/0.1/",
+        "friends": "knows",
+        "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    }
   };
   // The query engine and its source
   const queryEngine = new ComunicaEngine(session.info.webId.slice(0, -3));
@@ -42,74 +38,53 @@ const Friends = () => {
 
   const pod = path.create({ subject: namedNode(session.info.webId) });
 
-  async function showPerson(person) {
-    for await (const name of person.knows){
-      var webId = `${name}` + "profile/card#me";
-      friendsOfUser.push({webId});
-    }
-    friends = await friendsOfUser.filter(onlyUnique);
-  }
-
-  async function onlyUnique(value, index, self){
-    return self.indexOf(value) === index;
-  }
   
-  navigator.geolocation.getCurrentPosition(async function (position) {
-    showPerson(pod);
-    console.log(friends);
-    await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friends).then((user) => pepito.push(user));
-  });*/
+  var nearbyFriends = [];
+
+  
+
+  useEffect(()=>{
+  
+    async function onlyUnique(value, index, self){
+      return self.indexOf(value) === index;
+    }
+    
+    navigator.geolocation.getCurrentPosition(async function (position) {
+      var friendsOfUser = [];
+      var friends = [];
+
+      //Put all friends inside a list
+      for await (const name of pod.knows){
+        var webId = `${name}` + "profile/card#me";
+        friendsOfUser.push({webId});
+      }
+      friends = await friendsOfUser.filter(onlyUnique);
+      
+      await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friends).then((user) => nearbyFriends.push(user));
+      /*console.log(nearbyFriends);*/
+      console.log(nearbyFriends[0]);
+      console.log(nearbyFriends[0][0].webId);
+      console.log(nearbyFriends[0].length);
+
+      //
+
+      for(let i=0; i<nearbyFriends[0].length; i++){
+        console.log("holiwis");
+        var elem = document.createElement("p");
+        elem.innerText = nearbyFriends[0][i].webId;
+        elem.style.marginLeft = "50px";
+        document.getElementById('nearbyFriends').appendChild(elem);
+      }
+    });
+    
+  });
 
   return(
     <div className="ml-3">
       <h2 style={{marginTop: "10px", marginLeft: "40px"}}>Nearby friends</h2>
-      <p style ={{marginLeft: "50px"}}>Not available yet</p>
-      {/*pepito.map((friendDetail, index) => {
-        return <div>
-          <ListGroup horizontal style={{marginTop: "20px", marginLeft: "40px"}}>
-            <ListGroup.Item>
-              <img src={userLogo} alt="userLogo"
-                width="80"
-                height="80"
-                className="d-inline-block align-top"
-              />
-            </ListGroup.Item>
-            
-            <ListGroup.Item style={{minWidth: "300px", minHeight: "100px"}}> 
-              <p align="center">
-                {friendDetail.webId}
-              </p>
-              <p align="center">
-                {geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friendDetail.location.coordinates[0], longitude: friendDetail.location.coordinates[1] })}m away
-              </p>
-            </ListGroup.Item>
-
-            <ListGroup.Item>
-                <Link to="/map">
-                  <img src={lupa} alt="lupa"
-                    width="50"
-                    height="50"
-                    className="m-3"
-                  />
-                </Link>
-              </ListGroup.Item>
-
-            <ListGroup.Item >
-              <Dropdown className="m-4" >
-                <Dropdown.Toggle id="dropdown-basic">
-
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item>Delete friend</Dropdown.Item>
-                  <Dropdown.Item>Info</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </ListGroup.Item>
-          </ListGroup>
-
-        </div>
-        })
-      */}
+      <div id="nearbyFriends">
+          
+      </div>
       <h2 style={{marginTop: "10px", marginLeft: "40px"}}>All friends</h2>
       {activeProfile &&
         <div>
