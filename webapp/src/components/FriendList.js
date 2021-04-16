@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { createElement, useEffect, useRef, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
 import Dropdown from "react-bootstrap/Dropdown";
@@ -49,6 +49,51 @@ const Friends = () => {
       return self.indexOf(value) === index;
     }
     
+    function returnListNearbyFriends(friend){
+      return (Node) (
+        <ListGroup horizontal style={{marginTop: "20px", marginLeft: "40px"}}>
+          <ListGroup.Item>
+            <img src={userLogo} alt="userLogo"
+              width="80"
+              height="80"
+              className="d-inline-block align-top"
+            />
+          </ListGroup.Item>
+          
+          <ListGroup.Item style={{minWidth: "300px", minHeight: "100px"}}> 
+            <p align="center">
+              {friend}
+            </p>
+            <p align="center">
+              {geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friend.location.coordinates[0], longitude: friend.location.coordinates[1] })}m away
+            </p>
+          </ListGroup.Item>
+
+          <ListGroup.Item>
+              <Link to="/map">
+                <img src={lupa} alt="lupa"
+                  width="50"
+                  height="50"
+                  className="m-3"
+                />
+              </Link>
+            </ListGroup.Item>
+
+          <ListGroup.Item >
+            <Dropdown className="m-4" >
+              <Dropdown.Toggle id="dropdown-basic">
+
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item>Delete friend</Dropdown.Item>
+                <Dropdown.Item>Info</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </ListGroup.Item>
+        </ListGroup>
+      );
+    }
+
     navigator.geolocation.getCurrentPosition(async function (position) {
       var friendsOfUser = [];
       var friends = [];
@@ -62,22 +107,141 @@ const Friends = () => {
       
       await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friends).then((user) => nearbyFriends.push(user));
       /*console.log(nearbyFriends);*/
-      console.log(nearbyFriends[0]);
-      console.log(nearbyFriends[0][0].webId);
-      console.log(nearbyFriends[0].length);
+      //console.log(nearbyFriends[0]);
+      //console.log(nearbyFriends[0][0].webId);
+      //console.log(nearbyFriends[0].length);
 
       //
 
       for(let i=0; i<nearbyFriends[0].length; i++){
+
+        var friend = nearbyFriends[0][i];
+
         console.log("holiwis");
-        var elem = document.createElement("p");
-        elem.innerText = nearbyFriends[0][i].webId;
-        elem.style.marginLeft = "50px";
-        document.getElementById('nearbyFriends').appendChild(elem);
+        //var elem = document.createElement();
+        //elem.innerText = nearbyFriends[0][i].webId;
+        //elem.style.marginLeft = "50px";
+
+        //ListGroup grande
+        var primerListGroup = document.createElement("ListGroup");
+        primerListGroup.style.marginTop = "20px";
+        primerListGroup.style.marginLeft = "40px";
+
+        //Primer ListGroup
+        var listGroupUno = document.createElement("ListGroup.Item");
+        var imagen = document.createElement("img");
+        imagen.src={userLogo};
+        imagen.alt="userLogo";
+        imagen.style.width = "80";
+        imagen.style.height = "80";
+        imagen.className="d-inline-block align-top";
+        listGroupUno.appendChild(imagen);
+
+        //Segundo ListGroup
+        var listGroupDos = document.createElement("ListGroup.Item");
+        listGroupDos.style.minWidth = "300px";
+        listGroupDos.style.minHeight = "100px";
+        var amigo = document.createElement("p");
+        amigo.style.textAlign = "center";
+        amigo.innerText = friend.webId;
+        listGroupDos.appendChild(amigo);
+        var distance = document.createElement("p");
+        distance.style.textAlign = "center";
+        distance.innerText = geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friend.location.coordinates[0], longitude: friend.location.coordinates[1] }) + "m away";
+        listGroupDos.appendChild(distance);
+        console.log(distance.textContent);
+
+        /*
+          <ListGroup.Item style={{minWidth: "300px", minHeight: "100px"}}> 
+            <p align="center">
+              {friendDetail.webId}
+            </p>
+            <p align="center">
+              {geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friendDetail.location.coordinates[0], longitude: friendDetail.location.coordinates[1] })}m away
+            </p>
+          </ListGroup.Item>
+        */
+
+
+        //Tercer ListGroup
+
+
+        var listGroupTres = document.createElement("ListGroup.Item");
+
+        /*
+          <ListGroup.Item>
+                <Link to="/map">
+                  <img src={lupa} alt="lupa"
+                    width="50"
+                    height="50"
+                    className="m-3"
+                  />
+                </Link>
+              </ListGroup.Item>
+        */
+
+
+        primerListGroup.appendChild(listGroupUno);
+        primerListGroup.appendChild(listGroupDos);
+
+        //console.log(nearbyFriends[0][i].webId);
+        //console.log(nearbyFriends[0][i].location.coordinates[0]);
+        //console.log(nearbyFriends[0][i].location.coordinates[1]);
+        
+        document.getElementById('nearbyFriends').appendChild(primerListGroup);
       }
     });
     
   });
+
+  /*
+    {nearbyFriends.map((friendDetail, index) => {
+        return <div>
+          <ListGroup horizontal style={{marginTop: "20px", marginLeft: "40px"}}>
+            <ListGroup.Item>
+              <img src={userLogo} alt="userLogo"
+                width="80"
+                height="80"
+                className="d-inline-block align-top"
+              />
+            </ListGroup.Item>
+            
+            <ListGroup.Item style={{minWidth: "300px", minHeight: "100px"}}> 
+              <p align="center">
+                {friendDetail.webId}
+              </p>
+              <p align="center">
+                {geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friendDetail.location.coordinates[0], longitude: friendDetail.location.coordinates[1] })}m away
+              </p>
+            </ListGroup.Item>
+
+            <ListGroup.Item>
+                <Link to="/map">
+                  <img src={lupa} alt="lupa"
+                    width="50"
+                    height="50"
+                    className="m-3"
+                  />
+                </Link>
+              </ListGroup.Item>
+
+            <ListGroup.Item >
+              <Dropdown className="m-4" >
+                <Dropdown.Toggle id="dropdown-basic">
+
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item>Delete friend</Dropdown.Item>
+                  <Dropdown.Item>Info</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </ListGroup.Item>
+          </ListGroup>
+
+        </div>
+        })
+      }
+  */
 
   return(
     <div className="ml-3">
