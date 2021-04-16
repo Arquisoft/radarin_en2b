@@ -47,52 +47,7 @@ const Friends = () => {
   
     async function onlyUnique(value, index, self){
       return self.indexOf(value) === index;
-    }
-    
-    function returnListNearbyFriends(friend){
-      return (Node) (
-        <ListGroup horizontal style={{marginTop: "20px", marginLeft: "40px"}}>
-          <ListGroup.Item>
-            <img src={userLogo} alt="userLogo"
-              width="80"
-              height="80"
-              className="d-inline-block align-top"
-            />
-          </ListGroup.Item>
-          
-          <ListGroup.Item style={{minWidth: "300px", minHeight: "100px"}}> 
-            <p align="center">
-              {friend}
-            </p>
-            <p align="center">
-              {geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friend.location.coordinates[0], longitude: friend.location.coordinates[1] })}m away
-            </p>
-          </ListGroup.Item>
-
-          <ListGroup.Item>
-              <Link to="/map">
-                <img src={lupa} alt="lupa"
-                  width="50"
-                  height="50"
-                  className="m-3"
-                />
-              </Link>
-            </ListGroup.Item>
-
-          <ListGroup.Item >
-            <Dropdown className="m-4" >
-              <Dropdown.Toggle id="dropdown-basic">
-
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item>Delete friend</Dropdown.Item>
-                <Dropdown.Item>Info</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </ListGroup.Item>
-        </ListGroup>
-      );
-    }
+    }    
 
     navigator.geolocation.getCurrentPosition(async function (position) {
       var friendsOfUser = [];
@@ -111,7 +66,8 @@ const Friends = () => {
       //console.log(nearbyFriends[0][0].webId);
       //console.log(nearbyFriends[0].length);
 
-      //
+      //ul grande
+      var lista = document.createElement("ul");
 
       for(let i=0; i<nearbyFriends[0].length; i++){
 
@@ -122,73 +78,86 @@ const Friends = () => {
         //elem.innerText = nearbyFriends[0][i].webId;
         //elem.style.marginLeft = "50px";
 
-        //ListGroup grande
-        var primerListGroup = document.createElement("ListGroup");
-        primerListGroup.style.marginTop = "20px";
-        primerListGroup.style.marginLeft = "40px";
+        //Big div
+        var bigDiv = document.createElement("div");
+        bigDiv.classList = "list-group list-group-horizontal";
+        bigDiv.style.marginTop = "20px";
 
-        //Primer ListGroup
-        var listGroupUno = document.createElement("ListGroup.Item");
-        var imagen = document.createElement("img");
-        imagen.src={userLogo};
-        imagen.alt="userLogo";
-        imagen.style.width = "80";
-        imagen.style.height = "80";
-        imagen.className="d-inline-block align-top";
-        listGroupUno.appendChild(imagen);
+        // Img div
+        var imgDiv = document.createElement("div");
+        imgDiv.classList = "list-group-item";
+        imgDiv.style.minWidth = "100px";
+        imgDiv.style.minHeight = "100px";
+        var image = document.createElement("img");
+        image.src="/static/media/userLogo.db7219e3.jpg";
+        image.alt = "userLogo";
+        image.width = "50%";
+        image.height = "50%";
+        imgDiv.appendChild(image);
 
-        //Segundo ListGroup
-        var listGroupDos = document.createElement("ListGroup.Item");
-        listGroupDos.style.minWidth = "300px";
-        listGroupDos.style.minHeight = "100px";
-        var amigo = document.createElement("p");
-        amigo.style.textAlign = "center";
-        amigo.innerText = friend.webId;
-        listGroupDos.appendChild(amigo);
+        //document.getElementById("first").setAttribute("align", "center");
+
+        // WebId and distance Div
+        var idDistDiv = document.createElement("div");
+        idDistDiv.classList = "list-group-item";
+        idDistDiv.style.minWidth = "300px";
+        idDistDiv.style.minHeight = "100px";
+        var id = document.createElement("p");
+        id.setAttribute("align", "center");
+        id.innerHTML = "\n" + friend.webId;
         var distance = document.createElement("p");
-        distance.style.textAlign = "center";
-        distance.innerText = geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friend.location.coordinates[0], longitude: friend.location.coordinates[1] }) + "m away";
-        listGroupDos.appendChild(distance);
-        console.log(distance.textContent);
+        distance.setAttribute("align", "center");
+        distance.innerText = geolib.getDistance({ latitude: position.coords.latitude, longitude: position.coords.longitude }, { latitude: friend.location.coordinates[0], longitude: friend.location.coordinates[1] }) + "m away";
+        idDistDiv.appendChild(id);
+        idDistDiv.appendChild(distance);
 
-        /*
-          <ListGroup.Item style={{minWidth: "300px", minHeight: "100px"}}> 
-            <p align="center">
-              {friendDetail.webId}
-            </p>
-            <p align="center">
-              {geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friendDetail.location.coordinates[0], longitude: friendDetail.location.coordinates[1] })}m away
-            </p>
-          </ListGroup.Item>
-        */
+        // Glass div
+        var glassDiv = document.createElement("div");
+        glassDiv.classList = "list-group-item";
+        var glass = document.createElement("a");
+        glass.href = "/map";
+        var imgGlass = document.createElement("img");
+        imgGlass.classList = "m-3";
+        imgGlass.setAttribute("src", {lupa});
+        imgGlass.alt = "lupa";
+        imgGlass.width = "50";
+        imgGlass.height = "50";
+        //Meter dentro del elemento <a> la <img> de la lupa
+        glass.appendChild(imgGlass);
+        // Meter dentro del <div> todo lo de la lupa
+        glassDiv.appendChild(glass);
 
+        // Dropdown div
+        var dropDownDiv = document.createElement("div");
+        dropDownDiv.classList = "list-group-item";
+        var downDiv = document.createElement("div");
+        downDiv.classList = "m-4 dropdown";
+        var button = document.createElement("button");
+        button.setAttribute("aria-haspopup","true");
+        button.setAttribute("aria-expanded","false");
+        button.setAttribute("id","dropdown.basic");
+        button.setAttribute("type","button");
+        button.classList = "dropdown-toggle btn btn-primary";
 
-        //Tercer ListGroup
+        downDiv.appendChild(button);
+        dropDownDiv.appendChild(downDiv);
 
+        // Los divs pequeños se añaden al grande
+        bigDiv.appendChild(imgDiv);
+        bigDiv.appendChild(idDistDiv);
+        bigDiv.appendChild(glassDiv);
+        bigDiv.appendChild(dropDownDiv);
 
-        var listGroupTres = document.createElement("ListGroup.Item");
+        
 
-        /*
-          <ListGroup.Item>
-                <Link to="/map">
-                  <img src={lupa} alt="lupa"
-                    width="50"
-                    height="50"
-                    className="m-3"
-                  />
-                </Link>
-              </ListGroup.Item>
-        */
-
-
-        primerListGroup.appendChild(listGroupUno);
-        primerListGroup.appendChild(listGroupDos);
+        //El div grande se añade a la lista de los demas
+        lista.appendChild(bigDiv);
 
         //console.log(nearbyFriends[0][i].webId);
         //console.log(nearbyFriends[0][i].location.coordinates[0]);
         //console.log(nearbyFriends[0][i].location.coordinates[1]);
         
-        document.getElementById('nearbyFriends').appendChild(primerListGroup);
+        document.getElementById('nearbyFriends').appendChild(lista);
       }
     });
     
