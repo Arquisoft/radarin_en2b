@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSession } from "@inrupt/solid-ui-react";
 import { getLocations, deleteLocation } from "../services/crudPod";
 import Table from "react-bootstrap/Table";
 import { Button } from "@material-ui/core";
 
-
 const MyLocations = () => {
     const [locations, setLocations] = useState([]);
     const { session } = useSession();
     useEffect(() => {
-        getLocations(session.info.webId).then((list) =>
-            setLocations(list)
-        )
+        getLocations(session.info.webId).then((list) => setLocations(list));
     });
 
-
-    var listItems = []
+    var listItems = [];
     locations.forEach(location => {
         var splited = location.split(", ");
         listItems.push(<tr>
@@ -23,11 +19,9 @@ const MyLocations = () => {
             <td>{splited[2]}</td>
             <td><Button variant="contained" data-testid={session.info.webId} onClick={ () => deleteLocation(session.info.webId, location)}>Delete</Button></td>
         </tr>);
-    }
-    );
+    });
 
-
-    return <div>
+    return (<div>
         <Table striped bordered hover>
             <thead>
                 <tr>
@@ -46,8 +40,8 @@ const MyLocations = () => {
                 {listItems}
             </tbody>
         </Table>
-    </div>
+    </div>);
 
-}
+};
 
-export default MyLocations
+export default MyLocations;

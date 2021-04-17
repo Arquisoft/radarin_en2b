@@ -29,6 +29,8 @@ import { addLocation, getFriends } from "../services/crudPod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
+import MyTags from "./MyTags";
+import Prueba from "./Prueba";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -49,6 +51,7 @@ const MyNavBar = () => {
             const nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId);
             nearby.forEach(friend => notifyFriend(friend.webId))
         });
+
         if (role == null) {
             navigator.geolocation.getCurrentPosition(async function (position) {
                 await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
@@ -126,6 +129,16 @@ const MyNavBar = () => {
                             My Locations
                         </Navbar.Brand>
                     </Link>
+                    <Link to="/myTags">
+                        <Navbar.Brand>
+                            My Tags
+                        </Navbar.Brand>
+                    </Link>
+                    <Link to="/prueba">
+                        <Navbar.Brand>
+                            Prueba
+                        </Navbar.Brand>
+                    </Link>
                     <Link to="/aboutUs">
                         <Navbar.Brand>
                             About us
@@ -158,6 +171,12 @@ const MyNavBar = () => {
             </Route>
             <Route path="/myLocations">
                 <MyLocations />
+            </Route>
+            <Route path="/myTags">
+                <MyTags />
+            </Route>
+            <Route path="/prueba">
+                <Prueba webId={session.info.webId}/>
             </Route>
         </Switch>
     </Router>);
