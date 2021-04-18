@@ -7,6 +7,7 @@ import { getNearbyFriends } from "../api/api";
 function Map() {
   const [activeGeo, setActiveGeo] = useState(false);
   const [crd, setCrd] = useState([0,0]);
+  const [friends, setFriends] = useState([]);
   const [nearbyFriends, setNearbyFriends] = useState([]);
   const { session } = useSession();
   const { PathFactory } = require("ldflex");
@@ -27,14 +28,20 @@ function Map() {
   const pod = path.create({ subject: namedNode(session.info.webId) });
 
   useEffect(() => {
+      let friendsFromPod = [];
       let nearby = [];
       navigator.geolocation.getCurrentPosition(async function(pos) {
           setCrd([pos.coords.latitude, pos.coords.longitude]);
           setActiveGeo(true);
-          let friends = await showPerson(pod);
+          await showPerson(pod).then((friend) => {
+            friendsFromPod.push(friend);
+          });
+          console.log("FFP" + friendsFromPod);
+          setFriends(friendsFromPod);
           await getNearbyFriends({ type: "Point", coordinates: [pos.coords.latitude, pos.coords.longitude] }, friends).then((user)=> {
           nearby.push(user);
           });
+          console.log("ffffffff "+friends)
           setNearbyFriends(nearby);
       }, async function(err) {
           console.warn("ERROR(" + err.code + "): " + err.message);
@@ -59,6 +66,18 @@ function Map() {
   console.log("Coords: "+crd);
   console.log("Nearby: "+nearbyFriends);
   console.log("Geo: "+activeGeo );
+  if (!activeGeo) {
+    return null;
+  }
+  if (nearbyFriends.length === 0) {
+    return (
+      <GoogleMap defaultZoom={15} //Starting zoom and position
+      defaultCenter={{lat: crd[0], lng: crd[1]}}
+      defaultOptions={{styles: mapStyles}}> 
+      <Marker icon={{url: "/pushpin-you.png"}} key="You" position={{lat: crd[0], lng: crd[1]}}/>
+  </GoogleMap>
+    )
+  }
   return (
     <GoogleMap defaultZoom={15} //Starting zoom and position
       defaultCenter={{lat: crd[0], lng: crd[1]}}
@@ -91,6 +110,11 @@ function Map() {
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export default function MapView() {
+  if (Map === null) {
+    return (
+      <div><h1>Geolocation is not active</h1></div>
+    );
+  }
     return (
       <div style={{width: "100vw", height: "90vh", padding: "20px"}}>
         <h1>Map</h1>

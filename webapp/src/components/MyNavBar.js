@@ -20,7 +20,8 @@ import FriendList from './FriendList';
 import MyLocations from "./MyLocations";
 import AboutUs from './AboutUs';
 import Home from './Home';
-import MapView from './MapView';
+//import MapView from './MapView';
+import MapContainer from './MapContainer';
 import AdminManageUsers from './AdminManageUsers';
 import { LogoutButton, useSession } from '@inrupt/solid-ui-react';
 import { updateUserLocation, addUser, getUserById } from '../api/api';
@@ -156,7 +157,7 @@ const MyNavBar = () => {
                 <AboutUs />
             </Route>
             <Route path="/map">
-                <MapView />
+                <MapContainer />
             </Route>
             <Route path="/myLocations">
                 <MyLocations />
