@@ -36,10 +36,10 @@ const Friends = () => {
   const path = new PathFactory({ context, queryEngine });
 
   const pod = path.create({ subject: namedNode(session.info.webId) });
-  
-  var nearbyFriends = [];
 
   useEffect(()=>{
+    
+    var nearbyFriends = [];
   
     async function onlyUnique(value, index, self){
       return self.indexOf(value) === index;
