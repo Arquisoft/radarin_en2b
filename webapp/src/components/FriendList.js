@@ -1,4 +1,4 @@
-import { createElement, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
 import Dropdown from "react-bootstrap/Dropdown";
@@ -19,7 +19,6 @@ const { default: ComunicaEngine } = require("@ldflex/comunica");
 const { namedNode } = require("@rdfjs/data-model");
 
 const Friends = () => {
-  const caca = "";
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
@@ -153,7 +152,7 @@ const Friends = () => {
         //console.log(nearbyFriends[0][i].location.coordinates[0]);
         //console.log(nearbyFriends[0][i].location.coordinates[1]);
         
-        document.getElementById('nearbyFriends').appendChild(lista);
+        document.getElementById("nearbyFriends").appendChild(lista);
       }
     });
   }, []);
