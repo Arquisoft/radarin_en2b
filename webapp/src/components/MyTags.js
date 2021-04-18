@@ -206,17 +206,18 @@ const MyTags = () => {
                 {searchItems}
             </tbody>
         </Table>
+    </div>);
 
-        <h5 style={{ margin: "20px" }}>Map</h5>
+    /*
+    <h5 style={{ margin: "20px" }}>Map</h5>
         <div style={{width: "100vw", height: "90vh", padding: "20px"}}>
             {/*(() => {
                 if(change){
                     setChange(false);
                     return ( Prueba() );
                 }
-            })()*/}
-        </div>
-    </div>);
+            })()}
+            </div>*/
 };
 
 export default MyTags;
