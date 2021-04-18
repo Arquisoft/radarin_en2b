@@ -30,8 +30,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
 
-import AnotherMap from "./AnotherMap";
-
 const MyNavBar = () => {
     const { session } = useSession();
     const [webId] = useState(session.info.webId);
@@ -158,7 +156,7 @@ const MyNavBar = () => {
                 <AboutUs />
             </Route>
             <Route path="/map">
-                <AnotherMap />
+                <MapView />
             </Route>
             <Route path="/myLocations">
                 <MyLocations />

@@ -249,7 +249,7 @@ export default function MapView() {
   if (activeGeo) {
     return (
       <div style={{width: "100vw", height: "90vh", padding: "20px"}}>
-        <h1>Map</h1>
+        <h1>My current location</h1>
         <WrappedMap 
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&
             libraries=geometry,drawing,places&key=AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY`}
