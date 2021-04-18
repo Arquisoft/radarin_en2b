@@ -23,6 +23,7 @@ defineFeature(feature, test => {
       // blank, app, redirected: get a pod
       await expect(pages.length).toBe(3);
       await expect(await pages[2].url()).toBe("https://solidproject.org/users/get-a-pod");
+      await pages[2].close();
     });
   });
 
