@@ -22,7 +22,9 @@ const Friends = () => {
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
-  // The JSON-LD context for resolving properties
+  useEffect(()=>{
+    
+   // The JSON-LD context for resolving properties
   const context = {
     "@context": {
         "@vocab": "http://xmlns.com/foaf/0.1/",
@@ -36,8 +38,6 @@ const Friends = () => {
   const path = new PathFactory({ context, queryEngine });
 
   const pod = path.create({ subject: namedNode(session.info.webId) });
-
-  useEffect(()=>{
     
     var nearbyFriends = [];
   
