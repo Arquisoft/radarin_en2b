@@ -81,7 +81,7 @@ const MyNavBar = () => {
             </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto justify-content-center" fill>
+                <Nav className="mr-auto justify-content-center container-fluid" fill>
                     <Link to="/notifications">
                         <Navbar.Brand>
                             <img src={bell} alt="notifications"
@@ -134,7 +134,7 @@ const MyNavBar = () => {
                                 </Navbar.Brand>
                     </Link>
                     <Navbar.Text>Logged in as {name}</Navbar.Text>
-                    <Nav.Item>
+                    <Nav.Item className="mr-auto">
                         <LogoutButton>
                             <Button>Log Out</Button>
                         </LogoutButton>
