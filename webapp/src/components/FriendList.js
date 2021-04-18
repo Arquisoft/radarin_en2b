@@ -19,7 +19,7 @@ const { default: ComunicaEngine } = require("@ldflex/comunica");
 const { namedNode } = require("@rdfjs/data-model");
 
 const Friends = () => {
-
+  const caca = "";
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
@@ -37,11 +37,8 @@ const Friends = () => {
   const path = new PathFactory({ context, queryEngine });
 
   const pod = path.create({ subject: namedNode(session.info.webId) });
-
   
   var nearbyFriends = [];
-
-  
 
   useEffect(()=>{
   
@@ -159,57 +156,7 @@ const Friends = () => {
         document.getElementById('nearbyFriends').appendChild(lista);
       }
     });
-    
-  });
-
-  /*
-    {nearbyFriends.map((friendDetail, index) => {
-        return <div>
-          <ListGroup horizontal style={{marginTop: "20px", marginLeft: "40px"}}>
-            <ListGroup.Item>
-              <img src={userLogo} alt="userLogo"
-                width="80"
-                height="80"
-                className="d-inline-block align-top"
-              />
-            </ListGroup.Item>
-            
-            <ListGroup.Item style={{minWidth: "300px", minHeight: "100px"}}> 
-              <p align="center">
-                {friendDetail.webId}
-              </p>
-              <p align="center">
-                {geolib.getDistance({ latitude: 43.616541, longitude: -5.793476 }, { latitude: friendDetail.location.coordinates[0], longitude: friendDetail.location.coordinates[1] })}m away
-              </p>
-            </ListGroup.Item>
-
-            <ListGroup.Item>
-                <Link to="/map">
-                  <img src={lupa} alt="lupa"
-                    width="50"
-                    height="50"
-                    className="m-3"
-                  />
-                </Link>
-              </ListGroup.Item>
-
-            <ListGroup.Item >
-              <Dropdown className="m-4" >
-                <Dropdown.Toggle id="dropdown-basic">
-
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item>Delete friend</Dropdown.Item>
-                  <Dropdown.Item>Info</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </ListGroup.Item>
-          </ListGroup>
-
-        </div>
-        })
-      }
-  */
+  }, []);
 
   return(
     <div className="ml-3">
