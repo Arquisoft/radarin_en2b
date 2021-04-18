@@ -51,7 +51,7 @@ const Friends = () => {
 
       //Put all friends inside a list
       for await (const name of pod.knows){
-        var webId = `${name}` + "profile/card#me";
+        var webId = `${name}profile/card#me`;
         friendsOfUser.push({webId});
       }
       friends = await friendsOfUser.filter(onlyUnique);
