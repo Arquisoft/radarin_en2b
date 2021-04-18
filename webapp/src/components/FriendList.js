@@ -22,6 +22,8 @@ const Friends = () => {
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
+  useEffect(()=>{
+
   // The JSON-LD context for resolving properties
   const context = {
     "@context": {
@@ -30,16 +32,15 @@ const Friends = () => {
         "label": "http://www.w3.org/2000/01/rdf-schema#label",
     }
   };
+
   // The query engine and its source
   const queryEngine = new ComunicaEngine(session.info.webId.slice(0, -3));
   // The object that can create new paths
   const path = new PathFactory({ context, queryEngine });
 
   const pod = path.create({ subject: namedNode(session.info.webId) });
-  
-  var nearbyFriends = [];
-
-  useEffect(()=>{
+    
+    var nearbyFriends = [];
   
     async function onlyUnique(value, index, self){
       return self.indexOf(value) === index;
@@ -51,7 +52,7 @@ const Friends = () => {
 
       //Put all friends inside a list
       for await (const name of pod.knows){
-        var webId = `${name}` + "profile/card#me";
+        var webId = `${name}profile/card#me`;
         friendsOfUser.push({webId});
       }
       friends = await friendsOfUser.filter(onlyUnique);
