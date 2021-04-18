@@ -1,8 +1,8 @@
 import {GoogleMap, withScriptjs, withGoogleMap, Marker} from "react-google-maps";
 import mapStyles from "./MapStyles.js";
-import { useState } from "react";
-import { getNearbyFriends } from "../api/api";
-import { useSession } from "@inrupt/solid-ui-react";
+//import { useState } from "react";
+//import { getNearbyFriends } from "../api/api";
+//import { useSession } from "@inrupt/solid-ui-react";
 
 var activeGeo;
 var crd = [];
@@ -76,32 +76,12 @@ function error(err) {
 navigator.geolocation.getCurrentPosition(success, error, options);
 
 function Map() {
-  const [selectedFriend, setSelectedFriend] = useState(null);
+  //const [selectedFriend, setSelectedFriend] = useState(null);
   return (
     <GoogleMap defaultZoom={15} //Starting zoom and position
       defaultCenter={{lat: crd.latitude, lng: crd.longitude}}
       defaultOptions={{styles: mapStyles}}> 
       <Marker icon={{url: "/pushpin-you.png"}} key="You" position={{lat: crd.latitude, lng: crd.longitude}}/>
-      {FriendData.map((friend) => (
-        <Marker icon={{url: "/pushpin-friends.png"}} key={friend._id} position={{lat: friend.location.coordinates[0], 
-          lng: friend.location.coordinates[1]}}
-        onClick={() => {
-          setSelectedFriend(friend);
-        }}/>
-      ))}
-      {selectedFriend && (
-        <InfoWindow
-          position= {{lat: selectedFriend.location.coordinates[0],
-            lng: selectedFriend.location.coordinates[1]}} 
-          onCloseClick={() => {
-            setSelectedFriend(null);
-          }}
-          >
-          <div>
-            <h4>{selectedFriend.webId}</h4>
-          </div>
-        </InfoWindow>
-      )}
     </GoogleMap>
   );
 }
