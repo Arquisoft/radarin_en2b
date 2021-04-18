@@ -33,11 +33,11 @@ const Friends = () => {
     }
   };
   // The query engine and its source
-  const queryEngine = new ComunicaEngine(session.info.webId.slice(0, -3));
+  const queryEngine = new ComunicaEngine(activeProfile.slice(0, -3));
   // The object that can create new paths
   const path = new PathFactory({ context, queryEngine });
 
-  const pod = path.create({ subject: namedNode(session.info.webId) });
+  const pod = path.create({ subject: namedNode(activeProfile) });
     
     var nearbyFriends = [];
   
@@ -155,7 +155,7 @@ const Friends = () => {
         document.getElementById("nearbyFriends").appendChild(lista);
       }
     });
-  }, []);
+  }, [activeProfile]);
 
   return(
     <div className="ml-3">
