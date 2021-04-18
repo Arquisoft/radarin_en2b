@@ -20,8 +20,7 @@ import FriendList from './FriendList';
 import MyLocations from "./MyLocations";
 import AboutUs from './AboutUs';
 import Home from './Home';
-//import MapView from './MapView';
-import MapContainer from './MapContainer';
+import MapView from './MapView';
 import AdminManageUsers from './AdminManageUsers';
 import { LogoutButton, useSession } from '@inrupt/solid-ui-react';
 import { updateUserLocation, addUser, getUserById } from '../api/api';
@@ -30,6 +29,8 @@ import { addLocation, getFriends } from "../services/crudPod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
+
+import AnotherMap from "./AnotherMap";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -157,7 +158,7 @@ const MyNavBar = () => {
                 <AboutUs />
             </Route>
             <Route path="/map">
-                <MapContainer />
+                <AnotherMap />
             </Route>
             <Route path="/myLocations">
                 <MyLocations />
