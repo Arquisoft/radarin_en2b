@@ -7,8 +7,7 @@ import {
     getStringNoLocaleAll,
     getStringNoLocale,
     removeStringNoLocale,
-    getUrlAll, 
-    addUrl
+    getUrlAll
 } from "@inrupt/solid-client";
 import { fetch } from "@inrupt/solid-client-authn-browser";
 import { FOAF, VCARD } from "@inrupt/vocab-common-rdf";
@@ -80,10 +79,4 @@ async function getFriends(webId){
     return await acquaintances;
 }
 
-async function getAddress(lat, long){
-    const res = await fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=43.3537381,-5.8619822&sensor=true&key=AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY');
-    const json = await res.json();
-    return json.results[1].formatted_address;
-}
-
-export { addLocation, getLocations, getName, deleteLocation, getFriends, getAddress }
+export { addLocation, getLocations, getName, deleteLocation, getFriends }
