@@ -49,13 +49,13 @@ jobs:
       with:
         node-version: 12.14.1
     - name: Update hosts rule to allow multiple users in solid server
-      run: echo "127.0.0.1 *.localhost" >> /etc/hosts
+      run: sudo echo "127.0.0.1 *.localhost" | sudo tee -a /etc/hosts
 
     - name: Install webapp
-      run: npm --prefix webapp install
+      run: npm --prefix webapp ci
 
     - name: Install restapi
-      run: npm --prefix restapi install
+      run: npm --prefix restapi ci
 
     - name: Run e2e tests
       run: npm --prefix webapp run test:e2e
