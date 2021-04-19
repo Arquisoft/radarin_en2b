@@ -16,21 +16,21 @@ import {
     Link
 } from "react-router-dom";
 
-import FriendList from './FriendList';
+import FriendList from "./FriendList";
 import MyLocations from "./MyLocations";
-import AboutUs from './AboutUs';
-import Home from './Home';
-import MapView from './MapView';
-import AdminManageUsers from './AdminManageUsers';
-import { LogoutButton, useSession } from '@inrupt/solid-ui-react';
-import { updateUserLocation, addUser, getUserById } from '../api/api';
+import AboutUs from "./AboutUs";
+import Home from "./Home";
+import MapView from "./MapView";
+import AdminManageUsers from "./AdminManageUsers";
+import { LogoutButton, useSession } from "@inrupt/solid-ui-react";
+import { updateUserLocation, addUser, getUserById } from "../api/api";
 import { getName } from "../services/crudPod";
 import { addLocation, getFriends } from "../services/crudPod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
-import Prueba from "./Prueba";
+import TagsMap from "./TagsMap";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -134,9 +134,9 @@ const MyNavBar = () => {
                             My Tags
                         </Navbar.Brand>
                     </Link>
-                    <Link to="/prueba">
+                    <Link to="/tagsMap">
                         <Navbar.Brand>
-                            Prueba
+                            TagsMap
                         </Navbar.Brand>
                     </Link>
                     <Link to="/aboutUs">
@@ -175,8 +175,8 @@ const MyNavBar = () => {
             <Route path="/myTags">
                 <MyTags />
             </Route>
-            <Route path="/prueba">
-                <Prueba webId={session.info.webId}/>
+            <Route path="/tagsMap">
+                <TagsMap webId={session.info.webId}/>
             </Route>
         </Switch>
     </Router>);
