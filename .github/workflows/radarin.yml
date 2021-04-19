@@ -34,13 +34,15 @@ jobs:
   e2e-tests:
     needs: [build-test-webapp, build-test-restapi]
     runs-on: ubuntu-latest
-    container:
-      image: nodesolidserver/node-solid-server:v5.6.6
-      ports: 8443:8443
-      env:
-        - SOLID_MULTIUSER=true
-        - SOLID_NO_REJECT_AUTHORIZED=true
-        - NODE_TLS_REJECT_UNAUTHORIZED=0
+    services:
+      node-solid-server:
+        image: nodesolidserver/node-solid-server:v5.6.6
+        ports: 
+          - 8443:8443
+        env:
+          SOLID_MULTIUSER: true
+          SOLID_NO_REJECT_AUTHORIZED: true
+          NODE_TLS_REJECT_UNAUTHORIZED: 0
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
