@@ -100,8 +100,7 @@ const TagsMap = (props) => {
                                         {
                                             name: splited[0],
                                             description: splited[1],
-                                            position: {lat: parseFloat(splited[2]), lng: parseFloat(splited[3])},
-                                            showInfo: false
+                                            position: {lat: parseFloat(splited[2]), lng: parseFloat(splited[3])}
                                         }
                                     ]);
                                 }

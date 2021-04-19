@@ -167,7 +167,7 @@ const MyNavBar = () => {
                 <AboutUs />
             </Route>
             <Route path="/map">
-                <MapView />
+                <MapView activeProfile={session.info.webId}/>
             </Route>
             <Route path="/myLocations">
                 <MyLocations />

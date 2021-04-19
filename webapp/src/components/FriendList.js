@@ -70,7 +70,7 @@ const Friends = () => {
 
             var friend = nearbyFriends[0][i];
 
-            console.log("holiwis");
+            //console.log("holiwis");
             //var elem = document.createElement();
             //elem.innerText = nearbyFriends[0][i].webId;
             //elem.style.marginLeft = "50px";
