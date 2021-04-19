@@ -76,22 +76,30 @@ router.post("/users/location/near", async (req, res) => {
     let userLocation = req.body.userLocation;
     let userFriends = req.body.friends; 
     let userNearByFriends = [];
+
+    let nowMinus15Minutes = new Date(Date.now() - 15 * 60000); // minutes * millis per minute
         
     async.each(userFriends, async function(friend) {
+
                         const near = await User.findOne({
                                                             webId: friend.webId
                                                             , location: {
                                                                             $near: {
                                                                                 $geometry: userLocation,
                                                                                 $minDistance: 0, // meters
-                                                                                $maxDistance: 1000000
+                                                                                $maxDistance: 1000
                                                                             }   
                                                                         }
+                                                            /*, updateAt: {
+                                                                            $gte: new Date(nowMinus15Minutes.toISOString())
+                                                                        }*/
                                                         });
                                                         
                         if(near != null){
-                            console.log(near);
-                            userNearByFriends.push(near);
+                            if(near.updatedAt.toISOString() >= nowMinus15Minutes.toISOString()){
+                                console.log(near);
+                                userNearByFriends.push(near);
+                            }
                         }
                         
                     }, async function(err) {

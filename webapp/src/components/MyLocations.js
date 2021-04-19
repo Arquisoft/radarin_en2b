@@ -1,8 +1,7 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSession } from "@inrupt/solid-ui-react";
 import { getLocations, deleteLocation } from "../services/crudPod";
 import {Table, Button} from "react-bootstrap";
-
 
 const MyLocations = () => {
     const [locations, setLocations] = useState([]);
@@ -19,8 +18,7 @@ const MyLocations = () => {
         updateTable();
     }, [updateTable]);
 
-
-    var listItems = []
+    var listItems = [];
     locations.forEach(location => {
         var splited = location.split(", ");
         listItems.push(<tr>
@@ -28,11 +26,9 @@ const MyLocations = () => {
             <td>{splited[2]}</td>
             <td><Button variant="contained" data-testid={session.info.webId} onClick={ async () => {await deleteLocation(session.info.webId, location); updateTable();}}>Delete</Button></td>
         </tr>);
-    }
-    );
+    });
 
-
-    return <div>
+    return (<div>
         <Button block onClick={updateTable}>Refresh</Button>
         <Table striped bordered hover>
             <thead>
@@ -52,8 +48,7 @@ const MyLocations = () => {
                 {listItems}
             </tbody>
         </Table>
-    </div>
+    </div>);
+};
 
-}
-
-export default MyLocations
+export default MyLocations;

@@ -8,6 +8,9 @@ test("check that we are in the nav bar", async () => {
     expect(getByText("Radarin")).toBeInTheDocument();
     expect(getByAltText("friends")).toBeInTheDocument();
     expect(getByAltText("map")).toBeInTheDocument();
+    expect(getByText("My Locations")).toBeInTheDocument();
+    expect(getByText("My Tags")).toBeInTheDocument();
+    expect(getByText("TagsMap")).toBeInTheDocument();
     //expect(getByText("Manage users")).toBeInTheDocument();  not possible to be checked
     expect(getByText("About us")).toBeInTheDocument();
     expect(getByText("Logged in as")).toBeInTheDocument();
@@ -21,13 +24,45 @@ test("check that we can move to friends view", async () => {
 });
 
 
-test("check that we can move to map view ", async () => {
+test("check that we can move to map view", async () => {
     const { getByText, getByAltText } = render(<MyNavBar />);
     fireEvent.click(getByAltText("map"));
     expect(getByText("Map")).toBeInTheDocument();
 });
 
 // test -> check that we can move to manage users view, it is not possible
+
+test("check that we can move to my locations page", async () => {
+    const { getByText } = render(<MyNavBar />);
+    fireEvent.click(getByText("My Locations"));
+    expect(getByText("Locations")).toBeInTheDocument();
+    expect(getByText("Date and time")).toBeInTheDocument();
+    expect(getByText("Actions")).toBeInTheDocument();
+});
+
+test("check that we can move to my tags page", async () => {
+    const { getByText, getAllByText } = render(<MyNavBar />);
+    fireEvent.click(getByText("My Tags"));
+    expect(getByText("Create a tag location")).toBeInTheDocument();
+    expect(getByText("Name")).toBeInTheDocument();
+    expect(getByText("Description (optional)")).toBeInTheDocument();
+    expect(getByText("Tag locations list")).toBeInTheDocument();
+    expect(getAllByText("Tag name and description")[0]).toBeInTheDocument();
+    expect(getAllByText("Creation date and time")[0]).toBeInTheDocument();
+    expect(getAllByText("Coordinates")[0]).toBeInTheDocument();
+    expect(getByText("Actions")).toBeInTheDocument();
+    expect(getByText("Search tags")).toBeInTheDocument();
+    expect(getByText("Search")).toBeInTheDocument();
+    expect(getAllByText("Tag name and description")[1]).toBeInTheDocument();
+    expect(getAllByText("Creation date and time")[1]).toBeInTheDocument();
+    expect(getAllByText("Coordinates")[1]).toBeInTheDocument();
+});
+
+test("check that we can move to tags map page", async () => {
+    const { getByText, getByTestId } = render(<MyNavBar />);
+    fireEvent.click(getByText("TagsMap"));
+    expect(getByTestId("mainDiv")).toBeInTheDocument();
+});
 
 test("check that we can move to about us view", async () => {
     const { getByText } = render(<MyNavBar />);
