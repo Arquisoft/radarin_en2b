@@ -16,20 +16,21 @@ import {
     Link
 } from "react-router-dom";
 
-import FriendList from './FriendList';
+import FriendList from "./FriendList";
 import MyLocations from "./MyLocations";
-import AboutUs from './AboutUs';
-import Home from './Home';
-import MapView from './MapView';
-import LocationMap from './LocationMap';
-import AdminManageUsers from './AdminManageUsers';
-import { LogoutButton, useSession } from '@inrupt/solid-ui-react';
-import { updateUserLocation, addUser, getUserById } from '../api/api';
+import AboutUs from "./AboutUs";
+import Home from "./Home";
+import MapView from "./MapView";
+import AdminManageUsers from "./AdminManageUsers";
+import { LogoutButton, useSession } from "@inrupt/solid-ui-react";
+import { updateUserLocation, addUser, getUserById } from "../api/api";
 import { getName } from "../services/crudPod";
 import { addLocation, getFriends } from "../services/crudPod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
+import MyTags from "./MyTags";
+import TagsMap from "./TagsMap";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -50,6 +51,7 @@ const MyNavBar = () => {
             const nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId);
             nearby.forEach(friend => notifyFriend(friend.webId))
         });
+
         if (role == null) {
             navigator.geolocation.getCurrentPosition(async function (position) {
                 await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
@@ -77,8 +79,8 @@ const MyNavBar = () => {
                         height="30"
                         className="App-logo d-inline-block align-top"
                     />{" "}
-                                Radarin
-                            </Navbar.Brand>
+                    Radarin
+                </Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -90,7 +92,6 @@ const MyNavBar = () => {
                                 height="30"
                                 className="Notifications d-inline-block align-top"
                             />{" "}
-
                         </Navbar.Brand>
                     </Link>
                     <Link to="/friendList">
@@ -100,7 +101,6 @@ const MyNavBar = () => {
                                 height="30"
                                 className="Friends d-inline-block align-top"
                             />{" "}
-
                         </Navbar.Brand>
                     </Link>
                     <Link to="/map">
@@ -118,8 +118,8 @@ const MyNavBar = () => {
                                 <Link id="linkAdminManageUsers" to="/adminManageUsers">
                                     <Navbar.Brand>
                                         {" "}
-                                                Manage users
-                                                </Navbar.Brand>
+                                        Manage users
+                                    </Navbar.Brand>
                                 </Link>
                             );
                         }
@@ -127,12 +127,22 @@ const MyNavBar = () => {
                     <Link to="/myLocations">
                         <Navbar.Brand>
                             My Locations
-                                </Navbar.Brand>
+                        </Navbar.Brand>
+                    </Link>
+                    <Link to="/myTags">
+                        <Navbar.Brand>
+                            My Tags
+                        </Navbar.Brand>
+                    </Link>
+                    <Link to="/tagsMap">
+                        <Navbar.Brand>
+                            TagsMap
+                        </Navbar.Brand>
                     </Link>
                     <Link to="/aboutUs">
                         <Navbar.Brand>
                             About us
-                                </Navbar.Brand>
+                        </Navbar.Brand>
                     </Link>
                     <Navbar.Text>Logged in as {name}</Navbar.Text>
                     <Nav.Item className="float-right">
@@ -161,6 +171,12 @@ const MyNavBar = () => {
             </Route>
             <Route path="/myLocations">
                 <MyLocations />
+            </Route>
+            <Route path="/myTags">
+                <MyTags />
+            </Route>
+            <Route path="/tagsMap">
+                <TagsMap webId={session.info.webId}/>
             </Route>
         </Switch>
     </Router>);
