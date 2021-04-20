@@ -3,7 +3,9 @@ import { useSession } from "@inrupt/solid-ui-react";
 import { getLocations, deleteLocation } from "../services/crudPod";
 import Table from "react-bootstrap/Table";
 import { Button } from "@material-ui/core";
-
+import LocationMap from './LocationMap';
+import { Link } from "react-router-dom";
+import lupa from "../img/lupa.png";
 
 const MyLocations = () => {
     const [locations, setLocations] = useState([]);
@@ -14,7 +16,7 @@ const MyLocations = () => {
         )
     });
 
-
+    var crd = [];
     var listItems = []
     locations.forEach(location => {
         var splited = location.split(", ");
@@ -26,8 +28,8 @@ const MyLocations = () => {
     }
     );
 
-
     return <div>
+        <LocationMap {...crd}/>
         <Table striped bordered hover>
             <thead>
                 <tr>
@@ -49,5 +51,4 @@ const MyLocations = () => {
     </div>
 
 }
-
 export default MyLocations

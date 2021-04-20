@@ -21,6 +21,7 @@ import MyLocations from "./MyLocations";
 import AboutUs from './AboutUs';
 import Home from './Home';
 import MapView from './MapView';
+import LocationMap from './LocationMap';
 import AdminManageUsers from './AdminManageUsers';
 import { LogoutButton, useSession } from '@inrupt/solid-ui-react';
 import { updateUserLocation, addUser, getUserById } from '../api/api';
@@ -134,7 +135,7 @@ const MyNavBar = () => {
                                 </Navbar.Brand>
                     </Link>
                     <Navbar.Text>Logged in as {name}</Navbar.Text>
-                    <Nav.Item className="mr-auto">
+                    <Nav.Item className="float-right">
                         <LogoutButton>
                             <Button>Log Out</Button>
                         </LogoutButton>
