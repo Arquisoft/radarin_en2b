@@ -52,5 +52,5 @@ class AccessingRadarin extends Simulation {
 			.get("/static/js/main.66404107.chunk.js.map")
 			.headers(headers_3)))
 
-	setUp(scn.inject(constantUsersPerSec(20) during (60 seconds) randomized).protocols(httpProtocol)
+	setUp(scn.inject(constantUsersPerSec(2).during(60 seconds).randomized)).protocols(httpProtocol)
 }
