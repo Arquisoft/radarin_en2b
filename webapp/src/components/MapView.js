@@ -58,7 +58,7 @@ const MapView = () => {
             </GoogleMap>
         </div>
     ): (<div style={{width: "100vw", height: "90vh", padding: "20px"}}>
-        <h1>Map</h1>
+        <h1>Your current location</h1>
         <p>{loadError}</p>
         </div>);
 }
