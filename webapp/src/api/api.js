@@ -41,16 +41,6 @@ async function addUser(webId, location, authKey){
     return await response.json();
 };
 
-async function updateUserLocation(webId, location){
-    const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
-    let response = await fetch(apiEndPoint + "/users/location/submit", {
-        method: "POST",
-        headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "http://localhost:5000/api/users/location/submit", "Control-Allow-Methods": "POST"},
-        body: JSON.stringify({"webId": webId, "location": location})
-    });
-    return await response.json();
-};
-
 async function getNearbyFriends(userLocation, friends){
     console.log(friends);
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
@@ -62,4 +52,4 @@ async function getNearbyFriends(userLocation, friends){
     return await response.json();
 };
 
-export { getUserById, removeUserById, getUsers, getNormalUsers, addUser, updateUserLocation, getNearbyFriends };
+export { getUserById, removeUserById, getUsers, getNormalUsers, addUser, getNearbyFriends };

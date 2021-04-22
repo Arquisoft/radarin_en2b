@@ -44,31 +44,20 @@ router.post("/users/add", async (req, res) => {
     //Check if the user is already in the db
     let user = await User.findOne({ webId: webId });
     if (user){
-        res.send({error: "This user is already registered"});
+        user.location = location;
+        user.updatedAt = new Date();
+        await user.save();
+        res.json(user);
     }else{
         user = new User({
             webId: webId,
             location: location,
-            authKey: authKey
+            authKey: authKey,
+            updatedAt: new Date()
         });
         await user.save();
         res.json(user);
     }
-});
-
-// Submit user's location
-router.post("/users/location/submit", async (req, res) => {
-    let webId = req.body.webId;
-    let location = req.body.location;
-    //Check if the device is already in the db
-    let user = await User.findOne({ webId: webId });
-    if (user){
-        user.location = location;
-        await user.save();
-        res.json(user);
-    }
-    // an else is not needed because when a user firstly signs in (/user/add)
-    // the user is created and the location is saved
 });
 
 // Find the user's friends that are near
@@ -90,9 +79,6 @@ router.post("/users/location/near", async (req, res) => {
                                                                                 $maxDistance: 1000
                                                                             }   
                                                                         }
-                                                            /*, updateAt: {
-                                                                            $gte: new Date(nowMinus15Minutes.toISOString())
-                                                                        }*/
                                                         });
                                                         
                         if(near != null){
