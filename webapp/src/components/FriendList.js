@@ -33,6 +33,7 @@ const Friends = () => {
     };
 
     if(activeProfile !== undefined){
+      console.log("Hola");
       // The query engine and its source
       const queryEngine = new ComunicaEngine(activeProfile.slice(0, -3));
       // The object that can create new paths
@@ -44,7 +45,7 @@ const Friends = () => {
       
         async function onlyUnique(value, index, self){
           return self.indexOf(value) === index;
-        }    
+        }
 
         navigator.geolocation.getCurrentPosition(async function (position) {
           var friendsOfUser = [];
@@ -57,6 +58,8 @@ const Friends = () => {
           }
           friends = await friendsOfUser.filter(onlyUnique);
           
+          console.log("Antes del nearby");
+
           await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friends).then((user) => nearbyFriends.push(user));
           /*console.log(nearbyFriends);*/
           //console.log(nearbyFriends[0]);
@@ -66,6 +69,8 @@ const Friends = () => {
           //ul grande
           var lista = document.createElement("ul");
 
+
+          console.log("Antes del for");
           for(let i=0; i<nearbyFriends[0].length; i++){
 
             var friend = nearbyFriends[0][i];
