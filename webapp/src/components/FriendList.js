@@ -75,7 +75,7 @@ const Friends = () => {
 
             var friend = nearbyFriends[0][i];
 
-            //console.log("holiwis");
+            console.log("despues del for");
             //var elem = document.createElement();
             //elem.innerText = nearbyFriends[0][i].webId;
             //elem.style.marginLeft = "50px";
@@ -183,16 +183,6 @@ const Friends = () => {
                   <p align="center"><br></br>
                     <Value src={`[${friend}].name`}>{`${friend}`}</Value>
                   </p>
-                </ListGroup.Item>
-                
-                <ListGroup.Item>
-                  <Link to="/map">
-                    <img src={lupa} alt="lupa"
-                      width="50"
-                      height="50"
-                      className="m-3"
-                    />
-                  </Link>
                 </ListGroup.Item>
 
                 <ListGroup.Item >
