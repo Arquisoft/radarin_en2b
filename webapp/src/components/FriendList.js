@@ -12,6 +12,7 @@ import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
 import { getNearbyFriends } from "../api/api";
 import Button from 'react-bootstrap/Button';
+import { css } from "@emotion/css";
 
 import {
   getSolidDataset,
@@ -34,9 +35,14 @@ const Friends = () => {
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
-  const styleAddFriendsDiv = {
-    border: '1px solid rgba(0,0,0,1)', 
-  };
+  const styleAddFriendsDiv = css`
+    border-style: solid;
+    border-width: 5px;
+    border-color: #5da1d2;
+    max-width: 600px;
+    margin-Left: 40px;
+    border-radius: 25px;
+  `;
 
   async function deleteFriend(webId){
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
@@ -106,6 +112,8 @@ const Friends = () => {
           // If there are no nearby friends
           if(nearbyFriends[0].length === 0){
             var noFriendsElement = document.createElement("p");
+            noFriendsElement.style.marginLeft = "40px";
+            noFriendsElement.style.marginTop = "20px";
             noFriendsElement.innerText = "There are no nearby friends";
             document.getElementById("nearbyFriends").appendChild(noFriendsElement);
           }else{  //If there are nearby friends
@@ -238,7 +246,7 @@ const Friends = () => {
             </List>
           </div>
         }
-        <div style={{styleAddFriendsDiv}}>
+        <div className={styleAddFriendsDiv}>
           <h3 style={{marginTop: "20px", marginLeft: "40px"}}>Add new friends</h3>
           <input id="webFriend" style={{marginLeft: "45px"}} type="text" name="name" placeholder="uo271405.inrupt.net"/>
           <Button className="m-4" onClick={ async () => {addLocation(document.getElementById("webFriend").value);}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
