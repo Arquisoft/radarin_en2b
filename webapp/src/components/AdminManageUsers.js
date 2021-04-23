@@ -8,7 +8,7 @@ class AdminManageUsers extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-          usersList: [],
+          usersList: []
         };
     }
 

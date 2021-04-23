@@ -44,31 +44,20 @@ router.post("/users/add", async (req, res) => {
     //Check if the user is already in the db
     let user = await User.findOne({ webId: webId });
     if (user){
-        res.send({error: "This user is already registered"});
+        user.location = location;
+        user.updatedAt = new Date();
+        await user.save();
+        res.json(user);
     }else{
         user = new User({
             webId: webId,
             location: location,
-            authKey: authKey
+            authKey: authKey,
+            updatedAt: new Date()
         });
         await user.save();
         res.json(user);
     }
-});
-
-// Submit user's location
-router.post("/users/location/submit", async (req, res) => {
-    let webId = req.body.webId;
-    let location = req.body.location;
-    //Check if the device is already in the db
-    let user = await User.findOne({ webId: webId });
-    if (user){
-        user.location = location;
-        await user.save();
-        res.json(user);
-    }
-    // an else is not needed because when a user firstly signs in (/user/add)
-    // the user is created and the location is saved
 });
 
 // Find the user's friends that are near
@@ -76,22 +65,27 @@ router.post("/users/location/near", async (req, res) => {
     let userLocation = req.body.userLocation;
     let userFriends = req.body.friends; 
     let userNearByFriends = [];
+
+    let nowMinus15Minutes = new Date(Date.now() - 15 * 60000); // minutes * millis per minute
         
     async.each(userFriends, async function(friend) {
+
                         const near = await User.findOne({
                                                             webId: friend.webId
                                                             , location: {
                                                                             $near: {
                                                                                 $geometry: userLocation,
                                                                                 $minDistance: 0, // meters
-                                                                                $maxDistance: 1000000
+                                                                                $maxDistance: 1000
                                                                             }   
                                                                         }
                                                         });
                                                         
                         if(near != null){
-                            console.log(near);
-                            userNearByFriends.push(near);
+                            if(near.updatedAt.toISOString() >= nowMinus15Minutes.toISOString()){
+                                console.log(near);
+                                userNearByFriends.push(near);
+                            }
                         }
                         
                     }, async function(err) {

@@ -11,9 +11,9 @@ const schema = mongoose.Schema(
             type: String,
             enum: ["Normal","Admin"],
             default: "Normal"
-        }
-    },
-    { timestamps: true } // UTC + 2
+        },
+        updatedAt: Date
+    }
 );
 
 schema.index( { location: "2dsphere" } );
