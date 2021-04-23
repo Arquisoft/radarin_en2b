@@ -1,38 +1,35 @@
-import React, { useEffect, useState, useLayoutEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSession } from "@inrupt/solid-ui-react";
-import { getLocations, deleteLocation, getAddress } from "../services/crudPod";
-import Table from "react-bootstrap/Table";
-import { Button } from "@material-ui/core"
-
+import { getLocations, deleteLocation } from "../services/crudPod";
+import {Table, Button} from "react-bootstrap";
 
 const MyLocations = () => {
-    //const [locations, setLocations] = useState([]);
+    const [locations, setLocations] = useState([]);
     const { session } = useSession();
-    const [addresses, setAddresses] = useState(new Set());
 
+    // https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies
+    const updateTable = useCallback(() => {
+        getLocations(session.info.webId).then((list) =>
+            setLocations(list)
+        );
+    }, [session.info.webId]);
 
     useEffect(() => {
-        async function fetchLocations() {
-            const locations = await getLocations(session.info.webId);
-            setAddresses(await locations.map(async function (location) {
-                const splited = await location.split(", ")
-                const res = await fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + splited[0] + ',' + splited[1] + '&sensor=true&key=AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY')
-                const json = await res.json();
-                const results = await json.results
-                const addr = await results[1].formatted_address
-                await console.log(addr)
-                return await <tr>
-                <td>{addr}</td>
-                <td>{splited[2]}</td>
-                <td><Button variant="contained" data-testid={session.info.webId} onClick={() => deleteLocation(session.info.webId, location)}>Delete</Button></td>
-                </tr>;
-            }))
-        }
+        updateTable();
+    }, [updateTable]);
 
-        
-    }, [setAddresses]);
-    fetchLocations()
-    return <div>
+    var listItems = [];
+    locations.forEach(location => {
+        var splited = location.split(", ");
+        listItems.push(<tr>
+            <td>{splited[0] + ", " +splited[1]}</td>
+            <td>{splited[2]}</td>
+            <td><Button variant="contained" data-testid={session.info.webId} onClick={ async () => {await deleteLocation(session.info.webId, location); updateTable();}}>Delete</Button></td>
+        </tr>);
+    });
+
+    return (<div>
+        <Button block onClick={updateTable}>Refresh</Button>
         <Table striped bordered hover>
             <thead>
                 <tr>
@@ -48,13 +45,10 @@ const MyLocations = () => {
                 </tr>
             </thead>
             <tbody>
-                {console.log(addresses[0])}
-                {addresses[0]}
-                {addresses[1]}
+                {listItems}
             </tbody>
         </Table>
-    </div>
+    </div>);
+};
 
-}
-
-export default MyLocations
+export default MyLocations;
