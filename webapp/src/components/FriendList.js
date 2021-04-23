@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
-import Dropdown from "react-bootstrap/Dropdown";
 //import saw from "../img/saw.png";
 import lupa from "../img/lupa.png";
 /*import batman from "../img/batman.webp";
@@ -12,15 +11,53 @@ import userLogo from "../img/userLogo.jpg";
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
 import { getNearbyFriends } from "../api/api";
+import Button from 'react-bootstrap/Button';
+
+import {
+  getSolidDataset,
+  getThing,
+  addStringNoLocale,
+  setThing,
+  saveSolidDatasetAt,
+  removeStringNoLocale
+} from "@inrupt/solid-client";
+import { FOAF } from "@inrupt/vocab-common-rdf";
 
 const geolib = require("geolib");
 const { PathFactory } = require("ldflex");
 const { default: ComunicaEngine } = require("@ldflex/comunica");
 const { namedNode } = require("@rdfjs/data-model");
 
+
+
 const Friends = () => {
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
+
+  const styleAddFriendsDiv = {
+    border: '1px solid rgba(0,0,0,1)', 
+  };
+
+  async function deleteFriend(webId){
+    const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
+    const profile = getThing(myDataset, webId);
+    let updatedProfile = removeStringNoLocale(profile, FOAF.knows);
+
+    const myChangedDataset = setThing(myDataset, updatedProfile);
+
+    await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
+  };
+
+  async function addLocation(webId) {
+    const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
+    const profile = getThing(myDataset, webId);
+    var date = new Date();
+    let updatedProfile = addStringNoLocale(profile, FOAF.interest, date.toLocaleString());
+
+    const myChangedDataset = setThing(myDataset, updatedProfile);
+
+    await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
+  };
 
   useEffect(()=>{
     // The JSON-LD context for resolving properties
@@ -66,99 +103,105 @@ const Friends = () => {
           //console.log(nearbyFriends[0][0].webId);
           //console.log(nearbyFriends[0].length);
 
-          //ul grande
-          var lista = document.createElement("ul");
+          // If there are no nearby friends
+          if(nearbyFriends[0].length === 0){
+            var noFriendsElement = document.createElement("p");
+            noFriendsElement.innerText = "There are no nearby friends";
+            document.getElementById("nearbyFriends").appendChild(noFriendsElement);
+          }else{  //If there are nearby friends
+            //ul grande
+            var lista = document.createElement("ul");
 
+            console.log("Antes del for");
+            for(let i=0; i<nearbyFriends[0].length; i++){
 
-          console.log("Antes del for");
-          for(let i=0; i<nearbyFriends[0].length; i++){
+              var friend = nearbyFriends[0][i];
 
-            var friend = nearbyFriends[0][i];
+              console.log("despues del for");
+              //var elem = document.createElement();
+              //elem.innerText = nearbyFriends[0][i].webId;
+              //elem.style.marginLeft = "50px";
 
-            console.log("despues del for");
-            //var elem = document.createElement();
-            //elem.innerText = nearbyFriends[0][i].webId;
-            //elem.style.marginLeft = "50px";
+              //Big div
+              var bigDiv = document.createElement("div");
+              bigDiv.classList = "list-group list-group-horizontal";
+              bigDiv.style.marginTop = "20px";
 
-            //Big div
-            var bigDiv = document.createElement("div");
-            bigDiv.classList = "list-group list-group-horizontal";
-            bigDiv.style.marginTop = "20px";
+              // Img div
+              var imgDiv = document.createElement("div");
+              imgDiv.classList = "list-group-item";
+              imgDiv.style.minWidth = "100px";
+              imgDiv.style.minHeight = "100px";
+              var image = document.createElement("img");
+              image.src = userLogo;
+              image.alt = "userLogo";
+              image.width = "80";
+              image.height = "80";
+              imgDiv.appendChild(image);
 
-            // Img div
-            var imgDiv = document.createElement("div");
-            imgDiv.classList = "list-group-item";
-            imgDiv.style.minWidth = "100px";
-            imgDiv.style.minHeight = "100px";
-            var image = document.createElement("img");
-            image.src = userLogo;
-            image.alt = "userLogo";
-            image.width = "80";
-            image.height = "80";
-            imgDiv.appendChild(image);
+              //document.getElementById("first").setAttribute("align", "center");
 
-            //document.getElementById("first").setAttribute("align", "center");
+              // WebId and distance Div
+              var idDistDiv = document.createElement("div");
+              idDistDiv.classList = "list-group-item";
+              idDistDiv.style.minWidth = "300px";
+              idDistDiv.style.minHeight = "100px";
+              var id = document.createElement("p");
+              id.setAttribute("align", "center");
+              //Substring used to remove -> /profile/card#me
+              id.innerHTML = "\n" + friend.webId.substring(0,friend.webId.length-15);
+              var distance = document.createElement("p");
+              distance.setAttribute("align", "center");
+              distance.innerText = geolib.getDistance({ latitude: position.coords.latitude, longitude: position.coords.longitude }, { latitude: friend.location.coordinates[0], longitude: friend.location.coordinates[1] }) + "m away";
+              idDistDiv.appendChild(id);
+              idDistDiv.appendChild(distance);
 
-            // WebId and distance Div
-            var idDistDiv = document.createElement("div");
-            idDistDiv.classList = "list-group-item";
-            idDistDiv.style.minWidth = "300px";
-            idDistDiv.style.minHeight = "100px";
-            var id = document.createElement("p");
-            id.setAttribute("align", "center");
-            //Substring used to remove -> /profile/card#me
-            id.innerHTML = "\n" + friend.webId.substring(0,friend.webId.length-15);
-            var distance = document.createElement("p");
-            distance.setAttribute("align", "center");
-            distance.innerText = geolib.getDistance({ latitude: position.coords.latitude, longitude: position.coords.longitude }, { latitude: friend.location.coordinates[0], longitude: friend.location.coordinates[1] }) + "m away";
-            idDistDiv.appendChild(id);
-            idDistDiv.appendChild(distance);
+              // Glass div
+              var glassDiv = document.createElement("div");
+              glassDiv.classList = "list-group-item";
+              var glass = document.createElement("a");
+              glass.href = "/map";
+              var imgGlass = document.createElement("img");
+              imgGlass.src = lupa;
+              imgGlass.alt = "lupa";
+              imgGlass.width = "50";
+              imgGlass.height = "50";
+              imgGlass.classList = "m-3";
+              //Meter dentro del elemento <a> la <img> de la lupa
+              glass.appendChild(imgGlass);
+              // Meter dentro del <div> todo lo de la lupa
+              glassDiv.appendChild(glass);
 
-            // Glass div
-            var glassDiv = document.createElement("div");
-            glassDiv.classList = "list-group-item";
-            var glass = document.createElement("a");
-            glass.href = "/map";
-            var imgGlass = document.createElement("img");
-            imgGlass.src = lupa;
-            imgGlass.alt = "lupa";
-            imgGlass.width = "50";
-            imgGlass.height = "50";
-            imgGlass.classList = "m-3";
-            //Meter dentro del elemento <a> la <img> de la lupa
-            glass.appendChild(imgGlass);
-            // Meter dentro del <div> todo lo de la lupa
-            glassDiv.appendChild(glass);
+              // Dropdown div
+              var dropDownDiv = document.createElement("div");
+              dropDownDiv.classList = "list-group-item";
+              var downDiv = document.createElement("div");
+              downDiv.classList = "m-4 dropdown";
+              var button = document.createElement("button");
+              button.setAttribute("aria-haspopup","true");
+              button.setAttribute("aria-expanded","false");
+              button.setAttribute("id","dropdown.basic");
+              button.setAttribute("type","button");
+              button.classList = "dropdown-toggle btn btn-primary";
 
-            // Dropdown div
-            var dropDownDiv = document.createElement("div");
-            dropDownDiv.classList = "list-group-item";
-            var downDiv = document.createElement("div");
-            downDiv.classList = "m-4 dropdown";
-            var button = document.createElement("button");
-            button.setAttribute("aria-haspopup","true");
-            button.setAttribute("aria-expanded","false");
-            button.setAttribute("id","dropdown.basic");
-            button.setAttribute("type","button");
-            button.classList = "dropdown-toggle btn btn-primary";
+              downDiv.appendChild(button);
+              dropDownDiv.appendChild(downDiv);
 
-            downDiv.appendChild(button);
-            dropDownDiv.appendChild(downDiv);
+              // Los divs pequeños se añaden al grande
+              bigDiv.appendChild(imgDiv);
+              bigDiv.appendChild(idDistDiv);
+              bigDiv.appendChild(glassDiv);
+              bigDiv.appendChild(dropDownDiv);
 
-            // Los divs pequeños se añaden al grande
-            bigDiv.appendChild(imgDiv);
-            bigDiv.appendChild(idDistDiv);
-            bigDiv.appendChild(glassDiv);
-            bigDiv.appendChild(dropDownDiv);
+              //El div grande se añade a la lista de los demas
+              lista.appendChild(bigDiv);
 
-            //El div grande se añade a la lista de los demas
-            lista.appendChild(bigDiv);
-
-            //console.log(nearbyFriends[0][i].webId);
-            //console.log(nearbyFriends[0][i].location.coordinates[0]);
-            //console.log(nearbyFriends[0][i].location.coordinates[1]);
-            
-            document.getElementById("nearbyFriends").appendChild(lista);
+              //console.log(nearbyFriends[0][i].webId);
+              //console.log(nearbyFriends[0][i].location.coordinates[0]);
+              //console.log(nearbyFriends[0][i].location.coordinates[1]);
+              
+              document.getElementById("nearbyFriends").appendChild(lista);
+            }
           }
         });
       }
@@ -186,22 +229,35 @@ const Friends = () => {
                 </ListGroup.Item>
 
                 <ListGroup.Item >
-                  <Dropdown className="m-4" >
-                    <Dropdown.Toggle id="dropdown-basic">
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Dropdown.Item>Delete friend</Dropdown.Item>
-                      <Dropdown.Item>Info</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                <Button className="m-4" onClick={ async () => {deleteFriend(`${friend}`);}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
+                  Remove
+                </Button>               
                 </ListGroup.Item>
               </ListGroup>
             }
             </List>
           </div>
         }
+        <div style={{styleAddFriendsDiv}}>
+          <h3 style={{marginTop: "20px", marginLeft: "40px"}}>Add new friends</h3>
+          <input id="webFriend" style={{marginLeft: "45px"}} type="text" name="name" placeholder="uo271405.inrupt.net"/>
+          <Button className="m-4" onClick={ async () => {addLocation(document.getElementById("webFriend").value);}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
+            Add
+          </Button>
+        </div>
       </div>
     );
 }
+
+/*
+<Dropdown className="m-4" >
+  <Dropdown.Toggle id="dropdown-basic">
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    <Dropdown.Item>Delete friend</Dropdown.Item>
+    <Dropdown.Item>Info</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+*/
 
 export default withWebId(Friends);
