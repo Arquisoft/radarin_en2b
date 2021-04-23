@@ -29,9 +29,9 @@ const MyLocations = () => {
             }))
         }
 
-        fetchLocations()
+        
     }, [setAddresses]);
-
+    fetchLocations()
     return <div>
         <Table striped bordered hover>
             <thead>
