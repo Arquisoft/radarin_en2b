@@ -23,13 +23,14 @@
     "geolib": "^3.3.1",
     "google-map-react": "^2.1.9",
     "google-maps-react": "^2.0.6",
+    "holderjs": "^2.9.9",
     "ldflex": "^2.12.0",
     "puppeteer": "^8.0.0",
     "rdf-namespaces": "^1.9.2",
-    "react": "next",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-google-maps": "^9.4.5",
+    "react-image-holder": "^2.0.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
@@ -73,6 +74,7 @@
     "jest-dev-server": "^4.4.0",
     "jest-environment-node": "^26.6.2",
     "jest-puppeteer": "^4.4.0",
+    "react": "0.0.0-709f94841",
     "shx": "^0.3.3"
   }
 }

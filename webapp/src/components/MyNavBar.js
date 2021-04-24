@@ -7,7 +7,7 @@ import bell from "../img/bell.png";
 import friends from "../img/friends.png";
 import map from "../img/map.png";
 import Nav from "react-bootstrap/Nav";
-import { Button } from "react-bootstrap";
+import { Button, NavbarBrand } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
     BrowserRouter as Router,
@@ -31,6 +31,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
+import '../Logo.css';
+import { lightBlue } from "@material-ui/core/colors";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -71,30 +73,30 @@ const MyNavBar = () => {
 
     return (<Router>
         <ToastContainer />
-        <Navbar bg="dark" expand="lg" variant="dark">
-            <Link to="/">
-                <Navbar.Brand>
+        <Navbar bg="dark" variant="dark">
+           
+            <Navbar.Brand>
                     <img src={logo} alt="logo"
-                        width="30"
-                        height="30"
                         className="App-logo d-inline-block align-top"
                     />{" "}
+                </Navbar.Brand>
+                <Link to="/">
+                <Navbar.Brand> 
                     Radarin
                 </Navbar.Brand>
-            </Link>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto justify-content-center container-fluid" fill>
-                    <Link to="/notifications">
-                        <Navbar.Brand>
+                </Link>
+            
+                <Nav className="mr-auto">
+                <Link to="/notifications">
+                        <Navbar.Brand >
                             <img src={bell} alt="notifications"
                                 width="30"
                                 height="30"
                                 className="Notifications d-inline-block align-top"
                             />{" "}
                         </Navbar.Brand>
-                    </Link>
-                    <Link to="/friendList">
+                        </Link>
+                        <Link to="/friendList">
                         <Navbar.Brand>
                             <img src={friends} alt="friends"
                                 width="30"
@@ -102,9 +104,9 @@ const MyNavBar = () => {
                                 className="Friends d-inline-block align-top"
                             />{" "}
                         </Navbar.Brand>
-                    </Link>
+                        </Link>
                     <Link to="/map">
-                        <Navbar.Brand>
+                        <Navbar.Brand href="/map">
                             <img src={map} alt="map"
                                 width="30"
                                 height="30"
@@ -120,38 +122,38 @@ const MyNavBar = () => {
                                         {" "}
                                         Manage users
                                     </Navbar.Brand>
-                                </Link>
+                                    </Link>
                             );
                         }
-                    })()}
-                    <Link to="/myLocations">
+                    })()}<Link to="/myLocations">
                         <Navbar.Brand>
                             My Locations
                         </Navbar.Brand>
-                    </Link>
-                    <Link to="/myTags">
+                        </Link>
+                        <Link to="/myTags">
                         <Navbar.Brand>
                             My Tags
                         </Navbar.Brand>
-                    </Link>
-                    <Link to="/tagsMap">
+                        </Link>
+                    
+                        <Link to="/tagsMap">
                         <Navbar.Brand>
-                            TagsMap
+                            Tags map
                         </Navbar.Brand>
-                    </Link>
-                    <Link to="/aboutUs">
+                        </Link>
+                    
+                        <Link to="/aboutUs">
                         <Navbar.Brand>
-                            About us
+                            About Us
                         </Navbar.Brand>
-                    </Link>
-                    <Navbar.Text>Logged in as {name}</Navbar.Text>
-                    <Nav.Item className="float-right">
+                        </Link>
+                    </Nav>
+                    <Navbar.Text className="mr-sm-2">Logged in as {name ? name : webId}</Navbar.Text>
+                    <Nav.Item>
                         <LogoutButton>
                             <Button>Log Out</Button>
                         </LogoutButton>
                     </Nav.Item>
-                </Nav>
-            </Navbar.Collapse>
         </Navbar>
         <Switch>
             <Route exact path="/">
