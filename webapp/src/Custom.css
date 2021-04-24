@@ -1,0 +1,16 @@
+h1{
+    color: white;
+}
+
+Label, p{
+    color: white;
+    font-size: 20px;
+}
+
+a{
+    color: bisque;
+}
+
+.otherLink{
+    color: white;
+}
