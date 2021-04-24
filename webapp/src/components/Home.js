@@ -4,6 +4,7 @@ import item1 from '../img/item1.png';
 import item from '../img/item.png';
 import item2 from '../img/item2.png';
 import item3 from '../img/item3.png';
+import item4 from '../img/item4.png';
 
 const Home = () => {
     return (
@@ -52,6 +53,18 @@ const Home = () => {
                 <Carousel.Caption>
                     <h3>Interact with your friends</h3>
                     <span>Are any of your friends near? Then go interact with them! In the notification section, you will have a list of your friends' last interactions: if they were near or maybe, they sent you a message! In Radarin you can get in touch with your friends, sending them a message that they will recieve as notification in real time.</span>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item interval={7000}>
+            <div class="item">
+            <img src={item4} className="d-block w-100"/>
+            </div>
+                <Carousel.Caption>
+                    <h3>Save your special spots</h3>
+                    <span>If you have found an special spot for you and you want to save it forever, Radarin makes easy for you. In the section My tags, you will find the possibility of creating a custom tag that will later appear in your own tags map, so that if you want to come back in another moment, the app will be there for you.</span>
                     <br></br>
                     <br></br>
                     <br></br>
