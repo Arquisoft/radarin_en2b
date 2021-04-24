@@ -181,7 +181,8 @@ const MyNavBar = ({ ...boopConfig }) => {
                 <TagsMap webId={session.info.webId} />
             </Route>
         </Switch>
-    </Router>);
+    </Router>
+    );
 };
 
 export default MyNavBar;

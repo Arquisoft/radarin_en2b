@@ -29,5 +29,11 @@ export default function App () {
     return <LogIn/>;
   } 
 
-  return <MyNavBar rotation={20} timing={200}/>;
+  return (
+  <>
+  <MyNavBar rotation={20} timing={200}/>
+  <footer className="fixed-bottom">
+    <p class="footerText">Radarin-En-2B | University of Oviedo | 2020-2021</p>
+</footer>)
+</>);
 };
