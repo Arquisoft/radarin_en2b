@@ -8,7 +8,7 @@ defineFeature(feature, test => {
     });
 
     test("User with a pod logs in to radarin", ({given, when, then}) => {
-        given("User with a pod logs in to radarin", () => {
+        given("A user with a pod", () => {
             let username = "alice";
             let password = "1234";
         });
