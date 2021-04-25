@@ -32,7 +32,7 @@ defineFeature(feature, test => {
     let password;
 
     given("A user without a pod", () => {
-      username = "alice";
+      username = "bobby";
       password = "oieyhcdf/&%19823Ayrfcpjh";
     });
 
@@ -50,7 +50,7 @@ defineFeature(feature, test => {
           waitUntil: "networkidle2",
         })
       ]);
-      await expect(await page.url()).toBe("https://alice.localhost:8443/");
+      await expect(await page.url()).toBe("https://bobby.localhost:8443/");
     });
 
     then("I should be redirected to my pod", () => {
