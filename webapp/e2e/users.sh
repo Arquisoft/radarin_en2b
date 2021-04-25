@@ -1,7 +1,7 @@
 #!/bin/bash
-alice=("alice" "alice" "123456789")
-bob=("bob" "bob" "123456789")
-charlie=("charlie" "charlie" "123456789")
+alice=("alice" "alice" "1234")
+bob=("bob" "bob" "1234")
+charlie=("charlie" "charlie" "1234")
 
 
 create_user() {
