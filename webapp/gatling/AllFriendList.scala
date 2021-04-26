@@ -8,7 +8,7 @@ import io.gatling.jdbc.Predef._
 class AllFriendList extends Simulation {
 
 	val httpProtocol = http
-		.baseUrl("https://www.googleapis.com")
+		.baseUrl("https://radarinen2bwebapp.herokuapp.com")
 		.inferHtmlResources(BlackList(""".*\.js""", """.*\.css""", """.*\.gif""", """.*\.jpeg""", """.*\.jpg""", """.*\.ico""", """.*\.woff""", """.*\.woff2""", """.*\.(t|o)tf""", """.*\.png""", """.*detectportal\.firefox\.com.*"""), WhiteList())
 		.acceptHeader("*/*")
 		.acceptEncodingHeader("gzip, deflate")
@@ -17,25 +17,29 @@ class AllFriendList extends Simulation {
 
 	val headers_0 = Map(
 		"Accept" -> "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-		"If-Modified-Since" -> "Wed, 21 Apr 2021 09:14:52 GMT",
-		"If-None-Match" -> """W/"c05-178f3b5f6e0"""",
 		"Upgrade-Insecure-Requests" -> "1")
 
 	val headers_1 = Map(
 		"Content-Type" -> "application/json; charset=UTF-8",
 		"Origin" -> "null")
 
-    val uri2 = "https://radarinen2bwebapp.herokuapp.com"
+	val headers_2 = Map("Accept" -> "image/webp,*/*")
+
+    val uri1 = "https://www.googleapis.com/geolocation/v1/geolocate"
 
 	val scn = scenario("AllFriendList")
 		.exec(http("request_0")
-			.get(uri2 + "/")
+			.get("/?code=a419c695c8a6ed092a33850ce4b3467e&state=6231f72a3293487e9a3a4da2cf0eca16")
 			.headers(headers_0))
-		.pause(6)
+		.pause(2)
 		.exec(http("request_1")
-			.post("/geolocation/v1/geolocate?key=AIzaSyB2h2OuRcUgy5N-5hsZqiPW6sH3n_rptiQ")
+			.post(uri1 + "?key=AIzaSyB2h2OuRcUgy5N-5hsZqiPW6sH3n_rptiQ")
 			.headers(headers_1)
 			.body(RawFileBody("/allfriendlist/0001_request.json")))
+		.pause(1)
+		.exec(http("request_2")
+			.get("/static/media/logo.6ce24c58.svg")
+			.headers(headers_2))
 
-	setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
+	setUp(scn.inject(constantUsersPerSec(2).during(60 seconds).randomized)).protocols(httpProtocol)
 }
