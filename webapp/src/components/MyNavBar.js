@@ -15,7 +15,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
-
+import { MDBBtn } from 'mdbreact';
 import FriendList from "./FriendList";
 import MyLocations from "./MyLocations";
 import AboutUs from "./AboutUs";
@@ -33,7 +33,7 @@ import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
 import '../Logo.css';
 import '../NavBar.css';
-import { animated, useSpring } from 'react-spring';
+import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop.js';
 
 const MyNavBar = ({ ...boopConfig }) => {
@@ -78,7 +78,8 @@ const MyNavBar = ({ ...boopConfig }) => {
 
     return (<Router>
         <ToastContainer />
-        <Navbar bg="dark" variant="dark">
+        <div class="grad">
+        <Navbar variant="dark">
         <Link to="/" class="otherLink" >
             <Navbar.Brand>
                 <img src={logo} alt="logo"
@@ -88,7 +89,7 @@ const MyNavBar = ({ ...boopConfig }) => {
             </Link>
             <Link to="/" class="otherLink" >
             <Navbar.Brand>
-                Radarin
+            Radarin
             </Navbar.Brand>
             </Link>
             <Nav className="mr-auto">
@@ -141,20 +142,22 @@ const MyNavBar = ({ ...boopConfig }) => {
                 })()}
                 <Navbar.Brand>
                     <ButtonGroup aria-label="Basic example">
-                        <Button variant="outline-info"><Link to="/myTags" class="otherLink">My Locations</Link></Button>
-                        <Button variant="outline-info"><Link to="/myTags" class="otherLink">My Tags</Link></Button>
-                        <Button variant="outline-info"><Link to="/tagsMap" class="otherLink">Tags map </Link></Button>
-                        <Button variant="outline-info"><Link to="/aboutUs" class="otherLink">About us</Link></Button>
+                        <Button variant="link"><Link to="/myLocations" class="otherLink">My Locations</Link></Button>
+                        <Button variant="link"><Link to="/myTags" class="otherLink">My Tags</Link></Button>
+                        <Button variant="link"><Link to="/tagsMap" class="otherLink">Tags map </Link></Button>
+                        <Button variant="link"><Link to="/aboutUs" class="otherLink">About us</Link></Button>
                     </ButtonGroup>
                 </Navbar.Brand>
             </Nav>
-            <Navbar.Text className="mr-sm-2">Logged in as {name ? name : webId}</Navbar.Text>
+            <div className="mr-sm-2">
+            <Navbar.Text  class="loggedText">Logged in as {name ? name : webId}</Navbar.Text></div>
             <Nav.Item>
                 <LogoutButton>
-                    <Button variant="outline-info">Log Out</Button>
+                    <Button variant="dark">Log Out</Button>
                 </LogoutButton>
             </Nav.Item>
         </Navbar>
+        </div>
         <Switch>
             <Route exact path="/">
                 <Home />

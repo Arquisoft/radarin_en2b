@@ -9,3 +9,52 @@
     border-radius: 10px;
      border: 3px solid #fff;
 }
+
+.gradient-border {
+        --border-width: 3px;
+      
+        position: relative;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 520px;
+        background-size: cover;
+        background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        border-radius: var(--border-width);
+}
+      
+        .gradient-border:after {
+          position: absolute;
+          content: "";
+          top: calc(-1 * var(--border-width));
+          left: calc(-1 * var(--border-width));
+          z-index: -1;
+          width: calc(100% + var(--border-width) * 2);
+          height: calc(100% + var(--border-width) * 2);
+          background: linear-gradient(
+            60deg,
+            hsl(224, 85%, 66%),
+            hsl(269, 85%, 66%),
+            hsl(314, 85%, 66%),
+            hsl(359, 85%, 66%),
+            hsl(44, 85%, 66%),
+            hsl(89, 85%, 66%),
+            hsl(134, 85%, 66%),
+            hsl(179, 85%, 66%)
+          );
+          background-size: 300% 300%;
+          background-position: 0 50%;
+          border-radius: calc(2 * var(--border-width));
+          animation: moveGradient 4s alternate infinite;
+        }
+      
+      
+      @keyframes moveGradient {
+        50% {
+          background-position: 100% 50%;
+        }
+      }

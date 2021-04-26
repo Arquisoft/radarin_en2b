@@ -17,7 +17,7 @@ export default function App () {
       <Container className="min-vh-100 d-flex">
         <Row className="m-auto align-self-center">
           <Col>
-            <h1>Loading<Spinner animation="grow" size="sm" variant="light"/>
+            <h1 style={{color:"white", fontSize:"53px"}}>Loading<Spinner animation="grow" size="sm" variant="light"/>
             <Spinner animation="grow" variant="light"/></h1>
           </Col>
         </Row>
@@ -32,8 +32,6 @@ export default function App () {
   return (
   <>
   <MyNavBar rotation={20} timing={200}/>
-  <footer className="fixed-bottom">
-    <p class="footerText">Radarin-En-2B | University of Oviedo | 2020-2021</p>
-</footer>)
+  )
 </>);
 };

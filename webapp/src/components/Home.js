@@ -9,18 +9,18 @@ import item4 from '../img/item4.png';
 const Home = () => {
     return (
         <div class="center">
-        <Carousel >
+        <Carousel fade>
         <Carousel.Item interval={7000}>
-                <div class="item">
-                <img src={item1} className="d-block w-100"/>
-                </div>
-                <Carousel.Caption>
+            <div style={{padding:"20px", display:"block", marginLeft:"auto", marginRight:"auto"}}>
+            <div class="gradient-border"><Carousel.Caption>
                     <h3>Welcome to Radarin!</h3>
                     <span>But... what is Radarin? It is an app developed by third year Software Engineering from the University of Oviedo, coursing the Software Architecture subject. The main objetive of the Radarin is keeping you in touch with your friends, wherever and whenever you want. This React app supports the Solid project, created by Sir Tim Berners-Lee, and works through Inrupt.</span>
                     <br></br>
-                    <br></br>
                     <p>Let's get started!</p>
-                </Carousel.Caption>
+                </Carousel.Caption></div>
+            </div>
+            
+                
             </Carousel.Item>
             <Carousel.Item interval={7000}>
                 <div class="item">

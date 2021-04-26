@@ -1,5 +1,8 @@
+
 const AboutUs = () => {
-    return(<div className="m-2">
+    return(
+    <>
+    <div className="m-2">
         <h2 style={{color: "#356ad3" }}>What is Radarin?</h2>
         <p>Radarin is a system to facilitate meetings between friends using new technologies.</p>
         <p>To carry out the project’s aim, the application needs the mobile phone localization of the users who voluntarily activate it and allow the application to use it.</p>
@@ -16,7 +19,9 @@ const AboutUs = () => {
 
         <h4 style={{color: "#60b2ff" }}>Company</h4>
         <p>RadarinEn2b: students enrolling Sotware Architecture course in Computer Software Engineering,University of Oviedo</p>
+        
         </div>
+    </>
     );
 };
 
