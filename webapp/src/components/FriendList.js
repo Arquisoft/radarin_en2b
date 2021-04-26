@@ -5,7 +5,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 import lupa from "../img/lupa.png";
 /*import batman from "../img/batman.webp";
 import chica from "../img/chica.png";*/
-import { Link } from "react-router-dom";
 import userLogo from "../img/userLogo.jpg";
 
 import {  Value, List, withWebId } from "@solid/react";
@@ -13,6 +12,7 @@ import { useSession } from "@inrupt/solid-ui-react";
 import { getNearbyFriends } from "../api/api";
 import Button from 'react-bootstrap/Button';
 import { css } from "@emotion/css";
+import { fetch } from "@inrupt/solid-client-authn-browser";
 
 import {
   getSolidDataset,
@@ -30,7 +30,6 @@ const { default: ComunicaEngine } = require("@ldflex/comunica");
 const { namedNode } = require("@rdfjs/data-model");
 
 
-
 const Friends = () => {
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
@@ -43,22 +42,22 @@ const Friends = () => {
     margin-Left: 40px;
     border-radius: 25px;
   `;
-
-  async function deleteFriend(webId){
+//
+  async function deleteFriend(webId, friend){
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
     const profile = getThing(myDataset, webId);
     let updatedProfile = removeStringNoLocale(profile, FOAF.knows);
 
-    const myChangedDataset = setThing(myDataset, updatedProfile);
+    const myChangedDataset = setThing(myDataset, updatedProfile, friend);
 
     await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
   };
 
-  async function addLocation(webId) {
+  async function addFriend(webId, friend) {
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
     const profile = getThing(myDataset, webId);
     var date = new Date();
-    let updatedProfile = addStringNoLocale(profile, FOAF.interest, date.toLocaleString());
+    let updatedProfile = addStringNoLocale(profile, FOAF.knows, friend);
 
     const myChangedDataset = setThing(myDataset, updatedProfile);
 
@@ -180,7 +179,7 @@ const Friends = () => {
               // Meter dentro del <div> todo lo de la lupa
               glassDiv.appendChild(glass);
 
-              // Dropdown div
+              /*/ Dropdown div
               var dropDownDiv = document.createElement("div");
               dropDownDiv.classList = "list-group-item";
               var downDiv = document.createElement("div");
@@ -193,13 +192,13 @@ const Friends = () => {
               button.classList = "dropdown-toggle btn btn-primary";
 
               downDiv.appendChild(button);
-              dropDownDiv.appendChild(downDiv);
+              //dropDownDiv.appendChild(downDiv);*/
 
               // Los divs pequeños se añaden al grande
               bigDiv.appendChild(imgDiv);
               bigDiv.appendChild(idDistDiv);
               bigDiv.appendChild(glassDiv);
-              bigDiv.appendChild(dropDownDiv);
+              //bigDiv.appendChild(dropDownDiv);
 
               //El div grande se añade a la lista de los demas
               lista.appendChild(bigDiv);
@@ -249,7 +248,7 @@ const Friends = () => {
         <div className={styleAddFriendsDiv}>
           <h3 style={{marginTop: "20px", marginLeft: "40px"}}>Add new friends</h3>
           <input id="webFriend" style={{marginLeft: "45px"}} type="text" name="name" placeholder="uo271405.inrupt.net"/>
-          <Button className="m-4" onClick={ async () => {addLocation(document.getElementById("webFriend").value);}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
+          <Button className="m-4" onClick={ async () => {addFriend(activeProfile, document.getElementById("webFriend").value);}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
             Add
           </Button>
         </div>
