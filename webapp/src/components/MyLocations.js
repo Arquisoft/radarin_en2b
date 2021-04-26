@@ -26,11 +26,9 @@ const MyLocations = () => {
             <td>{splited[2]}</td>
             <td><Button variant="contained" data-testid={session.info.webId} onClick={ async () => {await deleteLocation(session.info.webId, location); updateTable();}}>Delete</Button></td>
         </tr>);
-    }
-    );
+    });
 
     return (<div>
-        <LocationMap {...crd}/>
         <Button block onClick={updateTable}>Refresh</Button>
         <Table striped bordered hover>
             <thead>

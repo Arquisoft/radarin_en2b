@@ -85,7 +85,8 @@ const TagsMap = (props) => {
     };*/
 
     return isLoaded ? (
-        <div data-testid="mainDiv">
+        <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
+            <h1>My tags</h1>
             <GoogleMap 
                 mapContainerStyle={mapContainerStyle} 
                 center={center}
@@ -121,7 +122,9 @@ const TagsMap = (props) => {
                 ))}
             </GoogleMap>
         </div>
-    ): <div data-testid="mainDiv">{loadError}</div>;
+    ): <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
+        <h1>My tags</h1>
+        {loadError}</div>;
 }
 
 export default TagsMap;

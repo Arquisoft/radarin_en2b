@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { getLocations } from "../services/crudPod";
+import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from "@react-google-maps/api";
 import mapStyles from "./MapStyles.js";
+
+const geolib = require("geolib");
 
 var crd = [];
 
@@ -8,9 +11,10 @@ navigator.geolocation.getCurrentPosition(function position(position){
     crd = position.coords;
 });
 
+const libraries = ["places"];
 const mapContainerStyle = {
     width: "100vw", 
-    height: "60vh", 
+    height: "90vh", 
     padding: "20px"
 };
 const options = {
@@ -19,8 +23,9 @@ const options = {
     zoomControl: true
 }
 
-const LocationMap = (locations = []) => {
+const LocationMap = (props) => {
     const [markers, setMarkers] = useState([]);
+    const [selected, setSelected] = useState(null);
 
     var center ={
         lat: crd.latitude, 
@@ -29,32 +34,55 @@ const LocationMap = (locations = []) => {
 
     const { isLoaded, loadError } = useJsApiLoader({
         id: "google-map-script",
-        googleMapsApiKey: "AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY"
+        googleMapsApiKey: "AIzaSyClIZED8kODn9vaGf-_ke73ETRNbFC9IhY",
+        libraries
     });
 
     return isLoaded ? (
-        <div style={{width: "100vw", height: "90vh", padding: "80px"}}>
+        <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
+            <h1>My locations</h1>
             <GoogleMap 
                 mapContainerStyle={mapContainerStyle} 
                 center={center}
-                zoom={16}
+                zoom={16} 
                 options={options}
                 onLoad={() => {
+                    var filtered = [];
+                        var before = crd;
+                        getLocations(props.webId).then((list) => 
+                            list.forEach(location => {
+                                var splited = location.split(", ");
+                                if (geolib.getDistance({ latitude: parseFloat(splited[0]), longitude: parseFloat(splited[1]) }, { latitude: before.latitude, longitude: before.longitude})) {
+                                    filtered.push(location);
+                                }
+                            },
+                            filtered.forEach(location => {
+                                var splited = location.split(", ");
                                 setMarkers((current) => [
                                     ...current,
                                     {
-                                        position: {locations}
+                                        position: {lat: parseFloat(splited[0]), lng: parseFloat(splited[1])}
                                     }
                                 ]);
-                            }
+                            })
+                            )
+                        )
+                    }
                 }>
-                {markers.map((marker) => (
-                    <Marker icon={{url: "/pushpin-you.png"}} key="You" position={marker.position}/>
+                {markers.map((marker, index) => (
+                    <Marker icon={{url: "/pushpin-locations.png"}} key={index} position={marker.position} onClick={() => setSelected(marker)}>
+                        {selected ? (<InfoWindow onCloseClick={() => setSelected(null)}>
+                                <div>
+                                    <h3>{marker.position}</h3>
+                                </div>
+                            </InfoWindow>): null }
+                    </Marker>
                 ))}
             </GoogleMap>
         </div>
     ): (<div style={{width: "100vw", height: "90vh", padding: "20px"}}>
-        <p>{loadError}</p>
-        </div>);
+    <h1>My locations</h1>
+    <p>{loadError}</p>
+    </div>);
 }
 export default LocationMap;

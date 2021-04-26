@@ -31,6 +31,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
+import LocationMap from "./LocationMap";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -64,7 +65,7 @@ const MyNavBar = () => {
                     await updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
                     await addLocation(webId, position.coords.latitude, position.coords.longitude);
                 });
-            }, 30000);
+            }, 300000);
             return () => clearInterval(interval);
         }
     }, [role, webId]);
@@ -129,6 +130,11 @@ const MyNavBar = () => {
                             My Locations
                         </Navbar.Brand>
                     </Link>
+                    <Link to="/locationMap">
+                        <Navbar.Brand>
+                            LocationsMap
+                        </Navbar.Brand>
+                    </Link>
                     <Link to="/myTags">
                         <Navbar.Brand>
                             My Tags
@@ -176,7 +182,10 @@ const MyNavBar = () => {
                 <MyTags />
             </Route>
             <Route path="/tagsMap">
-                <TagsMap webId={session.info.webId}/>
+                <TagsMap webId={session.info.webId} />
+            </Route>
+            <Route path="/locationMap">
+                <LocationMap webId={session.info.webId} />
             </Route>
         </Switch>
     </Router>);
