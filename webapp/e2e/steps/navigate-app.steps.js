@@ -8,35 +8,39 @@ defineFeature(feature, test => {
     });
 
     test("User with a pod logs in to radarin", ({given, when, then}) => {
+        let username;
+        let password;
+        
         given("A user with a pod", () => {
-            let username = "alice";
-            let password = "1234";
+            username = "alice";
+            password = "1234";
         });
 
 
         when("I select my provider and log in with it", async () => {
-            await page.type("input", nss);
+            const input = await page.$('input');
+            await input.click({ clickCount: 3 })
+            await input.type(nss);
             await Promise.all([
-                expect(page).toClick("button"),
+                page.click("button"),
                 page.waitForNavigation({
-                  waitUntil: "networkidle2",
+                  timeout: 5000
                 })
             ]);
             await page.type("input#username", username);
             await page.type("input#password", password);
             await Promise.all([
-                expect(page).toClick("button#login"),
+                page.click("button#login"),
                 page.waitForNavigation({
-                  waitUntil: "networkidle0",
+                  timeout: 5000
                 })
             ]);
             try {
-                await page.waitForSelector("button[name=consent]", { timeout: 400 });
                 // Add default permissions if not given already
                 await Promise.all([
-                    expect(page).toClick("button[name=consent]"),
+                    page.click("button[name=consent]"),
                     page.waitForNavigation({
-                      waitUntil: "networkidle0",
+                        timeout: 5000
                     })
                 ]);
             } catch (error) {
@@ -45,7 +49,7 @@ defineFeature(feature, test => {
         });
 
         then("I should see the main radarin page", async () => {
-            await expect(page).toMatch("Welcome!");
+            await expect(page).toMatch("Welcome!", {timeout: 5000});
         });
 
     });
