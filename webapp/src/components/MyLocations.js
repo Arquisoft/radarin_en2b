@@ -19,7 +19,7 @@ const MyLocations = () => {
     }, [updateTable]);
 
     var listItems = [];
-    locations.forEach(location => {
+    locations.forEach((location) => {
         var splited = location.split(", ");
         listItems.push(<tr>
             <td>{splited[0] + ", " +splited[1]}</td>
@@ -49,6 +49,5 @@ const MyLocations = () => {
             </tbody>
         </Table>
     </div>);
-};
-
+}
 export default MyLocations;

@@ -7,6 +7,5 @@ const Home = () => {
             <h3 align="center" style={{color: "#60b2ff" }}>Have a nice day and experience :)</h3>
         </div>
     );
-};
-
+}
 export default Home;

@@ -48,9 +48,9 @@ const MyNavBar = () => {
                 return list;
             });
             var friendsWithWebId = [];
-            friends.forEach(friend => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
+            friends.forEach((friend) => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
             const nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId);
-            nearby.forEach(friend => notifyFriend(friend.webId))
+            nearby.forEach((friend) => notifyFriend(friend.webId));
         });
 
         if (role == null) {
@@ -189,6 +189,5 @@ const MyNavBar = () => {
             </Route>
         </Switch>
     </Router>);
-};
-
+}
 export default MyNavBar;

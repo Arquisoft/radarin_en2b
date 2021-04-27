@@ -7,7 +7,7 @@ async function getUserById(webId){
         body: JSON.stringify({"webId": webId})
     });
     return await response.json();
-};
+}
 
 async function removeUserById(webId){
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
@@ -17,19 +17,19 @@ async function removeUserById(webId){
         body: JSON.stringify({"webId": webId})
     });
     return await response.json();
-};
+}
 
 async function getUsers(){
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
     let response = await fetch(apiEndPoint + "/users/list");
     return await response.json();
-};
+}
 
 async function getNormalUsers(){
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
     let response = await fetch(apiEndPoint + "/users/normal/list");
     return await response.json();
-};
+}
 
 async function addUser(webId, location, authKey){
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
@@ -39,7 +39,7 @@ async function addUser(webId, location, authKey){
         body: JSON.stringify({"webId": webId, "location": location, "authKey": authKey})
     });
     return await response.json();
-};
+}
 
 async function updateUserLocation(webId, location){
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
@@ -49,10 +49,9 @@ async function updateUserLocation(webId, location){
         body: JSON.stringify({"webId": webId, "location": location})
     });
     return await response.json();
-};
+}
 
 async function getNearbyFriends(userLocation, friends){
-    console.log(friends);
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
     let response = await fetch(apiEndPoint + "/users/location/near", {
         method: "POST",
@@ -60,6 +59,6 @@ async function getNearbyFriends(userLocation, friends){
         body: JSON.stringify({"userLocation": userLocation, "friends": friends})
     });
     return await response.json();
-};
+}
 
 export { getUserById, removeUserById, getUsers, getNormalUsers, addUser, updateUserLocation, getNearbyFriends };

@@ -34,7 +34,7 @@ describe("user ", () => {
         location = {
             "type": "Point",
             "coordinates": [0.0, 0.0]
-        };
+        }
         authKey = "pablo@uniovi.es";
         const response = await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
@@ -51,7 +51,7 @@ describe("user ", () => {
         location = {
             "type": "Point",
             "coordinates": [0.0, 0.0]
-        };
+        }
         authKey = "pablo@uniovi.es";
         await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         
@@ -68,7 +68,7 @@ describe("user ", () => {
         location = {
             "type": "Point",
             "coordinates": [0.0, 0.0]
-        };
+        }
         authKey = "pablo@uniovi.es";
         await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         
@@ -88,7 +88,7 @@ describe("user ", () => {
         location = {
             "type": "Point",
             "coordinates": [0.0, 0.0]
-        };
+        }
         authKey = "pablo@uniovi.es";
         await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         
@@ -124,7 +124,7 @@ describe("user ", () => {
         location = {
             "type": "Point",
             "coordinates": [0.0, 0.0]
-        };
+        }
         authKey = "pablo@uniovi.es";
         await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
 
@@ -132,7 +132,7 @@ describe("user ", () => {
         location = {
             "type": "Point",
             "coordinates": [90.0, 90.0]
-        };
+        }
         const response = await request(app).post("/api/users/location/submit").send({webId: webId, location: location}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
         expect(response.body.webId).toBe(webId);
@@ -147,19 +147,19 @@ describe("user ", () => {
         location = {
             "type": "Point",
             "coordinates": [43.354731, -5.851250]
-        };
+        }
         authKey = "pablo@uniovi.es";
         await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
 
         userLocation = {
             "type": "Point",
             "coordinates": [43.353390, -5.850649]
-        };
+        }
         friends = [
             {
                 "webId": "Pablo"  
             }
-        ];
+        ]
         const response = await request(app).post("/api/users/location/near").send({userLocation: userLocation, friends: friends}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
         const user = response.body.find(u => u); // returns an array with the unique user in the db at the moment

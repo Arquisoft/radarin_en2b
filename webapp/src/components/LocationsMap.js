@@ -16,7 +16,7 @@ const mapContainerStyle = {
     width: "100vw", 
     height: "90vh", 
     padding: "20px"
-};
+}
 const options = {
     styles: mapStyles,
     disableDefaultUI: true,
@@ -60,11 +60,11 @@ const LocationsMap = (props) => {
                                     add = add && true;
                                 } 
                             });
-                            console.log(add);
+                            //console.log(add);
                                 if (add) 
                                     filtered.push(location);
                         });
-                            console.log(filtered);
+                            //console.log(filtered);
                             filtered.forEach(location => {
                                 var splited = location.split(", ");
                                 setMarkers((current) => [

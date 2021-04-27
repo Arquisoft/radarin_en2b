@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-
 import Dropdown from "react-bootstrap/Dropdown";
 //import saw from "../img/saw.png";
 import lupa from "../img/lupa.png";
@@ -8,7 +7,6 @@ import lupa from "../img/lupa.png";
 import chica from "../img/chica.png";*/
 import { Link } from "react-router-dom";
 import userLogo from "../img/userLogo.jpg";
-
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
 import { getNearbyFriends } from "../api/api";
@@ -22,7 +20,7 @@ const Friends = () => {
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
-  useEffect(()=>{
+  useEffect(() => {
     // The JSON-LD context for resolving properties
     const context = {
       "@context": {
@@ -30,7 +28,7 @@ const Friends = () => {
           "friends": "knows",
           "label": "http://www.w3.org/2000/01/rdf-schema#label",
       } 
-    };
+    }
 
     if(activeProfile !== undefined){
       // The query engine and its source
@@ -70,7 +68,7 @@ const Friends = () => {
 
             var friend = nearbyFriends[0][i];
 
-            console.log("holiwis");
+            //console.log("holiwis");
             //var elem = document.createElement();
             //elem.innerText = nearbyFriends[0][i].webId;
             //elem.style.marginLeft = "50px";
@@ -168,8 +166,8 @@ const Friends = () => {
         <h2 style={{marginTop: "10px", marginLeft: "40px"}}>All friends</h2>
         {activeProfile &&
           <div>
-            <List src={`[${activeProfile}].friends`}>{friend =>
-              <ListGroup horizontal key={friend} style={{marginTop: `20px`}}>
+            <List src={`[${activeProfile}].friends`}>{ (friend) =>
+              <ListGroup horizontal key={friend} style={{marginTop: "20px"}}>
                 <ListGroup.Item horizontal style={{minWidth: "100px", minHeight: "100px"}}>
                   <img src={userLogo} alt="userLogo" width="80" height="80"></img>
                 </ListGroup.Item>
@@ -208,5 +206,4 @@ const Friends = () => {
       </div>
     );
 }
-
 export default withWebId(Friends);

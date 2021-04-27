@@ -14,7 +14,7 @@ const mapContainerStyle = {
     width: "100vw", 
     height: "90vh", 
     padding: "20px"
-};
+}
 const options = {
     styles: mapStyles,
     disableDefaultUI: true,
@@ -24,7 +24,7 @@ const options = {
 const MapView = () => {
     const [markers, setMarkers] = useState([]);
 
-    var center ={
+    var center = {
         lat: crd.latitude, 
         lng: crd.longitude
     };

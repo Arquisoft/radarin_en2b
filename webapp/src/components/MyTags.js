@@ -16,7 +16,7 @@ const MyTags = () => {
     async function onClickFunction(){
         navigator.geolocation.getCurrentPosition(async function (position) {
             var name = document.getElementById("name").value;
-            var aux = name.replace(/\s/g, '').length;
+            var aux = name.replace(/\s/g, "").length;
             var description = document.getElementById("description").value;
             if(name !== "" && aux > 0){
                 await addTagLocation(session.info.webId, name, description, position.coords.latitude, position.coords.longitude);
@@ -24,16 +24,16 @@ const MyTags = () => {
             document.getElementById("name").value = "";
             document.getElementById("description").value = "";
         });
-    };
+    }
 
     function search(){
         var searchValue = document.getElementById("search").value;
         setSearchValue(searchValue);
         document.getElementById("search").value = "";
-    };
+    }
 
     getTagLocations(session.info.webId).then((list) => setTags(list));
-    tags.forEach(tag => {
+    tags.forEach((tag) => {
         var splited = tag.split(", ");
         listItems.push(<tr>
             <td style={{ textAlign: "center" }}>{splited[0] + " - " + splited[1]}</td>
@@ -155,6 +155,5 @@ const MyTags = () => {
             </tbody>
         </Table>
     </div>);
-};
-
+}
 export default MyTags;

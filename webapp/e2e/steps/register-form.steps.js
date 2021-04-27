@@ -38,14 +38,14 @@ defineFeature(feature, test => {
 
     when("I fill the data in the form and press submit", async () => {
       await global.page.goto("https://localhost:8443/register", {timeout: 60000});
-      await expect(page).toFillForm('form#RegisterForm', {
+      await expect(page).toFillForm("form#RegisterForm", {
         username,
         password,
         repeat_password: password,
         name: username,
       });
       await Promise.all([
-        expect(page).toClick('button#register'),
+        expect(page).toClick("button#register"),
         page.waitForNavigation({
           waitUntil: "networkidle2",
         })
