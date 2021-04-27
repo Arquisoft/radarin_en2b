@@ -31,7 +31,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
-import LocationMap from "./LocationMap";
+import LocationsMap from "./LocationMap";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -185,7 +185,7 @@ const MyNavBar = () => {
                 <TagsMap webId={session.info.webId} />
             </Route>
             <Route path="/locationMap">
-                <LocationMap webId={session.info.webId} />
+                <LocationsMap webId={session.info.webId} />
             </Route>
         </Switch>
     </Router>);

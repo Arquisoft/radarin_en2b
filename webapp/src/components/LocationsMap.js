@@ -23,7 +23,7 @@ const options = {
     zoomControl: true
 }
 
-const LocationMap = (props) => {
+const LocationsMap = (props) => {
     const [markers, setMarkers] = useState([]);
     const [selected, setSelected] = useState(null);
 
@@ -92,4 +92,4 @@ const LocationMap = (props) => {
     <p>{loadError}</p>
     </div>);
 }
-export default LocationMap;
+export default LocationsMap;
