@@ -77,13 +77,7 @@ const LocationsMap = (props) => {
                     });      
                 }}>
                 {markers.map((marker, index) => (
-                    <Marker icon={{url: "/pushpin-locations.png"}} key={index} position={marker.position} onClick={() => setSelected(marker)}>
-                        {selected ? (<InfoWindow onCloseClick={() => setSelected(null)}>
-                                <div>
-                                    <h3>{marker.position}</h3>
-                                </div>
-                            </InfoWindow>): null }
-                    </Marker>
+                    <Marker icon={{url: "/pushpin-locations.png"}} key={index} position={marker.position} onClick={() => setSelected(marker)}></Marker>
                 ))}
             </GoogleMap>
         </div>
