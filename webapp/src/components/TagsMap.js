@@ -111,7 +111,7 @@ const TagsMap = (props) => {
                     }
                 }>
                 {markers.map((marker, index) => (
-                    <Marker icon={{url: "/iconTag.png"}} key={index} position={marker.position} onClick={() => setSelected(marker)}>
+                    <Marker icon={{url: "/pushpin-tag.png"}} key={index} position={marker.position} onClick={() => setSelected(marker)}>
                         {selected ? (<InfoWindow onCloseClick={() => setSelected(null)}>
                                 <div>
                                     <h3>{marker.name}</h3>
