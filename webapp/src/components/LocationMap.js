@@ -48,14 +48,23 @@ const LocationMap = (props) => {
                 options={options}
                 onLoad={() => {
                     var filtered = [];
-                        var before = crd;
-                        getLocations(props.webId).then((list) => 
-                            list.forEach(location => {
-                                var splited = location.split(", ");
-                                if (geolib.getDistance({ latitude: parseFloat(splited[0]), longitude: parseFloat(splited[1]) }, { latitude: before.latitude, longitude: before.longitude})) {
+                    getLocations(props.webId).then((list) => {
+                        list.forEach(location => {
+                            var splited = location.split(", ");
+                            var add = true;
+                            filtered.forEach(crd => {
+                                var splitCrd = crd.split(", ");
+                                if (geolib.getDistance({ latitude: parseFloat(splited[0]), longitude: parseFloat(splited[1]) }, { latitude: splitCrd[0], longitude: splitCrd[1]}) < 100) {
+                                    add = add && false;
+                                } else {
+                                    add = add && true;
+                                } 
+                            });
+                            console.log(add);
+                                if (add) 
                                     filtered.push(location);
-                                }
-                            },
+                        });
+                            console.log(filtered);
                             filtered.forEach(location => {
                                 var splited = location.split(", ");
                                 setMarkers((current) => [
@@ -64,11 +73,9 @@ const LocationMap = (props) => {
                                         position: {lat: parseFloat(splited[0]), lng: parseFloat(splited[1])}
                                     }
                                 ]);
-                            })
-                            )
-                        )
-                    }
-                }>
+                            });
+                    });      
+                }}>
                 {markers.map((marker, index) => (
                     <Marker icon={{url: "/pushpin-locations.png"}} key={index} position={marker.position} onClick={() => setSelected(marker)}>
                         {selected ? (<InfoWindow onCloseClick={() => setSelected(null)}>
