@@ -31,7 +31,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
-import LocationsMap from "./LocationMap";
+import LocationsMap from "./LocationsMap";
 
 const MyNavBar = () => {
     const { session } = useSession();

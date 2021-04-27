@@ -87,7 +87,7 @@ const LocationsMap = (props) => {
                 ))}
             </GoogleMap>
         </div>
-    ): (<div style={{width: "100vw", height: "90vh", padding: "20px"}}>
+    ): (<div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
     <h1>My locations</h1>
     <p>{loadError}</p>
     </div>);

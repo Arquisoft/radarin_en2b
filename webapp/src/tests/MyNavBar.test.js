@@ -9,6 +9,7 @@ test("check that we are in the nav bar", async () => {
     expect(getByAltText("friends")).toBeInTheDocument();
     expect(getByAltText("map")).toBeInTheDocument();
     expect(getByText("My Locations")).toBeInTheDocument();
+    expect(getByText("LocationsMap")).toBeInTheDocument();
     expect(getByText("My Tags")).toBeInTheDocument();
     expect(getByText("TagsMap")).toBeInTheDocument();
     //expect(getByText("Manage users")).toBeInTheDocument();  not possible to be checked
@@ -27,7 +28,7 @@ test("check that we can move to friends view", async () => {
 test("check that we can move to map view", async () => {
     const { getByText, getByAltText } = render(<MyNavBar />);
     fireEvent.click(getByAltText("map"));
-    expect(getByText("Map")).toBeInTheDocument();
+    expect(getByText("My current location")).toBeInTheDocument();
 });
 
 // test -> check that we can move to manage users view, it is not possible
@@ -38,6 +39,12 @@ test("check that we can move to my locations page", async () => {
     expect(getByText("Locations")).toBeInTheDocument();
     expect(getByText("Date and time")).toBeInTheDocument();
     expect(getByText("Actions")).toBeInTheDocument();
+});
+
+test("check that we can move to locations map page", async () => {
+    const { getByText, getByTestId } = render(<MyNavBar />);
+    fireEvent.click(getByText("LocationsMap"));
+    expect(getByTestId("mainDiv")).toBeInTheDocument();
 });
 
 test("check that we can move to my tags page", async () => {

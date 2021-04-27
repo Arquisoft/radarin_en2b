@@ -18,6 +18,6 @@ test("check that the map renders properly with geolocation activated", async () 
           .fn()
           .mockImplementationOnce(() => Promise.resolve({ state: "granted" })),
     };
-    const { getByText } = render(<MapView />);
-    expect(getByText("Your current location")).toBeInTheDocument();
+    const { getByTestId } = render(<MapView />);
+    expect(getByTestId("wholeDiv")).toBeInTheDocument();
 });

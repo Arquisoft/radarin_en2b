@@ -36,7 +36,7 @@ const MapView = () => {
     });
 
     return isLoaded ? (
-        <div style={{width: "100vw", height: "90vh", padding: "20px"}}>
+        <div data-testid="wholeDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
             <h1>My current location</h1>
             <GoogleMap 
                 mapContainerStyle={mapContainerStyle} 
@@ -57,7 +57,7 @@ const MapView = () => {
                 ))}
             </GoogleMap>
         </div>
-    ): (<div style={{width: "100vw", height: "90vh", padding: "20px"}}>
+    ): (<div data-testid="wholeDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
         <h1>My current location</h1>
         <p>{loadError}</p>
         </div>);
