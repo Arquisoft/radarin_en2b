@@ -17,10 +17,10 @@ import { fetch } from "@inrupt/solid-client-authn-browser";
 import {
   getSolidDataset,
   getThing,
-  addStringNoLocale,
   setThing,
   saveSolidDatasetAt,
-  removeStringNoLocale
+  removeUrl,
+  addUrl
 } from "@inrupt/solid-client";
 import { FOAF } from "@inrupt/vocab-common-rdf";
 
@@ -46,9 +46,9 @@ const Friends = () => {
   async function deleteFriend(webId, friend){
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
     const profile = getThing(myDataset, webId);
-    let updatedProfile = removeStringNoLocale(profile, FOAF.knows);
+    let updatedProfile = removeUrl(profile, FOAF.knows, friend);
 
-    const myChangedDataset = setThing(myDataset, updatedProfile, friend);
+    const myChangedDataset = setThing(myDataset, updatedProfile);
 
     await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
   };
@@ -56,8 +56,7 @@ const Friends = () => {
   async function addFriend(webId, friend) {
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
     const profile = getThing(myDataset, webId);
-    var date = new Date();
-    let updatedProfile = addStringNoLocale(profile, FOAF.knows, friend);
+    let updatedProfile = addUrl(profile, FOAF.knows, friend);
 
     const myChangedDataset = setThing(myDataset, updatedProfile);
 
@@ -236,7 +235,7 @@ const Friends = () => {
                 </ListGroup.Item>
 
                 <ListGroup.Item >
-                <Button className="m-4" onClick={ async () => {deleteFriend(`${friend}`);}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
+                <Button className="m-4" onClick={ async () => {deleteFriend(activeProfile, `${friend}`);}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
                   Remove
                 </Button>               
                 </ListGroup.Item>
