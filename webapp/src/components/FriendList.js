@@ -235,7 +235,7 @@ const Friends = () => {
                 </ListGroup.Item>
 
                 <ListGroup.Item >
-                <Button className="m-4" onClick={ async () => {deleteFriend(activeProfile, `${friend}`);}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
+                <Button className="m-4" onClick={ async () => {deleteFriend(activeProfile, `${friend}`); alert("Friend removed");}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
                   Remove
                 </Button>               
                 </ListGroup.Item>
@@ -246,8 +246,8 @@ const Friends = () => {
         }
         <div className={styleAddFriendsDiv}>
           <h3 style={{marginTop: "20px", marginLeft: "40px"}}>Add new friends</h3>
-          <input id="webFriend" style={{marginLeft: "45px"}} type="text" name="name" placeholder="uo271405.inrupt.net"/>
-          <Button className="m-4" onClick={ async () => {addFriend(activeProfile, document.getElementById("webFriend").value);}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
+          <input id="webFriend" style={{marginLeft: "45px"}} type="text" name="name" placeholder="https://uo271405.inrupt.net/"/>
+          <Button className="m-4" onClick={ async () => {addFriend(activeProfile, document.getElementById("webFriend").value); alert("Friend added");}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
             Add
           </Button>
         </div>
