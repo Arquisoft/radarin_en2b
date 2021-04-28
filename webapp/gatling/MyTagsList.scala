@@ -8,7 +8,7 @@ import io.gatling.jdbc.Predef._
 class MyTagsList extends Simulation {
 
 	val httpProtocol = http
-		.baseUrl("https://www.googleapis.com")
+		.baseUrl("https://radarinen2bwebapp.herokuapp.com")
 		.inferHtmlResources(BlackList(""".*\.js""", """.*\.css""", """.*\.gif""", """.*\.jpeg""", """.*\.jpg""", """.*\.ico""", """.*\.woff""", """.*\.woff2""", """.*\.(t|o)tf""", """.*\.png""", """.*detectportal\.firefox\.com.*"""), WhiteList())
 		.acceptHeader("*/*")
 		.acceptEncodingHeader("gzip, deflate")
@@ -23,28 +23,23 @@ class MyTagsList extends Simulation {
 		"Accept" -> "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
 		"Upgrade-Insecure-Requests" -> "1")
 
-	val headers_3 = Map("Accept" -> "image/webp,*/*")
+	val headers_2 = Map("Accept" -> "image/webp,*/*")
 
-    val uri2 = "https://radarinen2bwebapp.herokuapp.com"
+    val uri1 = "https://www.googleapis.com/geolocation/v1/geolocate"
 
 	val scn = scenario("MyTagsList")
 		.exec(http("request_0")
-			.post("/geolocation/v1/geolocate?key=AIzaSyB2h2OuRcUgy5N-5hsZqiPW6sH3n_rptiQ")
+			.post(uri1 + "?key=AIzaSyB2h2OuRcUgy5N-5hsZqiPW6sH3n_rptiQ")
 			.headers(headers_0)
 			.body(RawFileBody("/mytagslist/0000_request.json")))
-		.pause(3)
+		.pause(1)
 		.exec(http("request_1")
-			.get(uri2 + "/?code=eaf7fa327ab9efff411ef0ce610e9d51&state=e70760453c454975850fb6ad3352ccb7")
+			.get("/?code=eb77211d4867b1aa301cc0d3e1c5325b&state=098f0b93b0804114b4725b5f2daa3f29")
 			.headers(headers_1))
-		.pause(2)
+		.pause(5)
 		.exec(http("request_2")
-			.post("/geolocation/v1/geolocate?key=AIzaSyB2h2OuRcUgy5N-5hsZqiPW6sH3n_rptiQ")
-			.headers(headers_0)
-			.body(RawFileBody("/mytagslist/0002_request.json")))
-		.pause(2)
-		.exec(http("request_3")
-			.get(uri2 + "/static/media/logo.6ce24c58.svg")
-			.headers(headers_3))
+			.get("/static/media/logo.6ce24c58.svg")
+			.headers(headers_2))
 
-	setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
+	setUp(scn.inject(constantUsersPerSec(2).during(60 seconds).randomized)).protocols(httpProtocol)
 }

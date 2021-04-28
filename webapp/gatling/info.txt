@@ -1,0 +1,23 @@
+Brief explanation of the loading tests executed:
+1. AboutUs -> login with a normal user and see the content of AboutUs link.
+2. AdminManageUsers* -> the test account was given an admin rol to perfom some specific tests (the ones with *). Login and see the option ManageUsers in the navbar.
+3. AllFriendList -> login and only see the complete list of the pod's friends (nearby friends are not included).
+4. DeleteNormalUser* -> login and when all normal users are displayed in the ManageUsers view, a random user is delete from the view and from the mongo database.
+5. FriendListWithNearby -> login and see the list with all friends and the list with the nearby ones.
+6. GetURLApp -> charge the https://radarinen2bwebapp.herokuapp.com/ and wait until it charges completelly.
+7. LoginAndLogout -> login in the application and then logout from it.
+8. LoginView -> login and see the first login view.
+9. MapViewOnlyMyLocation -> login and see the map from MapView with the pushpin that shows the user current location (only, no nearby friends pushpins).
+10. MyLocations -> login, see the table of MyLocations and refresh it to see the last current position.
+11. MyLocationsDelete -> the same as the previous one but deleting one of the locations, wait until it is removed also from the view.
+12. MyTags -> login and see the view of MyTags.
+13. MyTagsCreate -> when the user is in MyTags view, he/she creates a new one with name and description.
+14. MyTagsDelete -> when there are some tags already created and appearing in the tags list, delete one and wait util it is removed from the view and from the pod.
+15. MyTagsList -> wait until the list shows that tags that the pod has (in this case there were tags, it was not empty).
+16. MyTagsSearchOK -> search between all tags in the pod that are shown in a list by the name characteristic; search a complete name or partial that at least one tag has.
+17. MyTagsSearchFAIL -> same case as the previous one but searching a complete name or partial that no tag has.
+18. NearbyFriendsInMapDisplayed -> see the map from MapView with the corresponding friends pushpins and with the webId of each friend displayed.
+19. NormalUsersList* -> see the users whose role is normal in the ManageUsers list.
+20. TagsMap -> login and only see the TagsMap when there are some tags in it.
+21. TagsMapEmpty -> login and only see the TagsMap when it is empty.
+22. TagsMapInfo -> login and see the TagsMap when there are some tags in it with their information displayed.

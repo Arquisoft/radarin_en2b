@@ -22,20 +22,23 @@ class AboutUs extends Simulation {
 	val headers_1 = Map("Accept" -> "image/webp,*/*")
 
 	val headers_2 = Map(
-		"Access-Control-Request-Headers" -> "content-type",
-		"Access-Control-Request-Method" -> "POST",
-		"Origin" -> "https://radarinen2bwebapp.herokuapp.com")
-
-	val headers_3 = Map(
-		"Content-Type" -> "application/json",
-		"Origin" -> "https://radarinen2bwebapp.herokuapp.com")
-
-	val headers_4 = Map(
 		"Access-Control-Request-Headers" -> "access-control-allow-origin,content-type,control-allow-methods",
 		"Access-Control-Request-Method" -> "POST",
 		"Origin" -> "https://radarinen2bwebapp.herokuapp.com")
 
+	val headers_4 = Map(
+		"Access-Control-Allow-Origin" -> "http://localhost:5000/api/users/location/near",
+		"Content-Type" -> "application/json",
+		"Control-Allow-Methods" -> "POST",
+		"Origin" -> "https://radarinen2bwebapp.herokuapp.com")
+
 	val headers_5 = Map(
+		"Access-Control-Allow-Origin" -> "http://localhost:5000/api/users/add",
+		"Content-Type" -> "application/json",
+		"Control-Allow-Methods" -> "POST",
+		"Origin" -> "https://radarinen2bwebapp.herokuapp.com")
+
+	val headers_7 = Map(
 		"Access-Control-Allow-Origin" -> "http://localhost:5000/api/users/getById",
 		"Content-Type" -> "application/json",
 		"Control-Allow-Methods" -> "POST",
@@ -45,9 +48,9 @@ class AboutUs extends Simulation {
 
 	val scn = scenario("AboutUs")
 		.exec(http("request_0")
-			.get("/?code=2dfe71e0a66cf9886942aebb920b981b&state=d7a2fee7084b4daabc0c7f7587f64e1d")
+			.get("/?code=c1d1d0c988ecf105de5f754bd5101c50&state=70cef7320819443ba232bb44ed51b534")
 			.headers(headers_0))
-		.pause(3)
+		.pause(2)
 		.exec(http("request_1")
 			.get("/static/media/logo.6ce24c58.svg")
 			.headers(headers_1))
@@ -56,23 +59,23 @@ class AboutUs extends Simulation {
 			.options(uri2 + "/add")
 			.headers(headers_2)
 			.resources(http("request_3")
-			.post(uri2 + "/add")
-			.headers(headers_3)
-			.body(RawFileBody("/aboutus/0003_request.json")),
+			.options(uri2 + "/location/near")
+			.headers(headers_2),
             http("request_4")
-			.options(uri2 + "/getById")
-			.headers(headers_4),
+			.post(uri2 + "/location/near")
+			.headers(headers_4)
+			.body(RawFileBody("/aboutus/0004_request.json")),
             http("request_5")
-			.post(uri2 + "/getById")
+			.post(uri2 + "/add")
 			.headers(headers_5)
 			.body(RawFileBody("/aboutus/0005_request.json")),
             http("request_6")
-			.options(uri2 + "/location/near")
+			.options(uri2 + "/getById")
 			.headers(headers_2),
             http("request_7")
-			.post(uri2 + "/location/near")
-			.headers(headers_3)
+			.post(uri2 + "/getById")
+			.headers(headers_7)
 			.body(RawFileBody("/aboutus/0007_request.json"))))
 
-	setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
+	setUp(scn.inject(rampUsersPerSec(1) to 5 during (20 seconds))).protocols(httpProtocol)
 }
