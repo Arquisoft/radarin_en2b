@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
-import MapView from "../components/MapView";
+import LocationsMap from "../components/TagsMap";
 
-test("check that the map renders properly with geolocation activated", async () => {
+test("check that the locations map renders properly with geolocation activated", async () => {
     const mockGeolocation = {
         getCurrentPosition: jest.fn()
           .mockImplementationOnce((success) => Promise.resolve(success({
@@ -18,6 +18,6 @@ test("check that the map renders properly with geolocation activated", async () 
           .fn()
           .mockImplementationOnce(() => Promise.resolve({ state: "granted" })),
     };
-    const { getByTestId } = render(<MapView />);
-    expect(getByTestId("wholeDiv")).toBeInTheDocument();
+    const { getByTestId } = render(<LocationsMap />);
+    expect(getByTestId("mainDiv")).toBeInTheDocument();
 });

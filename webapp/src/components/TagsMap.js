@@ -15,7 +15,7 @@ const mapContainerStyle = {
     width: "100vw", 
     height: "90vh", 
     padding: "20px"
-};
+}
 const options = {
     styles: mapStyles,
     disableDefaultUI: true,
@@ -85,7 +85,8 @@ const TagsMap = (props) => {
     };*/
 
     return isLoaded ? (
-        <div data-testid="mainDiv">
+        <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
+            <h1>My tags</h1>
             <GoogleMap 
                 mapContainerStyle={mapContainerStyle} 
                 center={center}
@@ -93,7 +94,7 @@ const TagsMap = (props) => {
                 options={options}
                 onLoad={() => {
                         getTagLocations(props.webId).then((list) => 
-                            list.forEach(tag => {
+                            list.forEach((tag) => {
                                     var splited = tag.split(", ");
                                     setMarkers((current) => [
                                         ...current,
@@ -105,11 +106,11 @@ const TagsMap = (props) => {
                                     ]);
                                 }
                             )
-                        )
+                        );
                     }
                 }>
                 {markers.map((marker, index) => (
-                    <Marker icon={{url: "/iconTag.png"}} key={index} position={marker.position} onClick={() => setSelected(marker)}>
+                    <Marker icon={{url: "/pushpin-tag.png"}} key={index} position={marker.position} onClick={() => setSelected(marker)}>
                         {selected ? (<InfoWindow onCloseClick={() => setSelected(null)}>
                                 <div>
                                     <h3>{marker.name}</h3>
@@ -120,7 +121,8 @@ const TagsMap = (props) => {
                 ))}
             </GoogleMap>
         </div>
-    ): <div data-testid="mainDiv">{loadError}</div>;
+    ): <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
+        <h1>My tags</h1>
+        {loadError}</div>;
 }
-
 export default TagsMap;

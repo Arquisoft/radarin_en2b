@@ -15,12 +15,12 @@ class CustomEnvironment extends NodeEnvironemnt {
             // slowMo: 1000
         });
         this.global.page = await this.global.browser.newPage();
-    };
+    }
 
     async teardown(){
         await this.global.browser.close();
         await super.teardown();
-    };
+    }
 }
 
 module.exports = CustomEnvironment;
