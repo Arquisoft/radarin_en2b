@@ -15,12 +15,12 @@ const mapContainerStyle = {
     width: "100vw", 
     height: "90vh", 
     padding: "20px"
-}
+};
 const options = {
     styles: mapStyles,
     disableDefaultUI: true,
     zoomControl: true
-}
+};
 
 const TagsMap = (props) => {
     const [markers, setMarkers] = useState([]);

@@ -16,12 +16,12 @@ const mapContainerStyle = {
     width: "100vw", 
     height: "90vh", 
     padding: "20px"
-}
+};
 const options = {
     styles: mapStyles,
     disableDefaultUI: true,
     zoomControl: true
-}
+};
 
 const LocationsMap = (props) => {
     const [markers, setMarkers] = useState([]);
@@ -48,7 +48,7 @@ const LocationsMap = (props) => {
                 onLoad={() => {
                     var filtered = [];
                     getLocations(props.webId).then((list) => {
-                        list.forEach(location => {
+                        list.forEach((location) => {
                             var splited = location.split(", ");
                             var add = true;
                             filtered.forEach(crd => {
@@ -60,11 +60,12 @@ const LocationsMap = (props) => {
                                 } 
                             });
                             //console.log(add);
-                                if (add) 
+                                if (add) {
                                     filtered.push(location);
+                                }
                         });
                             //console.log(filtered);
-                            filtered.forEach(location => {
+                            filtered.forEach((location) => {
                                 var splited = location.split(", ");
                                 setMarkers((current) => [
                                     ...current,
