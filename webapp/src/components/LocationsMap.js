@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getLocations } from "../services/crudPod";
-import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import mapStyles from "./MapStyles.js";
 
 const geolib = require("geolib");
@@ -25,7 +25,6 @@ const options = {
 
 const LocationsMap = (props) => {
     const [markers, setMarkers] = useState([]);
-    const [selected, setSelected] = useState(null);
 
     var center ={
         lat: crd.latitude, 
@@ -77,7 +76,7 @@ const LocationsMap = (props) => {
                     });      
                 }}>
                 {markers.map((marker, index) => (
-                    <Marker icon={{url: "/pushpin-locations.png"}} key={index} position={marker.position} onClick={() => setSelected(marker)}></Marker>
+                    <Marker icon={{url: "/pushpin-locations.png"}} key={index} position={marker.position}></Marker>
                 ))}
             </GoogleMap>
         </div>
