@@ -20,7 +20,7 @@ const mapContainerStyle = {
     width: "100vw", 
     height: "90vh", 
     padding: "20px"
-};
+}
 const options = {
     styles: mapStyles,
     disableDefaultUI: true,
@@ -32,7 +32,7 @@ const MapView = (props) => {
     const [markers, setMarkers] = useState([]);
     const [selected, setSelected] = useState(null);
 
-    var center ={
+    var center = {
         lat: crd.latitude, 
         lng: crd.longitude
     };
@@ -48,8 +48,8 @@ const MapView = (props) => {
     }; 
 
     return isLoaded ? (
-        <div data-testid="wholeDiv">
-            <h1>Map</h1>
+        <div data-testid="wholeDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
+            <h1>My current location and friends</h1>
             <div data-testid="mapDiv">
                 <GoogleMap 
                     mapContainerStyle={mapContainerStyle} 
@@ -118,10 +118,9 @@ const MapView = (props) => {
                 </GoogleMap>
         </div>
         </div>
-    ): (<div data-testid="wholeDiv">
-        <h1>Map</h1>
+    ): (<div data-testid="wholeDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
+        <h1>My current location and friends</h1>
         <p>{loadError}</p>
         </div>);
 }
-
 export default MapView;
