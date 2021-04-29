@@ -15,7 +15,7 @@ const AboutUs = () => {
         </ul>
 
         <h4 style={{color: "#60b2ff" }}>Company</h4>
-        <p>RadarinEn2b: students enrolling Software Architecture course in Computer Software Engineering,University of Oviedo</p>
+        <p>RadarinEn2b: students enrolling Software Architecture course in Computer Software Engineering, University of Oviedo</p>
         </div>
     );
 }

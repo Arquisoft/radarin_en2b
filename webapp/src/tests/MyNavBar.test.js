@@ -28,7 +28,7 @@ test("check that we can move to friends view", async () => {
 test("check that we can move to map view", async () => {
     const { getByText, getByAltText } = render(<MyNavBar />);
     fireEvent.click(getByAltText("map"));
-    expect(getByText("My current location")).toBeInTheDocument();
+    expect(getByText("My current location and friends")).toBeInTheDocument();
 });
 
 // test -> check that we can move to manage users view, it is not possible
@@ -82,7 +82,7 @@ test("check that we can move to about us view", async () => {
     expect(getByText("Luis Fernández Suárez - uo271405")).toBeInTheDocument();
     expect(getByText("Héctor Díaz Beltrán - uo269787")).toBeInTheDocument();
     expect(getByText("Company")).toBeInTheDocument();
-    expect(getByText("RadarinEn2b: students enrolling Sotware Architecture course in Computer Software Engineering,University of Oviedo")).toBeInTheDocument();
+    expect(getByText("RadarinEn2b: students enrolling Software Architecture course in Computer Software Engineering, University of Oviedo")).toBeInTheDocument();
 });
 
 test("check that we can move back to home view", async () => {
