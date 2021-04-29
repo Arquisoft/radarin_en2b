@@ -2,12 +2,14 @@ import { render } from "@testing-library/react";
 import MyTags from "../components/MyTags";
 
 test("check that we are in the my tags page", async () => {
-    const { getByText, getAllByText } = render(<MyTags />);
+    const { getByText, getAllByText, getByAltText } = render(<MyTags />);
     expect(getByText("Create a tag location")).toBeInTheDocument();
     expect(getByText("Name")).toBeInTheDocument();
     expect(getByText("Description (optional)")).toBeInTheDocument();
+    expect(getByText("Save tag location")).toBeInTheDocument();
     expect(getByText("Tag locations list")).toBeInTheDocument();
     expect(getAllByText("Tag name and description")[0]).toBeInTheDocument();
+    expect(getByAltText("submitSearch")).toBeInTheDocument();
     expect(getAllByText("Creation date and time")[0]).toBeInTheDocument();
     expect(getAllByText("Coordinates")[0]).toBeInTheDocument();
     expect(getByText("Actions")).toBeInTheDocument();

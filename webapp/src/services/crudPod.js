@@ -20,7 +20,7 @@ async function getName(webId) {
     const fn = getStringNoLocale(profile, VCARD.fn);
 
     return fn;
-};
+}
 
 async function addLocation(webId, lat, long) {
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
@@ -31,7 +31,7 @@ async function addLocation(webId, lat, long) {
     const myChangedDataset = setThing(myDataset, updatedProfile);
 
     await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
-};
+}
 
 async function getLocations(webId) {
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
@@ -42,7 +42,7 @@ async function getLocations(webId) {
     });
 
     return await acquaintances;
-};
+}
 
 async function deleteLocation(webId, location){
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
@@ -52,7 +52,7 @@ async function deleteLocation(webId, location){
     const myChangedDataset = setThing(myDataset, updatedProfile);
 
     await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
-};
+}
 
 async function getFriends(webId){
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
@@ -63,7 +63,7 @@ async function getFriends(webId){
     });
 
     return await acquaintances;
-};
+}
 
 async function addTagLocation(webId, name, description, lat, long) {
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
@@ -79,7 +79,7 @@ async function addTagLocation(webId, name, description, lat, long) {
     const myChangedDataset = setThing(myDataset, updatedProfile);
 
     await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
-};
+}
 
 async function getTagLocations(webId) {
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
@@ -90,7 +90,7 @@ async function getTagLocations(webId) {
     });
 
     return await acquaintances;
-};
+}
 
 async function deleteTagLocation(webId, tag){
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
@@ -100,6 +100,5 @@ async function deleteTagLocation(webId, tag){
     const myChangedDataset = setThing(myDataset, updatedProfile);
 
     await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
-};
-
+}
 export {  getName, addLocation, getLocations, deleteLocation, getFriends, addTagLocation, getTagLocations, deleteTagLocation };
