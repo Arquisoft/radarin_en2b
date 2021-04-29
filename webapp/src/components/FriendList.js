@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
-//import saw from "../img/saw.png";
 import lupa from "../img/lupa.png";
-/*import batman from "../img/batman.webp";
-import chica from "../img/chica.png";*/
 import userLogo from "../img/userLogo.jpg";
-
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
 import { getNearbyFriends } from "../api/api";
-import Button from 'react-bootstrap/Button';
-import { css } from "@emotion/css";
-import { fetch } from "@inrupt/solid-client-authn-browser";
 
+
+
+
+/*
+Para añadir y eliminar amigos
+import { fetch } from "@inrupt/solid-client-authn-browser";
+import Button from 'react-bootstrap/Button';
 import {
   getSolidDataset,
   getThing,
@@ -23,6 +23,7 @@ import {
   addUrl
 } from "@inrupt/solid-client";
 import { FOAF } from "@inrupt/vocab-common-rdf";
+*/
 
 const geolib = require("geolib");
 const { PathFactory } = require("ldflex");
@@ -34,6 +35,9 @@ const Friends = () => {
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
 
+  /*
+  Para darle borde a un div (con element.style no deja darle borde)
+  import { css } from "@emotion/css";
   const styleAddFriendsDiv = css`
     border-style: solid;
     border-width: 5px;
@@ -42,7 +46,8 @@ const Friends = () => {
     margin-Left: 40px;
     border-radius: 25px;
   `;
-//
+  */
+/*
   async function deleteFriend(webId, friend){
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
     const profile = getThing(myDataset, webId);
@@ -63,6 +68,8 @@ const Friends = () => {
     await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
   };
 
+  */
+
   useEffect(()=>{
     // The JSON-LD context for resolving properties
     const context = {
@@ -74,7 +81,6 @@ const Friends = () => {
     };
 
     if(activeProfile !== undefined){
-      console.log("Hola");
       // The query engine and its source
       const queryEngine = new ComunicaEngine(activeProfile.slice(0, -3));
       // The object that can create new paths
@@ -98,14 +104,8 @@ const Friends = () => {
             friendsOfUser.push({webId});
           }
           friends = await friendsOfUser.filter(onlyUnique);
-          
-          console.log("Antes del nearby");
 
           await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friends).then((user) => nearbyFriends.push(user));
-          /*console.log(nearbyFriends);*/
-          //console.log(nearbyFriends[0]);
-          //console.log(nearbyFriends[0][0].webId);
-          //console.log(nearbyFriends[0].length);
 
           // If there are no nearby friends
           if(nearbyFriends[0].length === 0){
@@ -118,15 +118,9 @@ const Friends = () => {
             //ul grande
             var lista = document.createElement("ul");
 
-            console.log("Antes del for");
             for(let i=0; i<nearbyFriends[0].length; i++){
 
               var friend = nearbyFriends[0][i];
-
-              console.log("despues del for");
-              //var elem = document.createElement();
-              //elem.innerText = nearbyFriends[0][i].webId;
-              //elem.style.marginLeft = "50px";
 
               //Big div
               var bigDiv = document.createElement("div");
@@ -145,8 +139,6 @@ const Friends = () => {
               image.height = "80";
               imgDiv.appendChild(image);
 
-              //document.getElementById("first").setAttribute("align", "center");
-
               // WebId and distance Div
               var idDistDiv = document.createElement("div");
               idDistDiv.classList = "list-group-item";
@@ -162,7 +154,7 @@ const Friends = () => {
               idDistDiv.appendChild(id);
               idDistDiv.appendChild(distance);
 
-              // Glass div
+              // Loupe div
               var glassDiv = document.createElement("div");
               glassDiv.classList = "list-group-item";
               var glass = document.createElement("a");
@@ -178,20 +170,6 @@ const Friends = () => {
               // Meter dentro del <div> todo lo de la lupa
               glassDiv.appendChild(glass);
 
-              /*/ Dropdown div
-              var dropDownDiv = document.createElement("div");
-              dropDownDiv.classList = "list-group-item";
-              var downDiv = document.createElement("div");
-              downDiv.classList = "m-4 dropdown";
-              var button = document.createElement("button");
-              button.setAttribute("aria-haspopup","true");
-              button.setAttribute("aria-expanded","false");
-              button.setAttribute("id","dropdown.basic");
-              button.setAttribute("type","button");
-              button.classList = "dropdown-toggle btn btn-primary";
-
-              downDiv.appendChild(button);
-              //dropDownDiv.appendChild(downDiv);*/
 
               // Los divs pequeños se añaden al grande
               bigDiv.appendChild(imgDiv);
@@ -201,11 +179,8 @@ const Friends = () => {
 
               //El div grande se añade a la lista de los demas
               lista.appendChild(bigDiv);
-
-              //console.log(nearbyFriends[0][i].webId);
-              //console.log(nearbyFriends[0][i].location.coordinates[0]);
-              //console.log(nearbyFriends[0][i].location.coordinates[1]);
               
+              //Se añade todo al div ya creado para mostrar amigos cercanos
               document.getElementById("nearbyFriends").appendChild(lista);
             }
           }
@@ -232,38 +207,32 @@ const Friends = () => {
                   <p align="center"><br></br>
                     <Value src={`[${friend}].name`}>{`${friend}`}</Value>
                   </p>
-                </ListGroup.Item>
-
-                <ListGroup.Item >
-                <Button className="m-4" onClick={ async () => {deleteFriend(activeProfile, `${friend}`); alert("Friend removed");}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
-                  Remove
-                </Button>               
-                </ListGroup.Item>
+                </ListGroup.Item>                
               </ListGroup>
             }
             </List>
           </div>
         }
-        <div className={styleAddFriendsDiv}>
-          <h3 style={{marginTop: "20px", marginLeft: "40px"}}>Add new friends</h3>
-          <input id="webFriend" style={{marginLeft: "45px"}} type="text" name="name" placeholder="https://uo271405.inrupt.net/"/>
-          <Button className="m-4" onClick={ async () => {addFriend(activeProfile, document.getElementById("webFriend").value); alert("Friend added");}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
-            Add
-          </Button>
-        </div>
       </div>
     );
-}
+};
 
 /*
-<Dropdown className="m-4" >
-  <Dropdown.Toggle id="dropdown-basic">
-  </Dropdown.Toggle>
-  <Dropdown.Menu>
-    <Dropdown.Item>Delete friend</Dropdown.Item>
-    <Dropdown.Item>Info</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+For deleting a friend (must be on the return then of the loup)
+<ListGroup.Item >
+  <Button className="m-4" onClick={ async () => {deleteFriend(activeProfile, `${friend}`); alert("Friend removed");}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
+    Remove
+  </Button>               
+</ListGroup.Item>
+
+For adding a new friend (must be on the return before the last div)
+<div className={styleAddFriendsDiv}>
+  <h3 style={{marginTop: "20px", marginLeft: "40px"}}>Add new friends</h3>
+  <input id="webFriend" style={{marginLeft: "45px"}} type="text" name="name" placeholder="https://uo271405.inrupt.net/"/>
+  <Button className="m-4" onClick={ async () => {addFriend(activeProfile, document.getElementById("webFriend").value); alert("Friend added");}} variant="contained" color="secondary" style={{backgroundColor: '#5da1d2'}}>
+    Add
+  </Button>
+</div>
 */
 
 export default withWebId(Friends);
