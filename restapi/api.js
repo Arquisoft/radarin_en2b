@@ -83,7 +83,6 @@ router.post("/users/location/near", async (req, res) => {
                                                         
                         if(near != null){
                             if(near.updatedAt.toISOString() >= nowMinus15Minutes.toISOString()){
-                                console.log(near);
                                 userNearByFriends.push(near);
                             }
                         }
@@ -97,7 +96,7 @@ router.post("/users/location/near", async (req, res) => {
                             res.status(200).json(userNearByFriends);
                         }
 
-                })
+                });
 });
 
 module.exports = router;

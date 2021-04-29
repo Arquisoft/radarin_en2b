@@ -33,6 +33,7 @@ import TagsMap from "./TagsMap";
 import '../NavBar.css';
 import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop.js';
+import LocationsMap from "./LocationsMap";
 
 const MyNavBar = ({ ...boopConfig }) => {
     const { session } = useSession();
@@ -52,9 +53,9 @@ const MyNavBar = ({ ...boopConfig }) => {
                 return list;
             });
             var friendsWithWebId = [];
-            friends.forEach(friend => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
+            friends.forEach((friend) => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
             const nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId);
-            nearby.forEach(friend => notifyFriend(friend.webId))
+            nearby.forEach((friend) => notifyFriend(friend.webId));
         });
 
         if (role == null) {
@@ -69,7 +70,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                     await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
                     await addLocation(webId, position.coords.latitude, position.coords.longitude);
                 });
-            }, 30000);
+            }, 300000);
             return () => clearInterval(interval);
         }
     }, [role, webId]);
@@ -154,6 +155,10 @@ const MyNavBar = ({ ...boopConfig }) => {
                     <Button variant="dark">Log Out</Button>
                 </LogoutButton>
             </Nav.Item>
+                    <Link to="/locationMap">
+                        <Navbar.Brand>
+                            LocationsMap
+                        </Navbar.Brand>
         </Navbar>
         </div>
         <Switch>
@@ -180,6 +185,9 @@ const MyNavBar = ({ ...boopConfig }) => {
             </Route>
             <Route path="/tagsMap">
                 <TagsMap webId={session.info.webId} />
+            </Route>
+            <Route path="/locationMap">
+                <LocationsMap webId={session.info.webId} />
             </Route>
         </Switch>
     </Router>

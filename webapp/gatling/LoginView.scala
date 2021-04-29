@@ -29,7 +29,7 @@ class LoginView extends Simulation {
 
 	val scn = scenario("LoginView")
 		.exec(http("request_0")
-			.get("/?code=dfc5dce98f0d7a83960ea04d12cdf4cb&state=c6e1d46786b2465f95d18160e7eb95c4")
+			.get("/?code=a7596988b259d1e3e3ad8b2fe5956f59&state=1d979af4af5e42258654e6fb0b140809")
 			.headers(headers_0))
 		.pause(2)
 		.exec(http("request_1")
@@ -41,5 +41,5 @@ class LoginView extends Simulation {
 			.get("/static/media/logo.6ce24c58.svg")
 			.headers(headers_2))
 
-	setUp(scn.inject(atOnceUsers(1))).protocols(httpProtocol)
+	setUp(scn.inject(rampUsersPerSec(1) to 5 during (20 seconds))).protocols(httpProtocol)
 }
