@@ -9,7 +9,7 @@ class AdminManageUsers extends React.Component{
         super(props);
         this.state = {
           usersList: []
-        };
+        }
     }
 
     componentDidMount(){
@@ -23,16 +23,15 @@ class AdminManageUsers extends React.Component{
         setTimeout(() => {
             this.setState({usersList: usersList});
         }, 100);
-    };
+    }
 
     deleteUserByWebId = (user) => {
         removeUserById(user.webId);
         this.state.usersList.splice(this.state.usersList.indexOf(user), 1);
-        console.log(this.state.usersList);
         this.setState({usersList: this.state.usersList});
-    };
+    }
 
-    render(){
+    render() {
         return (
             <div>
                 <h2>UsersList</h2>
@@ -42,15 +41,13 @@ class AdminManageUsers extends React.Component{
                                         {user.webId}
                                     </ListGroup.Item>
                                     <ListGroup.Item>
-                                        <Button data-testid={user.webId} onClick={()=>this.deleteUserByWebId(user)}>Delete</Button>
+                                        <Button data-testid={user.webId} onClick={() => this.deleteUserByWebId(user)}>Delete</Button>
                                     </ListGroup.Item>
                                 </ListGroup>      
                         }
                     )}
             </div>
         );
-    };
-
+    }
 }
-
 export default AdminManageUsers;
