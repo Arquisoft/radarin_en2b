@@ -15,7 +15,6 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import { MDBBtn } from 'mdbreact';
 import FriendList from "./FriendList";
 import MyLocations from "./MyLocations";
 import AboutUs from "./AboutUs";
@@ -31,7 +30,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
-import '../Logo.css';
 import '../NavBar.css';
 import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop.js';

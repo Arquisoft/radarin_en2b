@@ -1,5 +1,5 @@
 import { LoginButton } from "@inrupt/solid-ui-react";
-import { useState, useEffect, Component, Children, PropTypes } from "react";
+import { useState, useEffect, Component } from "react";
 import { Form, Button, Col, Container } from "react-bootstrap";
 
 class SplitText extends Component {
