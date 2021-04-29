@@ -132,8 +132,9 @@ describe("user ", () => {
         location = {
             "type": "Point",
             "coordinates": [90.0, 90.0]
-        }
-        const response = await request(app).post("/api/users/location/submit").send({webId: webId, location: location}).set("Accept", "application/json");
+        };
+        authKey = "pablo@uniovi.es";
+        const response = await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
         expect(response.body.webId).toBe(webId);
         expect(response.body.location).toStrictEqual(location);

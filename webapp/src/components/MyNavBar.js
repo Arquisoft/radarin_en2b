@@ -23,7 +23,7 @@ import Home from "./Home";
 import MapView from "./MapView";
 import AdminManageUsers from "./AdminManageUsers";
 import { LogoutButton, useSession } from "@inrupt/solid-ui-react";
-import { updateUserLocation, addUser, getUserById } from "../api/api";
+import { addUser, getUserById } from "../api/api";
 import { getName } from "../services/crudPod";
 import { addLocation, getFriends } from "../services/crudPod";
 import { ToastContainer, toast } from "react-toastify";
@@ -42,7 +42,7 @@ const MyNavBar = () => {
     const notifyFriend = (friend) => toast(friend + " is near you");
 
     useEffect(() => {
-        getName(webId).then((name) => setName(name))
+        getName(webId).then((name) => setName(name));
         navigator.geolocation.getCurrentPosition(async function (position) {
             let friends = await getFriends(webId).then(function (list) {
                 return list;
@@ -62,7 +62,7 @@ const MyNavBar = () => {
         } else {
             const interval = setInterval(() => {
                 navigator.geolocation.getCurrentPosition(async function (position) {
-                    await updateUserLocation(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
+                    await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
                     await addLocation(webId, position.coords.latitude, position.coords.longitude);
                 });
             }, 300000);
@@ -173,7 +173,7 @@ const MyNavBar = () => {
                 <AboutUs />
             </Route>
             <Route path="/map">
-                <MapView />
+                <MapView activeProfile={session.info.webId}/>
             </Route>
             <Route path="/myLocations">
                 <MyLocations />
