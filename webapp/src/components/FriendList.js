@@ -110,8 +110,8 @@ const Friends = () => {
           // If there are no nearby friends
           if(nearbyFriends[0].length === 0){
             var noFriendsElement = document.createElement("p");
-            noFriendsElement.style.marginLeft = "40px";
-            noFriendsElement.style.marginTop = "20px";
+            noFriendsElement.style.marginLeft = "2.5em";
+            noFriendsElement.style.marginTop = "1.25em";
             noFriendsElement.innerText = "There are no nearby friends";
             document.getElementById("nearbyFriends").appendChild(noFriendsElement);
           }else{  //If there are nearby friends
@@ -125,13 +125,13 @@ const Friends = () => {
               //Big div
               var bigDiv = document.createElement("div");
               bigDiv.classList = "list-group list-group-horizontal";
-              bigDiv.style.marginTop = "20px";
+              bigDiv.style.marginTop = "1.25em";
 
               // Img div
               var imgDiv = document.createElement("div");
               imgDiv.classList = "list-group-item";
-              imgDiv.style.minWidth = "100px";
-              imgDiv.style.minHeight = "100px";
+              imgDiv.style.minWidth = "6.25em";
+              imgDiv.style.minHeight = "6.25em";
               var image = document.createElement("img");
               image.src = userLogo;
               image.alt = "userLogo";
@@ -142,8 +142,8 @@ const Friends = () => {
               // WebId and distance Div
               var idDistDiv = document.createElement("div");
               idDistDiv.classList = "list-group-item";
-              idDistDiv.style.minWidth = "300px";
-              idDistDiv.style.minHeight = "100px";
+              idDistDiv.style.minWidth = "25em";
+              idDistDiv.style.minHeight = "6.25em";
               var id = document.createElement("p");
               id.setAttribute("align", "center");
               //Substring used to remove -> /profile/card#me
@@ -190,20 +190,20 @@ const Friends = () => {
 
     return(
       <div className="ml-3">
-        <h2 style={{marginTop: "10px", marginLeft: "40px"}}>Nearby friends</h2>
+        <h2 style={{marginTop: "0.625em", marginLeft: "2.5em"}}>Nearby friends</h2>
         <div id="nearbyFriends">
             
         </div>
-        <h2 style={{marginTop: "10px", marginLeft: "40px"}}>All friends</h2>
+        <h2 style={{marginTop: "0.625em", marginLeft: "2.5em"}}>All friends</h2>
         {activeProfile &&
           <div>
             <List src={`[${activeProfile}].friends`}>{friend =>
-              <ListGroup horizontal key={friend} style={{marginTop: `20px`}}>
-                <ListGroup.Item horizontal style={{minWidth: "100px", minHeight: "100px"}}>
+              <ListGroup horizontal key={friend} style={{marginTop: `1.25em`}}>
+                <ListGroup.Item horizontal style={{minWidth: "6.25em", minHeight: "6.25em"}}>
                   <img src={userLogo} alt="userLogo" width="80" height="80"></img>
                 </ListGroup.Item>
 
-                <ListGroup.Item style={{minWidth: "300px", minHeight: "100px"}}>
+                <ListGroup.Item style={{minWidth: "25em", minHeight: "6.25em"}}>
                   <p align="center"><br></br>
                     <Value src={`[${friend}].name`}>{`${friend}`}</Value>
                   </p>
