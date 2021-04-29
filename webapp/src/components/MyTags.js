@@ -155,5 +155,6 @@ const MyTags = () => {
             </tbody>
         </Table>
     </div>);
-}
+};
+
 export default MyTags;

@@ -27,8 +27,8 @@ const Friends = () => {
           "@vocab": "http://xmlns.com/foaf/0.1/",
           "friends": "knows",
           "label": "http://www.w3.org/2000/01/rdf-schema#label",
-      } 
-    }
+      }
+    };
 
     if(activeProfile !== undefined){
       // The query engine and its source
