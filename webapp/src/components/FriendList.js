@@ -198,7 +198,7 @@ const Friends = () => {
         {activeProfile &&
           <div>
             <List src={`[${activeProfile}].friends`}>{friend =>
-              <ListGroup horizontal key={friend} style={{marginTop: `1.25em`}}>
+              <ListGroup horizontal key={friend} style={{marginTop: "1.25em"}}>
                 <ListGroup.Item horizontal style={{minWidth: "6.25em", minHeight: "6.25em"}}>
                   <img src={userLogo} alt="userLogo" width="80" height="80"></img>
                 </ListGroup.Item>
