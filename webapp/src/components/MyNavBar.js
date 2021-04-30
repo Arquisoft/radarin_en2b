@@ -151,11 +151,13 @@ const MyNavBar = () => {
                         </Navbar.Brand>
                     </Link>
                     <Navbar.Text>Logged in as {name}</Navbar.Text>
-                    <Nav.Item className="float-right">
-                        <LogoutButton>
-                            <Button>Log Out</Button>
-                        </LogoutButton>
-                    </Nav.Item>
+                    <Link to="/">
+                        <Nav.Item className="float-right">
+                            <LogoutButton>
+                                <Button>Log Out</Button>
+                            </LogoutButton>
+                        </Nav.Item>
+                    </Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
