@@ -95,4 +95,31 @@ jobs:
             MONGO_URI
         env:
           MONGO_URI: ${{secrets.MONGO_URI}}
+  deploy-prometheus:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: [e2e-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.8.9 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "radarinen2bprometheus" #Must be unique in Heroku
+          heroku_email: "asw2021en2b@gmail.com"
+          usedocker: true
+          appdir: "restapi/monitoring/prometheus"
+  deploy-grafana:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: [e2e-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.8.9 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "radarinen2bgrafana" #Must be unique in Heroku
+          heroku_email: "asw2021en2b@gmail.com"
+          usedocker: true
+          appdir: "restapi/monitoring/grafana"
+  
 

@@ -1,0 +1,1 @@
+/bin/prometheus --web.listen-address=:$PORT
