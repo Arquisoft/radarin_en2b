@@ -26,9 +26,9 @@
         width: 100%;
         height: 520px;
         background-size: cover;
-        background: #696969;  /* fallback for old browsers */
-        color: rgb(138, 132, 132);
-background: linear-gradient(#040404, #000000, #656565); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: #8360c3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(#2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
         border-radius: var(--border-width);
 }

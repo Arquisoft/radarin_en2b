@@ -3,7 +3,7 @@ import '../Home.css';
 import solid from '../img/solid.png';
 import map from '../img/map.png';
 import friends from '../img/friends.png';
-import noti from '../img/bell.png';
+import noti from '../img/bellhome.png';
 import inrupt from '../img/inrupt.png';
 import location from '../img/location.png';
 

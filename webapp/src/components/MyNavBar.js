@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../logo.svg";
 import bell from "../img/bell.png";
 import friends from "../img/friends.png";
-import map from "../img/map.png";
+import map from "../img/mapicon.png";
 import Nav from "react-bootstrap/Nav";
 import { Button, ButtonGroup } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -41,6 +41,7 @@ const MyNavBar = ({ ...boopConfig }) => {
     const [name, setName] = useState("");
     const [role, setRole] = useState(null);
     const notifyFriend = (friend) => toast(friend + " is near you");
+        
     const [style, trigger] = useBoop(boopConfig);
     const [style2, trigger2] = useBoop(boopConfig);
     const [style3, trigger3] = useBoop(boopConfig);
@@ -53,9 +54,12 @@ const MyNavBar = ({ ...boopConfig }) => {
                 return list;
             });
             var friendsWithWebId = [];
-            friends.forEach((friend) => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
-            const nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId);
-            nearby.forEach((friend) => notifyFriend(friend.webId));
+            await friends.forEach((friend) => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
+            let nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId).then(function (list){
+                return list;
+            });
+            console.log(nearby)
+            await nearby.forEach((friend) => notifyFriend(friend.webId));
         });
 
         if (role == null) {
@@ -69,8 +73,18 @@ const MyNavBar = ({ ...boopConfig }) => {
                 navigator.geolocation.getCurrentPosition(async function (position) {
                     await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
                     await addLocation(webId, position.coords.latitude, position.coords.longitude);
+                    let friends = await getFriends(webId).then(function (list) {
+                        return list;
+                    });
+                    var friendsWithWebId = [];
+                    friends.forEach((friend) => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
+                    let nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId).then(function (list){
+                        return list;
+                    });
+                    console.log(nearby)
+                    await nearby.forEach((friend) => notifyFriend(friend.webId));
                 });
-            }, 300000);
+            }, 30000);
             return () => clearInterval(interval);
         }
     }, [role, webId]);
@@ -144,6 +158,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                         <Button variant="link"><Link to="/myLocations" class="otherLink">My Locations</Link></Button>
                         <Button variant="link"><Link to="/myTags" class="otherLink">My Tags</Link></Button>
                         <Button variant="link"><Link to="/tagsMap" class="otherLink">Tags map </Link></Button>
+                        <Button variant="link"><Link to="/locationMap" class="otherLink">Locations Map</Link></Button>
                         <Button variant="link"><Link to="/aboutUs" class="otherLink">About us</Link></Button>
                     </ButtonGroup>
                 </Navbar.Brand>
@@ -155,10 +170,6 @@ const MyNavBar = ({ ...boopConfig }) => {
                     <Button variant="dark">Log Out</Button>
                 </LogoutButton>
             </Nav.Item>
-                    <Link to="/locationMap">
-                        <Navbar.Brand>
-                            LocationsMap
-                        </Navbar.Brand>
         </Navbar>
         </div>
         <Switch>

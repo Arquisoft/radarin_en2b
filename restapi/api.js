@@ -70,7 +70,7 @@ router.post("/users/location/near", async (req, res) => {
         
     async.each(userFriends, async function(friend) {
 
-                        const near = await User.findOne({
+                        let near = await User.findOne({
                                                             webId: friend.webId
                                                             , location: {
                                                                             $near: {
@@ -79,10 +79,11 @@ router.post("/users/location/near", async (req, res) => {
                                                                                 $maxDistance: 1000
                                                                             }   
                                                                         }
-                                                        });
-                                                        
+                                                        });      
+                        console.log(near)  
                         if(near != null){
                             if(near.updatedAt.toISOString() >= nowMinus15Minutes.toISOString()){
+                                console.log(near)
                                 userNearByFriends.push(near);
                             }
                         }
