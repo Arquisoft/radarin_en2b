@@ -155,6 +155,7 @@ const Friends = () => {
               idDistDiv.appendChild(distance);
 
               // Loupe div
+              /*
               var glassDiv = document.createElement("div");
               glassDiv.classList = "list-group-item";
               var glass = document.createElement("a");
@@ -168,13 +169,13 @@ const Friends = () => {
               //Meter dentro del elemento <a> la <img> de la lupa
               glass.appendChild(imgGlass);
               // Meter dentro del <div> todo lo de la lupa
-              glassDiv.appendChild(glass);
+              glassDiv.appendChild(glass);*/
 
 
               // Los divs pequeños se añaden al grande
               bigDiv.appendChild(imgDiv);
               bigDiv.appendChild(idDistDiv);
-              bigDiv.appendChild(glassDiv);
+              //bigDiv.appendChild(glassDiv);
               //bigDiv.appendChild(dropDownDiv);
 
               //El div grande se añade a la lista de los demas
