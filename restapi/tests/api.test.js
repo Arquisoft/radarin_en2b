@@ -35,12 +35,10 @@ describe("user ", () => {
             "type": "Point",
             "coordinates": [0.0, 0.0]
         };
-        var authKey = "pablo@uniovi.es";
-        var response = await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        var response = await request(app).post("/api/users/add").send({webId: webId, location: location}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
         expect(response.body.webId).toBe(webId);
         expect(response.body.location).toStrictEqual(location);
-        expect(response.body.authKey).toBe(authKey);
     });
 
     /**
@@ -52,8 +50,7 @@ describe("user ", () => {
             "type": "Point",
             "coordinates": [0.0, 0.0]
         };
-        var authKey = "pablo@uniovi.es";
-        await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        await request(app).post("/api/users/add").send({webId: webId, location: location}).set("Accept", "application/json");
         
         var response = await request(app).post("/api/users/getById").send({webId: webId}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
@@ -69,8 +66,7 @@ describe("user ", () => {
             "type": "Point",
             "coordinates": [0.0, 0.0]
         };
-        var authKey = "pablo@uniovi.es";
-        await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        await request(app).post("/api/users/add").send({webId: webId, location: location}).set("Accept", "application/json");
         
         var response = await request(app).post("/api/users/removeById").send({webId: webId}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
@@ -89,8 +85,7 @@ describe("user ", () => {
             "type": "Point",
             "coordinates": [0.0, 0.0]
         };
-        var authKey = "pablo@uniovi.es";
-        await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        await request(app).post("/api/users/add").send({webId: webId, location: location}).set("Accept", "application/json");
         
         var response = await request(app).get("/api/users/list");
         expect(response.statusCode).toBe(200);
@@ -107,8 +102,7 @@ describe("user ", () => {
             "type": "Point",
             "coordinates": [0.0, 0.0]
         };
-        var authKey = "pablo@uniovi.es";
-        await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        await request(app).post("/api/users/add").send({webId: webId, location: location}).set("Accept", "application/json");
         
         var response = await request(app).get("/api/users/normal/list"); 
         expect(response.statusCode).toBe(200);
@@ -125,16 +119,14 @@ describe("user ", () => {
             "type": "Point",
             "coordinates": [0.0, 0.0]
         };
-        var authKey = "pablo@uniovi.es";
-        await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        await request(app).post("/api/users/add").send({webId: webId, location: location}).set("Accept", "application/json");
 
         webId = "Pablo";
         location = {
             "type": "Point",
             "coordinates": [90.0, 90.0]
         };
-        authKey = "pablo@uniovi.es";
-        var response = await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        var response = await request(app).post("/api/users/add").send({webId: webId, location: location}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
         expect(response.body.webId).toBe(webId);
         expect(response.body.location).toStrictEqual(location);
@@ -149,8 +141,7 @@ describe("user ", () => {
             "type": "Point",
             "coordinates": [43.354731, -5.851250]
         };
-        var authKey = "pablo@uniovi.es";
-        await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        await request(app).post("/api/users/add").send({webId: webId, location: location}).set("Accept", "application/json");
 
         var userLocation = {
             "type": "Point",

@@ -57,14 +57,14 @@ const MyNavBar = () => {
 
         if (role == null) {
             navigator.geolocation.getCurrentPosition(async function (position) {
-                await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
+                await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
                 await getUserById(webId).then((user) => setRole(user.role));
                 await addLocation(webId, position.coords.latitude, position.coords.longitude);
             });
         } else {
             const interval = setInterval(() => {
                 navigator.geolocation.getCurrentPosition(async function (position) {
-                    await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
+                    await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
                     await addLocation(webId, position.coords.latitude, position.coords.longitude);
                 });
             }, 300000);
