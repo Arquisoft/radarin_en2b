@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
-import lupa from "../img/lupa.png";
 import userLogo from "../img/userLogo.jpg";
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
