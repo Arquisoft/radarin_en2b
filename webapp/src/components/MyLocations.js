@@ -23,13 +23,22 @@ const MyLocations = () => {
         var splited = location.split(", ");
         listItems.push(<tr>
             <td>{splited[0] + ", " +splited[1]}</td>
-            <td>{splited[2]}</td>
-            <td><Button variant="contained" data-testid={session.info.webId} onClick={ async () => {await deleteLocation(session.info.webId, location); updateTable();}}>Delete</Button></td>
+            <td>{splited[2] + ", " +splited[3]}</td>
+            <td><Button variant="danger" data-testid={session.info.webId} onClick={ async () => {await deleteLocation(session.info.webId, location); updateTable();}}>Delete</Button></td>
         </tr>);
     });
 
+    const handleDeleteAll = async () => {
+        await Promise.all(locations.map(async (location) => {
+            deleteLocation(session.info.webId, location);
+            console.log("Deleting location: ", location);
+        }));
+        console.log("Finished deleting location");
+        updateTable();
+    }
+
     return (<div>
-        <Button block onClick={updateTable}>Refresh</Button>
+        <Button variant="danger" block onClick={handleDeleteAll}>Delete All Locations</Button>
         <Table striped bordered hover>
             <thead>
                 <tr>
