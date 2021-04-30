@@ -1,0 +1,6 @@
+global:
+  scrape_interval: 5s
+scrape_configs:
+  - job_name: "Radarinen2b"
+    static_configs:
+      - targets: ["https://radarinen2brestapi.herokuapp.com/metrics"]
