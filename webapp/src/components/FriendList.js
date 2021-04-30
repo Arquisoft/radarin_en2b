@@ -68,7 +68,7 @@ const Friends = () => {
     return self.indexOf(value) === index;
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     // The JSON-LD context for resolving properties
     const context = {
       "@context": {
@@ -191,7 +191,7 @@ const Friends = () => {
       <h2 style={{marginTop: "10px", marginLeft: "40px"}}>All friends</h2>
       {activeProfile &&
         <div>
-          <List src={`[${activeProfile}].friends`}>{friend =>
+          <List src={`[${activeProfile}].friends`}>{(friend) =>
             <ListGroup horizontal key={friend} style={{marginTop: `20px`}}>
               <ListGroup.Item horizontal style={{minWidth: "100px", minHeight: "100px"}}>
                 <img src={userLogo} alt="userLogo" width="80" height="80"></img>
