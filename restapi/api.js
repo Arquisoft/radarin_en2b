@@ -40,7 +40,6 @@ router.get("/users/normal/list", async (req, res) => {
 router.post("/users/add", async (req, res) => {
     let webId = req.body.webId; // supposed to be unique
     let location = req.body.location;
-    let authKey = req.body.authKey;
     //Check if the user is already in the db
     let user = await User.findOne({ webId: webId });
     if (user){
@@ -52,7 +51,6 @@ router.post("/users/add", async (req, res) => {
         user = new User({
             webId: webId,
             location: location,
-            authKey: authKey,
             updatedAt: new Date()
         });
         await user.save();
