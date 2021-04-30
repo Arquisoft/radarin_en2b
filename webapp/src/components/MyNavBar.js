@@ -1,4 +1,4 @@
-import {
+import React, {
     useState, useEffect
 } from "react";
 import Navbar from "react-bootstrap/Navbar";
@@ -32,6 +32,8 @@ import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
 import LocationsMap from "./LocationsMap";
+import Prometheus from "./Prometheus";
+import Grafana from "./Grafana";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -86,65 +88,84 @@ const MyNavBar = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto justify-content-center container-fluid" fill>
-                    <Link to="/notifications">
-                        <Navbar.Brand>
-                            <img src={bell} alt="notifications"
-                                width="30"
-                                height="30"
-                                className="Notifications d-inline-block align-top"
-                            />{" "}
-                        </Navbar.Brand>
-                    </Link>
-                    <Link to="/friendList">
-                        <Navbar.Brand>
-                            <img src={friends} alt="friends"
-                                width="30"
-                                height="30"
-                                className="Friends d-inline-block align-top"
-                            />{" "}
-                        </Navbar.Brand>
-                    </Link>
-                    <Link to="/map">
-                        <Navbar.Brand>
-                            <img src={map} alt="map"
-                                width="30"
-                                height="30"
-                                className="Map d-inline-block align-top"
-                            />{" "}
-                        </Navbar.Brand>
-                    </Link>
                     {(() => {
-                        if (role != null && role === "Admin") {
+                        if (role === null || role !== "Admin") {
                             return (
-                                <Link id="linkAdminManageUsers" to="/adminManageUsers">
-                                    <Navbar.Brand>
-                                        {" "}
-                                        Manage users
-                                    </Navbar.Brand>
-                                </Link>
+                                <React.Fragment>
+                                    <Link to="/notifications">
+                                        <Navbar.Brand>
+                                            <img src={bell} alt="notifications"
+                                                width="30"
+                                                height="30"
+                                                className="Notifications d-inline-block align-top"
+                                            />{" "}
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link to="/friendList">
+                                        <Navbar.Brand>
+                                            <img src={friends} alt="friends"
+                                                width="30"
+                                                height="30"
+                                                className="Friends d-inline-block align-top"
+                                            />{" "}
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link to="/map">
+                                        <Navbar.Brand>
+                                            <img src={map} alt="map"
+                                                width="30"
+                                                height="30"
+                                                className="Map d-inline-block align-top"
+                                            />{" "}
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link to="/myLocations">
+                                        <Navbar.Brand>
+                                            My Locations
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link to="/locationMap">
+                                        <Navbar.Brand>
+                                            LocationsMap
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link to="/myTags">
+                                        <Navbar.Brand>
+                                            My Tags
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link to="/tagsMap">
+                                        <Navbar.Brand>
+                                            TagsMap
+                                        </Navbar.Brand>
+                                    </Link>
+                                </React.Fragment>
                             );
                         }
                     })()}
-                    <Link to="/myLocations">
-                        <Navbar.Brand>
-                            My Locations
-                        </Navbar.Brand>
-                    </Link>
-                    <Link to="/locationMap">
-                        <Navbar.Brand>
-                            LocationsMap
-                        </Navbar.Brand>
-                    </Link>
-                    <Link to="/myTags">
-                        <Navbar.Brand>
-                            My Tags
-                        </Navbar.Brand>
-                    </Link>
-                    <Link to="/tagsMap">
-                        <Navbar.Brand>
-                            TagsMap
-                        </Navbar.Brand>
-                    </Link>
+                    {(() => {
+                        if (role !== null && role === "Admin") {
+                            return (
+                                <React.Fragment>
+                                    <Link id="linkAdminManageUsers" to="/adminManageUsers">
+                                        <Navbar.Brand>
+                                            Manage users
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link id="linkPrometheus" to="/prometheus">
+                                        <Navbar.Brand>
+                                            Prometheus
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link id="linkGrafana" to="/grafana">
+                                        <Navbar.Brand>
+                                            Grafana
+                                        </Navbar.Brand>
+                                    </Link>
+                                </React.Fragment>
+                            );
+                        }
+                    })()}
                     <Link to="/aboutUs">
                         <Navbar.Brand>
                             About us
@@ -166,17 +187,14 @@ const MyNavBar = () => {
             <Route path="/friendList">
                 <FriendList />
             </Route>
-            <Route path="/adminManageUsers">
-                <AdminManageUsers />
-            </Route>
-            <Route path="/aboutUs">
-                <AboutUs />
-            </Route>
             <Route path="/map">
                 <MapView activeProfile={session.info.webId}/>
             </Route>
             <Route path="/myLocations">
                 <MyLocations />
+            </Route>
+            <Route path="/locationMap">
+                <LocationsMap webId={session.info.webId} />
             </Route>
             <Route path="/myTags">
                 <MyTags />
@@ -184,10 +202,20 @@ const MyNavBar = () => {
             <Route path="/tagsMap">
                 <TagsMap webId={session.info.webId} />
             </Route>
-            <Route path="/locationMap">
-                <LocationsMap webId={session.info.webId} />
+            <Route path="/adminManageUsers">
+                <AdminManageUsers />
+            </Route>
+            <Route path="/aboutUs">
+                <AboutUs />
+            </Route>
+            <Route path="/prometheus">
+                <Prometheus />
+            </Route>
+            <Route path="/grafana">
+                <Grafana />
             </Route>
         </Switch>
     </Router>);
-}
+};
+
 export default MyNavBar;

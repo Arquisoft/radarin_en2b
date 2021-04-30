@@ -20,7 +20,8 @@ const mapContainerStyle = {
 const options = {
     styles: mapStyles,
     disableDefaultUI: true,
-    zoomControl: true
+    zoomControl: true,
+    gestureHandling: "greedy"
 };
 
 const LocationsMap = (props) => {
