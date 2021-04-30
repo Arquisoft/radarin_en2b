@@ -212,7 +212,7 @@ const Friends = () => {
             }
             </List>
           </div>
-        }
+        } 
       </div>
     );
 };
