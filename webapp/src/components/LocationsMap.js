@@ -51,7 +51,7 @@ const LocationsMap = (props) => {
                         list.forEach((location) => {
                             var splited = location.split(", ");
                             var add = true;
-                            filtered.forEach(crd => {
+                            filtered.forEach((crd) => {
                                 var splitCrd = crd.split(", ");
                                 if (geolib.getDistance({ latitude: parseFloat(splited[0]), longitude: parseFloat(splited[1]) }, { latitude: splitCrd[0], longitude: splitCrd[1]}) < 100) {
                                     add = add && false;
@@ -85,5 +85,6 @@ const LocationsMap = (props) => {
     <h1>My locations</h1>
     <p>{loadError}</p>
     </div>);
-}
+};
+
 export default LocationsMap;

@@ -122,5 +122,6 @@ const MapView = (props) => {
         <h1>My current location and friends</h1>
         <p>{loadError}</p>
         </div>);
-}
+};
+
 export default MapView;
