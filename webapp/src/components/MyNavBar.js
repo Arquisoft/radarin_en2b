@@ -33,7 +33,6 @@ import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
 import LocationsMap from "./LocationsMap";
 import Prometheus from "./Prometheus";
-import Grafana from "./Grafana";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -157,7 +156,7 @@ const MyNavBar = () => {
                                             Prometheus
                                         </Navbar.Brand>
                                     </Link>
-                                    <Link id="linkGrafana" to="/grafana">
+                                    <Link id="linkGrafana" onClick = { () => { window.open("https://radarinen2bgrafana.herokuapp.com/","_blank"); }}>
                                         <Navbar.Brand>
                                             Grafana
                                         </Navbar.Brand>
@@ -212,9 +211,6 @@ const MyNavBar = () => {
             </Route>
             <Route path="/prometheus">
                 <Prometheus />
-            </Route>
-            <Route path="/grafana">
-                <Grafana />
             </Route>
         </Switch>
     </Router>);
