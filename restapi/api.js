@@ -13,14 +13,14 @@ router.get("/", function(req, res) {
 // Get a specific user by its webId
 router.post("/users/getById", async (req, res) => {
     let webId = req.body.webId;
-    let user = await User.findOne({ webId: webId });
+    var user = await User.findOne({ webId: webId });
 	res.json(user);
 });
 
 // Delete a specific user by its webId
 router.post("/users/removeById", async (req, res) => {
     let webId = req.body.webId;
-    let user = await User.deleteOne({ webId: webId });
+    var user = await User.deleteOne({ webId: webId });
 	res.json(user);
 });
 
@@ -83,21 +83,18 @@ router.post("/users/location/near", async (req, res) => {
                                                         
                         if(near != null){
                             if(near.updatedAt.toISOString() >= nowMinus15Minutes.toISOString()){
-                                console.log(near);
                                 userNearByFriends.push(near);
                             }
                         }
                         
                     }, async function(err) {
                         if(err) {
-                            console.log("A element failed to process", err);
                             res.status(500).json(err);
                         } else {
-                            console.log("All elements have been processed successfully");
                             res.status(200).json(userNearByFriends);
                         }
 
-                })
+                });
 });
 
 module.exports = router;

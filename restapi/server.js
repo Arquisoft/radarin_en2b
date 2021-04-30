@@ -32,12 +32,11 @@ function connect(){
             response.header("Access-Control-Allow-Origin", "http://localhost:5000/api/*"); // " "
         });
 
-        app.listen(process.env.PORT || 5000, () => {
-            console.log("Node server has started running on http://localhost:5000/api");
-            console.log("Using db in " + mongo_uri);
-        });
+        app.listen(process.env.PORT || 5000);
+        // Node server has started running on http://localhost:5000/api
+        // Using db in mongodb://localhost:27017/api
     });
-};
+}
 
 // Connect to MongoDB database, the wait is for giving time to mongodb to finish loading
 setTimeout(connect,5000);

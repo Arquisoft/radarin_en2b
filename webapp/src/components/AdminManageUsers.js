@@ -23,34 +23,31 @@ class AdminManageUsers extends React.Component{
         setTimeout(() => {
             this.setState({usersList: usersList});
         }, 100);
-    };
+    }
 
     deleteUserByWebId = (user) => {
         removeUserById(user.webId);
         this.state.usersList.splice(this.state.usersList.indexOf(user), 1);
-        console.log(this.state.usersList);
         this.setState({usersList: this.state.usersList});
-    };
+    }
 
-    render(){
+    render() {
         return (
             <div>
                 <h2>UsersList</h2>
                     {this.state.usersList.map((user) => 
-                        {return <ListGroup horizontal style={{ margin: "20px" }}>
+                        {return (<ListGroup horizontal style={{ margin: "20px" }}>
                                     <ListGroup.Item style={{ minWidth: "500px", textAlign: "center" }}>
                                         {user.webId}
                                     </ListGroup.Item>
                                     <ListGroup.Item>
-                                        <Button data-testid={user.webId} onClick={()=>this.deleteUserByWebId(user)}>Delete</Button>
+                                        <Button data-testid={user.webId} onClick={() => this.deleteUserByWebId(user)}>Delete</Button>
                                     </ListGroup.Item>
-                                </ListGroup>      
+                                </ListGroup>);     
                         }
                     )}
             </div>
         );
-    };
-
+    }
 }
-
 export default AdminManageUsers;

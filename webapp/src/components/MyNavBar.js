@@ -31,6 +31,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
+import LocationsMap from "./LocationsMap";
 
 const MyNavBar = () => {
     const { session } = useSession();
@@ -47,9 +48,9 @@ const MyNavBar = () => {
                 return list;
             });
             var friendsWithWebId = [];
-            friends.forEach(friend => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
+            friends.forEach((friend) => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
             const nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId);
-            nearby.forEach(friend => notifyFriend(friend.webId))
+            nearby.forEach((friend) => notifyFriend(friend.webId));
         });
 
         if (role == null) {
@@ -64,7 +65,7 @@ const MyNavBar = () => {
                     await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
                     await addLocation(webId, position.coords.latitude, position.coords.longitude);
                 });
-            }, 30000);
+            }, 300000);
             return () => clearInterval(interval);
         }
     }, [role, webId]);
@@ -129,6 +130,11 @@ const MyNavBar = () => {
                             My Locations
                         </Navbar.Brand>
                     </Link>
+                    <Link to="/locationMap">
+                        <Navbar.Brand>
+                            LocationsMap
+                        </Navbar.Brand>
+                    </Link>
                     <Link to="/myTags">
                         <Navbar.Brand>
                             My Tags
@@ -176,10 +182,12 @@ const MyNavBar = () => {
                 <MyTags />
             </Route>
             <Route path="/tagsMap">
-                <TagsMap webId={session.info.webId}/>
+                <TagsMap webId={session.info.webId} />
+            </Route>
+            <Route path="/locationMap">
+                <LocationsMap webId={session.info.webId} />
             </Route>
         </Switch>
     </Router>);
-};
-
+}
 export default MyNavBar;
