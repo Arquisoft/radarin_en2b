@@ -5,4 +5,4 @@ ENV GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
 ADD provisioning /etc/grafana/provisioning
 ADD heroku-run.sh /
 ADD grafana.ini /etc/grafana/grafana.ini
-ENTRYPOINT ["/heroku-run.sh"]
+ENTRYPOINT ["bash /heroku-run.sh"]
