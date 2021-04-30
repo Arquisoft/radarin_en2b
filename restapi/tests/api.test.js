@@ -36,7 +36,7 @@ describe("user ", () => {
             "coordinates": [0.0, 0.0]
         };
         var authKey = "pablo@uniovi.es";
-        const response = await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        var response = await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
         expect(response.body.webId).toBe(webId);
         expect(response.body.location).toStrictEqual(location);
@@ -55,7 +55,7 @@ describe("user ", () => {
         var authKey = "pablo@uniovi.es";
         await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         
-        const response = await request(app).post("/api/users/getById").send({webId: webId}).set("Accept", "application/json");
+        var response = await request(app).post("/api/users/getById").send({webId: webId}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
         expect(response.body.webId).toBe(webId);
     });
@@ -72,7 +72,7 @@ describe("user ", () => {
         var authKey = "pablo@uniovi.es";
         await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         
-        const response = await request(app).post("/api/users/removeById").send({webId: webId}).set("Accept", "application/json");
+        var response = await request(app).post("/api/users/removeById").send({webId: webId}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
         // response -> { n: 1, ok: 1, deletedCount: 1 } if the operation success
         expect(response.body.n).toBe(1);
@@ -92,9 +92,9 @@ describe("user ", () => {
         var authKey = "pablo@uniovi.es";
         await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         
-        const response = await request(app).get("/api/users/list");
+        var response = await request(app).get("/api/users/list");
         expect(response.statusCode).toBe(200);
-        const user = response.body.find(u => u); // returns an array with the unique user in the db at the moment
+        var user = response.body.find(u => u); // returns an array with the unique user in the db at the moment
         expect(user.webId).toBe(webId);
     });
 
@@ -110,9 +110,9 @@ describe("user ", () => {
         var authKey = "pablo@uniovi.es";
         await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         
-        const response = await request(app).get("/api/users/normal/list"); 
+        var response = await request(app).get("/api/users/normal/list"); 
         expect(response.statusCode).toBe(200);
-        const user = response.body.find(u => u); // returns an array with the unique user in the db at the moment
+        var user = response.body.find(u => u); // returns an array with the unique user in the db at the moment
         expect(user.webId).toBe(webId);
     });
 
@@ -134,7 +134,7 @@ describe("user ", () => {
             "coordinates": [90.0, 90.0]
         };
         authKey = "pablo@uniovi.es";
-        const response = await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
+        var response = await request(app).post("/api/users/add").send({webId: webId, location: location, authKey: authKey}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
         expect(response.body.webId).toBe(webId);
         expect(response.body.location).toStrictEqual(location);
@@ -161,9 +161,9 @@ describe("user ", () => {
                 "webId": "Pablo"  
             }
         ];
-        const response = await request(app).post("/api/users/location/near").send({userLocation: userLocation, friends: friends}).set("Accept", "application/json");
+        var response = await request(app).post("/api/users/location/near").send({userLocation: userLocation, friends: friends}).set("Accept", "application/json");
         expect(response.statusCode).toBe(200);
-        const user = response.body.find(u => u); // returns an array with the unique user in the db at the moment
+        var user = response.body.find(u => u); // returns an array with the unique user in the db at the moment
         expect(user.webId).toBe(friends[0].webId);
     });
 });
