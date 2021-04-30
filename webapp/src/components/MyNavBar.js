@@ -67,7 +67,7 @@ const MyNavBar = () => {
                     await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
                     await addLocation(webId, position.coords.latitude, position.coords.longitude);
                 });
-            }, 300000);
+            }, 120000);
             return () => clearInterval(interval);
         }
     }, [role, webId]);
@@ -172,11 +172,13 @@ const MyNavBar = () => {
                         </Navbar.Brand>
                     </Link>
                     <Navbar.Text>Logged in as {name}</Navbar.Text>
-                    <Nav.Item className="float-right">
-                        <LogoutButton>
-                            <Button>Log Out</Button>
-                        </LogoutButton>
-                    </Nav.Item>
+                    <Link to="/">
+                        <Nav.Item className="float-right">
+                            <LogoutButton>
+                                <Button>Log Out</Button>
+                            </LogoutButton>
+                        </Nav.Item>
+                    </Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
