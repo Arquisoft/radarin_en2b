@@ -69,7 +69,7 @@ const Friends = () => {
 
   */
 
-  useEffect(()=>{
+  useEffect(() => {
     // The JSON-LD context for resolving properties
     const context = {
       "@context": {
@@ -89,9 +89,9 @@ const Friends = () => {
         
         var nearbyFriends = [];
       
-        async function onlyUnique(value, index, self){
+        /*async function onlyUnique(value, index, self){
           return self.indexOf(value) === index;
-        }
+        }*/
 
         navigator.geolocation.getCurrentPosition(async function (position) {
           var friendsOfUser = [];
@@ -102,7 +102,7 @@ const Friends = () => {
             var webId = `${name}profile/card#me`;
             friendsOfUser.push({webId});
           }
-          friends = await friendsOfUser.filter(onlyUnique);
+          //friends = await friendsOfUser.filter(onlyUnique);
 
           await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friends).then((user) => nearbyFriends.push(user));
 
@@ -197,7 +197,7 @@ const Friends = () => {
         <h2 style={{marginTop: "0.625em", marginLeft: "2.5em"}}>All friends</h2>
         {activeProfile &&
           <div>
-            <List src={`[${activeProfile}].friends`}>{friend =>
+            <List src={`[${activeProfile}].friends`}>{(friend) =>
               <ListGroup horizontal key={friend} style={{marginTop: "1.25em"}}>
                 <ListGroup.Item horizontal style={{minWidth: "6.25em", minHeight: "6.25em"}}>
                   <img src={userLogo} alt="userLogo" width="80" height="80"></img>
