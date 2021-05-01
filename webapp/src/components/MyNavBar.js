@@ -23,7 +23,7 @@ import MapView from "./MapView";
 import AdminManageUsers from "./AdminManageUsers";
 import { LogoutButton, useSession } from "@inrupt/solid-ui-react";
 import { addUser, getUserById } from "../api/api";
-import { getName } from "../services/crudPod";
+import { getName, getChats } from "../services/crudPod";
 import { addLocation, getFriends } from "../services/crudPod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -48,6 +48,7 @@ const MyNavBar = ({ ...boopConfig }) => {
 
 
     useEffect(() => {
+        getChats(webId).then();
         getName(webId).then((name) => setName(name));
         navigator.geolocation.getCurrentPosition(async function (position) {
             let friends = await getFriends(webId).then(function (list) {
