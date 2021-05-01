@@ -32,7 +32,7 @@ There are many notations for describing scenarios, e.g.
 
 === Interaction with user's pod
 
-Interaction with the pod corresponds with adding or giving information to it, apart from retrieving data from it.
+==== Adding or giving information to the pod
 
 [plantuml,"sequence-upload-location",svg]
 ....
@@ -50,6 +50,9 @@ wa -> u : confirmation response
 deactivate wa
 ....
 
+==== Retrieving data from the pod
+
+[plantuml,"sequence-upload-location",svg]
 ....
 actor John as u
 participant WebApp as wa
