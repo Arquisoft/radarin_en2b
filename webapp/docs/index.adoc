@@ -84,12 +84,16 @@ include::09_design_decisions.adoc[]
 include::10_quality_scenarios.adoc[]
 
 <<<<
-// 11. Technical Risks
-include::11_technical_risks.adoc[]
+// 11. Test Report
+include::11_test_report.adoc[]
 
 <<<<
-// 12. Glossary
-include::12_glossary.adoc[]
+// 12. Technical Risks
+include::12_technical_risks.adoc[]
+
+<<<<
+// 13. Glossary
+include::13_glossary.adoc[]
 
 <<<<
 // About

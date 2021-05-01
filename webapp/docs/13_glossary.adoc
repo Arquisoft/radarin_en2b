@@ -41,7 +41,7 @@ Potentially more columns in case you need translations.
 | [[node]] Node.js | Platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications.
 | [[javascript]] JavaScript | Text-based programming language used both on the client-side and server-side that allows users to make web pages interactive.
 | [[inrupt]] Inrupt | Puts individuals in control of their data, gives organizations new opportunities to create value for customers, and allows developers to thrive in an open marketplace of innovation. It is a SOLID provider.
-| [[rest]] Rest API |  Application programming interface (API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for representational state transfer.
+| [[rest]] REST API |  Application programming interface (API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services. REST stands for representational state transfer.
 | [[http]] HTTP protocol | Hypertext Transfer Protocol used to transfer data over the web.
 | [[geojson]] GeoJSON |  Format for encoding a variety of geographic data structures such as points, multilines, polygons, etc.
 |===

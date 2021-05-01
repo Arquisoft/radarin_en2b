@@ -30,6 +30,40 @@ There are many notations for describing scenarios, e.g.
 
 ****
 
+=== Interaction with user's pod
+
+Interaction with the pod corresponds with adding or giving information to it, apart from retrieving data from it.
+
+[plantuml,"sequence-upload-location",svg]
+....
+actor John as u
+participant WebApp as wa
+database "John's Pod" as jpod
+
+u -> wa : send information
+activate wa
+
+wa -> jpod : store information
+
+wa -> u : confirmation response
+
+deactivate wa
+....
+
+....
+actor John as u
+participant WebApp as wa
+database "John's Pod" as jpod
+
+activate wa
+
+jpod -> wa : retrieve information
+
+wa -> u : information response
+
+deactivate wa
+....
+
 === User sends location
 
 [plantuml,"sequence-upload-location",svg]
@@ -37,13 +71,13 @@ There are many notations for describing scenarios, e.g.
 actor Bob as u
 participant WebApp as wa
 database DB as db
-database "Bob's Pod" as pod
+database "Bob's Pod" as bpod
 
 u -> wa : send location and timestamp
 activate wa
 
 wa -> db : overwrite old location and timestamp
-wa -> pod : store log of location and timestamp
+wa -> bpod : store log of location and timestamp
 
 wa -> u : confirmation response
 

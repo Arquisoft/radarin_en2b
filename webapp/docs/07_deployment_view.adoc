@@ -55,18 +55,18 @@ WebApp --> SOLID_Server : uses
 
 Motivation::
 
-Radarin is located in a cloud service (Heroku <<heroku>>), as well as the Mongo database it uses. Users can access through the browser to the web application with a smartphone or tablet. Radarin connects to a SOLID <<solid>> provider, which manages the PODs <<pods>> that can be in any SOLID <<solid>> server. The three available providers are: Inrupt <<inrupt>> (the most common one), SolidCommunity and SolidWeb.
+Radarin is located in a cloud service (Heroku <<heroku>>), as well as the Mongo database it uses. Users can access through the browser to the web application with a computer or a mobile device. Radarin connects to a SOLID <<solid>> provider, which manages the PODs <<pods>> that can be in any SOLID <<solid>> server. The three available providers are: Inrupt <<inrupt>> (the most common one), SolidCommunity and SolidWeb.
 
 Quality and/or Performance Features::
 
-Being a web application, a network connection is needed in order for it to work. However, the app itself should not consume much bandwidth, as it does not perform heavy tasks (just sends coordinates and timestamp and receives the list of friends' webIDs and their location).  
-The availability of the servers where the SOLID <<solid>> PODs <<pods>> are stored will also be key in the availability of the application itself. Implementing a cache where the friends are stored is a good idea that will be taken into account. The cache will make the app less reliant on the PODs <<pods>> availability, but it will still be necessary to have the option to manually force checking them again in case there are changes. 
+Being a web application, a network connection is needed in order for it to work. However, the app itself should not consume much bandwidth, as it does not perform heavy tasks (just sends coordinates and timestamp and receives that information with the list of friends' webIDs, their location and tags).  
+The availability of the servers where the SOLID <<solid>> PODs <<pods>> are stored will also be key in the availability of the application itself. Implementing a cache where the friends are stored is a good idea that could be done as a further improvement, it could not be done because the lack of time. The cache will make the app less reliant on the PODs <<pods>> availability, but it will still be necessary to have the option to manually force checking them again in case there are changes. 
 
 Mapping of Building Blocks to Infrastructure::
 
 The blocks that compose the system are:
 
-- The device used by the user and the administrator to enter in a browser as it is the wy to enter in the web application.
+- The device used by the user and the administrator to enter in a browser as it is the way to enter in the web application.
 - The web application.
 - The server where the web application is located.
 - The database used by the app.
