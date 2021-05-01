@@ -156,7 +156,7 @@ const MyNavBar = () => {
                                             Prometheus
                                         </Navbar.Brand>
                                     </Link>
-                                    <Link id="linkGrafana" onClick = { () => { window.open("https://radarinen2bgrafana.herokuapp.com/","_blank"); }}>
+                                    <Link id="linkGrafana" to="" onClick = { () => { window.open("https://radarinen2bgrafana.herokuapp.com/","_blank"); }}>
                                         <Navbar.Brand>
                                             Grafana
                                         </Navbar.Brand>

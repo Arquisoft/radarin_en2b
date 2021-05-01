@@ -1,0 +1,1441 @@
+RUN	NearbyFriendsInMapDisplayed	nearbyfriendsinmapdisplayed	1619892095184	 	3.5.1
+USER	NearbyFriendsInMapDisplayed	START	1619892098998
+USER	NearbyFriendsInMapDisplayed	START	1619892099009
+REQUEST		request_0	1619892099049	1619892099324	OK	 
+REQUEST		request_0	1619892099049	1619892099296	OK	 
+REQUEST		request_1	1619892099344	1619892099591	OK	 
+REQUEST		request_1	1619892099344	1619892099591	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892099642
+REQUEST		request_0	1619892099643	1619892099894	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892099917
+REQUEST		request_1	1619892099896	1619892100114	OK	 
+REQUEST		request_0	1619892099918	1619892100193	OK	 
+REQUEST		request_1	1619892100194	1619892100409	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892100438
+REQUEST		request_0	1619892100439	1619892100702	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892100836
+REQUEST		request_1	1619892100703	1619892100906	OK	 
+REQUEST		request_0	1619892100837	1619892101099	OK	 
+REQUEST		request_1	1619892101100	1619892101345	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892101477
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892101620
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892101620
+REQUEST		request_0	1619892101478	1619892101702	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892101787
+REQUEST		request_1	1619892101703	1619892101924	OK	 
+REQUEST		request_0	1619892101787	1619892102001	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892102125
+REQUEST		request_1	1619892102002	1619892102195	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892102411
+REQUEST		request_3	1619892102659	1619892102715	OK	 
+REQUEST		request_3	1619892102659	1619892102715	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892102908
+REQUEST		request_3	1619892103140	1619892103201	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892103347
+REQUEST		request_3	1619892103425	1619892103483	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892103534
+REQUEST		request_0	1619892103535	1619892103764	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892103932
+REQUEST		request_4	1619892103723	1619892103936	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892103937
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892103937
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892103938
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892103938
+REQUEST		request_4	1619892103723	1619892103952	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892103952
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892103953
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892103953
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892103953
+REQUEST		request_3	1619892103917	1619892103972	OK	 
+REQUEST		request_1	1619892103765	1619892103980	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892104022
+REQUEST		request_7	1619892103939	1619892104036	OK	 
+REQUEST		request_7	1619892103954	1619892104061	OK	 
+REQUEST		request_8	1619892103940	1619892104167	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892103973	1619892104172	OK	 
+REQUEST		request_5	1619892103941	1619892104173	OK	 
+REQUEST		request_8	1619892103968	1619892104174	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892103973	1619892104175	OK	 
+REQUEST		request_11	1619892103975	1619892104188	OK	 
+REQUEST		request_5	1619892103969	1619892104188	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892104195
+REQUEST		request_11	1619892103975	1619892104197	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892104197
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892104203
+USER	NearbyFriendsInMapDisplayed	END	1619892104203
+REQUEST		request_0	1619892104022	1619892104212	OK	 
+REQUEST		request_3	1619892104356	1619892104413	OK	 
+REQUEST		request_1	1619892104213	1619892104414	OK	 
+REQUEST		request_0	1619892104195	1619892104419	OK	 
+REQUEST		request_4	1619892104218	1619892104422	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892104423
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892104424
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892104424
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892104424
+REQUEST		request_7	1619892104425	1619892104515	OK	 
+REQUEST		request_8	1619892104426	1619892104622	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892104429	1619892104636	OK	 
+REQUEST		request_1	1619892104420	1619892104644	OK	 
+REQUEST		request_9	1619892104428	1619892104647	OK	 
+REQUEST		request_5	1619892104427	1619892104647	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892104652
+REQUEST		request_4	1619892104498	1619892104701	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892104702
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892104703
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892104703
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892104703
+REQUEST		request_7	1619892104704	1619892104792	OK	 
+REQUEST		request_8	1619892104705	1619892104890	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892104706	1619892104897	OK	 
+REQUEST		request_9	1619892104707	1619892104904	OK	 
+REQUEST		request_11	1619892104708	1619892104906	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892104911
+REQUEST		request_3	1619892104981	1619892105043	OK	 
+REQUEST		request_4	1619892104981	1619892105179	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892105179
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892105180
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892105181
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892105181
+REQUEST		request_3	1619892105211	1619892105262	OK	 
+REQUEST		request_7	1619892105182	1619892105289	OK	 
+REQUEST		request_8	1619892105183	1619892105367	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892105184	1619892105384	OK	 
+REQUEST		request_5	1619892105184	1619892105389	OK	 
+REQUEST		request_11	1619892105185	1619892105399	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892105404
+REQUEST		request_4	1619892105415	1619892105613	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892105614
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892105614
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892105615
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892105615
+REQUEST		request_7	1619892105615	1619892105704	OK	 
+REQUEST		request_8	1619892105616	1619892105806	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892105617	1619892105810	OK	 
+REQUEST		request_11	1619892105620	1619892105816	OK	 
+REQUEST		request_9	1619892105619	1619892105820	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892105823
+USER	NearbyFriendsInMapDisplayed	START	1619892105923
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892105985
+USER	NearbyFriendsInMapDisplayed	START	1619892106093
+REQUEST		request_0	1619892105924	1619892106144	OK	 
+REQUEST		request_4	1619892106047	1619892106243	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892106244
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892106246
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892106247
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892106247
+REQUEST		request_0	1619892106094	1619892106286	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892106297
+REQUEST		request_7	1619892106249	1619892106338	OK	 
+REQUEST		request_1	1619892106145	1619892106339	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892106419
+REQUEST		request_8	1619892106252	1619892106440	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892106255	1619892106454	OK	 
+REQUEST		request_4	1619892106267	1619892106474	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892106475
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892106475
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892106475
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892106475
+REQUEST		request_11	1619892106257	1619892106476	OK	 
+REQUEST		request_9	1619892106256	1619892106492	OK	 
+REQUEST		request_1	1619892106287	1619892106492	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892106496
+REQUEST		request_0	1619892106298	1619892106505	OK	 
+REQUEST		request_7	1619892106476	1619892106563	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892106647
+REQUEST		request_8	1619892106477	1619892106653	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892106479	1619892106669	OK	 
+REQUEST		request_5	1619892106478	1619892106671	OK	 
+REQUEST		request_11	1619892106480	1619892106680	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892106685
+REQUEST		request_1	1619892106506	1619892106697	OK	 
+REQUEST		request_3	1619892106993	1619892107041	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892107070
+USER	NearbyFriendsInMapDisplayed	START	1619892107245
+REQUEST		request_0	1619892107071	1619892107286	OK	 
+REQUEST		request_0	1619892107245	1619892107479	OK	 
+REQUEST		request_3	1619892107433	1619892107484	OK	 
+REQUEST		request_1	1619892107287	1619892107497	OK	 
+REQUEST		request_1	1619892107480	1619892107671	OK	 
+REQUEST		request_3	1619892107655	1619892107703	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892107850
+REQUEST		request_0	1619892107851	1619892108040	OK	 
+REQUEST		request_1	1619892108041	1619892108239	OK	 
+REQUEST		request_4	1619892108042	1619892108248	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892108249
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892108251
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892108252
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892108253
+REQUEST		request_7	1619892108254	1619892108340	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892108341
+REQUEST		request_8	1619892108256	1619892108445	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892108258	1619892108461	OK	 
+REQUEST		request_9	1619892108260	1619892108462	OK	 
+REQUEST		request_11	1619892108262	1619892108467	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892108470
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892108499
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892108701
+REQUEST		request_4	1619892108499	1619892108708	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892108711
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892108713
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892108714
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892108714
+REQUEST		request_7	1619892108716	1619892108807	OK	 
+REQUEST		request_8	1619892108718	1619892108911	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892108719	1619892108915	OK	 
+REQUEST		request_9	1619892108720	1619892108918	OK	 
+REQUEST		request_11	1619892108721	1619892108920	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892108932
+REQUEST		request_4	1619892108717	1619892108942	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892108944
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892108945
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892108946
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892108947
+REQUEST		request_7	1619892108949	1619892109044	OK	 
+REQUEST		request_8	1619892108951	1619892109154	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892108954	1619892109169	OK	 
+REQUEST		request_9	1619892108956	1619892109179	OK	 
+REQUEST		request_11	1619892108957	1619892109182	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892109195
+USER	NearbyFriendsInMapDisplayed	START	1619892109318
+REQUEST		request_3	1619892109350	1619892109401	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892109506
+REQUEST		request_0	1619892109318	1619892109528	OK	 
+REQUEST		request_3	1619892109507	1619892109562	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892109675
+REQUEST		request_1	1619892109530	1619892109740	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892109738
+REQUEST		request_3	1619892109707	1619892109757	OK	 
+REQUEST		request_0	1619892109739	1619892109979	OK	 
+REQUEST		request_1	1619892109982	1619892110181	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892110251
+REQUEST		request_3	1619892110521	1619892110574	OK	 
+REQUEST		request_4	1619892110406	1619892110604	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892110605
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892110605
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892110605
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892110605
+REQUEST		request_7	1619892110606	1619892110704	OK	 
+REQUEST		request_3	1619892110694	1619892110750	OK	 
+REQUEST		request_4	1619892110568	1619892110775	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892110775
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892110776
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892110776
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892110776
+REQUEST		request_8	1619892110607	1619892110796	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892110608	1619892110800	OK	 
+REQUEST		request_9	1619892110608	1619892110817	OK	 
+REQUEST		request_11	1619892110609	1619892110818	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892110820
+REQUEST		request_7	1619892110777	1619892110859	OK	 
+REQUEST		request_8	1619892110778	1619892110957	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892110778	1619892110978	OK	 
+REQUEST		request_9	1619892110779	1619892110980	OK	 
+REQUEST		request_11	1619892110779	1619892110981	OK	 
+REQUEST		request_4	1619892110773	1619892110982	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892110983
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892110985
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892110986
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892110986
+USER	NearbyFriendsInMapDisplayed	END	1619892110989
+REQUEST		request_7	1619892110988	1619892111071	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892111145
+USER	NearbyFriendsInMapDisplayed	START	1619892111161
+REQUEST		request_8	1619892110989	1619892111175	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892110994	1619892111193	OK	 
+REQUEST		request_11	1619892110995	1619892111194	OK	 
+REQUEST		request_5	1619892110991	1619892111197	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892111203
+REQUEST		request_3	1619892111266	1619892111316	OK	 
+REQUEST		request_0	1619892111161	1619892111341	OK	 
+REQUEST		request_0	1619892111146	1619892111362	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892111374
+REQUEST		request_1	1619892111342	1619892111536	OK	 
+REQUEST		request_0	1619892111374	1619892111555	OK	 
+REQUEST		request_1	1619892111363	1619892111571	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892111743
+REQUEST		request_1	1619892111558	1619892111749	OK	 
+REQUEST		request_4	1619892111575	1619892111774	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892111778
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892111779
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892111780
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892111780
+REQUEST		request_7	1619892111782	1619892111867	OK	 
+REQUEST		request_4	1619892111761	1619892111963	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892111965
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892111966
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892111967
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892111967
+REQUEST		request_8	1619892111785	1619892111988	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892111788	1619892111991	OK	 
+REQUEST		request_5	1619892111787	1619892111997	OK	 
+REQUEST		request_11	1619892111790	1619892112014	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892112019
+REQUEST		request_7	1619892111969	1619892112056	OK	 
+REQUEST		request_8	1619892111970	1619892112161	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892111973	1619892112168	OK	 
+REQUEST		request_9	1619892111975	1619892112169	OK	 
+REQUEST		request_11	1619892111977	1619892112170	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892112176
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892112184
+USER	NearbyFriendsInMapDisplayed	START	1619892112478
+REQUEST		request_4	1619892112325	1619892112563	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892112564
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892112565
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892112566
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892112566
+REQUEST		request_7	1619892112568	1619892112672	OK	 
+REQUEST		request_0	1619892112479	1619892112690	OK	 
+REQUEST		request_8	1619892112570	1619892112764	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892112573	1619892112790	OK	 
+REQUEST		request_9	1619892112576	1619892112791	OK	 
+REQUEST		request_11	1619892112578	1619892112792	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892112795
+REQUEST		request_3	1619892112745	1619892112795	OK	 
+REQUEST		request_1	1619892112691	1619892112874	OK	 
+REQUEST		request_3	1619892113195	1619892113244	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892113553
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892113585
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892113756
+REQUEST		request_4	1619892113806	1619892114024	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892114024
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892114025
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892114025
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892114025
+REQUEST		request_7	1619892114026	1619892114109	OK	 
+REQUEST		request_8	1619892114026	1619892114218	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892114028	1619892114224	OK	 
+REQUEST		request_5	1619892114027	1619892114225	OK	 
+REQUEST		request_11	1619892114029	1619892114226	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892114231
+USER	NearbyFriendsInMapDisplayed	START	1619892114388
+REQUEST		request_4	1619892114249	1619892114456	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892114458
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892114459
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892114460
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892114460
+USER	NearbyFriendsInMapDisplayed	START	1619892114484
+REQUEST		request_7	1619892114461	1619892114553	OK	 
+REQUEST		request_0	1619892114389	1619892114590	OK	 
+REQUEST		request_3	1619892114562	1619892114616	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892114619
+REQUEST		request_3	1619892114593	1619892114654	OK	 
+REQUEST		request_8	1619892114463	1619892114656	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892114465	1619892114666	OK	 
+REQUEST		request_9	1619892114467	1619892114676	OK	 
+REQUEST		request_11	1619892114469	1619892114677	OK	 
+REQUEST		request_0	1619892114485	1619892114712	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892114729
+REQUEST		request_1	1619892114593	1619892114816	OK	 
+REQUEST		request_3	1619892114771	1619892114821	OK	 
+REQUEST		request_0	1619892114620	1619892114863	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892114877
+REQUEST		request_1	1619892114713	1619892114917	OK	 
+REQUEST		request_1	1619892114864	1619892115069	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892115310
+REQUEST		request_0	1619892115311	1619892115540	OK	 
+REQUEST		request_1	1619892115543	1619892115742	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892115790
+REQUEST		request_4	1619892115619	1619892115817	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892115818
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892115819
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892115819
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892115819
+REQUEST		request_4	1619892115665	1619892115865	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892115865
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892115866
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892115866
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892115866
+REQUEST		request_7	1619892115821	1619892115918	OK	 
+REQUEST		request_7	1619892115867	1619892115949	OK	 
+REQUEST		request_3	1619892115896	1619892115949	OK	 
+REQUEST		request_0	1619892115791	1619892115978	OK	 
+REQUEST		request_8	1619892115822	1619892116013	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892115823	1619892116039	OK	 
+REQUEST		request_4	1619892115835	1619892116039	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892116039
+REQUEST		request_9	1619892115824	1619892116039	OK	 
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892116039
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892116040
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892116040
+REQUEST		request_11	1619892115826	1619892116040	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892116043
+USER	NearbyFriendsInMapDisplayed	START	1619892116044
+REQUEST		request_8	1619892115867	1619892116046	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892115869	1619892116059	OK	 
+REQUEST		request_11	1619892115869	1619892116065	OK	 
+REQUEST		request_5	1619892115868	1619892116066	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892116069
+REQUEST		request_7	1619892116040	1619892116132	OK	 
+REQUEST		request_1	1619892115978	1619892116168	OK	 
+REQUEST		request_8	1619892116040	1619892116220	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892116042	1619892116244	OK	 
+REQUEST		request_5	1619892116041	1619892116246	OK	 
+REQUEST		request_11	1619892116043	1619892116247	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892116252
+REQUEST		request_0	1619892116044	1619892116272	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892116295
+REQUEST		request_1	1619892116273	1619892116479	OK	 
+REQUEST		request_0	1619892116295	1619892116531	OK	 
+REQUEST		request_1	1619892116532	1619892116725	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892116794
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892116823
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892116932
+REQUEST		request_0	1619892116794	1619892117022	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892117080
+REQUEST		request_4	1619892116957	1619892117156	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892117158
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892117159
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892117159
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892117160
+REQUEST		request_1	1619892117023	1619892117226	OK	 
+REQUEST		request_7	1619892117161	1619892117238	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892117346
+USER	NearbyFriendsInMapDisplayed	START	1619892117346
+REQUEST		request_8	1619892117163	1619892117350	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892117170	1619892117366	OK	 
+REQUEST		request_5	1619892117165	1619892117370	OK	 
+REQUEST		request_9	1619892117168	1619892117371	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892117376
+REQUEST		request_0	1619892117347	1619892117548	OK	 
+REQUEST		request_0	1619892117347	1619892117549	OK	 
+REQUEST		request_1	1619892117550	1619892117749	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892117751
+REQUEST		request_1	1619892117550	1619892117758	OK	 
+REQUEST		request_3	1619892117827	1619892117882	OK	 
+REQUEST		request_3	1619892117938	1619892117986	OK	 
+REQUEST		request_3	1619892118093	1619892118148	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892118169
+USER	NearbyFriendsInMapDisplayed	START	1619892118356
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892118495
+REQUEST		request_0	1619892118357	1619892118573	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892118667
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892118727
+REQUEST		request_1	1619892118575	1619892118776	OK	 
+REQUEST		request_3	1619892118758	1619892118812	OK	 
+REQUEST		request_0	1619892118667	1619892118896	OK	 
+REQUEST		request_1	1619892118898	1619892119111	OK	 
+REQUEST		request_4	1619892118898	1619892119114	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892119114
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892119114
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892119114
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892119115
+REQUEST		request_4	1619892118997	1619892119196	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892119197
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892119197
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892119197
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892119197
+REQUEST		request_7	1619892119115	1619892119215	OK	 
+REQUEST		request_3	1619892119179	1619892119229	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892119241
+REQUEST		request_7	1619892119198	1619892119278	OK	 
+REQUEST		request_8	1619892119116	1619892119298	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892119117	1619892119315	OK	 
+REQUEST		request_5	1619892119116	1619892119315	OK	 
+REQUEST		request_11	1619892119117	1619892119329	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892119331
+REQUEST		request_4	1619892119164	1619892119368	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892119368
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892119369
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892119369
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892119369
+REQUEST		request_8	1619892119198	1619892119392	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892119199	1619892119402	OK	 
+REQUEST		request_5	1619892119199	1619892119403	OK	 
+REQUEST		request_11	1619892119200	1619892119403	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892119406
+REQUEST		request_7	1619892119370	1619892119456	OK	 
+REQUEST		request_8	1619892119370	1619892119549	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_3	1619892119505	1619892119558	OK	 
+REQUEST		request_5	1619892119371	1619892119564	OK	 
+REQUEST		request_9	1619892119372	1619892119565	OK	 
+REQUEST		request_11	1619892119372	1619892119594	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892119597
+USER	NearbyFriendsInMapDisplayed	START	1619892119615
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892119755
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892119769
+REQUEST		request_3	1619892119740	1619892119793	OK	 
+REQUEST		request_0	1619892119616	1619892119817	OK	 
+REQUEST		request_1	1619892119819	1619892120028	OK	 
+REQUEST		request_4	1619892119825	1619892120048	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892120049
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892120050
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892120050
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892120051
+REQUEST		request_7	1619892120052	1619892120135	OK	 
+REQUEST		request_11	1619892120058	1619892120241	OK	 
+REQUEST		request_8	1619892120054	1619892120245	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892120055	1619892120252	OK	 
+REQUEST		request_9	1619892120056	1619892120257	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892120260
+REQUEST		request_3	1619892120245	1619892120297	OK	 
+REQUEST		request_4	1619892120245	1619892120436	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892120437
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892120437
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892120438
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892120438
+REQUEST		request_7	1619892120439	1619892120519	OK	 
+REQUEST		request_8	1619892120440	1619892120622	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892120443	1619892120648	OK	 
+REQUEST		request_5	1619892120441	1619892120650	OK	 
+REQUEST		request_9	1619892120442	1619892120651	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892120661
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892120787
+REQUEST		request_4	1619892120570	1619892120789	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892120790
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892120791
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892120791
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892120791
+REQUEST		request_3	1619892120771	1619892120828	OK	 
+REQUEST		request_3	1619892120787	1619892120838	OK	 
+REQUEST		request_7	1619892120793	1619892120884	OK	 
+REQUEST		request_8	1619892120794	1619892120981	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892120796	1619892121000	OK	 
+REQUEST		request_5	1619892120795	1619892121002	OK	 
+REQUEST		request_11	1619892120799	1619892121007	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892121010
+REQUEST		request_4	1619892120809	1619892121019	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892121019
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892121019
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892121019
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892121019
+REQUEST		request_7	1619892121020	1619892121094	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892121121
+REQUEST		request_8	1619892121020	1619892121207	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892121021	1619892121213	OK	 
+REQUEST		request_11	1619892121022	1619892121235	OK	 
+REQUEST		request_9	1619892121022	1619892121239	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892121244
+REQUEST		request_4	1619892121307	1619892121497	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892121498
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892121499
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892121500
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892121500
+REQUEST		request_7	1619892121501	1619892121584	OK	 
+REQUEST		request_8	1619892121502	1619892121702	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892121506	1619892121710	OK	 
+REQUEST		request_5	1619892121504	1619892121725	OK	 
+REQUEST		request_11	1619892121507	1619892121731	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892121740
+REQUEST		request_3	1619892121807	1619892121856	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892122043
+REQUEST		request_4	1619892121837	1619892122049	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892122050
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892122051
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892122052
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892122052
+REQUEST		request_4	1619892121853	1619892122065	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892122066
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892122067
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892122067
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892122067
+REQUEST		request_7	1619892122053	1619892122144	OK	 
+REQUEST		request_7	1619892122068	1619892122151	OK	 
+REQUEST		request_3	1619892122135	1619892122185	OK	 
+REQUEST		request_8	1619892122054	1619892122246	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892122059	1619892122255	OK	 
+REQUEST		request_5	1619892122057	1619892122257	OK	 
+REQUEST		request_11	1619892122062	1619892122261	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892122267
+REQUEST		request_8	1619892122069	1619892122276	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892122083	1619892122276	OK	 
+REQUEST		request_9	1619892122084	1619892122285	OK	 
+REQUEST		request_11	1619892122085	1619892122288	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892122292
+REQUEST		request_4	1619892122864	1619892123072	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892123073
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892123074
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892123074
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892123074
+REQUEST		request_3	1619892123051	1619892123117	OK	 
+REQUEST		request_7	1619892123076	1619892123174	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892123301
+REQUEST		request_8	1619892123077	1619892123330	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892123079	1619892123332	OK	 
+REQUEST		request_9	1619892123081	1619892123362	OK	 
+REQUEST		request_11	1619892123084	1619892123364	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892123371
+REQUEST		request_4	1619892123191	1619892123403	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892123404
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892123405
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892123405
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892123406
+REQUEST		request_7	1619892123407	1619892123492	OK	 
+REQUEST		request_0	1619892123302	1619892123540	OK	 
+REQUEST		request_8	1619892123410	1619892123606	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892123413	1619892123619	OK	 
+REQUEST		request_9	1619892123415	1619892123623	OK	 
+REQUEST		request_11	1619892123417	1619892123631	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892123633
+REQUEST		request_1	1619892123541	1619892123739	OK	 
+REQUEST		request_4	1619892124130	1619892124339	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892124340
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892124341
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892124341
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892124341
+USER	NearbyFriendsInMapDisplayed	START	1619892124415
+REQUEST		request_7	1619892124342	1619892124420	OK	 
+REQUEST		request_8	1619892124344	1619892124541	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892124346	1619892124542	OK	 
+REQUEST		request_9	1619892124347	1619892124550	OK	 
+REQUEST		request_11	1619892124350	1619892124563	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892124566
+REQUEST		request_0	1619892124416	1619892124642	OK	 
+REQUEST		request_1	1619892124642	1619892124847	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892125138
+REQUEST		request_0	1619892125139	1619892125341	OK	 
+REQUEST		request_1	1619892125343	1619892125537	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892125753
+USER	NearbyFriendsInMapDisplayed	START	1619892125754
+REQUEST		request_0	1619892125754	1619892125951	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892125991
+REQUEST		request_1	1619892125952	1619892126139	OK	 
+REQUEST		request_0	1619892125991	1619892126207	OK	 
+REQUEST		request_1	1619892126210	1619892126403	OK	 
+REQUEST		request_3	1619892126763	1619892126812	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892126857
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892127546
+USER	NearbyFriendsInMapDisplayed	START	1619892127655
+USER	NearbyFriendsInMapDisplayed	START	1619892127763
+USER	NearbyFriendsInMapDisplayed	START	1619892127837
+REQUEST		request_0	1619892127656	1619892127895	OK	 
+REQUEST		request_3	1619892127867	1619892127917	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892127973
+REQUEST		request_0	1619892127764	1619892127990	OK	 
+REQUEST		request_4	1619892127822	1619892128029	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892128030
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892128030
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892128030
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892128031
+REQUEST		request_0	1619892127837	1619892128051	OK	 
+REQUEST		request_1	1619892127895	1619892128101	OK	 
+REQUEST		request_7	1619892128031	1619892128129	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892128129
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892128143
+REQUEST		request_0	1619892127973	1619892128166	OK	 
+REQUEST		request_1	1619892127991	1619892128204	OK	 
+REQUEST		request_8	1619892128032	1619892128231	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892128034	1619892128244	OK	 
+REQUEST		request_9	1619892128036	1619892128249	OK	 
+REQUEST		request_1	1619892128053	1619892128252	OK	 
+REQUEST		request_11	1619892128037	1619892128261	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892128264
+REQUEST		request_0	1619892128129	1619892128354	OK	 
+REQUEST		request_1	1619892128167	1619892128370	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892128419
+REQUEST		request_1	1619892128354	1619892128544	OK	 
+REQUEST		request_3	1619892128557	1619892128609	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892128946
+REQUEST		request_3	1619892129146	1619892129318	OK	 
+REQUEST		request_0	1619892128946	1619892129356	OK	 
+REQUEST		request_4	1619892128931	1619892129359	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892129360
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892129361
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892129361
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892129361
+REQUEST		request_7	1619892129363	1619892129457	OK	 
+REQUEST		request_3	1619892129423	1619892129475	OK	 
+REQUEST		request_1	1619892129358	1619892129558	OK	 
+REQUEST		request_8	1619892129364	1619892129559	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892129366	1619892129564	OK	 
+REQUEST		request_9	1619892129367	1619892129565	OK	 
+REQUEST		request_11	1619892129368	1619892129568	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892129578
+REQUEST		request_4	1619892129626	1619892129825	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892129826
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892129827
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892129827
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892129828
+REQUEST		request_7	1619892129829	1619892129908	OK	 
+REQUEST		request_8	1619892129831	1619892130026	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892129834	1619892130036	OK	 
+REQUEST		request_9	1619892129836	1619892130037	OK	 
+REQUEST		request_11	1619892129837	1619892130042	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892130044
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892130107
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892130216
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892130262
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892130376
+REQUEST		request_4	1619892130325	1619892130524	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892130525
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892130526
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892130526
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892130526
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892130549
+REQUEST		request_7	1619892130528	1619892130610	OK	 
+REQUEST		request_4	1619892130488	1619892130696	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892130697
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892130698
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892130698
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892130699
+REQUEST		request_8	1619892130529	1619892130723	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892130531	1619892130733	OK	 
+REQUEST		request_9	1619892130532	1619892130735	OK	 
+REQUEST		request_11	1619892130534	1619892130768	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892130776
+REQUEST		request_7	1619892130700	1619892130795	OK	 
+REQUEST		request_8	1619892130701	1619892130897	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892130703	1619892130904	OK	 
+REQUEST		request_9	1619892130705	1619892130912	OK	 
+REQUEST		request_11	1619892130707	1619892130914	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892130917
+USER	NearbyFriendsInMapDisplayed	START	1619892130993
+REQUEST		request_3	1619892131109	1619892131159	OK	 
+REQUEST		request_0	1619892130994	1619892131196	OK	 
+REQUEST		request_3	1619892131233	1619892131285	OK	 
+REQUEST		request_3	1619892131280	1619892131335	OK	 
+REQUEST		request_1	1619892131198	1619892131400	OK	 
+REQUEST		request_3	1619892131388	1619892131445	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892131575
+REQUEST		request_3	1619892131559	1619892131609	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892131623
+USER	NearbyFriendsInMapDisplayed	START	1619892131948
+REQUEST		request_0	1619892131624	1619892132104	OK	 
+REQUEST		request_0	1619892131948	1619892132171	OK	 
+REQUEST		request_1	1619892132106	1619892132301	OK	 
+REQUEST		request_4	1619892132162	1619892132352	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892132352
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892132353
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892132353
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892132353
+REQUEST		request_1	1619892132172	1619892132365	OK	 
+REQUEST		request_7	1619892132355	1619892132440	OK	 
+REQUEST		request_4	1619892132300	1619892132504	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892132504
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892132504
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892132505
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892132505
+REQUEST		request_4	1619892132346	1619892132553	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892132553
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892132554
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892132554
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892132554
+REQUEST		request_8	1619892132356	1619892132561	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892132357	1619892132567	OK	 
+REQUEST		request_9	1619892132358	1619892132568	OK	 
+REQUEST		request_11	1619892132359	1619892132568	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892132572
+REQUEST		request_7	1619892132505	1619892132592	OK	 
+REQUEST		request_3	1619892132583	1619892132631	OK	 
+REQUEST		request_7	1619892132555	1619892132635	OK	 
+REQUEST		request_4	1619892132448	1619892132656	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892132656
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892132656
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892132657
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892132657
+REQUEST		request_8	1619892132506	1619892132689	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892132508	1619892132706	OK	 
+REQUEST		request_11	1619892132509	1619892132714	OK	 
+REQUEST		request_5	1619892132507	1619892132717	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892132719
+REQUEST		request_7	1619892132657	1619892132736	OK	 
+REQUEST		request_8	1619892132555	1619892132741	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892132558	1619892132758	OK	 
+REQUEST		request_9	1619892132557	1619892132759	OK	 
+REQUEST		request_5	1619892132556	1619892132759	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892132761
+REQUEST		request_4	1619892132613	1619892132802	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892132802
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892132802
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892132802
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892132802
+REQUEST		request_8	1619892132657	1619892132835	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892132659	1619892132861	OK	 
+REQUEST		request_9	1619892132659	1619892132862	OK	 
+REQUEST		request_5	1619892132658	1619892132865	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892132868
+REQUEST		request_7	1619892132803	1619892132884	OK	 
+REQUEST		request_8	1619892132803	1619892132996	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892132804	1619892132997	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892132998
+REQUEST		request_5	1619892132804	1619892133007	OK	 
+REQUEST		request_11	1619892132805	1619892133012	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892133018
+USER	NearbyFriendsInMapDisplayed	START	1619892133108
+REQUEST		request_0	1619892132999	1619892133192	OK	 
+REQUEST		request_0	1619892133108	1619892133331	OK	 
+REQUEST		request_1	1619892133193	1619892133389	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892133415
+REQUEST		request_1	1619892133332	1619892133528	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892133557
+REQUEST		request_0	1619892133557	1619892133782	OK	 
+REQUEST		request_4	1619892133648	1619892133861	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892133861
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892133862
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892133862
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892133862
+REQUEST		request_7	1619892133864	1619892133938	OK	 
+REQUEST		request_1	1619892133783	1619892133994	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892134012
+REQUEST		request_8	1619892133865	1619892134062	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892133871	1619892134082	OK	 
+REQUEST		request_5	1619892133869	1619892134087	OK	 
+REQUEST		request_11	1619892133872	1619892134088	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892134090
+REQUEST		request_0	1619892134012	1619892134201	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892134306
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892134366
+REQUEST		request_1	1619892134202	1619892134394	OK	 
+REQUEST		request_3	1619892134429	1619892134478	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892134915
+REQUEST		request_0	1619892134916	1619892135138	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892135180
+USER	NearbyFriendsInMapDisplayed	START	1619892135304
+REQUEST		request_1	1619892135139	1619892135341	OK	 
+REQUEST		request_3	1619892135318	1619892135371	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892135396
+REQUEST		request_0	1619892135181	1619892135411	OK	 
+REQUEST		request_3	1619892135380	1619892135440	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892135456
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892135533
+REQUEST		request_0	1619892135304	1619892135534	OK	 
+REQUEST		request_0	1619892135456	1619892135632	OK	 
+REQUEST		request_4	1619892135487	1619892135676	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892135677
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892135677
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892135677
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892135678
+REQUEST		request_1	1619892135413	1619892135691	OK	 
+REQUEST		request_1	1619892135535	1619892135748	OK	 
+REQUEST		request_7	1619892135679	1619892135754	OK	 
+REQUEST		request_1	1619892135633	1619892135840	OK	 
+REQUEST		request_9	1619892135685	1619892135879	OK	 
+REQUEST		request_8	1619892135680	1619892135882	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892135687	1619892135891	OK	 
+REQUEST		request_5	1619892135681	1619892135911	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892135917
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892136007
+USER	NearbyFriendsInMapDisplayed	START	1619892136242
+USER	NearbyFriendsInMapDisplayed	START	1619892136380
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892136395
+REQUEST		request_0	1619892136243	1619892136432	OK	 
+REQUEST		request_3	1619892136411	1619892136470	OK	 
+REQUEST		request_4	1619892136380	1619892136579	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892136579
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892136579
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892136579
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892136579
+REQUEST		request_3	1619892136546	1619892136599	OK	 
+REQUEST		request_0	1619892136380	1619892136604	OK	 
+REQUEST		request_1	1619892136434	1619892136638	OK	 
+REQUEST		request_4	1619892136456	1619892136648	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892136648
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892136648
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892136648
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892136648
+REQUEST		request_7	1619892136580	1619892136661	OK	 
+REQUEST		request_7	1619892136649	1619892136731	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892136748
+REQUEST		request_8	1619892136580	1619892136754	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892136581	1619892136772	OK	 
+REQUEST		request_5	1619892136580	1619892136773	OK	 
+REQUEST		request_9	1619892136581	1619892136783	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892136785
+REQUEST		request_1	1619892136604	1619892136807	OK	 
+REQUEST		request_8	1619892136649	1619892136829	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892136650	1619892136852	OK	 
+REQUEST		request_9	1619892136650	1619892136853	OK	 
+REQUEST		request_5	1619892136649	1619892136857	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892136861
+REQUEST		request_0	1619892136748	1619892136931	OK	 
+REQUEST		request_3	1619892137013	1619892137062	OK	 
+REQUEST		request_1	1619892136933	1619892137133	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892137353
+REQUEST		request_3	1619892137401	1619892137453	OK	 
+REQUEST		request_4	1619892137478	1619892137680	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892137681
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892137681
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892137681
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892137681
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892137695
+REQUEST		request_7	1619892137681	1619892137756	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892137756
+REQUEST		request_4	1619892137604	1619892137791	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892137791
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892137791
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892137791
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892137791
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892137848
+REQUEST		request_8	1619892137682	1619892137860	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892137684	1619892137880	OK	 
+REQUEST		request_5	1619892137682	1619892137881	OK	 
+REQUEST		request_9	1619892137683	1619892137886	OK	 
+REQUEST		request_7	1619892137791	1619892137887	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892137892
+REQUEST		request_8	1619892137792	1619892137986	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892137792	1619892137986	OK	 
+REQUEST		request_9	1619892137792	1619892138011	OK	 
+REQUEST		request_11	1619892137793	1619892138013	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892138015
+REQUEST		request_4	1619892138074	1619892138284	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892138285
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892138285
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892138286
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892138286
+REQUEST		request_7	1619892138287	1619892138360	OK	 
+REQUEST		request_3	1619892138371	1619892138429	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892138464
+REQUEST		request_8	1619892138288	1619892138476	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892138290	1619892138491	OK	 
+REQUEST		request_9	1619892138291	1619892138492	OK	 
+REQUEST		request_11	1619892138292	1619892138518	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892138520
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892138647
+REQUEST		request_0	1619892138464	1619892138647	OK	 
+REQUEST		request_4	1619892138465	1619892138657	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892138657
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892138658
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892138658
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892138658
+REQUEST		request_7	1619892138660	1619892138750	OK	 
+REQUEST		request_3	1619892138711	1619892138776	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892138819
+REQUEST		request_3	1619892138773	1619892138832	OK	 
+REQUEST		request_1	1619892138648	1619892138844	OK	 
+REQUEST		request_8	1619892138661	1619892138859	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892138663	1619892138876	OK	 
+REQUEST		request_11	1619892138665	1619892138876	OK	 
+REQUEST		request_5	1619892138662	1619892138878	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892138879
+REQUEST		request_3	1619892138865	1619892138916	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892139143
+REQUEST		request_4	1619892139438	1619892139653	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892139654
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892139655
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892139655
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892139655
+REQUEST		request_3	1619892139657	1619892139715	OK	 
+REQUEST		request_7	1619892139658	1619892139740	OK	 
+REQUEST		request_8	1619892139659	1619892139848	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892139660	1619892139867	OK	 
+REQUEST		request_9	1619892139662	1619892139867	OK	 
+REQUEST		request_11	1619892139664	1619892139871	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892139875
+REQUEST		request_3	1619892139827	1619892139887	OK	 
+REQUEST		request_4	1619892139783	1619892139990	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892139991
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892139991
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892139992
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892139992
+REQUEST		request_4	1619892139842	1619892140032	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892140032
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892140033
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892140033
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892140033
+REQUEST		request_7	1619892139993	1619892140090	OK	 
+REQUEST		request_7	1619892140034	1619892140107	OK	 
+REQUEST		request_4	1619892139919	1619892140119	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892140119
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892140120
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892140120
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892140120
+USER	NearbyFriendsInMapDisplayed	START	1619892140152
+REQUEST		request_8	1619892139994	1619892140181	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_7	1619892140120	1619892140192	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892140197
+REQUEST		request_5	1619892139995	1619892140207	OK	 
+REQUEST		request_3	1619892140152	1619892140208	OK	 
+REQUEST		request_11	1619892139998	1619892140215	OK	 
+REQUEST		request_9	1619892139997	1619892140216	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892140219
+USER	NearbyFriendsInMapDisplayed	START	1619892140223
+REQUEST		request_8	1619892140035	1619892140225	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892140038	1619892140235	OK	 
+REQUEST		request_5	1619892140037	1619892140235	OK	 
+REQUEST		request_11	1619892140039	1619892140236	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892140237
+REQUEST		request_8	1619892140121	1619892140309	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892140122	1619892140315	OK	 
+REQUEST		request_11	1619892140124	1619892140329	OK	 
+REQUEST		request_9	1619892140123	1619892140333	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892140336
+REQUEST		request_0	1619892140153	1619892140374	OK	 
+REQUEST		request_0	1619892140197	1619892140417	OK	 
+REQUEST		request_0	1619892140223	1619892140438	OK	 
+REQUEST		request_1	1619892140375	1619892140572	OK	 
+REQUEST		request_1	1619892140419	1619892140606	OK	 
+REQUEST		request_1	1619892140439	1619892140636	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892140771
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892140848
+REQUEST		request_4	1619892140724	1619892140936	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892140937
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892140937
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892140937
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892140937
+REQUEST		request_0	1619892140772	1619892140976	OK	 
+REQUEST		request_7	1619892140937	1619892141010	OK	 
+REQUEST		request_4	1619892140890	1619892141089	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892141089
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892141090
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892141090
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892141090
+REQUEST		request_8	1619892140938	1619892141127	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892140938	1619892141128	OK	 
+REQUEST		request_9	1619892140939	1619892141128	OK	 
+REQUEST		request_11	1619892140939	1619892141128	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892141129
+USER	NearbyFriendsInMapDisplayed	START	1619892141140
+REQUEST		request_1	1619892140976	1619892141162	OK	 
+REQUEST		request_7	1619892141090	1619892141163	OK	 
+REQUEST		request_8	1619892141090	1619892141260	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892141091	1619892141273	OK	 
+REQUEST		request_5	1619892141091	1619892141280	OK	 
+REQUEST		request_9	1619892141091	1619892141281	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892141284
+REQUEST		request_0	1619892141140	1619892141338	OK	 
+REQUEST		request_4	1619892141217	1619892141412	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892141412
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892141413
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892141413
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892141413
+REQUEST		request_7	1619892141414	1619892141484	OK	 
+REQUEST		request_1	1619892141339	1619892141537	OK	 
+REQUEST		request_8	1619892141415	1619892141599	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892141416	1619892141613	OK	 
+REQUEST		request_9	1619892141417	1619892141614	OK	 
+REQUEST		request_11	1619892141419	1619892141619	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892141625
+REQUEST		request_3	1619892141850	1619892141899	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892141928
+REQUEST		request_0	1619892141929	1619892142121	OK	 
+REQUEST		request_1	1619892142122	1619892142326	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892142582
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892142616
+USER	NearbyFriendsInMapDisplayed	START	1619892142617
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892142655
+USER	NearbyFriendsInMapDisplayed	START	1619892142700
+REQUEST		request_0	1619892142617	1619892142819	OK	 
+REQUEST		request_0	1619892142700	1619892142914	OK	 
+REQUEST		request_1	1619892142820	1619892143034	OK	 
+REQUEST		request_4	1619892142901	1619892143113	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892143114
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892143114
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892143115
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892143115
+REQUEST		request_1	1619892142915	1619892143139	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892143175
+REQUEST		request_7	1619892143116	1619892143201	OK	 
+REQUEST		request_8	1619892143118	1619892143304	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892143120	1619892143320	OK	 
+REQUEST		request_9	1619892143121	1619892143325	OK	 
+REQUEST		request_11	1619892143123	1619892143326	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892143330
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892143549
+REQUEST		request_3	1619892143596	1619892143645	OK	 
+REQUEST		request_3	1619892143627	1619892143677	OK	 
+REQUEST		request_3	1619892143658	1619892143708	OK	 
+REQUEST		request_3	1619892144187	1619892144242	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892144340
+REQUEST		request_3	1619892144559	1619892144611	OK	 
+REQUEST		request_4	1619892144653	1619892144863	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892144864
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892144864
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892144864
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892144864
+REQUEST		request_4	1619892144685	1619892144889	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892144889
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892144890
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892144890
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892144890
+REQUEST		request_4	1619892144716	1619892144926	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892144926
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892144926
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892144926
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892144926
+REQUEST		request_7	1619892144865	1619892144944	OK	 
+REQUEST		request_7	1619892144892	1619892144961	OK	 
+REQUEST		request_7	1619892144927	1619892145007	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892145039
+REQUEST		request_8	1619892144866	1619892145053	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892144868	1619892145063	OK	 
+REQUEST		request_9	1619892144870	1619892145082	OK	 
+REQUEST		request_8	1619892144892	1619892145086	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892144871	1619892145090	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892145095
+REQUEST		request_9	1619892144895	1619892145099	OK	 
+REQUEST		request_5	1619892144894	1619892145099	OK	 
+REQUEST		request_11	1619892144896	1619892145100	OK	 
+REQUEST		request_8	1619892144927	1619892145106	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+USER	NearbyFriendsInMapDisplayed	END	1619892145109
+REQUEST		request_5	1619892144928	1619892145121	OK	 
+REQUEST		request_9	1619892144929	1619892145128	OK	 
+REQUEST		request_11	1619892144929	1619892145130	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892145136
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892145146
+REQUEST		request_3	1619892145346	1619892145411	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892145424
+REQUEST		request_4	1619892145255	1619892145457	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892145457
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892145457
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892145457
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892145457
+REQUEST		request_7	1619892145458	1619892145535	OK	 
+REQUEST		request_0	1619892145424	1619892145646	OK	 
+REQUEST		request_8	1619892145459	1619892145648	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892145460	1619892145658	OK	 
+REQUEST		request_9	1619892145460	1619892145659	OK	 
+REQUEST		request_11	1619892145461	1619892145661	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892145666
+USER	NearbyFriendsInMapDisplayed	START	1619892145685
+REQUEST		request_4	1619892145625	1619892145830	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892145830
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892145831
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892145831
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892145831
+REQUEST		request_1	1619892145648	1619892145838	OK	 
+REQUEST		request_7	1619892145832	1619892145910	OK	 
+REQUEST		request_0	1619892145686	1619892145910	OK	 
+REQUEST		request_8	1619892145833	1619892146027	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892145835	1619892146045	OK	 
+REQUEST		request_9	1619892145836	1619892146049	OK	 
+REQUEST		request_11	1619892145837	1619892146054	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892146061
+REQUEST		request_3	1619892146055	1619892146114	OK	 
+REQUEST		request_1	1619892145912	1619892146126	OK	 
+REQUEST		request_3	1619892146163	1619892146217	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892146457
+USER	NearbyFriendsInMapDisplayed	START	1619892146457
+USER	NearbyFriendsInMapDisplayed	START	1619892146506
+REQUEST		request_4	1619892146426	1619892146618	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892146619
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892146619
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892146619
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892146619
+REQUEST		request_0	1619892146457	1619892146639	OK	 
+REQUEST		request_0	1619892146457	1619892146646	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892146677
+REQUEST		request_7	1619892146619	1619892146708	OK	 
+REQUEST		request_0	1619892146506	1619892146729	OK	 
+REQUEST		request_8	1619892146619	1619892146803	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892146620	1619892146813	OK	 
+REQUEST		request_5	1619892146620	1619892146818	OK	 
+REQUEST		request_11	1619892146620	1619892146819	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892146824
+REQUEST		request_1	1619892146640	1619892146845	OK	 
+REQUEST		request_1	1619892146647	1619892146846	OK	 
+REQUEST		request_0	1619892146677	1619892146895	OK	 
+REQUEST		request_1	1619892146730	1619892146946	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892146947
+REQUEST		request_1	1619892146895	1619892147094	OK	 
+REQUEST		request_0	1619892146947	1619892147174	OK	 
+REQUEST		request_4	1619892147117	1619892147313	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892147314
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892147314
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892147314
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892147314
+REQUEST		request_1	1619892147175	1619892147388	OK	 
+REQUEST		request_7	1619892147315	1619892147396	OK	 
+REQUEST		request_4	1619892147224	1619892147426	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892147427
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892147427
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892147427
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892147427
+REQUEST		request_7	1619892147427	1619892147503	OK	 
+REQUEST		request_8	1619892147316	1619892147507	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892147318	1619892147547	OK	 
+REQUEST		request_11	1619892147321	1619892147547	OK	 
+REQUEST		request_9	1619892147320	1619892147557	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892147559
+REQUEST		request_8	1619892147428	1619892147621	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892147429	1619892147638	OK	 
+REQUEST		request_9	1619892147429	1619892147639	OK	 
+REQUEST		request_11	1619892147430	1619892147655	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892147662
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892147847
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892148134
+USER	NearbyFriendsInMapDisplayed	START	1619892148151
+REQUEST		request_0	1619892148152	1619892148351	OK	 
+REQUEST		request_1	1619892148351	1619892148541	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892148858
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892148858
+USER	NearbyFriendsInMapDisplayed	START	1619892148859
+USER	NearbyFriendsInMapDisplayed	START	1619892148904
+REQUEST		request_3	1619892148861	1619892148918	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892148950
+REQUEST		request_0	1619892148860	1619892149065	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892149107
+REQUEST		request_0	1619892148904	1619892149122	OK	 
+REQUEST		request_3	1619892149137	1619892149192	OK	 
+REQUEST		request_1	1619892149065	1619892149277	OK	 
+REQUEST		request_1	1619892149123	1619892149327	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892149400
+REQUEST		request_3	1619892149863	1619892149923	OK	 
+REQUEST		request_3	1619892149879	1619892149934	OK	 
+REQUEST		request_3	1619892149959	1619892150016	OK	 
+REQUEST		request_4	1619892149927	1619892150126	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892150126
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892150126
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892150126
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892150126
+REQUEST		request_3	1619892150114	1619892150166	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892150223
+REQUEST		request_7	1619892150127	1619892150231	OK	 
+REQUEST		request_8	1619892150127	1619892150383	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892150129	1619892150415	OK	 
+REQUEST		request_11	1619892150132	1619892150419	OK	 
+REQUEST		request_9	1619892150131	1619892150419	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892150420
+REQUEST		request_4	1619892150207	1619892150422	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892150422
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892150422
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892150422
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892150422
+REQUEST		request_0	1619892150224	1619892150449	OK	 
+REQUEST		request_3	1619892150410	1619892150471	OK	 
+REQUEST		request_7	1619892150423	1619892150495	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892150549
+REQUEST		request_8	1619892150423	1619892150601	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892150424	1619892150619	OK	 
+REQUEST		request_5	1619892150423	1619892150621	OK	 
+REQUEST		request_9	1619892150424	1619892150627	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892150635
+REQUEST		request_1	1619892150450	1619892150654	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892150916
+REQUEST		request_4	1619892150931	1619892151139	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892151140
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892151140
+REQUEST		request_0	1619892150916	1619892151140	OK	 
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892151140
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892151140
+REQUEST		request_4	1619892150946	1619892151164	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892151164
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892151165
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892151165
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892151165
+REQUEST		request_7	1619892151141	1619892151215	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892151242
+REQUEST		request_4	1619892151023	1619892151244	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892151244
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892151245
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892151245
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892151245
+REQUEST		request_7	1619892151166	1619892151250	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892151269
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892151285
+REQUEST		request_7	1619892151246	1619892151319	OK	 
+REQUEST		request_8	1619892151142	1619892151326	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892151330
+REQUEST		request_5	1619892151143	1619892151337	OK	 
+REQUEST		request_11	1619892151145	1619892151342	OK	 
+REQUEST		request_1	1619892151141	1619892151342	OK	 
+REQUEST		request_9	1619892151145	1619892151343	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892151345
+REQUEST		request_8	1619892151167	1619892151346	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892151168	1619892151356	OK	 
+REQUEST		request_9	1619892151168	1619892151382	OK	 
+REQUEST		request_11	1619892151169	1619892151383	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892151385
+REQUEST		request_4	1619892151177	1619892151386	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892151387
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892151387
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892151387
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892151387
+REQUEST		request_8	1619892151246	1619892151426	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892151247	1619892151444	OK	 
+REQUEST		request_11	1619892151249	1619892151446	OK	 
+REQUEST		request_9	1619892151248	1619892151449	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892151452
+REQUEST		request_0	1619892151242	1619892151456	OK	 
+REQUEST		request_0	1619892151269	1619892151470	OK	 
+REQUEST		request_7	1619892151387	1619892151476	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892151531
+REQUEST		request_8	1619892151388	1619892151581	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892151389	1619892151589	OK	 
+REQUEST		request_5	1619892151388	1619892151601	OK	 
+REQUEST		request_11	1619892151389	1619892151602	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892151605
+REQUEST		request_3	1619892151560	1619892151615	OK	 
+REQUEST		request_1	1619892151457	1619892151652	OK	 
+REQUEST		request_1	1619892151470	1619892151659	OK	 
+REQUEST		request_4	1619892151484	1619892151687	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892151688
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892151688
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892151689
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892151689
+REQUEST		request_0	1619892151531	1619892151718	OK	 
+REQUEST		request_7	1619892151690	1619892151764	OK	 
+REQUEST		request_8	1619892151690	1619892151875	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892151692	1619892151892	OK	 
+REQUEST		request_11	1619892151693	1619892151904	OK	 
+REQUEST		request_9	1619892151693	1619892151905	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892151907
+REQUEST		request_1	1619892151719	1619892151927	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892152164
+REQUEST		request_3	1619892152287	1619892152338	OK	 
+REQUEST		request_0	1619892152164	1619892152392	OK	 
+REQUEST		request_3	1619892152334	1619892152394	OK	 
+REQUEST		request_1	1619892152394	1619892152599	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892152645
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892152659
+USER	NearbyFriendsInMapDisplayed	START	1619892152718
+REQUEST		request_4	1619892152628	1619892152829	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892152829
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892152830
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892152830
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892152830
+REQUEST		request_0	1619892152645	1619892152874	OK	 
+REQUEST		request_7	1619892152831	1619892152907	OK	 
+REQUEST		request_0	1619892152718	1619892152951	OK	 
+REQUEST		request_5	1619892152834	1619892153035	OK	 
+REQUEST		request_8	1619892152832	1619892153036	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892152835	1619892153055	OK	 
+REQUEST		request_11	1619892152836	1619892153055	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892153057
+REQUEST		request_1	1619892152876	1619892153086	OK	 
+REQUEST		request_1	1619892152952	1619892153158	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892153357
+REQUEST		request_4	1619892153342	1619892153549	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892153549
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892153550
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892153550
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892153550
+REQUEST		request_4	1619892153402	1619892153624	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892153625
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892153625
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892153626
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892153626
+REQUEST		request_7	1619892153550	1619892153629	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892153661
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892153661
+REQUEST		request_7	1619892153627	1619892153697	OK	 
+REQUEST		request_3	1619892153677	1619892153724	OK	 
+REQUEST		request_8	1619892153550	1619892153735	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892153552	1619892153747	OK	 
+REQUEST		request_5	1619892153551	1619892153751	OK	 
+REQUEST		request_9	1619892153551	1619892153771	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892153772
+REQUEST		request_8	1619892153628	1619892153815	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892153632	1619892153843	OK	 
+REQUEST		request_5	1619892153629	1619892153843	OK	 
+REQUEST		request_9	1619892153631	1619892153843	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892153845
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892153934
+REQUEST		request_3	1619892154371	1619892154428	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892154481
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892154605
+REQUEST		request_0	1619892154481	1619892154674	OK	 
+REQUEST		request_3	1619892154668	1619892154731	OK	 
+REQUEST		request_3	1619892154683	1619892154738	OK	 
+USER	NearbyFriendsInMapDisplayed	START	1619892154839
+REQUEST		request_1	1619892154675	1619892154898	OK	 
+REQUEST		request_4	1619892154730	1619892154929	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892154929
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892154930
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892154930
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892154930
+REQUEST		request_3	1619892154946	1619892155013	OK	 
+REQUEST		request_7	1619892154932	1619892155015	OK	 
+REQUEST		request_0	1619892154839	1619892155036	OK	 
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892155100
+REQUEST		request_8	1619892154933	1619892155134	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892154935	1619892155147	OK	 
+REQUEST		request_11	1619892154936	1619892155154	OK	 
+REQUEST		request_9	1619892154936	1619892155157	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892155158
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892155162
+REQUEST		request_1	1619892155037	1619892155233	OK	 
+REQUEST		request_4	1619892155441	1619892155639	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892155640
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892155640
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892155640
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892155641
+REQUEST		request_3	1619892155612	1619892155672	OK	 
+REQUEST		request_7	1619892155641	1619892155732	OK	 
+REQUEST		request_8	1619892155642	1619892155831	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892155644	1619892155873	OK	 
+REQUEST		request_9	1619892155645	1619892155886	OK	 
+REQUEST		request_11	1619892155646	1619892155886	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892155890
+REQUEST		request_4	1619892155734	1619892155941	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892155941
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892155941
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892155941
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892155941
+REQUEST		request_4	1619892155750	1619892155956	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892155957
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892155957
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892155957
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892155957
+REQUEST		request_7	1619892155942	1619892156016	OK	 
+REQUEST		request_7	1619892155958	1619892156035	OK	 
+REQUEST		request_8	1619892155942	1619892156113	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892155944	1619892156141	OK	 
+REQUEST		request_8	1619892155958	1619892156146	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892155959	1619892156155	OK	 
+REQUEST		request_3	1619892156102	1619892156154	OK	 
+REQUEST		request_11	1619892155945	1619892156155	OK	 
+REQUEST		request_9	1619892155960	1619892156155	OK	 
+REQUEST		request_5	1619892155943	1619892156156	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892156162
+REQUEST		request_11	1619892155960	1619892156168	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892156174
+REQUEST		request_4	1619892156025	1619892156226	OK	 
+REQUEST		request_3	1619892156165	1619892156226	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892156226
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892156226
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892156226
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892156226
+REQUEST		request_7	1619892156227	1619892156302	OK	 
+REQUEST		request_8	1619892156227	1619892156398	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_11	1619892156228	1619892156433	OK	 
+REQUEST		request_9	1619892156228	1619892156433	OK	 
+REQUEST		request_5	1619892156227	1619892156435	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892156440
+REQUEST		request_4	1619892156676	1619892156863	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892156863
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892156863
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892156863
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892156863
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892156907
+REQUEST		request_7	1619892156864	1619892156938	OK	 
+REQUEST		request_8	1619892156865	1619892157047	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_9	1619892156865	1619892157053	OK	 
+REQUEST		request_5	1619892156865	1619892157058	OK	 
+REQUEST		request_11	1619892156865	1619892157070	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892157071
+ERROR	request_2: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0002_request.json not found 	1619892157245
+REQUEST		request_4	1619892157168	1619892157356	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892157356
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892157356
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892157356
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892157357
+REQUEST		request_4	1619892157230	1619892157418	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892157419
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892157419
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892157419
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892157419
+REQUEST		request_7	1619892157357	1619892157432	OK	 
+REQUEST		request_7	1619892157419	1619892157512	OK	 
+REQUEST		request_8	1619892157358	1619892157545	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892157358	1619892157559	OK	 
+REQUEST		request_11	1619892157359	1619892157571	OK	 
+REQUEST		request_9	1619892157359	1619892157577	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892157579
+REQUEST		request_8	1619892157419	1619892157600	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892157420	1619892157615	OK	 
+REQUEST		request_11	1619892157421	1619892157621	OK	 
+REQUEST		request_9	1619892157420	1619892157626	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892157628
+REQUEST		request_3	1619892157910	1619892157969	OK	 
+REQUEST		request_3	1619892158251	1619892158306	OK	 
+REQUEST		request_4	1619892158977	1619892159167	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892159168
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892159169
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892159169
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892159169
+REQUEST		request_7	1619892159170	1619892159253	OK	 
+REQUEST		request_8	1619892159171	1619892159359	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892159172	1619892159374	OK	 
+REQUEST		request_9	1619892159173	1619892159375	OK	 
+REQUEST		request_11	1619892159174	1619892159387	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892159392
+REQUEST		request_4	1619892159318	1619892159517	OK	 
+ERROR	request_6: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0006_request.json not found 	1619892159517
+ERROR	request_10: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0010_request.json not found 	1619892159517
+ERROR	request_12: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0012_request.json not found 	1619892159517
+ERROR	request_13: Failed to build request: Resource /nearbyfriendsinmapdisplayed/0013_request.json not found 	1619892159517
+REQUEST		request_7	1619892159517	1619892159595	OK	 
+REQUEST		request_8	1619892159518	1619892159699	KO	status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 403
+REQUEST		request_5	1619892159518	1619892159712	OK	 
+REQUEST		request_11	1619892159518	1619892159719	OK	 
+REQUEST		request_9	1619892159518	1619892159725	OK	 
+USER	NearbyFriendsInMapDisplayed	END	1619892159731

@@ -1,0 +1,10 @@
+{
+  "simulation": "MyLocationsEmpty",
+  "simulationId": "mylocationsempty",
+  "start": 1619891328967,
+  "description": "",
+  "scenarios": ["MyLocationsEmpty"],
+  "assertions": [
+
+  ]
+}
