@@ -57,7 +57,7 @@ In the best case you will get away with examples or simple signatures.
 
 ****
 
-image:documentation_5.png[]
+image:documentation_5_1.png[]
 
 Contained Building Blocks::
 The application allows the user to see the coordinates of his/her current position in a map, see a list of their friends and nearby ones, get notifications and manage and visualize their own locations. It is also able to make the different levels and structures communicate in a proper way.
