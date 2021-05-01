@@ -58,7 +58,7 @@ image:domainModel.png[]
 
 |=== 
 | Name | Description 
-| User | A user is identified by their web id (users' pod <<pods>> id), location (changes frequently as the user's position may change during the day and the app updates it each 30 seconds) and an authentication key (HTTP <<http>> key - web). 
+| User | A user is identified by their web id (users' pod <<pods>> id), location (changes frequently as the user's position may change during the day and the app updates it each 2 minutes), role (normal or admin) and a date that corresponds when the time the location was last updated. 
 | Location | A location is composed by several characteristics. The development team has decided that the better way of saving it is as coordinates, with its longitude and latitude. The time the location is placed is saved too. 
 |=== 
 
@@ -70,6 +70,8 @@ var user = {
 
     "webId": "https://pablo.inrupt.net/profile/card#me", // just an example
 
+    "role": "Normal",
+
     "location": {
 
         "type": "Point",
@@ -78,16 +80,11 @@ var user = {
 
     },
 
-    "authKey": "https://pablo.inrupt.net/profile/card#me" // just for the moment, deleted in case it is not needed
+    "updatedAt": "2021-05-01T20:37:25.240+00:00" // date and time
 
 }
 
-The information described before is an example to understand the idea wanted to be explained. The location is GeoJSON Point <<geojson>> that corresponds with the Computer Science School of the University of Oviedo. There is a default role and an automatic timestamp corresponds with the time the document is written.
-
-=== Design Patterns 
-We will use a MVC (Model-View-Controller) structure. The application will be split  into services (logic and domain model), views and repositories. The user will interact with the controllers which will send back the corresponding views. The controllers will communicate also with the model. The model will interact with the repositories.  
-We have wanted to use this architectural pattern in order to be able to distinguish the appearance, the business (logic) and the persistance. 
-Using MVC pattern also allows us to make the changes easier or increase the functionality. 
+The information described before is an example to understand the idea wanted to be explained. The location is GeoJSON Point <<geojson>> that corresponds with the Computer Science School of the University of Oviedo. There is a default role and an automatic date which corresponds with the time the document is written.
 
 === Code Generation 
 We will use a platform like React <<react>> to develop the web application.
@@ -96,25 +93,37 @@ We will use a platform like React <<react>> to develop the web application.
 ****
 Security is achieved thanks to various techniques:
 
+* Login in a SOLID <<solid>> pod <<pods>> with OIDC authentication tokens.
 * The usage of SOLID <<solid>> PODs <<pods>>, which protect all the compromising information. Only the user has access to the info.
 * The application of HTTP <<http>> and REST <<rest>> protocols, that ensure we use secure communication channels, and the authenticity and integrity of the data sent. 
 * Data validation, done by the app and the database, so that data is always consistent. 
+* To achieve REST Api basic security CORS <<cors>> mechanisms are being used. 
 ****
 
 ****
-Showing the location of a user is always a bit dangerous, so the app will always ask for permission to expose it. The user can hide their location at any time.
+Showing the location of a user is always a bit dangerous, so the app will always ask for permission to expose it. The user can hide their location at any time to stop sharing it with the application. If this happens the development team cannot grant the correct working of the application. A thing to highlight is that the last user location (the last one shared) is not deleted from the database.
 ****
 
 === Plausibility Check and Validation 
-When saving the user's location the development team must check its coordinates in order to verify that they are correct and they exist. 
-The web application and the database used must check the datatypes of the information exchanged. 
+The user has few opportunities to introduce data manually in the application. 
+
+The first case is when logging. That validation is made by the SOLID <<solid>> providers; they check that the credentials introduced are correct.
+
+The second case is when a user wants to create a tag taking the current location with it. The user can only write "inconsistent" names and descriptions to the tags, words that are not understandable, not more.
+
+The location is picked from code so the coordinates are never wrong.
+
+The rest of the information cannot lead to errors or invalid datatypes.
 
 === Exception and Error Handling
-The inconsistency of data and failed validation will lead to errors. These will be shown in the user interface as a message, so the user can understand what is happening and do something about it (for example, when logging in, if they have misspelled a word).
+As explained before user errors are not going to happend.
+
+The only possible errors are system errors caused by bugs or errors in the implemented code.
+
 Technical errors, such as a breakdown, will not be handled. They can lead to losing data or a crash in the app.
 
 === Session Handling  
-The session handling will be done using JavaScript <<javascript>> sessions. 
+The session handling will be done using JavaScript <<javascript>> sessions with React <<react>>. 
 
 === Testability
-The application will be tested in several ways. We will develop unit tests, acceptance tests and load tests, which will be run automatically in a continuous integration <<contint>> server. This way we can be sure that our project works well.
+The application will be tested in several ways. We will develop unit tests, acceptance tests and loading tests; the first two will be run automatically in a continuous integration <<contint>> server. This way we can be sure that our project works well.

@@ -1,0 +1,20 @@
+[[section-test-report]]
+== Test report
+
+=== Unit tests
+
+
+
+=== Acceptance tests
+
+
+
+=== Code coverage result
+
+
+
+=== Load tests
+
+
+
+==== Load tests report

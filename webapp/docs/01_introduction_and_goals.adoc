@@ -15,17 +15,17 @@ The aim is to create an application called Radarin, a project in which the stude
 
 The members of the team are:
 
-* Héctor Díaz Beltrán
-* Marcos Fernández González
-* Luis Fernández Suárez
-* Andrea García Cernuda 
-* Sara Rubín Estrada-Nora
+* Héctor Díaz Beltrán  uo269787
+* Marcos Fernández González  uo270803
+* Luis Fernández Suárez  uo271405
+* Andrea García Cernuda  uo270115
+* Sara Rubín Estrada-Nora  uo270185
 
 What is Radarin? 
 
 Radarin is a system to facilitate meetings between friends using new technologies.
 
-To carry out the project's aim, the application needs the location of the users who voluntarily activate it and allow the application to use it. The users also need to allow their friends to know when they are near them. A notification will be sent in this situation so they can get in contact.
+To carry out the project's aim, the application needs the location of the users. They must voluntarily activate it and allow the application to use it. It also needs the users to have a SOLID <<solid>> pod <<pods>>, whose URL will be asked to log in. A notification will be sent in case some SOLID <<solid>> friend has accessed Radarin and is nearby too, so they can get in contact. There is a possibility of sending messages to those friends that are nearby.
 
 
 === Requirements Overview
@@ -52,7 +52,7 @@ Keep these excerpts as short as possible. Balance readability of this document w
 [options="header"]
 |===
 | Requirement | Description
-| Two software components (at least) to take into account | A web application and an application that will run in the users' mobile phone.
+| Two software components (at least) to take into account | Give the user the possibility of accessing the application through the web and through the mobile phone.
 | Web application | It will run in a server and will store locations.
 
                     It will allow the users to manage and visualize locations. 
@@ -60,18 +60,18 @@ Keep these excerpts as short as possible. Balance readability of this document w
                     It will also include admin options to manage users and monitor server status.
 | Application ran in users' mobile phone | It will send the corresponding locations to the server.
 
-                                             It will receive notifications from nearby friend users.
-| Application that runs in a server | It will store the minimal information needed about a user, the mobile phone location and the timestamp in which those locations take place (all of them saved in the users's pods <<pods>>).
+                                            It will receive notifications from nearby friend users.
+| Application that runs in a server | It will store the minimal information needed about a user, the web and the mobile phone location apart from the timestamp in which those locations take place (all of them saved in the users's pods <<pods>>). The last user location is saved in the corresponding database.
                                       
-                                      The rest of users' information, such as friends; will be queried to the pods <<pods>>.
+                                      The rest of users' information, such as friends, locations and tags will be queried to the pods <<pods>>.
                                       
                                       No personal information will be stored in a centralized way.
 | System compatibility | The system will be compatible with the SOLID project <<solid>>.
 | System deployment | The system will be deployed from docker containers <<docker>>.
 
-                      It will also be deployed in a cloud service like heroku <<heroku>>, the one finally choosen.
-| Testing | Unit tests, acceptance tests and load tests will be made.
-| Continuous integration server <<contint>> | The previous tests will be automatically runned on it.
+                      It will also be deployed in a cloud service like heroku <<heroku>>, the one finally chosen.
+| Testing | Unit tests, acceptance tests and loading tests will be made.
+| Continuous integration server <<contint>> | The previous tests will be automatically run on it except from loading tests.
 |===
 
 All those specifications where provided https://arquisoft.github.io/course2021/labAssignmentDescription.html[here].
@@ -135,7 +135,7 @@ The following table has the most important roles for the application:
 |Role/Name|Goal/Boundaries
 | Developers | Developing this application will help us learn more features about software engineering. It will also help us to improve our group work skills.
 | Teachers |  They will supervise the development team by giving them some steps they have to follow and some tips in order to make the project.
-| Other developers / classmates | They can provide some support to the development team by giving them advices and knowledge.
+| Other developers / classmates | They can provide some support to the development team by giving them advice and knowledge.
 | Software engineers | Specialized people can guide developers by giving them professional advice based on their experience and studies.
 | Admin | He/she manages users and monitors server status through the Web application.
 | People with access to new technlogies | They would like to use this application whenever they hang around to meet their friends.
