@@ -1,0 +1,10 @@
+{
+  "simulation": "MyTagsSearchOK",
+  "simulationId": "mytagssearchok",
+  "start": 1619892004561,
+  "description": "",
+  "scenarios": ["MyTagsSearchOK"],
+  "assertions": [
+
+  ]
+}

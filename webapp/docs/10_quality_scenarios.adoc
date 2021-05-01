@@ -17,7 +17,7 @@ decisions you should know for every stakeholder what is really important to them
 concrete and measurable.
 ****
 
-As the most important quality requirement (quality goals) were described in section 1.2, here we have also some with less priority, which will not create high risks if they are not fully achieved.
+As the most important quality requirements (quality goals) were described in section 1.2, here we have also some with less priority, which will not create high risks if they are not fully achieved.
 
 [options="header"]
 |===
@@ -80,7 +80,6 @@ Tabular or free form text.
 ==== Usage scenarios:
 * The user is notified in less than fifteen seconds that there is a friend nearby from the moment the other person location is updated and is in a range lower of equal than 1000 meters of distance. Only the last fifteen minutes updated location will be taken into account to check if that friend is nearby or not.
 * Users locations are updated to mongo database every 2 minutes.
-* The map is recharged every 30 seconds showing the current position of the logged in user and his/her nearby friends. 
 * Location/s can be deleted with one button click.
 * Tags are easily created using the corresponding form.
 * Administrators can delete users in the manage users view with 1 button click.

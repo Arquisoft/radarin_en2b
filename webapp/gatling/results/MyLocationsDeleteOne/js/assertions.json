@@ -1,0 +1,10 @@
+{
+  "simulation": "MyLocationsDeleteOne",
+  "simulationId": "mylocationsdeleteone",
+  "start": 1619891233564,
+  "description": "",
+  "scenarios": ["MyLocationsDeleteOne"],
+  "assertions": [
+
+  ]
+}

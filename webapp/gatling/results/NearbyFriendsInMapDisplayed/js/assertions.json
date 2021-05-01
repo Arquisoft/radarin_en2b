@@ -1,0 +1,10 @@
+{
+  "simulation": "NearbyFriendsInMapDisplayed",
+  "simulationId": "nearbyfriendsinmapdisplayed",
+  "start": 1619892095184,
+  "description": "",
+  "scenarios": ["NearbyFriendsInMapDisplayed"],
+  "assertions": [
+
+  ]
+}

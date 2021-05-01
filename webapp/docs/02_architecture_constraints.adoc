@@ -34,9 +34,9 @@ In this section we will go through the different constraints the product has, gi
 |===
 | Constraint  | Context / Motivation
 | Team      | Héctor Díaz Beltrán, Marcos Fernández González, Luis Fernández Suárez, Andrea García Cernuda and Sara Rubín Estrada-Nora.
-| Time schedule     | The development started in february 2021 with due date 3 of may 2021 which is the presentation day.
+| Time schedule     | The development started in February 2021, with due date 3 of May 2021, which is the day of the presentation of the project.
 | Version control   | A public Github repository is available to check all the commits and the versions / releases the project has been through. The contributions of each team member can be checked too.
-| Testing       | Testing the app is a very important part of our development. All kind of scenarios will be considered and the development team will try to conver as much scenarios as they could.
+| Testing       | Testing the app is a very important part of our development. All kind of scenarios will be considered and the development team will try to conver as much scenarios as they can.
 |===
 
 === Conventions
