@@ -6,7 +6,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export default function App () {
   const {session, sessionRequestInProgress} = useSession();
-  const [loggedIn, setLoggedIn]  = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   session.onLogin(() => setLoggedIn(true));
   session.onLogout(() => setLoggedIn(false));
