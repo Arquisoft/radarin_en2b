@@ -121,12 +121,17 @@ image:documentation_5_2.png[]
 [options="header"]
 |===
 | Name | Responsability
-| Interface layer | It is the layer in which the user interacts with the application. In our application it is composed by a nav bar that displays the following options: welcome page, notifications, all friends and nearby friends, map with locations and about us page.
+| Interface layer | It is the layer in which the user interacts with the application. Our application it is composed by a nav bar that displays the following options: welcome page, notifications, all friends and nearby friends, map with locations and about us page.
 | Data access layer | It provides access to SOLID <<solid>> libraries. 
 | NavBar / Menu | It displays all the options the user has.
 | Friends | It displays all user's friends and the ones that are nearby, in a 1000 meters radius.
 | Notifications | Notifications are displayed when a friend is nearby.
-| Solid <<solid>> | It provides a set of libraries with which to exchange data between the interface layer and the user's pod <<pods>>.
+| My Locations | It shows a list of all the locations you have been to.
+| Map | It shows a map which shows your position, nearby friends and tags.
+| My Tags | It lets you create a tag of your current location. It also shows the list of all of your tags.
+| Tags Map | It shows all your tags in a map.
+| Solid <<solid>> | It provides a set of libraries with which you can exchange data between the interface layer and the user's pod <<pods>>.
+| Moongose <<moongose>> | It provides a set of libraries with which you can exchange data with the MONGODB database.
 |===
 
 [role="arc42help"]
