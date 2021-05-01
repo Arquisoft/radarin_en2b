@@ -1,0 +1,10 @@
+{
+  "simulation": "AdminOptionPrometheus",
+  "simulationId": "adminoptionprometheus",
+  "start": 1619889704296,
+  "description": "",
+  "scenarios": ["AdminOptionPrometheus"],
+  "assertions": [
+
+  ]
+}

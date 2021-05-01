@@ -1,0 +1,10 @@
+{
+  "simulation": "TagsMap",
+  "simulationId": "tagsmap",
+  "start": 1619892322328,
+  "description": "",
+  "scenarios": ["TagsMap"],
+  "assertions": [
+
+  ]
+}

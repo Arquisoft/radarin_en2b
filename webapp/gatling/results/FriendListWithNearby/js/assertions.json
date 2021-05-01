@@ -1,0 +1,10 @@
+{
+  "simulation": "FriendListWithNearby",
+  "simulationId": "friendlistwithnearby",
+  "start": 1619890211398,
+  "description": "",
+  "scenarios": ["FriendListWithNearby"],
+  "assertions": [
+
+  ]
+}

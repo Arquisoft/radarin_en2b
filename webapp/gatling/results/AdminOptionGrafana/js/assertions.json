@@ -1,0 +1,10 @@
+{
+  "simulation": "AdminOptionGrafana",
+  "simulationId": "adminoptiongrafana",
+  "start": 1619889556322,
+  "description": "",
+  "scenarios": ["AdminOptionGrafana"],
+  "assertions": [
+
+  ]
+}

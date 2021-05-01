@@ -1,0 +1,10 @@
+{
+  "simulation": "MyTagsList",
+  "simulationId": "mytagslist",
+  "start": 1619891729596,
+  "description": "",
+  "scenarios": ["MyTagsList"],
+  "assertions": [
+
+  ]
+}

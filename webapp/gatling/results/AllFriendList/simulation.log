@@ -1,0 +1,10 @@
+RUN	AllFriendList	allfriendlist	1619889972701	 	3.5.1
+USER	AllFriendList	START	1619889974148
+REQUEST		request_0	1619889974194	1619889974494	OK	 
+ERROR	request_1: Failed to build request: Resource /allfriendlist/0001_request.json not found 	1619889976610
+REQUEST		request_2	1619889984701	1619889984795	OK	 
+ERROR	request_3: Failed to build request: Resource /allfriendlist/0003_request.json not found 	1619889985818
+ERROR	request_10: Failed to build request: Resource /allfriendlist/0010_request.json not found 	1619889988823
+REQUEST		request_11	1619889989831	1619889990077	OK	 
+ERROR	request_12: Failed to build request: Resource /allfriendlist/0012_request.json not found 	1619889990079
+USER	AllFriendList	END	1619889990090

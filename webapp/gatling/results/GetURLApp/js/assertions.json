@@ -1,0 +1,10 @@
+{
+  "simulation": "GetURLApp",
+  "simulationId": "geturlapp",
+  "start": 1619890312103,
+  "description": "",
+  "scenarios": ["GetURLApp"],
+  "assertions": [
+
+  ]
+}
