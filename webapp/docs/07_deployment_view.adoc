@@ -50,6 +50,7 @@ rectangle Browser
 
 Browser --> WebApp : connects
 WebApp --> SOLID_Server : uses
+WebApp --> MongoDB : uses
 @enduml
 ....
 
@@ -60,7 +61,7 @@ Radarin is located in a cloud service (Heroku <<heroku>>), as well as the Mongo 
 Quality and/or Performance Features::
 
 Being a web application, a network connection is needed in order for it to work. However, the app itself should not consume much bandwidth, as it does not perform heavy tasks (just sends coordinates and timestamp and receives that information with the list of friends' webIDs, their location and tags).  
-The availability of the servers where the SOLID <<solid>> PODs <<pods>> are stored will also be key in the availability of the application itself. Implementing a cache where the friends are stored is a good idea that could be done as a further improvement, it could not be done because the lack of time. The cache will make the app less reliant on the PODs <<pods>> availability, but it will still be necessary to have the option to manually force checking them again in case there are changes. 
+The availability of the servers where the SOLID <<solid>> PODs <<pods>> are stored will also be key in the availability of the application itself. Implementing a cache where the friends are stored is a good idea that could be done as a further improvement, it could not be implemented due to the lack of time. The cache would make the app less reliant on the PODs <<pods>> availability, but it would still be necessary to have the option to manually force checking them again in case there are changes. 
 
 Mapping of Building Blocks to Infrastructure::
 
