@@ -5,7 +5,7 @@
   font-weight: bolder;
 }
 
-h1{
+h1, h2{
     color: white;
 }
 
@@ -15,7 +15,7 @@ Label, p{
 }
 
 a{
-    color: black;
+    color: darksalmon;
 }
 
 .otherLink{
@@ -148,5 +148,32 @@ h1 {
       transform: rotate(360deg);
     }
   }
+
+.contenedor {
+    padding: 1em;
+}
+
+.bigcenter {
+  display: block;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  background:linear-gradient( #2ebf91, #25b7c4)
+}
+
+.list-group-item{
+  background-color: transparent;
+  border: none;
+}
+
+.bgcenter {
+  display: block;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  background:linear-gradient( #2ebf91, #25b7c4)
+}
   
 

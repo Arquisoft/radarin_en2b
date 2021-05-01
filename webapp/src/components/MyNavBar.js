@@ -84,7 +84,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                     console.log(nearby)
                     await nearby.forEach((friend) => notifyFriend(friend.webId));
                 });
-            }, 30000);
+            }, 300000);
             return () => clearInterval(interval);
         }
     }, [role, webId]);

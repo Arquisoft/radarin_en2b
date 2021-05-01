@@ -55,7 +55,7 @@ export default function LogIn() {
                             <Button variant="link" block className="otherLink">Log In</Button>{' '}
                         </LoginButton>
                     </div>
-                    <p>Don't have a pod? &emsp; &ensp;<a href="https://solidproject.org/users/get-a-pod" target="_blank" rel="noreferrer">Learn how to get on here!</a></p>
+                    <p>Don't have a pod? <a href="https://solidproject.org/users/get-a-pod" target="_blank" rel="noreferrer">Learn how to get on here!</a></p>
                 </Container>
             </div>
         </>
