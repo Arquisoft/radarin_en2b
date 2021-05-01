@@ -59,7 +59,7 @@ image:domainModel.png[]
 |=== 
 | Name | Description 
 | User | A user is identified by their web id (users' pod <<pods>> id), location (changes frequently as the user's position may change during the day and the app updates it each 2 minutes), role (normal or admin) and a date that corresponds when the time the location was last updated. 
-| Location | A location is composed by several characteristics. The development team has decided that the better way of saving it is as coordinates, with its longitude and latitude. The time the location is placed is saved too. 
+| Location | A location is composed by several characteristics. The development team has decided that the better way of saving it is as coordinates, with its longitude and latitude.
 |=== 
 
 
@@ -107,7 +107,7 @@ Showing the location of a user is always a bit dangerous, so the app will always
 === Plausibility Check and Validation 
 The user has few opportunities to introduce data manually in the application. 
 
-The first case is when logging. That validation is made by the SOLID <<solid>> providers; they check that the credentials introduced are correct.
+The first case is when logging in. That validation is made by the SOLID <<solid>> providers; they check that the credentials introduced are correct.
 
 The second case is when a user wants to create a tag taking the current location with it. The user can only write "inconsistent" names and descriptions to the tags, words that are not understandable, not more.
 
@@ -116,7 +116,7 @@ The location is picked from code so the coordinates are never wrong.
 The rest of the information cannot lead to errors or invalid datatypes.
 
 === Exception and Error Handling
-As explained before user errors are not going to happend.
+As explained before user errors are not going to happen.
 
 The only possible errors are system errors caused by bugs or errors in the implemented code.
 

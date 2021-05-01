@@ -27,16 +27,16 @@ To achieve the goals we have for this project, we have to take some decisions on
 Technology decisions::
 As we saw before, we have to adhere to some constraints regarding <<technology>> and <<organization>>. In order to do that, we have chosen some technologies that we think make the work much easier. Those would be:
 |===
-| Adaptable web application instead of a mobile application  |  This decision was made because we found a lot of problems when using react native. The most troublesome was login into SOLID <<solid>> that although we managed to do it, at the end it was too late to apply it to the project and develop a complete mobile app.
+| Adaptable web application instead of a mobile application  |  This decision was made because we found a lot of problems when using React Native. The most troublesome was logging into SOLID <<solid>> that, although we managed to do it at the end, it was too late to apply it to the project and develop a complete mobile app.
 | Monitoring: Prometheus <<prometheus>> and Grafana <<grafana>>  | For this purpose there are two technologies. There will be a piece of software from Prometheus <<prometheus>> that will get data every five seconds. To show this information in a nice looking way, Grafana <<grafana>> will do the work. Both functionalities and the corresponding results can be accessed by an admin account through the web app.
 | Testing: Supertest <<supertest>>, E2E <<e2e>> and Gatling <<gatling>>  | Test the correct functionality of the app is vital. For this purpose we have chosen for the rest API <<rest>> Supertest <<supertest>> and for the webapp E2E <<e2e>> and Gatling <<gatling>>.
 | React <<react>>, Express <<express>> and Node.js <<node>>  | In order to implement the app in Javascript <<javascript>>, we chose these technologies, that we believe will help us through the development.
-| Google Maps API <<google maps api>> | The web app use several maps to represent different things Although we thought about using leaflet <<leaflet>>, we finally decided to use the Google Maps (@react-google-maps/api library) for showing the information as the development team find it easier to use.
+| Google Maps API <<google maps api>> | The web app uses several maps to represent different things. Although we thought about using Leaflet <<leaflet>>, we finally decided to use the Google Maps (@react-google-maps/api library was the one finally chosen, after dealing with problems with react-google-maps) for showing the information as the development team had a little experience with it and found it easier to use.
 | Notifications  | To use and deploy notifications the react-toastify framework was used.
-| Login with inrupt <<inrupt>>  | To be able to log in the SOLID <<solid>> pod <<pods>> the @inrupt/solid-ui-react library was used.
+| Login with inrupt <<inrupt>>  | To be able to log in the SOLID <<solid>> pods <<pods>> the @inrupt/solid-ui-react library was used.
 | Docker <<docker>> and Heroku <<heroku>>  | Those technologies are used to have the different parts of the application inside containers. They could be found deployed in the cloud, in this case in Heroku <<heroku>>.
 | Bootstrap <<bootstrap>>  | This framework allows the team to have a great variety of front-end components.
-| Mongo database  | This is the final database choosen where the minimal information from the user is stored.
+| Mongo database  | This is the final database chosen where the minimal information from the user is stored. It makes use of the Mongoose <<mongoose>> framework.
 |===
 
 Quality goals::

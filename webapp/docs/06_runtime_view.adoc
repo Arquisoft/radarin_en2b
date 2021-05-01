@@ -34,7 +34,7 @@ There are many notations for describing scenarios, e.g.
 
 ==== Adding or giving information to the pod
 
-[plantuml,"sequence-upload-location",svg]
+[plantuml,"adding-info-pod",svg]
 ....
 actor John as u
 participant WebApp as wa
@@ -52,7 +52,7 @@ deactivate wa
 
 ==== Retrieving data from the pod
 
-[plantuml,"sequence-upload-location",svg]
+[plantuml,"retrieve-pod-data",svg]
 ....
 actor John as u
 participant WebApp as wa
@@ -69,7 +69,7 @@ deactivate wa
 
 === User sends location
 
-[plantuml,"sequence-upload-location",svg]
+[plantuml,"user-sends-location",svg]
 ....
 actor Bob as u
 participant WebApp as wa

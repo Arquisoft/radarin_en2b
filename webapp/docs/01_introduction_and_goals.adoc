@@ -25,7 +25,7 @@ What is Radarin?
 
 Radarin is a system to facilitate meetings between friends using new technologies.
 
-To carry out the project's aim, the application needs the location of the users. They must voluntarily activate it and allow the application to use it. It also needs the users to have a SOLID <<solid>> pod <<pods>>, whose URL will be asked to log in. A notification will be sent in case some SOLID <<solid>> friend has accessed Radarin and is nearby too, so they can get in contact. There is a possibility of sending messages to those friends that are nearby.
+To carry out the project's aim, the application needs the location of the users. They must voluntarily activate it and allow the application to use it. It also needs the users to have a SOLID <<solid>> pod <<pod>>, whose URL will be asked to log in. A notification will be sent in case some SOLID <<solid>> friend has accessed Radarin and is nearby too, so they can get in contact. There is a possibility of sending messages to those friends that are nearby.
 
 
 === Requirements Overview
@@ -52,16 +52,16 @@ Keep these excerpts as short as possible. Balance readability of this document w
 [options="header"]
 |===
 | Requirement | Description
-| Two software components (at least) to take into account | Give the user the possibility of accessing the application through the web and through the mobile phone.
+| Two software components (at least) to take into account | Give the user the possibility of accessing the application through a web browser and through the mobile phone.
 | Web application | It will run in a server and will store locations.
 
                     It will allow the users to manage and visualize locations. 
                     
                     It will also include admin options to manage users and monitor server status.
-| Application ran in users' mobile phone | It will send the corresponding locations to the server.
+| Application run in users' mobile phone | It will send the corresponding locations to the server.
 
                                             It will receive notifications from nearby friend users.
-| Application that runs in a server | It will store the minimal information needed about a user, the web and the mobile phone location apart from the timestamp in which those locations take place (all of them saved in the users's pods <<pods>>). The last user location is saved in the corresponding database.
+| Application that runs in a server | It will store the minimal information needed about a user: the locations taken from the browser or phone and the timestamp in which those locations take place (all of them saved in the users's pods <<pods>>). The last user location is saved in the corresponding database.
                                       
                                       The rest of users' information, such as friends, locations and tags will be queried to the pods <<pods>>.
                                       

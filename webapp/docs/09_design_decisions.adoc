@@ -31,7 +31,7 @@ One problem we face when choosing the technologies is that, even though we looke
 Solutions::
 In order to solve the problem mentioned before, what we have done is work on the basics of the new technologies, getting a lot of practice and ask questions to other members of the team, as facing issues together is much easier and a lot more enriching for all the members.
 
-=== Not create a mobile application
+=== Not creating a mobile application
 
 ==== Status
 
@@ -59,21 +59,21 @@ Giving the restapi a complete and strong security is not something easy and it t
 
 === Prometheus and Grafana
 
-As one of the high level requirements is monitoring the deployed web application system, we decided to use prometheus <<prometheus>> to take data every five seconds and grafana <<grafana>> to show that data in a nice looking way. 
+As one of the high level requirements is monitoring the deployed web application system, we decided to use Prometheus <<prometheus>> to take data every five seconds and Grafana <<grafana>> to show that data in a nice looking way. 
 
-As the team was able to deploy both of them in heroku <<heroku>>, their links were added to the admin options. The prometheus <<prometheus>> page was been embedded inside the web application instead of opening it in a new window. Grafana <<grafana>> has not been shown in the same way. The first approach was to embed it too but it does not work because a security problem, the browser tolds the user to open it in a new window, so instead of embedding it when the grafana <<grafana>> link is clicked a new window with it is openned.
+As the team was able to deploy both of them in heroku <<heroku>>, their links were added to the admin options. The Prometheus <<prometheus>> page has been embedded inside the web application instead of opening it in a new window. Grafana <<grafana>> has not been shown in the same way. The first approach was to embed it too but it did not work because of a security problem (the browser told the user to open it in a new window), so instead of embedding it when the Grafana <<grafana>> link is clicked a new window with it is openned.
 
 === Optional features
 
 ==== Nearby friends
 
-A friend is considered to be nearby when the distance between him/her and the user is at most 1000 meters and the friend location updatedAt field is at most fifteen minutes ago comparing it with the current time. That last check is made because a case we are going to explain now. Imagine that a user uses the web application three days ago (updatedAt field) and the last location saved is inside the distance range but when another user, friend of the previous, uses the web application he/she sees that the friend is nearby. It could be ok or not, almost for sure the friend is not still there.
+A friend is considered to be nearby when the distance between him/her and the user is at most 1000 meters and the friend location updatedAt field is at most fifteen minutes ago comparing it with the current time. That last check is made because of a case we are going to explain now. Imagine that a user entered the web application three days ago (updatedAt field) and the last location saved is inside the distance range but when another user, friend of the previous, uses the web application he/she sees that the friend is nearby. It could be ok or not, almost for sure the friend is not still there.
 
 How can the users know that they have nearby friends? 
 
 There are several possibilities, the first one is that the user has an option to see the complete list of friends, apart from the nearby ones. 
 
-The second is that in the main map (the first one) the user can see his/her location (represented with a blue pushping) and the nearby friends locations (represented with a red pushpin, if the user clicks on them the webId of the friend is displayed to know which friend is it).
+The second is that in the main map (the first one) the user can see his/her location (represented with a blue pushpin) and the nearby friends locations (represented with a red pushpin, if the user clicks on them the webId of the friend is displayed to know which friend is it).
 
 The third one is explained in the next section. 
 
@@ -91,24 +91,24 @@ As the web application has three different maps to show and display different in
 
 Leaflet <<leaflet>> was taken into account but finally discarded because google maps <<google-maps-api>> seems to be easier to use.
 
-The first map approach had used google-maps-react framework but as it last updated was one year ago the code does not work as expected because "was not compatible" with the framework.
+The first map approach was using google-maps-react framework but, as it last was updated was one year ago, the code does not work as expected because it "is not compatible" with the framework.
 
-That is why we changed and now we are usign @react-google-maps/api that it last updated was three months ago and with this the expected result can be achieved.
+That is why we changed and now we are usign @react-google-maps/api, that was last updated three months ago and with this the expected result can be achieved.
 
 ==== Visualize location made
 
-As the user location is updated every 2 minutes, the user can see the location history in a table (MyLocations). He/she has the options to delete the desired location or to delete all locations saved in the pod <<pods>>. 
+As the user location is updated every 2 minutes, the user can see the location history in a table (MyLocations). He/she has the option to delete the desired location or to delete all locations saved in the pod <<pods>>. 
 
-That location history is also shown in a map (LocationMap). We have to mention that the locations map does not show every recorder locations. Those that are in a range of less than 100 meters from other location is not shown, since they are not very representative and affect performance.
+That location history is also shown in a map (LocationMap). We have to mention that the locations map does not show every recorded location. Those that are in a range of less than 100 meters from other location are not shown, since they are not very representative and affect performance.
 
-Imagine the situation where the user is using the web application or the development team is testing it. If they are not changing the location, every 2 minutes a new yellow pushpin is placed in the map in the same place where other marker is.
+Imagine the situation where the user is using the web application or the development team is testing it. If they are not changing the location, every 2 minutes a new yellow pushpin is placed in the map in the same place where other marker is. This is why we applied the measure mentioned above.
 
 === Tag location to facilitate their search
 
-The users have the posibility to create tags with a name and an optional description from the location they are in that moment.
+The users have the posibility to create tags with a name and an optional description from the location they are in at the moment.
 
-The list of created tags can be seeing apart from deleting the desired ones. Also, they can search a concrete tag by a complete or partial name if they do not find at first sight from a huge tag list.
+The list of created tags can be seen apart from deleting the desired ones. Also, a concrete tag can be searched by a complete or partial name if they do not find it at first sight from a huge tag list.
 
-There is a tag map where the all tags can be seen with a purple pushpin. If the user clicks in any marker, all are displayed showing the corresponding name and description (if there is).
+There is a tags map where the all tags can be seen with a purple pushpin. If the user clicks in any marker, all are displayed showing the corresponding name and description (if there is any).
 
 This functionality is very useful. It is very common that people is at one local, for example a bar, that they really like but they forget or do not know its name or its address, so when the people are at that place they can use the web app to create a tag with the current location. With that tag created and with a meaningful name they can easily search for that bar location in the map.
