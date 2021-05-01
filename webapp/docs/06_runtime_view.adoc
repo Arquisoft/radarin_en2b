@@ -50,6 +50,7 @@ wa -> u : confirmation response
 deactivate wa
 ....
 
+[plantuml,"sequence-upload-location",svg]
 ....
 actor John as u
 participant WebApp as wa
