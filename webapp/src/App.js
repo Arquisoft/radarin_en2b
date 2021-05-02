@@ -30,8 +30,7 @@ export default function App () {
   } 
 
   return (
-  <>
-  <MyNavBar rotation={20} timing={200}/>
-  )
-</>);
-};
+      <>
+      <MyNavBar rotation={20} timing={200}/>
+    )</>);
+}

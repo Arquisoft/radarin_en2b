@@ -4,7 +4,7 @@ a {
 
 .grad {
   background-color: #55efc4;
-  background-image: linear-gradient(315deg, #55efc4 0%, #000000 74%);
+  background-image: linear-gradient (315deg, #55efc4 0%, #000 74%);
 }
 
 .link:hover {

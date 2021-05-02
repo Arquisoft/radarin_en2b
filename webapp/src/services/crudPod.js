@@ -141,7 +141,7 @@ async function getChats(webId) {
         var resultToReturn = new Set();
         var names = new Set();
         for (var i = 1; i < inbox.length; i++) {
-            const urlParam = asUrl(inbox[i]).split("/")[3]
+            const urlParam = asUrl(inbox[i]).split("/")[3];
             getSolidDataset(webId.slice(0, -15) + "inbox/" + urlParam, { fetch: fetch }).then(async function (myDataset) {
                 const chat = await getThing(myDataset, webId.slice(0, -15) + "inbox/" + urlParam);
                 const dc = await getDatetime(chat, DCTERMS.modified);
@@ -157,7 +157,7 @@ async function getChats(webId) {
                     const messages = await getUrlAll(chat, "http://www.w3.org/2005/01/wf/flow#message");
                     var result = new Set();
                     messages.forEach(async function (elem) {
-                        const message = await getThing(myDataset, elem)
+                        const message = await getThing(myDataset, elem);
                         if (message !== null) {
                             const messageContent = await getStringNoLocale(message, "http://rdfs.org/sioc/ns#content")
                             const creator = await getUrl(message, FOAF.maker);
@@ -232,6 +232,6 @@ async function addChat(webId, text) {
             });
         }
     });
-};
+}
 
 export { getName, addLocation, getLocations, deleteLocation, getFriends, addTagLocation, getTagLocations, deleteTagLocation, getChats, addChat };
