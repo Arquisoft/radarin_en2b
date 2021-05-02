@@ -131,7 +131,7 @@ image:documentation_5_2.png[]
 | My Tags | It lets you create a tag of your current location. It also shows the list of all of your tags.
 | Tags Map | It shows all your tags in a map.
 | Solid <<solid>> | It provides a set of libraries with which you can exchange data between the interface layer and the user's pod <<pods>>.
-| Moongose <<moongose>> | It provides a set of libraries with which you can exchange data with the MONGODB database.
+| Mongoose <<mongoose>> | It provides a set of libraries with which you can exchange data with the MONGODB database.
 |===
 
 [role="arc42help"]
