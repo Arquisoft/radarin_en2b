@@ -23,7 +23,7 @@ import MapView from "./MapView";
 import AdminManageUsers from "./AdminManageUsers";
 import { LogoutButton, useSession } from "@inrupt/solid-ui-react";
 import { addUser, getUserById } from "../api/api";
-import { getName, getChats } from "../services/crudPod";
+import { getName, getChats, addChat } from "../services/crudPod";
 import { addLocation, getFriends } from "../services/crudPod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -34,6 +34,7 @@ import '../NavBar.css';
 import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop.js';
 import LocationsMap from "./LocationsMap";
+import Notifications from "./Notifications";
 
 const MyNavBar = ({ ...boopConfig }) => {
     const { session } = useSession();
@@ -48,7 +49,7 @@ const MyNavBar = ({ ...boopConfig }) => {
 
 
     useEffect(() => {
-        getChats(webId).then();
+        getChats(webId)
         getName(webId).then((name) => setName(name));
         navigator.geolocation.getCurrentPosition(async function (position) {
             let friends = await getFriends(webId).then(function (list) {
@@ -61,6 +62,8 @@ const MyNavBar = ({ ...boopConfig }) => {
             });
             console.log(nearby)
             await nearby.forEach((friend) => notifyFriend(friend.webId));
+
+            await friends.forEach(friend => getChats(friend))
         });
 
         if (role == null) {
@@ -200,6 +203,9 @@ const MyNavBar = ({ ...boopConfig }) => {
             </Route>
             <Route path="/locationMap">
                 <LocationsMap webId={session.info.webId} />
+            </Route>
+            <Route path="/notifications">
+                <Notifications />
             </Route>
         </Switch>
     </Router>
