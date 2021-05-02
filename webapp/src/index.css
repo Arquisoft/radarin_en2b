@@ -1,14 +1,14 @@
-#root{
+#root {
   background: url(https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?cs=srgb&dl=pexels-jakub-novacek-924824.jpg&fm=jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index: 9999; 
-    width: 100%; 
-    height: 100%; 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    overflow-y: scroll;
-  }
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+}

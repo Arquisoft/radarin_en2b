@@ -125,5 +125,6 @@ const TagsMap = (props) => {
     ): <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
         <h1>My tags</h1>
         {loadError}</div>;
-}
+};
+
 export default TagsMap;

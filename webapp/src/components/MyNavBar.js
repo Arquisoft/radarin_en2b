@@ -137,7 +137,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                                                     </Navbar.Brand>
                                                 </Link>
                                                 <Link data-testid="link-map" to="/map">
-                                                    <Navbar.Brand href="/map">
+                                                    <Navbar.Brand>
                                                         <animated.span onMouseEnter={trigger3} style={style3}>
                                                             <img src={map} alt="map"
                                                                 width="30"

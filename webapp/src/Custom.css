@@ -1,156 +1,180 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+@import url("https://fonts.googleapis.com/css?family=Raleway:200");
 
 *{
-  font-family: 'Raleway';
+  font-family: "Raleway";
   font-weight: bolder;
 }
 
 h1, h2{
-    color: white;
+  color: white;
 }
 
 Label, p{
-    color: white;
-    font-size: 20px;
+  color: white;
+  font-size: 20px;
 }
 
 a{
-    color: darksalmon;
+  color: darksalmon;
 }
 
 .otherLink{
-    color: white;
+  color: white;
 }
 
 .otherLink:hover { 
-    color: aquamarine; 
+  color: aquamarine;
 }
 
 footer {
-    background-image: linear-gradient(150deg, #616161 0%, #9bc5c3 100%);
-  }
+  background-image: linear-gradient(150deg, #616161 0%, #9bc5c3 100%);
+}
 
 .footerText{
-    font-size: 16px;
-    text-align: center;
-    color: cadetblue;
-    margin-top: 0.3%;
-    margin-bottom: 0.2%;
+  font-size: 16px;
+  text-align: center;
+  color: cadetblue;
+  margin-top: 0.3%;
+  margin-bottom: 0.2%;
 }
+
 h1 {
-    font-size: 5em;
-    text-align: center;
-    font-weight: 600;
-    color: #353239;
+  font-size: 5em;
+  text-align: center;
+  font-weight: 600;
+  color: #353239;
+}
+  
+h1 span span {
+  color: tomato;
+  position: relative;
+  bottom: -1em;
+  opacity: 0;
+  animation: move-text 0.75s forwards;
+}
+
+h1 span span:nth-child(2n) { 
+  color: lightseagreen;
+}
+
+h1 span span:nth-child(3n) { 
+  color: orange;
+}
+
+h1 span span:nth-child(4n) { 
+  color: dodgerblue;
+}
+
+h1 span span:nth-child(5n) { 
+  color: blueviolet;
+}
+
+h1 span span:nth-child(7n) { 
+  color: gold;
+}
+  
+@keyframes move-text {
+  0% {
+    bottom: -0.2em;
+    opacity: 1;
   }
   
-  h1 span span {
-    color: tomato;
-    position: relative;
-    bottom: -1em;
-    opacity: 0;
-    animation: move-text 0.75s forwards;
+  50% {
+    bottom: 0.2em;
   }
-  h1 span span:nth-child(2n) { color: lightseagreen; }
-  h1 span span:nth-child(3n) { color: orange; }
-  h1 span span:nth-child(4n) { color: dodgerblue; }
-  h1 span span:nth-child(5n) { color: blueviolet; }
-  h1 span span:nth-child(7n) { color: gold; }
-  
-  @keyframes move-text {
-    0% {
-      bottom: -0.2em;
-      opacity: 1;
-    }
-    
-    50% {
-      bottom: 0.2em;
-    }
-  
-    100% {
-      bottom: 0;
-      opacity: 1;
-    }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
   }
+}
   
-  
-  @media screen and (max-width: 500px) {
-    body {
-      transform: scale(0.75);
-    }
+@media screen and (max-width: 500px) {
+  body {
+    transform: scale(0.75);
+  }
 }
 
 .test {
-    color: #fff;
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    background-size: 400% 400%;
-    -webkit-animation: Gradient 15s ease infinite;
-    -moz-animation: Gradient 15s ease infinite;
-    animation: Gradient 15s ease infinite;
-    }
+  color: #fff;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
   
-  .paused {
-    -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
-    animation-play-state: paused;
-  }
+.paused {
+  -webkit-animation-play-state: paused;/* Safari 4.0 - 8.0 */
+  animation-play-state: paused;
+}
   
-  @-webkit-keyframes Gradient {
-    0% {
-    background-position: 0% 50%
-    }
-  50% {
-  background-position: 100% 50%
-  }
-  100% {
-  background-position: 0% 50%
-  }
-  }
-  
-  @-moz-keyframes Gradient {
-    0% {
-    background-position: 0% 50%
-    }
-  50% {
-  background-position: 100% 50%
-  }
-  100% {
-  background-position: 0% 50%
-  }
-  }
-  
-  @keyframes Gradient {
-    0% {
-    background-position: 0% 50%
-    }
-  50% {
-  background-position: 100% 50%
-  }
-  100% {
-  background-position: 0% 50%
-  }
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
   }
 
-  .App-logo {
-    pointer-events: none;
-    width: 50px;
-    height: 50px;
+  50% {
+    background-position: 100% 50%;
   }
+
+  100% {
+  background-position: 0% 50%;
+  }
+}
+  
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+  background-position: 100% 50%;
+  }
+
+  100% {
+  background-position: 0% 50%;
+  }
+}
+  
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+  background-position: 0% 50%;
+  }
+}
+
+.App-logo {
+  pointer-events: none;
+  width: 50px;
+  height: 50px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
+}
+
 @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
   }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .contenedor {
-    padding: 1em;
+  padding: 1em;
 }
 
 .bigcenter {
@@ -159,7 +183,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   width: 90%;
-  background:linear-gradient( #2ebf91, #25b7c4)
+  background: linear-gradient( #2ebf91, #25b7c4);
 }
 
 .list-group-item{
@@ -175,7 +199,6 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-  background:linear-gradient( #2ebf91, #25b7c4)
+  background: linear-gradient( #2ebf91, #25b7c4);
 }
   
-

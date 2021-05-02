@@ -1,5 +1,5 @@
 import { Jumbotron, Button } from "react-bootstrap";
-import "../AboutUs.css"
+import "../AboutUs.css";
 
 const AboutUs = () => {
     return (
@@ -33,5 +33,6 @@ const AboutUs = () => {
             </div>
             
     );
-}
+};
+
 export default AboutUs;

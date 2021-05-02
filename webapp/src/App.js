@@ -3,7 +3,7 @@ import { useSession } from "@inrupt/solid-ui-react";
 import MyNavBar from "./components/MyNavBar";
 import LogIn from "./components/LogIn";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
-import './Custom.css';
+import "./Custom.css";
 
 export default function App () {
   const {session, sessionRequestInProgress} = useSession();
