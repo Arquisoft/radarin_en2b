@@ -43,14 +43,14 @@ const MyNavBar = ({ ...boopConfig }) => {
     const [name, setName] = useState("");
     const [role, setRole] = useState(null);
     const notifyFriend = (friend) => toast(friend + " is near you");
-        
+
     const [style, trigger] = useBoop(boopConfig);
     const [style2, trigger2] = useBoop(boopConfig);
     const [style3, trigger3] = useBoop(boopConfig);
 
 
     useEffect(() => {
-        
+
         getName(webId).then((name) => setName(name));
         navigator.geolocation.getCurrentPosition(async function (position) {
             let friends = await getFriends(webId).then(function (list) {
@@ -58,7 +58,7 @@ const MyNavBar = ({ ...boopConfig }) => {
             });
             var friendsWithWebId = [];
             await friends.forEach((friend) => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
-            let nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId).then(function (list){
+            let nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId).then(function (list) {
                 return list;
             });
             await nearby.forEach((friend) => notifyFriend(friend.webId));
@@ -80,7 +80,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                     });
                     var friendsWithWebId = [];
                     friends.forEach((friend) => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
-                    let nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId).then(function (list){
+                    let nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId).then(function (list) {
                         return list;
                     });
                     await nearby.forEach((friend) => notifyFriend(friend.webId));
@@ -90,142 +90,150 @@ const MyNavBar = ({ ...boopConfig }) => {
         }
     }, [role, webId]);
     return (
-    <Router>
-        <ToastContainer />
-        <div class="grad">
-        <Navbar variant="dark">
-        <Link to="/" class="otherLink" >
-            <Navbar.Brand>
-                <img src={logo} alt="logo"
-                    className="App-logo d-inline-block align-top"
-                />    
-            </Navbar.Brand>
-            </Link>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto justify-content-center container-fluid" fill>
-                    {(() => {
-                        if (role === null || role !== "Admin") {
-                            return (
-                                <React.Fragment>
-            <Link to="/" class="otherLink" >
-            <Navbar.Brand>
-            Radarin
-            </Navbar.Brand>
-            </Link>
-            <Nav className="mr-auto">
-                
-                    <Link to="/notifications">
-                        <Navbar.Brand >
-                            <img src={bell} alt="notifications"
-                        <animated.span onMouseEnter={trigger} style={style}>
-                                width="30"
-                                height="30"
-                                className="Notifications d-inline-block align-top"
-                            />{" "}
-                             </animated.span>
+        <Router>
+            <ToastContainer />
+            <div class="grad">
+                <Navbar variant="dark">
+                    <Link to="/" class="otherLink" >
+                        <Navbar.Brand>
+                            <img src={logo} alt="logo"
+                                className="App-logo d-inline-block align-top"
+                            />
                         </Navbar.Brand>
                     </Link>
-               
-                <Link to="/friendList">
-                    <Navbar.Brand>
-                    <animated.span onMouseEnter={trigger2} style={style2}>
-                        <img src={friends} alt="friends"
-                            width="30"
-                            height="30"
-                            className="Friends d-inline-block align-top"
-                        />{" "}
-                        </animated.span>
-                    </Navbar.Brand>
-                </Link>
-                <Link to="/map">
-                    <Navbar.Brand href="/map">
-                        <animated.span onMouseEnter={trigger3} style={style3}>
-                        <img src={map} alt="map"
-                            width="30"
-                            height="30"
-                            className="Map d-inline-block align-top"
-                        />{" "}
-                        </animated.span>
-                    </Navbar.Brand>
-                </Link>
-                {(() => {
-                    if (role != null && role === "Admin") {
-                        return (
-                            <Link id="linkAdminManageUsers" to="/adminManageUsers">
-                                <React.Fragment>
-                                    <Link id="linkAdminManageUsers" to="/adminManageUsers">
-                                        <Navbar.Brand>
-                                            Manage users
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="mr-auto justify-content-center container-fluid" fill>
+                            <Link to="/" class="otherLink" >
+                                <Navbar.Brand>
+                                    Radarin
+                                            </Navbar.Brand>
+                            </Link>
+                            <Nav className="mr-auto">
+                                {(() => {
+                                    if (role === null || role !== "Admin") {
+                                        return (
+                                            <React.Fragment>
+                                                <Link to="/notifications">
+                                                    <Navbar.Brand>
+                                                        <animated.span onMouseEnter={trigger} style={style}>
+                                                            <img src={bell} alt="notifications"
+                                                                width="30"
+                                                                height="30"
+                                                                className="Notifications d-inline-block align-top"
+                                                            />{" "}
+                                                        </animated.span>
+                                                    </Navbar.Brand>
+                                                </Link>
+
+                                                <Link to="/friendList">
+                                                    <Navbar.Brand>
+                                                        <animated.span onMouseEnter={trigger2} style={style2}>
+                                                            <img src={friends} alt="friends"
+                                                                width="30"
+                                                                height="30"
+                                                                className="Friends d-inline-block align-top"
+                                                            />{" "}
+                                                        </animated.span>
+                                                    </Navbar.Brand>
+                                                </Link>
+                                                <Link to="/map">
+                                                    <Navbar.Brand href="/map">
+                                                        <animated.span onMouseEnter={trigger3} style={style3}>
+                                                            <img src={map} alt="map"
+                                                                width="30"
+                                                                height="30"
+                                                                className="Map d-inline-block align-top"
+                                                            />{" "}
+                                                        </animated.span>
+                                                    </Navbar.Brand>
+                                                </Link>
+
+                                                <Navbar.Brand>
+                                                    <ButtonGroup aria-label="Basic example">
+                                                        <Button variant="link"><Link to="/myLocations" class="otherLink">My Locations</Link></Button>
+                                                        <Button variant="link"><Link to="/myTags" class="otherLink">My Tags</Link></Button>
+                                                        <Button variant="link"><Link to="/tagsMap" class="otherLink">Tags map </Link></Button>
+                                                        <Button variant="link"><Link to="/locationMap" class="otherLink">Locations Map</Link></Button>
+                                                        <Button variant="link"><Link to="/aboutUs" class="otherLink">About us</Link></Button>
+                                                    </ButtonGroup>
+                                                </Navbar.Brand>
+                                            </React.Fragment>);
+                                    }
+                                })()}
+                                {
+                                    (() => {
+                                        if (role !== null && role === "Admin") {
+                                            return (
+                                                <React.Fragment>
+                                                    <Link id="linkAdminManageUsers" to="/adminManageUsers">
+                                                        <Navbar.Brand>
+                                                            Manage users
                                         </Navbar.Brand>
-                                    </Link>
-                                    <Link id="linkPrometheus" to="/prometheus">
-                                        <Navbar.Brand>
-                                            Prometheus
+                                                    </Link>
+                                                    <Link id="linkPrometheus" to="/prometheus">
+                                                        <Navbar.Brand>
+                                                            Prometheus
                                         </Navbar.Brand>
-                                    </Link>
-                                    <Link id="linkGrafana" to="" onClick = { () => { window.open("https://radarinen2bgrafana.herokuapp.com/","_blank"); }}>
-                                        <Navbar.Brand>
-                                            Grafana
+                                                    </Link>
+                                                    <Link id="linkGrafana" to="" onClick={() => { window.open("https://radarinen2bgrafana.herokuapp.com/", "_blank"); }}>
+                                                        <Navbar.Brand>
+                                                            Grafana
                                         </Navbar.Brand>
-                                    </Link>
-                                </React.Fragment>
-                            );
-                    })()}
-                        }
-                <Navbar.Brand>
-                    <ButtonGroup aria-label="Basic example">
-                        <Button variant="link"><Link to="/myLocations" class="otherLink">My Locations</Link></Button>
-                        <Button variant="link"><Link to="/myTags" class="otherLink">My Tags</Link></Button>
-                        <Button variant="link"><Link to="/tagsMap" class="otherLink">Tags map </Link></Button>
-                        <Button variant="link"><Link to="/locationMap" class="otherLink">Locations Map</Link></Button>
-                        <Button variant="link"><Link to="/aboutUs" class="otherLink">About us</Link></Button>
-                    </ButtonGroup>
-                </Navbar.Brand>
-            </Nav>
-            <div className="mr-sm-2">
-            <Navbar.Text  class="loggedText">Logged in as {name ? name : webId}</Navbar.Text></div>
-            <Nav.Item>
-                <LogoutButton>
-                    <Button variant="dark">Log Out</Button>
-                </LogoutButton>
-            </Nav.Item>
-            </Navbar.Collapse>
-        </Navbar>
-        </div>
-        <Switch>
-            <Route exact path="/">
-                <Home />
-            </Route>
-            <Route path="/friendList">
-                <FriendList />
-            </Route>
-            <Route path="/map">
-                <MapView activeProfile={session.info.webId} />
-            </Route>
-            <Route path="/myLocations">
-                <MyLocations />
-            </Route>
-            <Route path="/locationMap">
-                <LocationsMap webId={session.info.webId} />
-            </Route>
-            <Route path="/myTags">
-                <MyTags />
-            </Route>
-            <Route path="/tagsMap">
-                <TagsMap webId={session.info.webId} />
-            </Route>
-            <Route path="/adminManageUsers">
-                <AdminManageUsers />
-            </Route>
-            <Route path="/notifications">
-                <Notifications webId={webId}/>
-            </Route>
-            <Route path="/prometheus">
-                <Prometheus />
-            </Route>
-        </Switch>
-    </Router>
+                                                    </Link>
+                                                </React.Fragment>
+                                            );
+                                        }
+                                    })()
+                                }
+                            </Nav>
+                            <div className="mr-sm-2">
+                                <Navbar.Text class="loggedText">Logged in as {name ? name : webId}</Navbar.Text></div>
+                            <Nav.Item>
+                                <LogoutButton>
+                                    <Button variant="dark">Log Out</Button>
+                                </LogoutButton>
+                            </Nav.Item>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            </div>
+            <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route path="/friendList">
+                    <FriendList />
+                </Route>
+                <Route path="/map">
+                    <MapView activeProfile={session.info.webId} />
+                </Route>
+                <Route path="/myLocations">
+                    <MyLocations />
+                </Route>
+                <Route path="/locationMap">
+                    <LocationsMap webId={session.info.webId} />
+                </Route>
+                <Route path="/myTags">
+                    <MyTags />
+                </Route>
+                <Route path="/tagsMap">
+                    <TagsMap webId={session.info.webId} />
+                </Route>
+                <Route path="/adminManageUsers">
+                    <AdminManageUsers />
+                </Route>
+                <Route path="/notifications">
+                    <Notifications webId={webId} />
+                </Route>
+                <Route path="/prometheus">
+                    <Prometheus />
+                </Route>
+                <Route path="/aboutUs">
+                    <AboutUs />
+                </Route>
+            </Switch>
+        </Router>
     );
 };
 
