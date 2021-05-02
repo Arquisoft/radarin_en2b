@@ -87,7 +87,7 @@ const TagsMap = (props) => {
 
     return isLoaded ? (
         <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "1.25em"}}>
-            <h1>My tags</h1>
+            <h1  style={{color:"white"}}>My tags</h1>
             <GoogleMap 
                 mapContainerStyle={mapContainerStyle} 
                 center={center}

@@ -50,7 +50,10 @@ const MyTags = () => {
         }
     });
 
-    return (<div className="bigcenter">
+    return (<div className="bigcenter"   style={{borderStyle: "solid",
+    borderRadius: "3em",
+    borderColor: "black",
+    padding: "2em"}}>
         <div className="contenedor">
         <h2>Create a tag location</h2>
         <div>

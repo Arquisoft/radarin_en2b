@@ -49,7 +49,7 @@ const MapView = (props) => {
 
     return isLoaded ? (
         <div data-testid="wholeDiv" style={{width: "100vw", height: "90vh", padding: "1.25em"}}>
-            <h1>My current location and friends</h1>
+            <h1 style={{color:"white"}}>My current location and friends</h1>
             <div data-testid="mapDiv">
                 <GoogleMap 
                     mapContainerStyle={mapContainerStyle} 

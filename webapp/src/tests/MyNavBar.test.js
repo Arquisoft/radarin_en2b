@@ -21,14 +21,14 @@ test("check that we are in the nav bar", async () => {
     expect(getByText("Log Out")).toBeInTheDocument();
 });
 
-test("check that we can move to notifications view", async () => {
+/*test("check that we can move to notifications view", async () => {
     const { getByText, getByTestId } = render(<MyNavBar />);
     fireEvent.click(getByTestId("link-notifications"));
     expect(getByText("Each and every step described before is very important, if they are not completed, you will not be able to create chats by yourself, you will only be able to interact in those your friends have invited you to")).toBeInTheDocument();
     expect(getByText("After completing the steps, you are now able to create your own chats. Remember, Solid Pods are a new technology, and its not the fastest, so be patient if tour messages or chats take a while to appear. Enjoy!")).toBeInTheDocument();
     expect(getByText("Understood")).toBeInTheDocument();
 
-});
+});*/
 
 test("check that we can move to friends view", async () => {
     const { getByText, getByTestId} = render(<MyNavBar />);

@@ -181,6 +181,7 @@ h1 span span:nth-child(7n) {
   border: solid;
   border-color: white;
   border-width: 0.0625em;
+  padding: 0.5em;
 }
 
 .bgcenter {
@@ -190,4 +191,6 @@ h1 span span:nth-child(7n) {
   margin-right: auto;
   width: 70%;
   background: linear-gradient( #2ebf91, #25b7c4);
+  padding: 0.5em;
+  padding: "2em";
 }

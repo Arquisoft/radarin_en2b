@@ -3,7 +3,6 @@ import React, {
 } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../logo.svg";
-import bell from "../img/bell.png";
 import friends from "../img/friends.png";
 import map from "../img/mapicon.png";
 import Nav from "react-bootstrap/Nav";
@@ -34,7 +33,6 @@ import "../NavBar.css";
 import { animated } from "react-spring";
 import useBoop from "../hooks/useBoop.js";
 import LocationsMap from "./LocationsMap";
-import Notifications from "./Notifications";
 import Prometheus from "./Prometheus";
 
 const MyNavBar = ({ ...boopConfig }) => {
@@ -43,8 +41,6 @@ const MyNavBar = ({ ...boopConfig }) => {
     const [name, setName] = useState("");
     const [role, setRole] = useState(null);
     const notifyFriend = (friend) => toast(friend + " is near you");
-
-    const [style, trigger] = useBoop(boopConfig);
     const [style2, trigger2] = useBoop(boopConfig);
     const [style3, trigger3] = useBoop(boopConfig);
 
@@ -114,17 +110,6 @@ const MyNavBar = ({ ...boopConfig }) => {
                                     if (role === null || role !== "Admin") {
                                         return (
                                             <React.Fragment>
-                                                <Link data-testid="link-notifications" to="/notifications">
-                                                    <Navbar.Brand>
-                                                        <animated.span onMouseEnter={trigger} style={style}>
-                                                            <img src={bell} alt="notifications"
-                                                                width="30"
-                                                                height="30"
-                                                                className="Notifications d-inline-block align-top"
-                                                            />{" "}
-                                                        </animated.span>
-                                                    </Navbar.Brand>
-                                                </Link>
                                                 <Link data-testid="link-friend-list" to="/friendList">
                                                     <Navbar.Brand>
                                                         <animated.span onMouseEnter={trigger2} style={style2}>
@@ -221,9 +206,6 @@ const MyNavBar = ({ ...boopConfig }) => {
                 </Route>
                 <Route path="/adminManageUsers">
                     <AdminManageUsers />
-                </Route>
-                <Route path="/notifications">
-                    <Notifications webId={webId} />
                 </Route>
                 <Route path="/prometheus">
                     <Prometheus />

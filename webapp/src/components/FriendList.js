@@ -93,7 +93,7 @@ const Friends = () => {
 
           //Put all friends inside a list
           for await (const name of pod.knows){
-            var webId = `${name}profile/card#me`;
+            var webId = `${name}`;
             friendsOfUser.push({webId});
           }
           //friends = await friendsOfUser.filter(onlyUnique);
@@ -183,7 +183,10 @@ const Friends = () => {
     }, [activeProfile]);
 
     return(
-      <div className="bgcenter">
+      <div className="bgcenter"  style={{borderStyle: "solid",
+      borderRadius: "3em",
+      borderColor: "black",
+      padding: "2em"}}>
       <div className="ml-3">
         <h2 style={{marginTop: "0.625em", marginLeft: "2.5em"}}>Nearby friends</h2>
         <div id="nearbyFriends">
