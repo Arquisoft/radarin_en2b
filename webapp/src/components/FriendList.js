@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-//import Dropdown from "react-bootstrap/Dropdown";
-//import lupa from "../img/lupa.png";
-//import { Link } from "react-router-dom";
 import userLogo from "../img/userLogo.png";
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
