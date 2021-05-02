@@ -27,7 +27,7 @@ const AboutUs = () => {
                 <p>RadarinEn2b: students enrolling Sotware Architecture course in Computer Software Engineering,University of Oviedo</p>
 
                 <p>
-                    <Button variant="primary">Learn more</Button>
+                    <Button variant="primary" onClick={() => window.open("http://radarinen2bwebapp.herokuapp.com/docs/")}>Learn more</Button>
                 </p>
             </Jumbotron>
             </div>

@@ -23,7 +23,7 @@ import MapView from "./MapView";
 import AdminManageUsers from "./AdminManageUsers";
 import { LogoutButton, useSession } from "@inrupt/solid-ui-react";
 import { addUser, getUserById } from "../api/api";
-import { getName, getChats, addChat } from "../services/crudPod";
+import { getName } from "../services/crudPod";
 import { addLocation, getFriends } from "../services/crudPod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -84,7 +84,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                     });
                     await nearby.forEach((friend) => notifyFriend(friend.webId));
                 });
-            }, 300000);
+            }, 30000);
             return () => clearInterval(interval);
         }
     }, [role, webId]);

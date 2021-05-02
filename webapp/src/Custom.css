@@ -164,7 +164,9 @@ h1 {
 
 .list-group-item{
   background-color: transparent;
-  border: none;
+  border: solid;
+  border-color: white;
+  border-width: 1px;
 }
 
 .bgcenter {

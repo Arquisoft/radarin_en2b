@@ -17,8 +17,7 @@ import {
     asUrl
 } from "@inrupt/solid-client";
 import { fetch } from "@inrupt/solid-client-authn-browser";
-import { FOAF, VCARD, DCTERMS, RDFS, LDP } from "@inrupt/vocab-common-rdf";
-const rdf = require('rdflib');
+import { FOAF, VCARD, DCTERMS } from "@inrupt/vocab-common-rdf";
 
 async function getName(webId) {
     const myDataset = await getSolidDataset(webId.slice(0, -3));
@@ -31,28 +30,30 @@ async function getName(webId) {
 }
 
 async function addLocation(webId, lat, long) {
-    getSolidDataset(webId.slice(0, -15) + 'private/radarin.txt', { fetch: fetch }).then(async function (myDataset) {
+    let succes = getSolidDataset(webId.slice(0, -15) + 'private/radarin.txt', { fetch: fetch }).then(async function (myDataset) {
         const profile = getThing(myDataset, webId);
         var date = new Date();
         let updatedProfile = addStringNoLocale(profile, FOAF.interest, lat + ", " + long + ", " + date.toLocaleString());
 
         const myChangedDataset = setThing(myDataset, updatedProfile);
         await saveSolidDatasetAt(webId.slice(0, -15) + 'private/radarin.txt', myChangedDataset, { fetch: fetch });
-        return;
+        return true;
     });
-    getSolidDataset(webId.slice(0, -3), { fetch: fetch }).then(async function (myDataset) {
-        const profile = getThing(myDataset, webId);
-        var date = new Date();
-        let updatedProfile = addStringNoLocale(profile, FOAF.interest, lat + ", " + long + ", " + date.toLocaleString());
+    if (!succes) {
+        getSolidDataset(webId.slice(0, -3), { fetch: fetch }).then(async function (myDataset) {
+            console.log("no")
+            const profile = getThing(myDataset, webId);
+            var date = new Date();
+            let updatedProfile = addStringNoLocale(profile, FOAF.interest, lat + ", " + long + ", " + date.toLocaleString());
 
-        const myChangedDataset = setThing(myDataset, updatedProfile);
-        await saveSolidDatasetAt(webId.slice(0, -15) + 'private/radarin.txt', myChangedDataset, { fetch: fetch });
-        return;
-    });
+            const myChangedDataset = setThing(myDataset, updatedProfile);
+            await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+        });
+    }
 }
 
 async function getLocations(webId) {
-    let myDataset = await getSolidDataset(webId.slice(0, -15) + 'private/radarin.txt', { fetch: fetch });
+    let myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
     if (myDataset === null) {
         myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
     }

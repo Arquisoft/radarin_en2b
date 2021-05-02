@@ -24,11 +24,11 @@ const MyLocations = () => {
         listItems.push(<tr>
             <td>{splited[0] + ", " +splited[1]}</td>
             <td>{splited[2]}</td>
-            <td><Button variant="contained" data-testid={session.info.webId} onClick={ async () => {await deleteLocation(session.info.webId, location); updateTable();}}>Delete</Button></td>
+            <td><Button variant="info" data-testid={session.info.webId} onClick={ async () => {await deleteLocation(session.info.webId, location); updateTable();}}>Delete</Button></td>
         </tr>);
     });
 
-    return (<div>
+    return (<div class="bgcenter">
         <Button block onClick={updateTable}>Refresh</Button>
         <Table striped bordered hover>
             <thead>
