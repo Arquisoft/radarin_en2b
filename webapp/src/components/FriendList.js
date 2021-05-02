@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import Dropdown from "react-bootstrap/Dropdown";
-import lupa from "../img/lupa.png";
-import { Link } from "react-router-dom";
+//import Dropdown from "react-bootstrap/Dropdown";
+//import lupa from "../img/lupa.png";
+//import { Link } from "react-router-dom";
 import userLogo from "../img/userLogo.png";
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
 import { getNearbyFriends } from "../api/api";
-
-
-
 
 /*
 Para añadir y eliminar amigos
@@ -31,7 +28,6 @@ const { PathFactory } = require("ldflex");
 const { default: ComunicaEngine } = require("@ldflex/comunica");
 const { namedNode } = require("@rdfjs/data-model");
 
-
 const Friends = () => {
   const { session } = useSession();
   const [activeProfile] = useState(session.info.webId);
@@ -47,8 +43,7 @@ const Friends = () => {
     margin-Left: 40px;
     border-radius: 25px;
   `;
-  */
-/*
+
   async function deleteFriend(webId, friend){
     const myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
     const profile = getThing(myDataset, webId);
@@ -68,6 +63,10 @@ const Friends = () => {
 
     await saveSolidDatasetAt(webId.slice(0, -3), myChangedDataset, { fetch: fetch });
   };
+
+  async function onlyUnique(value, index, self){
+    return self.indexOf(value) === index;
+  }
 
   */
 
@@ -91,10 +90,6 @@ const Friends = () => {
         
         var nearbyFriends = [];
       
-        /*async function onlyUnique(value, index, self){
-          return self.indexOf(value) === index;
-        }*/
-
         navigator.geolocation.getCurrentPosition(async function (position) {
           var friendsOfUser = [];
           var friends = [];

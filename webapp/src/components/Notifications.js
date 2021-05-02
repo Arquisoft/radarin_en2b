@@ -10,7 +10,7 @@ const Notifications = (originWebId) => {
     if(originWebId.webId !== undefined){
         setWebId(originWebId.webId.slice(0, -15));
     }
-    const [chats, setChats] = useState(new Set());
+    const [/*chats,*/ setChats] = useState(new Set());
     const [htmlItems] = useState([]);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const Notifications = (originWebId) => {
             });
             friends.forEach(friend => getChats(friend).then(res => {
                 var values = res.values();
-                var next = values.next().value;
+                //var next = values.next().value;
             }));
         }
 
