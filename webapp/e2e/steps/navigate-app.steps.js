@@ -50,7 +50,7 @@ defineFeature(feature, test => {
         });
 
         then("I should see the main radarin page", async () => {
-            await expect(page).toMatch("Welcome!", {timeout: 5000});
+            await expect(page).toMatch("Welcome", {timeout: 5000});
         });
 
     });
@@ -62,14 +62,14 @@ defineFeature(feature, test => {
     	});
 
     	when("I navigate the page using the navbar", async () => {
-            await expect(page).toClick("span", {text: "My Locations"});
+            await expect(page).toClick("a", {text: "My Locations"});
     	});
 
     	then("I should go to the myLocations page", async () => {
             await expect(page).toMatchElement("button", {text: "Delete All Locations"});
             await expect(page).toMatch("Locations");
             await expect(page).toMatch("Date and time");
-            await expect(page).toMatch("Actions");
+            await expect(page).toMatchElement("th", {text: "Actions"});
     	});
     });
 });

@@ -30,5 +30,24 @@ exports.login = async (provider, username, password) => {
     } catch (error) {
         console.log("User has already given permision")
     }
-    await expect(page).toMatch("Welcome!", {timeout: 5000});
+    await expect(page).toMatch("Welcome", {timeout: 5000});
 }
+// FROM https://github.com/puppeteer/puppeteer/issues/3718
+exports.getNewPageWhenLoaded =  async () => {
+    return new Promise(x =>
+        browser.on('targetcreated', async target => {
+            if (target.type() === 'page') {
+                const newPage = await target.page();
+                const newPagePromise = new Promise(y =>
+                    newPage.once('domcontentloaded', () => y(newPage))
+                );
+                const isPageLoaded = await newPage.evaluate(
+                    () => document.readyState
+                );
+                return isPageLoaded.match('complete|interactive')
+                    ? x(newPage)
+                    : x(newPagePromise);
+            }
+        })
+    );
+};
