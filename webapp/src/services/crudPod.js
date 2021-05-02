@@ -30,8 +30,8 @@ async function getName(webId) {
 }
 
 async function addLocation(webId, lat, long) {
-    var success = false
-    success = getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+    console.log("hola")
+    getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
         const profile = getThing(myDataset, webId);
         var date = new Date();
         let updatedProfile = addStringNoLocale(profile, FOAF.interest, lat + ", " + long + ", " + date.toLocaleString());
@@ -39,8 +39,7 @@ async function addLocation(webId, lat, long) {
         const myChangedDataset = setThing(myDataset, updatedProfile);
         await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
         return true;
-    });
-    if (!success) {
+    }).catch(function (){
         getSolidDataset(webId.slice(0, -3), { fetch: fetch }).then(async function (myDataset) {
             const profile = getThing(myDataset, webId);
             var date = new Date();
@@ -49,34 +48,31 @@ async function addLocation(webId, lat, long) {
             const myChangedDataset = setThing(myDataset, updatedProfile);
             await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
         });
-    }
+    })
 }
 
 async function getLocations(webId) {
-    var myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
+    let locations = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
 
-    var acquaintances = new Promise((resolve) => {
-        resolve(getStringNoLocaleAll(profile, FOAF.interest));
+        var acquaintances = new Promise((resolve) => {
+            resolve(getStringNoLocaleAll(profile, FOAF.interest));
+        });
+
+        return await acquaintances;
     });
-
-    return await acquaintances;
+    return locations;
 }
 
 async function deleteLocation(webId, location) {
-    var myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
-    var updatedProfile = removeStringNoLocale(profile, FOAF.interest, location);
+    await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
+        var updatedProfile = removeStringNoLocale(profile, FOAF.interest, location);
 
-    const myChangedDataset = setThing(myDataset, updatedProfile);
+        const myChangedDataset = setThing(myDataset, updatedProfile);
 
-    await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+        await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+    });
 }
 
 async function getFriends(webId) {
@@ -91,49 +87,44 @@ async function getFriends(webId) {
 }
 
 async function addTagLocation(webId, name, description, lat, long) {
-    let myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
-    var date = new Date();
-    var updatedProfile = "";
-    if (description !== "" && description.length > 0) {
-        updatedProfile = addStringNoLocale(profile, FOAF.publications, name + ", " + description + ", " + lat + ", " + long + ", " + date.toLocaleString());
-    } else {
-        updatedProfile = addStringNoLocale(profile, FOAF.publications, name + ", no description, " + lat + ", " + long + ", " + date.toLocaleString());
-    }
+    await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
+        var date = new Date();
+        var updatedProfile = "";
+        if (description !== "" && description.length > 0) {
+            updatedProfile = addStringNoLocale(profile, FOAF.publications, name + ", " + description + ", " + lat + ", " + long + ", " + date.toLocaleString());
+        } else {
+            updatedProfile = addStringNoLocale(profile, FOAF.publications, name + ", no description, " + lat + ", " + long + ", " + date.toLocaleString());
+        }
 
-    const myChangedDataset = setThing(myDataset, updatedProfile);
+        const myChangedDataset = setThing(myDataset, updatedProfile);
 
-    await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+        await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+    });
 }
 
 async function getTagLocations(webId) {
-    let myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
+    let success = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
 
-    let acquaintances = new Promise((resolve) => {
-        resolve(getStringNoLocaleAll(profile, FOAF.publications));
+        let acquaintances = new Promise((resolve) => {
+            resolve(getStringNoLocaleAll(profile, FOAF.publications));
+        });
+
+        return await acquaintances;
     });
-
-    return await acquaintances;
+    return success;
 }
 
 async function deleteTagLocation(webId, tag) {
-    let myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
-    let updatedProfile = removeStringNoLocale(profile, FOAF.publications, tag);
+    await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
+        let updatedProfile = removeStringNoLocale(profile, FOAF.publications, tag);
 
-    const myChangedDataset = setThing(myDataset, updatedProfile);
+        const myChangedDataset = setThing(myDataset, updatedProfile);
 
-    await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+        await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+    });
 }
 
 async function getChats(myWebId, webId) {

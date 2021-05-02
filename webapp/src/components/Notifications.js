@@ -1,21 +1,18 @@
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
+import Card from "react-bootstrap/Card";
 import { useState, useEffect } from "react";
 import { getChats } from "../services/crudPod";
 import { getFriends } from "../services/crudPod";
 
 const Notifications = (originWebId) => {
     const [show, setShow] = useState(true);
-    //const [webId, setWebId] = useState("");
-    //if(originWebId.webId !== undefined){
-    //    setWebId(originWebId.webId.slice(0, -15));
-    //}
-    const [chats, setChats] = useState(new Set());
-    const [htmlItems] = useState([]);
+    const [chats, setChats] = useState([]);
+    const [htmlItems, setHtmlItems] = useState([]);
 
     useEffect(() => {
         async function fetchMessages() {
-            let myChats = await getChats(originWebId.webId, originWebId.webId).then(function (chats) { 
+            let myChats = await getChats(originWebId.webId, originWebId.webId).then(function (chats) {
                 return chats;
             });
             console.log(myChats)
@@ -23,39 +20,56 @@ const Notifications = (originWebId) => {
                 return list;
             });
             var friendChats = []
-            friends.forEach(async function(friend) {
-                await getChats(originWebId.webId, friend).then(res => friendChats.push(res))
-            console.log(friendChats)
-        });
+            friends.forEach(async function (friend) {
+                getChats(originWebId.webId, friend).then(res => friendChats.push(res))
+                var allchats = [];
+                await allchats.push(myChats);
+                await friendChats.forEach(chat => allchats.push(chat));
+                console.log(allchats)
+                var myHtmlItems = []
+                await allchats.forEach(async function (chat) {
+                    console.log(chat)
+                    console.log(chat.keys())
+                    console.log("hi")
+                    console.log(Array.from(chat))
+                    const iterator1 = chat.entries();
+                    console.log(iterator1)
+                    for (const entry of iterator1){
+                        console.log(entry);
+                    }
+                    
+                    await chat.forEach(async function (singleChat) {
+                        await console.log(singleChat.chatName)
+                        myHtmlItems.push(
+                            <div>
+                                <Card style={{ width: "18rem" }}>
+                                    <Card.Body>
+                                        <Card.Title>{singleChat.chatName}</Card.Title>
+                                        <Card.Subtitle className="mb-2 text-muted">{singleChat.maker}</Card.Subtitle>
+                                        <Card.Text>
+                                            Some quick example text to build on the card title and make up the bulk of
+                                            the card's content.
+                                </Card.Text>
+                                        <Card.Link href="#">Card Link</Card.Link>
+                                        <Card.Link href="#">Another Link</Card.Link>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        )
+                    }
+                    );
+                })
+
+                if (myHtmlItems.length !== 0)
+                    setHtmlItems(myHtmlItems);
+                setChats(allchats);
+            });
         }
 
         fetchMessages();
 
-        /*setChats(merged)
-        var values = merged.values()
-        var first = values.next()
-        console.log(first)
-        htmlItems.push(
-            <div>
-                <Card style={{ width: "18rem" }}>
-                    <Card.Body>
-                        <Card.Title>{first.chatName}</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">{first.maker}</Card.Subtitle>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                        <Card.Link href="#">Card Link</Card.Link>
-                        <Card.Link href="#">Another Link</Card.Link>
-                    </Card.Body>
-                </Card>
-            </div>
-        )
-        */
+    }, [setChats, originWebId.webId, setHtmlItems]);
 
-    }, [setChats,originWebId.webId]);
-
-    console.log(chats)
     return (
         <div className="bgcenter">
             <>
