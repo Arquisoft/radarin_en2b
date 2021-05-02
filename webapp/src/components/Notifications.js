@@ -6,8 +6,9 @@ import { getFriends } from "../services/crudPod";
 
 const Notifications = (originWebId) => {
     const [show, setShow] = useState(true);
+    const [webId, setWebId] = useState("");
     if(originWebId.webId !== undefined){
-        const [webId] = useState(originWebId.webId.slice(0, -15));
+        setWebId(originWebId.webId.slice(0, -15));
     }
     const [chats, setChats] = useState(new Set());
     const [htmlItems] = useState([]);
