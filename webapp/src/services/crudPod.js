@@ -133,7 +133,7 @@ async function getChats(myWebId, webId) {
         var resultToReturn = new Set();
         var names = new Set();
         for (var i = 1; i < inbox.length; i++) {
-            const urlParam = asUrl(inbox[i]).split("/")[3]
+            const urlParam = asUrl(inbox[i]).split("/")[3];
             getSolidDataset(webId.slice(0, -15) + "inbox/" + urlParam, { fetch: fetch }).then(async function (myDataset) {
                 const chat = await getThing(myDataset, webId.slice(0, -15) + "inbox/" + urlParam);
                 const dc = await getDatetime(chat, DCTERMS.modified);
@@ -241,6 +241,6 @@ async function addChat(webId, text) {
             });
         }
     });
-};
+}
 
 export { getName, addLocation, getLocations, deleteLocation, getFriends, addTagLocation, getTagLocations, deleteTagLocation, getChats, addChat };

@@ -63,6 +63,8 @@ As one of the high level requirements is monitoring the deployed web application
 
 As the team was able to deploy both of them in heroku <<heroku>>, their links were added to the admin options. The Prometheus <<prometheus>> page has been embedded inside the web application instead of opening it in a new window. Grafana <<grafana>> has not been shown in the same way. The first approach was to embed it too but it did not work because of a security problem (the browser told the user to open it in a new window), so instead of embedding it when the Grafana <<grafana>> link is clicked a new window with it is openned.
 
+The grafana instance is configured with the basic security mechanisms that were present for the local docker deployment, meaning that everyone is an anonymous administrator. In the future it would be best to configure a basic administrator account.
+
 === Optional features
 
 ==== Nearby friends

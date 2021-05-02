@@ -5,6 +5,7 @@
   margin-right: auto;
   width: 70%;
 }
+
 .item {
   width: 38%;
   height: 38%;
@@ -12,13 +13,14 @@
   margin-right: auto;
 }
 
-[title="Flaticon"], 
+[title="Flaticon"],  
 [title="Freepik"] {
   color: antiquewhite;
 }
 
 .gradient-border {
   --border-width: 3px;
+
   position: relative;
   display: block;
   justify-content: center;
@@ -29,9 +31,10 @@
   background: #8360c3;/* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);/* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(#2ebf91, #8360c3);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
   border-radius: var(--border-width);
 }
-      
+
 .gradient-border:after {
   position: absolute;
   content: "";
@@ -40,16 +43,17 @@
   z-index: -1;
   width: calc(100% + var(--border-width) * 2);
   height: calc(100% + var(--border-width) * 2);
-  background: linear-gradient(
-    60deg,
-    hsl(224, 85%, 66%),
-    hsl(269, 85%, 66%),
-    hsl(314, 85%, 66%),
-    hsl(359, 85%, 66%),
-    hsl(44, 85%, 66%),
-    hsl(89, 85%, 66%),
-    hsl(134, 85%, 66%),
-    hsl(179, 85%, 66%)
+  background: 
+    linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
   );
   background-size: 300% 300%;
   background-position: 0 50%;

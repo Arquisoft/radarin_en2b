@@ -32,7 +32,7 @@ There are many notations for describing scenarios, e.g.
 
 === Interaction with user's pod
 
-==== Adding or giving information to the pod
+==== Adding or giving information to the pod (tags as example)
 
 [plantuml,"adding-info-pod",svg]
 ....
@@ -40,12 +40,11 @@ actor John as u
 participant WebApp as wa
 database "John's Pod" as jpod
 
-u -> wa : send information
+u -> wa : create tag
 activate wa
 
-wa -> jpod : store information
-
-wa -> u : confirmation response
+wa -> jpod : store tag
+wa -> u : show new tag in list
 
 deactivate wa
 ....

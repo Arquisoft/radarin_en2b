@@ -41,22 +41,30 @@ when your infrastructure is more complex.
 @startuml
 rectangle "<<cloud>>" as Cloud {
 node WebApp
+node RestApi
+node Prometheus
+node Grafana
 database MongoDB
-  }
+}
 rectangle "SOLID Server" as SOLID_Server {
 storage POD
-  }
+}
 rectangle Browser
 
 Browser --> WebApp : connects
 WebApp --> SOLID_Server : uses
-WebApp --> MongoDB : uses
+WebApp --> Grafana : links to
+WebApp --> Prometheus : embeds
+WebApp --> RestApi : uses
+Grafana --> Prometheus : uses
+Prometheus --> RestApi : uses
+RestApi --> MongoDB : uses
 @enduml
 ....
 
 Motivation::
 
-Radarin is located in a cloud service (Heroku <<heroku>>), as well as the Mongo database it uses. Users can access through the browser to the web application with a computer or a mobile device. Radarin connects to a SOLID <<solid>> provider, which manages the PODs <<pods>> that can be in any SOLID <<solid>> server. The three available providers are: Inrupt <<inrupt>> (the most common one), SolidCommunity and SolidWeb.
+Radarin is located in a cloud service (Heroku <<heroku>>), while the Mongo database it uses is in Mongo Atlas. Users can access through the browser to the web application with a computer or a mobile device. Radarin connects to a SOLID <<solid>> provider, which manages the PODs <<pods>> that can be in any SOLID <<solid>> server. The three available providers are: Inrupt <<inrupt>> (the most common one), SolidCommunity and SolidWeb.
 
 Quality and/or Performance Features::
 
@@ -69,7 +77,13 @@ The blocks that compose the system are:
 
 - The device used by the user and the administrator to enter in a browser as it is the way to enter in the web application.
 - The web application.
-- The server where the web application is located.
-- The database used by the app.
+- The REST api used by the web application.
+- The monitoring stack: prometheus and grafana to monitor the REST api
+- The servers where the web application, REST api, prometheus and grafana are located.
+- The database used by the REST api.
 - The POD <<pods>> server where all PODs <<pods>> are stored. 
 - The user's PODs <<pods>>.
+
+Different environments::
+
+All the blocks that compose the system could be run in the same machine, in different ones or a mixture. The monitoring stack, grafana and prometheus are not needed to run end to end testing, which means that in CI and for e2e test development deploying them is not needed. A local SOLID server is deployed for e2e testing and CI instead of using one by external providers.

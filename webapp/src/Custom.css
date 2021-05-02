@@ -1,24 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:200");
 
-*{
+* {
   font-family: "Raleway";
   font-weight: bolder;
 }
 
-h1, h2{
+h1, 
+h2 {
   color: white;
 }
 
-Label, p{
+label, 
+p {
   color: white;
   font-size: 1.25em;
 }
 
-a{
+a {
   color: darksalmon;
 }
 
-.otherLink{
+.otherLink {
   color: white;
 }
 
@@ -32,7 +34,7 @@ h1 {
   font-weight: 600;
   color: #353239;
 }
-  
+
 h1 span span {
   color: tomato;
   position: relative;
@@ -60,7 +62,7 @@ h1 span span:nth-child(5n) {
 h1 span span:nth-child(7n) { 
   color: gold;
 }
-  
+
 @keyframes move-text {
   0% {
     bottom: -0.2em;
@@ -85,7 +87,7 @@ h1 span span:nth-child(7n) {
 
 .test {
   color: #fff;
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background: linear-gradient(-45deg, #ee7752, #e73C7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
@@ -107,7 +109,7 @@ h1 span span:nth-child(7n) {
   }
 
   100% {
-  background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
   
@@ -117,11 +119,11 @@ h1 span span:nth-child(7n) {
   }
 
   50% {
-  background-position: 100% 50%;
+    background-position: 100% 50%;
   }
 
   100% {
-  background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
   
@@ -135,7 +137,7 @@ h1 span span:nth-child(7n) {
   }
 
   100% {
-  background-position: 0% 50%;
+    background-position: 0% 50%;
   }
 }
 
@@ -174,7 +176,7 @@ h1 span span:nth-child(7n) {
   background: linear-gradient( #2ebf91, #25b7c4);
 }
 
-.list-group-item{
+.list-group-item {
   background-color: transparent;
   border: solid;
   border-color: white;
@@ -189,4 +191,3 @@ h1 span span:nth-child(7n) {
   width: 70%;
   background: linear-gradient( #2ebf91, #25b7c4);
 }
-  
