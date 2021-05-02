@@ -17,7 +17,7 @@ If needed you can subdivide them into
 technical constraints, organizational and political constraints and
 conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
 ****
-In this section we will go through the different constraints the product has, giving them some kind of context and explanation._
+In this section we will go through the different constraints the product has, giving them some kind of context and explanation.
 
 === [[technology]]Technical constraints
 [options="header"]
@@ -27,7 +27,6 @@ In this section we will go through the different constraints the product has, gi
 | Docker <<docker>>   | This container technology will be used for deploying the application.
 | Monitoring the app    | The system needs to be monitored in some kind of way, displaying the information in a user-friendly way.
 | Operating System (OS) independence   | No specific OS will be needed in order to deploy the app.
-| Memory friendly   | The use of docker <<docker>> for deploying the app will make it a lighter app.
 |===
 
 === [[organization]]Organizational constraints
@@ -35,9 +34,9 @@ In this section we will go through the different constraints the product has, gi
 |===
 | Constraint  | Context / Motivation
 | Team      | Héctor Díaz Beltrán, Marcos Fernández González, Luis Fernández Suárez, Andrea García Cernuda and Sara Rubín Estrada-Nora.
-| Time schedule     | The development started in february 2021 with due date at the middle of may 2021. The project presentation will take place at the end of may 2021.
-| Version control   | A public Github repository is available to check all the commits and the versions / releases the project has been through.
-| Testing       | Testing the app is a very important part of our development. All kind of scenarios will be considered.
+| Time schedule     | The development started in February 2021, with due date 3 of May 2021, which is the day of the presentation of the project.
+| Version control   | A public Github repository is available to check all the commits and the versions / releases the project has been through. The contributions of each team member can be checked too.
+| Testing       | Testing the app is a very important part of our development. All kind of scenarios will be considered and the development team will try to conver as much scenarios as they can.
 |===
 
 === Conventions

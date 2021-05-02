@@ -1,0 +1,10 @@
+{
+  "simulation": "NormalUsersList",
+  "simulationId": "normaluserslist",
+  "start": 1619892224772,
+  "description": "",
+  "scenarios": ["NormalUsersList"],
+  "assertions": [
+
+  ]
+}

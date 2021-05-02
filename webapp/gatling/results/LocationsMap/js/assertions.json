@@ -1,0 +1,10 @@
+{
+  "simulation": "LocationsMap",
+  "simulationId": "locationsmap",
+  "start": 1619890361883,
+  "description": "",
+  "scenarios": ["LocationsMap"],
+  "assertions": [
+
+  ]
+}

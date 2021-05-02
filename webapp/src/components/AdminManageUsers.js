@@ -9,7 +9,7 @@ class AdminManageUsers extends React.Component{
         super(props);
         this.state = {
           usersList: []
-        }
+        };
     }
 
     componentDidMount(){
@@ -36,14 +36,14 @@ class AdminManageUsers extends React.Component{
             <div>
                 <h2>UsersList</h2>
                     {this.state.usersList.map((user) => 
-                        {return <ListGroup horizontal style={{ margin: "20px" }}>
+                        {return (<ListGroup horizontal style={{ margin: "20px" }}>
                                     <ListGroup.Item style={{ minWidth: "500px", textAlign: "center" }}>
                                         {user.webId}
                                     </ListGroup.Item>
                                     <ListGroup.Item>
                                         <Button data-testid={user.webId} onClick={() => this.deleteUserByWebId(user)}>Delete</Button>
                                     </ListGroup.Item>
-                                </ListGroup>      
+                                </ListGroup>);     
                         }
                     )}
             </div>

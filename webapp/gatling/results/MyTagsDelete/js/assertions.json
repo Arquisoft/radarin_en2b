@@ -1,0 +1,10 @@
+{
+  "simulation": "MyTagsDelete",
+  "simulationId": "mytagsdelete",
+  "start": 1619891640949,
+  "description": "",
+  "scenarios": ["MyTagsDelete"],
+  "assertions": [
+
+  ]
+}

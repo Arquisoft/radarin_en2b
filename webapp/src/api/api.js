@@ -31,12 +31,12 @@ async function getNormalUsers(){
     return await response.json();
 }
 
-async function addUser(webId, location, authKey){
+async function addUser(webId, location){
     const apiEndPoint= process.env.REACT_APP_API_URI || "http://localhost:5000/api";
     let response = await fetch(apiEndPoint + "/users/add", {
         method: "POST",
         headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "http://localhost:5000/api/users/add", "Control-Allow-Methods": "POST"},
-        body: JSON.stringify({"webId": webId, "location": location, "authKey": authKey})
+        body: JSON.stringify({"webId": webId, "location": location})
     });
     return await response.json();
 }

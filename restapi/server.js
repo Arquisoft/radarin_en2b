@@ -23,19 +23,23 @@ function connect(){
         app.use( (request, response) => {
             request.header("Access-Control-Allow-Origin", "https://radarinen2bwebapp.herokuapp.com/*");
             request.header("Access-Control-Allow-Origin", "https://radarinen2brestapi.herokuapp.com/*");
+            request.header("Access-Control-Allow-Origin", "https://radarinen2bprometheus.herokuapp.com/*");
+            request.header("Access-Control-Allow-Origin", "https://radarinen2bgrafana.herokuapp.com/*");
+            request.header("Access-Control-Allow-Origin", "https://radarinen2brestapi.herokuapp.com/*");
             request.header("Access-Control-Allow-Origin", "http://localhost:3000/*"); // just for working until the final delivery and all deploy
             request.header("Access-Control-Allow-Origin", "http://localhost:5000/api/*"); // " "
             request.header("GET, POST"); // the other methods are not used in the api
             response.header("Access-Control-Allow-Origin", "https://radarinen2bwebapp.herokuapp.com/*");
             response.header("Access-Control-Allow-Origin", "https://radarinen2brestapi.herokuapp.com/*");
+            response.header("Access-Control-Allow-Origin", "https://radarinen2bprometheus.herokuapp.com/*");
+            response.header("Access-Control-Allow-Origin", "https://radarinen2bgrafana.herokuapp.com/*");
             response.header("Access-Control-Allow-Origin", "http://localhost:3000/*"); // just for working until the final delivery and all deploy
             response.header("Access-Control-Allow-Origin", "http://localhost:5000/api/*"); // " "
         });
 
-        app.listen(process.env.PORT || 5000, () => {
-            console.log("Node server has started running on http://localhost:5000/api");
-            console.log("Using db in " + mongo_uri);
-        });
+        app.listen(process.env.PORT || 5000);
+        // Node server has started running on http://localhost:5000/api
+        // Using db in mongodb://localhost:27017/api
     });
 }
 
