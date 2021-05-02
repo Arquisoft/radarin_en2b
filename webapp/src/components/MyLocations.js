@@ -15,7 +15,10 @@ const MyLocations = () => {
     }, [session.info.webId]);
  
     useEffect(() => {
-        updateTable();
+        const interval = setInterval(() => {
+            updateTable();
+        }, 120000);
+        return () => clearInterval(interval);
     }, [updateTable]);
  
     var listItems = [];
