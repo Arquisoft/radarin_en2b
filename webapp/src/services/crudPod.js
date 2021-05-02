@@ -17,20 +17,21 @@ import {
     asUrl
 } from "@inrupt/solid-client";
 import { fetch } from "@inrupt/solid-client-authn-browser";
-import { FOAF, VCARD, DCTERMS } from "@inrupt/vocab-common-rdf";
+import { FOAF, DCTERMS } from "@inrupt/vocab-common-rdf";
 
 async function getName(webId) {
     const myDataset = await getSolidDataset(webId.slice(0, -3));
 
     const profile = getThing(myDataset, webId);
 
-    const fn = getStringNoLocale(profile, VCARD.fn);
+    const fn = getStringNoLocale(profile, FOAF.name);
 
     return fn;
 }
 
 async function addLocation(webId, lat, long) {
-    var success = getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+    var success = false
+    success = getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
         const profile = getThing(myDataset, webId);
         var date = new Date();
         let updatedProfile = addStringNoLocale(profile, FOAF.interest, lat + ", " + long + ", " + date.toLocaleString());
@@ -135,7 +136,7 @@ async function deleteTagLocation(webId, tag) {
     await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
 }
 
-async function getChats(webId) {
+async function getChats(myWebId, webId) {
     var chats = getSolidDataset(webId.slice(0, -15) + "inbox", { fetch: fetch }).then(async function (myDataset) {
         const inbox = await getThingAll(myDataset);
         var resultToReturn = new Set();
@@ -152,28 +153,45 @@ async function getChats(webId) {
                 const day = utcDay.length === 1 ? "0" + utcDay : utcDay;
                 const date = year + "/" + month + "/" + day;
 
-                getSolidDataset(webId.slice(0, -15) + "inbox/" + urlParam + "/" + date + "/chat.ttl", { fetch: fetch }).then(async function (myDataset) {
-                    const chat = await getThing(myDataset, webId.slice(0, -15) + "inbox/" + urlParam + "/index.ttl#this");
-                    const messages = await getUrlAll(chat, "http://www.w3.org/2005/01/wf/flow#message");
-                    var result = new Set();
-                    messages.forEach(async function (elem) {
-                        const message = await getThing(myDataset, elem)
-                        if (message !== null) {
-                            const messageContent = await getStringNoLocale(message, "http://rdfs.org/sioc/ns#content")
-                            const creator = await getUrl(message, FOAF.maker);
-                            const date = await getDatetime(message, DCTERMS.created);
-                            result.add({ content: messageContent, creator: creator, date: date });
+                getSolidDataset(webId.slice(0, -15) + "inbox/" + urlParam + "/index.ttl", { fetch: fetch }).then(async function (myDataset) {
+                    const participations = await getThingAll(myDataset, "http://www.w3.org/2005/01/wf/flow#participation");
+                    let participants = []
+                    participations.forEach(async function (participation) {
+                        let participant = await getUrl(participation, "http://www.w3.org/2005/01/wf/flow#participant");
+                        if (participant !== null && !participants.includes(participant)) {
+                            participants.push(participant);
                         }
-                        if (!names.has(urlParam)) {
-                            const finalResult = { maker: webId, chatName: urlParam, chats: result };
-                            resultToReturn.add(finalResult);
-                            names.add(urlParam);
-                        }
-                    });
+                    })
+                    let author = await getThing(myDataset, "http://purl.org/dc/elements/1.1/author");
+                    if (author !== null)
+                        participants.push(author);
+                    if (participants.includes(myWebId)) {
+                        getSolidDataset(webId.slice(0, -15) + "inbox/" + urlParam + "/" + date + "/chat.ttl", { fetch: fetch }).then(async function (myDataset) {
+                            const chat = await getThing(myDataset, webId.slice(0, -15) + "inbox/" + urlParam + "/index.ttl#this");
+                            const messages = await getUrlAll(chat, "http://www.w3.org/2005/01/wf/flow#message");
+                            var result = new Set();
+                            messages.forEach(async function (elem) {
+                                const message = await getThing(myDataset, elem)
+                                if (message !== null) {
+                                    const messageContent = await getStringNoLocale(message, "http://rdfs.org/sioc/ns#content")
+                                    const creator = await getUrl(message, FOAF.maker);
+                                    const date = await getDatetime(message, DCTERMS.created);
+                                    result.add({ content: messageContent, creator: creator, date: date });
+                                }
+                                console.log(webId, urlParam)
+                                if (!names.has(urlParam)) {
+                                    const finalResult = { maker: webId, chatName: urlParam, chats: result };
+                                    resultToReturn.add(finalResult);
+                                    names.add(urlParam);
+                                }
+                            });
+                        });
+                    }
                 });
             });
         }
         return resultToReturn;
+
     });
     return chats;
 }

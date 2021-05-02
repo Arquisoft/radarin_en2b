@@ -1,29 +1,32 @@
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
-import { useState/*, useEffect*/ } from "react";
-//import { getChats } from "../services/crudPod";
-//import { getFriends } from "../services/crudPod";
+import { useState, useEffect } from "react";
+import { getChats } from "../services/crudPod";
+import { getFriends } from "../services/crudPod";
 
 const Notifications = (originWebId) => {
     const [show, setShow] = useState(true);
-    const [webId, setWebId] = useState("");
-    if(originWebId.webId !== undefined){
-        setWebId(originWebId.webId.slice(0, -15));
-    }
-    //const [/*chats,*/ setChats] = useState(new Set());
+    //const [webId, setWebId] = useState("");
+    //if(originWebId.webId !== undefined){
+    //    setWebId(originWebId.webId.slice(0, -15));
+    //}
+    const [chats, setChats] = useState(new Set());
     const [htmlItems] = useState([]);
 
-    /*useEffect(() => {
-        /async function fetchMessages() {
-            await getChats(originWebId.webId).then((chats) => setChats(chats));
-
+    useEffect(() => {
+        async function fetchMessages() {
+            let myChats = await getChats(originWebId.webId, originWebId.webId).then(function (chats) { 
+                return chats;
+            });
+            console.log(myChats)
             let friends = await getFriends(originWebId.webId).then(function (list) {
                 return list;
             });
-            friends.forEach((friend) => getChats(friend).then(res => {
-                var values = res.values();
-                //var next = values.next().value;
-            }));
+            var friendChats = []
+            friends.forEach(async function(friend) {
+                await getChats(originWebId.webId, friend).then(res => friendChats.push(res))
+            console.log(friendChats)
+        });
         }
 
         fetchMessages();
@@ -48,15 +51,17 @@ const Notifications = (originWebId) => {
                 </Card>
             </div>
         )
+        */
 
-    }, [setChats, originWebId.webId]);*/
+    }, [setChats,originWebId.webId]);
 
+    console.log(chats)
     return (
         <div className="bgcenter">
             <>
                 <Alert show={show}>
                     <Alert.Heading>Very important, must read!!!</Alert.Heading>
-                    <p>In order to create chats in Radarin, you will have to click <span style={{ color: "blue" }} onClick={() => window.open(webId + "inbox/", "_blank")}>here</span>. This will open a new tab, the inbox of your Pod. Radarin
+                    <p>In order to create chats in Radarin, you will have to click <span style={{ color: "blue" }} onClick={() => window.open(originWebId.webId + "inbox/", "_blank")}>here</span>. This will open a new tab, the inbox of your Pod. Radarin
                         uses it to create chats there. By default you are the only user that can manage its contents, but, if you want to connect with your friends, you have to change access to this folder and
                         give everyone a 'Poster' access (if you do not know how to do this click <span>here</span> to see a tutorial). Now, you also have to create the chat in the inox folder and publish a chat (in the same <span>link</span> as before you will fins a tutorial).</p>
                     <p>Each and every step described before is very important, if they are not completed, you will not be able to create chats by yourself, you will only be able to interact in those your friends have invited you to</p>
