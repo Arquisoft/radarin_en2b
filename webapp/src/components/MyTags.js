@@ -68,7 +68,7 @@ const MyTags = () => {
                             />
                     </InputGroup>
                 </ListGroup.Item>
-                <ListGroup.Item style={{ minWidth: "750px"}}>
+                <ListGroup.Item style={{ minWidth: "46.875em"}}>
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
                         <InputGroup.Text id="basic-addon2">Description (optional)</InputGroup.Text>
@@ -131,8 +131,8 @@ const MyTags = () => {
                 <ListGroup.Item style={{ borderColor: "white" }}>
                     <Button onClick={ () => search() }>
                         <img src={lupa} alt="submitSearch"
-                                width="30px"
-                                height="30px"
+                                width="1.875em"
+                                height="1.875em"
                                 className="Search d-inline-block align-top"
                         />
                     </Button>
