@@ -6,7 +6,6 @@ test("check that we are in the nav bar", async () => {
     const { getByText, getByAltText, getByTestId } = render(<MyNavBar />);
     expect(getByAltText("logo")).toBeInTheDocument();
     expect(getByText("Radarin")).toBeInTheDocument();
-    expect(getByTestId("link-notifications")).toBeInTheDocument();
     expect(getByTestId("link-friend-list")).toBeInTheDocument();
     expect(getByTestId("link-map")).toBeInTheDocument();
     expect(getByTestId("link-my-locations")).toBeInTheDocument();
