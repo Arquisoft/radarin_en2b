@@ -187,9 +187,11 @@ const MyNavBar = ({ ...boopConfig }) => {
                             <div className="mr-sm-2">
                                 <Navbar.Text className="loggedText">Logged in as {name ? name : webId}</Navbar.Text></div>
                             <Nav.Item>
-                                <LogoutButton>
-                                    <Button variant="dark">Log Out</Button>
-                                </LogoutButton>
+                                <Link to="/">
+                                    <LogoutButton>
+                                        <Button variant="dark">Log Out</Button>
+                                    </LogoutButton>
+                                </Link>
                             </Nav.Item>
                         </Nav>
                     </Navbar.Collapse>
