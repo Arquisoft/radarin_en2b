@@ -19,7 +19,7 @@ const Home = () => {
                     <h3>Welcome to Radarin!</h3>
                     <span>But... what is Radarin? It is an app developed by third year Software Engineering from the University of Oviedo, coursing the Software Architecture subject. The main objetive of the Radarin is keeping you in touch with your friends, wherever and whenever you want. This React app supports the Solid project, created by Sir Tim Berners-Lee, and works through Inrupt.</span>
                     <br></br>
-                    <p>Let"s get started!</p>
+                    <p>Let's get started!</p>
                 </Carousel.Caption></div>
             </div>
             
@@ -58,7 +58,7 @@ const Home = () => {
                 <Carousel.Caption>
                 <img src={noti} className="item" alt="notifications"></img>
                     <h3>Interact with your friends</h3>
-                    <span>Are any of your friends near? Then go interact with them! In the notification section, you will have a list of your friends" last interactions: if they were near or maybe, they sent you a message! In Radarin you can get in touch with your friends, sending them a message that they will recieve as notification in real time.</span>
+                    <span>Are any of your friends near? Then go interact with them! In the notification section, you will have a list of your friends' last interactions: if they were near or maybe, they sent you a message! In Radarin you can get in touch with your friends, sending them a message that they will recieve as notification in real time.</span>
                     <br></br>
                     <br></br>
                     <br></br>
