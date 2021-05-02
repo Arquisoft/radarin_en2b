@@ -50,11 +50,12 @@ const MyTags = () => {
         }
     });
 
-    return (<div>
-        <h2 style={{ margin: "20px" }}>Create a tag location</h2>
+    return (<div className="bigcenter">
+        <div className="contenedor">
+        <h2>Create a tag location</h2>
         <div>
-            <ListGroup horizontal style={{ margin: "20px" }}>
-                <ListGroup.Item style={{ borderColor: "white" }}>
+            <ListGroup horizontal>
+                <ListGroup.Item>
                     <InputGroup className="mb-3">
                         <InputGroup.Prepend>
                         <InputGroup.Text id="basic-addon1">Name</InputGroup.Text>
@@ -67,7 +68,7 @@ const MyTags = () => {
                             />
                     </InputGroup>
                 </ListGroup.Item>
-                <ListGroup.Item style={{ minWidth: "750px", borderColor: "white" }}>
+                <ListGroup.Item style={{ minWidth: "750px"}}>
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
                         <InputGroup.Text id="basic-addon2">Description (optional)</InputGroup.Text>
@@ -80,14 +81,15 @@ const MyTags = () => {
                             />
                     </InputGroup>
                 </ListGroup.Item>
-                <ListGroup.Item style={{ borderColor: "white" }}>
+                <ListGroup.Item>
                     <Button style={{ background: "rgb(194, 194, 194)" }} id="saveTagLocation" onClick={ () => onClickFunction() }>Save tag location</Button>
                 </ListGroup.Item>
             </ListGroup> 
         </div>
-
-        <h3 style={{ margin: "20px" }}>Tag locations list</h3>
-        <Table striped bordered hover style={{ margin: "20px" }}>
+        </div>
+        <div className="contenedor">
+        <h2>Tag locations list</h2>
+        <Table striped bordered hover>
             <thead>
                 <tr>
                     <th>
@@ -108,10 +110,11 @@ const MyTags = () => {
                 {listItems}
             </tbody>
         </Table>
-
-        <h4 style={{ margin: "20px" }}>Search tags</h4>
+        </div>
+        <div className="contenedor">
+        <h2>Search tags</h2>
         <div>
-            <ListGroup horizontal style={{ margin: "20px" }}>
+            <ListGroup horizontal>
                 <ListGroup.Item style={{ borderColor: "white" }}>
                     <InputGroup className="mb-3">
                         <InputGroup.Prepend>
@@ -136,7 +139,7 @@ const MyTags = () => {
                 </ListGroup.Item>
             </ListGroup> 
         </div>
-        <Table striped bordered hover style={{ margin: "20px" }}>
+        <Table striped bordered hover>
             <thead>
                 <tr>
                     <th>
@@ -154,6 +157,7 @@ const MyTags = () => {
                 {searchItems}
             </tbody>
         </Table>
+        </div>
     </div>);
 };
 

@@ -3,5 +3,5 @@ import App from "./App";
 
 test("renders login when not logged to a solid pod", () => {
   const { getByText } = render(<App />);
-  expect(getByText("Loading...")).toBeInTheDocument();
+  expect(getByText("Loading")).toBeInTheDocument();
 });

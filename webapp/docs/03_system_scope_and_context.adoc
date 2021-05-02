@@ -22,8 +22,8 @@ Various options:
 
 - Client: normal user who has the web application in his/her electronic device browser.
 - Admin: special user who can access the system through the web application for management purposes. There is a unique admin account known for all team members. It was manually added to the mongo database to avoid security problems as third-parties knowing its credentials.
-- Web App: its purpose is to gather all needed information from the database and PODs <<pods>>, through the Rest API <<rest>>. It also offers an administration interface apart from the basic functionality.
-- Database: stores the minimal information needed by the app to work (location of users, user's role, webId and the data where the location have taken place).
+- Web App: its purpose is to gather all needed information from the database and PODs <<pods>>, through the Rest API <<rest>>. It offers an administration interface apart from the basic functionality.
+- Database: stores the minimal information needed by the app to work (last location of users, user's role, webId and the date when the location has been collected).
 - SOLID <<solid>> Server: an external server where user PODs <<pods>> are stored. The web application, using the WebIDs, is able to access specific PODs <<pods>> when needed, getting the user information without storing it elsewhere, and therefore maintaining user privacy.
 
 === Business Context
@@ -59,13 +59,9 @@ cloud "SOLID server provider" {
     package "User pod" as pod {
         file "Friends" as friends
         file "Past locations and timestamps"
+        file "Location Tags"
     }
 }
-
-note right of foldb
-    May also need to
-    store Auth credentials
-end note
 
 user --> WAPI : sends location and tags
 WAPI --> user : receives nearby friends, locations history and tags created

@@ -24,7 +24,7 @@ const MyLocations = () => {
         listItems.push(<tr>
             <td>{splited[0] + ", " +splited[1]}</td>
             <td>{splited[2] + (splited.length === 4 ? " "+splited[3] : "")}</td>
-            <td><Button variant="danger" data-testid={session.info.webId} onClick={ async () => {await deleteLocation(session.info.webId, location); updateTable();}}>Delete</Button></td>
+            <td><Button variant="info" data-testid={session.info.webId} onClick={ async () => {await deleteLocation(session.info.webId, location); updateTable();}}>Delete</Button></td>
         </tr>);
     });
 
@@ -35,7 +35,7 @@ const MyLocations = () => {
         updateTable();
     }
 
-    return (<div>
+    return (<div className="bgcenter">
         <Button variant="danger" block onClick={handleDeleteAll}>Delete All Locations</Button>
         <Table striped bordered hover>
             <thead>
