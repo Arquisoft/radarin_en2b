@@ -151,9 +151,9 @@ const MyNavBar = ({ ...boopConfig }) => {
                                                     <ButtonGroup aria-label="Basic example">
                                                         <Button variant="link"><Link data-testid="link-my-locations" to="/myLocations" className="otherLink">My Locations</Link></Button>
                                                         <Button variant="link"><Link data-testid="link-my-tags" to="/myTags" className="otherLink">My Tags</Link></Button>
-                                                        <Button variant="link"><Link data-testid="link-tags-map" to="/tagsMap" className="otherLink">Tags map</Link></Button>
+                                                        <Button variant="link"><Link data-testid="link-tags-map" to="/tagsMap" className="otherLink">Tags Map</Link></Button>
                                                         <Button variant="link"><Link data-testid="link-locations-map" to="/locationMap" className="otherLink">Locations Map</Link></Button>
-                                                        <Button variant="link"><Link data-testid="link-about-us" to="/aboutUs" className="otherLink">About us</Link></Button>
+                                                        <Button variant="link"><Link data-testid="link-about-us" to="/aboutUs" className="otherLink">About Us</Link></Button>
                                                     </ButtonGroup>
                                                 </Navbar.Brand>
                                             </React.Fragment>
