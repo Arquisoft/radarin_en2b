@@ -66,23 +66,15 @@ image:domainModel.png[]
 === MongoDB data structure
 As we need to store the information explained in the domain model but in a mongo database, the information structure is different. The objects saved will follow the next schema:
 
-var user = {
-
-    "webId": "https://pablo.inrupt.net/profile/card#me", // just an example
-
-    "role": "Normal",
-
-    "location": {
-
-        "type": "Point",
-
-        "coordinates": [43.354995, -5.851354] 
-
-    },
-
-    "updatedAt": "2021-05-01T20:37:25.240+00:00" // date and time
-
-}
+    var user = {
+        "webId": "https://pablo.inrupt.net/profile/card#me", // just an example
+        "role": "Normal",
+        "location": {
+            "type": "Point",
+            "coordinates": [43.354995, -5.851354] 
+        },
+        "updatedAt": "2021-05-01T20:37:25.240+00:00" // date and time
+    }
 
 The information described before is an example to understand the idea wanted to be explained. The location is GeoJSON Point <<geojson>> that corresponds with the Computer Science School of the University of Oviedo. There is a default role and an automatic date which corresponds with the time the document is written.
 
@@ -112,6 +104,8 @@ The first case is when logging in. That validation is made by the SOLID <<solid>
 The second case is when a user wants to create a tag taking the current location with it. The user can only write "inconsistent" names and descriptions to the tags, words that are not understandable, not more.
 
 The location is picked from code so the coordinates are never wrong.
+
+If the restapi were to receive incorrect data, like coordinates "imastring" only the request would fail, and the invalid data wouldn't be saved to the database.
 
 The rest of the information cannot lead to errors or invalid datatypes.
 
