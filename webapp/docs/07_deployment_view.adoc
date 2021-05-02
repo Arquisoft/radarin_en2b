@@ -64,7 +64,7 @@ RestApi --> MongoDB : uses
 
 Motivation::
 
-Radarin is located in a cloud service (Heroku <<heroku>>), as well as the Mongo database it uses. Users can access through the browser to the web application with a computer or a mobile device. Radarin connects to a SOLID <<solid>> provider, which manages the PODs <<pods>> that can be in any SOLID <<solid>> server. The three available providers are: Inrupt <<inrupt>> (the most common one), SolidCommunity and SolidWeb.
+Radarin is located in a cloud service (Heroku <<heroku>>), while the Mongo database it uses is in Mongo Atlas. Users can access through the browser to the web application with a computer or a mobile device. Radarin connects to a SOLID <<solid>> provider, which manages the PODs <<pods>> that can be in any SOLID <<solid>> server. The three available providers are: Inrupt <<inrupt>> (the most common one), SolidCommunity and SolidWeb.
 
 Quality and/or Performance Features::
 
