@@ -1,0 +1,10 @@
+{
+  "simulation": "MapViewOnlyMyLocation",
+  "simulationId": "mapviewonlymylocation",
+  "start": 1619890550686,
+  "description": "",
+  "scenarios": ["MapViewOnlyMyLocation"],
+  "assertions": [
+
+  ]
+}

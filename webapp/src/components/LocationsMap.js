@@ -16,12 +16,13 @@ const mapContainerStyle = {
     width: "100vw", 
     height: "90vh", 
     padding: "20px"
-}
+};
 const options = {
     styles: mapStyles,
     disableDefaultUI: true,
-    zoomControl: true
-}
+    zoomControl: true,
+    gestureHandling: "greedy"
+};
 
 const LocationsMap = (props) => {
     const [markers, setMarkers] = useState([]);
@@ -48,10 +49,10 @@ const LocationsMap = (props) => {
                 onLoad={() => {
                     var filtered = [];
                     getLocations(props.webId).then((list) => {
-                        list.forEach(location => {
+                        list.forEach((location) => {
                             var splited = location.split(", ");
                             var add = true;
-                            filtered.forEach(crd => {
+                            filtered.forEach((crd) => {
                                 var splitCrd = crd.split(", ");
                                 if (geolib.getDistance({ latitude: parseFloat(splited[0]), longitude: parseFloat(splited[1]) }, { latitude: splitCrd[0], longitude: splitCrd[1]}) < 100) {
                                     add = add && false;
@@ -60,11 +61,12 @@ const LocationsMap = (props) => {
                                 } 
                             });
                             //console.log(add);
-                                if (add) 
+                                if (add) {
                                     filtered.push(location);
+                                }
                         });
                             //console.log(filtered);
-                            filtered.forEach(location => {
+                            filtered.forEach((location) => {
                                 var splited = location.split(", ");
                                 setMarkers((current) => [
                                     ...current,
@@ -84,5 +86,6 @@ const LocationsMap = (props) => {
     <h1>My locations</h1>
     <p>{loadError}</p>
     </div>);
-}
+};
+
 export default LocationsMap;

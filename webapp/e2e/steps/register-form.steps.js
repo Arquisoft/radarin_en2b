@@ -1,4 +1,4 @@
-const {defineFeature, loadFeature}=require("jest-cucumber");
+const { defineFeature, loadFeature } = require("jest-cucumber");
 const feature = loadFeature("./features/register-form.feature");
 
 defineFeature(feature, test => {

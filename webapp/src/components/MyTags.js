@@ -159,5 +159,6 @@ const MyTags = () => {
         </Table>
         </div>
     </div>);
-}
+};
+
 export default MyTags;

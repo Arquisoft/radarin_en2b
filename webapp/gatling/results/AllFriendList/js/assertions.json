@@ -1,0 +1,10 @@
+{
+  "simulation": "AllFriendList",
+  "simulationId": "allfriendlist",
+  "start": 1619889972701,
+  "description": "",
+  "scenarios": ["AllFriendList"],
+  "assertions": [
+
+  ]
+}

@@ -1,4 +1,4 @@
-import {
+import React, {
     useState, useEffect
 } from "react";
 import Navbar from "react-bootstrap/Navbar";
@@ -35,6 +35,7 @@ import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop.js';
 import LocationsMap from "./LocationsMap";
 import Notifications from "./Notifications";
+import Prometheus from "./Prometheus";
 
 const MyNavBar = ({ ...boopConfig }) => {
     const { session } = useSession();
@@ -65,14 +66,14 @@ const MyNavBar = ({ ...boopConfig }) => {
 
         if (role == null) {
             navigator.geolocation.getCurrentPosition(async function (position) {
-                await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
+                await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
                 await getUserById(webId).then((user) => setRole(user.role));
                 await addLocation(webId, position.coords.latitude, position.coords.longitude);
             });
         } else {
             const interval = setInterval(() => {
                 navigator.geolocation.getCurrentPosition(async function (position) {
-                    await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, webId);
+                    await addUser(webId, { type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] });
                     await addLocation(webId, position.coords.latitude, position.coords.longitude);
                     let friends = await getFriends(webId).then(function (list) {
                         return list;
@@ -84,7 +85,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                     });
                     await nearby.forEach((friend) => notifyFriend(friend.webId));
                 });
-            }, 30000);
+            }, 120000);
             return () => clearInterval(interval);
         }
     }, [role, webId]);
@@ -100,6 +101,13 @@ const MyNavBar = ({ ...boopConfig }) => {
                 />    
             </Navbar.Brand>
             </Link>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto justify-content-center container-fluid" fill>
+                    {(() => {
+                        if (role === null || role !== "Admin") {
+                            return (
+                                <React.Fragment>
             <Link to="/" class="otherLink" >
             <Navbar.Brand>
             Radarin
@@ -109,8 +117,8 @@ const MyNavBar = ({ ...boopConfig }) => {
                 
                     <Link to="/notifications">
                         <Navbar.Brand >
-                        <animated.span onMouseEnter={trigger} style={style}>
                             <img src={bell} alt="notifications"
+                        <animated.span onMouseEnter={trigger} style={style}>
                                 width="30"
                                 height="30"
                                 className="Notifications d-inline-block align-top"
@@ -145,14 +153,26 @@ const MyNavBar = ({ ...boopConfig }) => {
                     if (role != null && role === "Admin") {
                         return (
                             <Link id="linkAdminManageUsers" to="/adminManageUsers">
-                                <Navbar.Brand>
-                                    {" "}
-                                        Manage users
-                                    </Navbar.Brand>
-                            </Link>
-                        );
-                    }
-                })()}
+                                <React.Fragment>
+                                    <Link id="linkAdminManageUsers" to="/adminManageUsers">
+                                        <Navbar.Brand>
+                                            Manage users
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link id="linkPrometheus" to="/prometheus">
+                                        <Navbar.Brand>
+                                            Prometheus
+                                        </Navbar.Brand>
+                                    </Link>
+                                    <Link id="linkGrafana" to="" onClick = { () => { window.open("https://radarinen2bgrafana.herokuapp.com/","_blank"); }}>
+                                        <Navbar.Brand>
+                                            Grafana
+                                        </Navbar.Brand>
+                                    </Link>
+                                </React.Fragment>
+                            );
+                    })()}
+                        }
                 <Navbar.Brand>
                     <ButtonGroup aria-label="Basic example">
                         <Button variant="link"><Link to="/myLocations" class="otherLink">My Locations</Link></Button>
@@ -170,6 +190,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                     <Button variant="dark">Log Out</Button>
                 </LogoutButton>
             </Nav.Item>
+            </Navbar.Collapse>
         </Navbar>
         </div>
         <Switch>
@@ -179,17 +200,14 @@ const MyNavBar = ({ ...boopConfig }) => {
             <Route path="/friendList">
                 <FriendList />
             </Route>
-            <Route path="/adminManageUsers">
-                <AdminManageUsers />
-            </Route>
-            <Route path="/aboutUs">
-                <AboutUs />
-            </Route>
             <Route path="/map">
                 <MapView activeProfile={session.info.webId} />
             </Route>
             <Route path="/myLocations">
                 <MyLocations />
+            </Route>
+            <Route path="/locationMap">
+                <LocationsMap webId={session.info.webId} />
             </Route>
             <Route path="/myTags">
                 <MyTags />
@@ -197,11 +215,14 @@ const MyNavBar = ({ ...boopConfig }) => {
             <Route path="/tagsMap">
                 <TagsMap webId={session.info.webId} />
             </Route>
-            <Route path="/locationMap">
-                <LocationsMap webId={session.info.webId} />
+            <Route path="/adminManageUsers">
+                <AdminManageUsers />
             </Route>
             <Route path="/notifications">
                 <Notifications webId={webId}/>
+            </Route>
+            <Route path="/prometheus">
+                <Prometheus />
             </Route>
         </Switch>
     </Router>

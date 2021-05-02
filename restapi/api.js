@@ -13,14 +13,14 @@ router.get("/", function(req, res) {
 // Get a specific user by its webId
 router.post("/users/getById", async (req, res) => {
     let webId = req.body.webId;
-    let user = await User.findOne({ webId: webId });
+    var user = await User.findOne({ webId: webId });
 	res.json(user);
 });
 
 // Delete a specific user by its webId
 router.post("/users/removeById", async (req, res) => {
     let webId = req.body.webId;
-    let user = await User.deleteOne({ webId: webId });
+    var user = await User.deleteOne({ webId: webId });
 	res.json(user);
 });
 
@@ -40,7 +40,6 @@ router.get("/users/normal/list", async (req, res) => {
 router.post("/users/add", async (req, res) => {
     let webId = req.body.webId; // supposed to be unique
     let location = req.body.location;
-    let authKey = req.body.authKey;
     //Check if the user is already in the db
     let user = await User.findOne({ webId: webId });
     if (user){
@@ -52,7 +51,6 @@ router.post("/users/add", async (req, res) => {
         user = new User({
             webId: webId,
             location: location,
-            authKey: authKey,
             updatedAt: new Date()
         });
         await user.save();
@@ -90,10 +88,8 @@ router.post("/users/location/near", async (req, res) => {
                         
                     }, async function(err) {
                         if(err) {
-                            console.log("A element failed to process", err);
                             res.status(500).json(err);
                         } else {
-                            console.log("All elements have been processed successfully");
                             res.status(200).json(userNearByFriends);
                         }
 

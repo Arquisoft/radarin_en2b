@@ -1,0 +1,10 @@
+{
+  "simulation": "AdminOptions",
+  "simulationId": "adminoptions",
+  "start": 1619889849965,
+  "description": "",
+  "scenarios": ["AdminOptions"],
+  "assertions": [
+
+  ]
+}
