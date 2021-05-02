@@ -30,7 +30,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
-import '../NavBar.css';
+import "../NavBar.css";
 import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop.js';
 import LocationsMap from "./LocationsMap";
@@ -49,7 +49,7 @@ const MyNavBar = ({ ...boopConfig }) => {
 
 
     useEffect(() => {
-        getChats(webId)
+        
         getName(webId).then((name) => setName(name));
         navigator.geolocation.getCurrentPosition(async function (position) {
             let friends = await getFriends(webId).then(function (list) {
@@ -60,10 +60,7 @@ const MyNavBar = ({ ...boopConfig }) => {
             let nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId).then(function (list){
                 return list;
             });
-            console.log(nearby)
             await nearby.forEach((friend) => notifyFriend(friend.webId));
-
-            await friends.forEach(friend => getChats(friend))
         });
 
         if (role == null) {
@@ -85,15 +82,14 @@ const MyNavBar = ({ ...boopConfig }) => {
                     let nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId).then(function (list){
                         return list;
                     });
-                    console.log(nearby)
                     await nearby.forEach((friend) => notifyFriend(friend.webId));
                 });
             }, 300000);
             return () => clearInterval(interval);
         }
     }, [role, webId]);
-
-    return (<Router>
+    return (
+    <Router>
         <ToastContainer />
         <div class="grad">
         <Navbar variant="dark">
@@ -205,7 +201,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                 <LocationsMap webId={session.info.webId} />
             </Route>
             <Route path="/notifications">
-                <Notifications />
+                <Notifications webId={webId}/>
             </Route>
         </Switch>
     </Router>

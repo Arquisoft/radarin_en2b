@@ -136,8 +136,11 @@ async function deleteTagLocation(webId, tag) {
 }
 
 async function getChats(webId) {
-    getSolidDataset(webId.slice(0, -15) + 'inbox', { fetch: fetch }).then(async function (myDataset) {
+    console.log(webId)
+    let chats = getSolidDataset(webId.slice(0, -15) + 'inbox', { fetch: fetch }).then(async function (myDataset) {
         const inbox = await getThingAll(myDataset)
+        var resultToReturn = new Set()
+        var names = new Set()
         for (var i = 1; i < inbox.length; i++) {
             const urlParam = asUrl(inbox[i]).split('/')[3]
             getSolidDataset(webId.slice(0, -15) + 'inbox/' + urlParam, { fetch: fetch }).then(async function (myDataset) {
@@ -153,19 +156,28 @@ async function getChats(webId) {
                 getSolidDataset(webId.slice(0, -15) + 'inbox/' + urlParam + '/' + date + '/chat.ttl', { fetch: fetch }).then(async function (myDataset) {
                     const chat = await getThing(myDataset, webId.slice(0, -15) + 'inbox/' + urlParam + '/index.ttl#this')
                     const messages = await getUrlAll(chat, 'http://www.w3.org/2005/01/wf/flow#message');
-                    messages.forEach(async function(elem) {
+                    var result = new Set()
+                    messages.forEach(async function (elem) {
                         const message = await getThing(myDataset, elem)
-                        if (message !== null){
-                        const messageContent = await getStringNoLocale(message, 'http://rdfs.org/sioc/ns#content')
-                        const creator = await getUrl(message, FOAF.maker)
-                        const date = await getDatetime(message, DCTERMS.created)
-                        console.log(messageContent, creator, date)
+                        if (message !== null) {
+                            const messageContent = await getStringNoLocale(message, 'http://rdfs.org/sioc/ns#content')
+                            const creator = await getUrl(message, FOAF.maker)
+                            const date = await getDatetime(message, DCTERMS.created)
+                            result.add({ content: messageContent, creator: creator, date: date });
+                        }
+                        if (!names.has(urlParam)) {
+                            const finalResult = { maker: webId, chatName: urlParam, chats: result }
+                            resultToReturn.add(finalResult)
+                            names.add(urlParam)
                         }
                     });
                 })
             });
         }
+        console.log(resultToReturn)
+        return resultToReturn;
     });
+    return chats;
 }
 
 async function getDateForChat(webId, urlParam) {
@@ -185,7 +197,7 @@ async function getDateForChat(webId, urlParam) {
 async function addChat(webId, text) {
     getSolidDataset(webId.slice(0, -15) + 'inbox', { fetch: fetch }).then(async function (myDataset) {
         const inbox = await getThingAll(myDataset)
-        
+
         for (var i = 1; i < inbox.length; i++) {
             const urlParam = asUrl(inbox[i]).split('/')[3]
             const date = await getDateForChat(webId, urlParam)
@@ -195,7 +207,7 @@ async function addChat(webId, text) {
                 const indexThis = await setThing(myDataset, url)
                 const newParticipation = await createThing(myDataset)
                 var now = new Date()
-                let updatedParticipation =  addDatetime(newParticipation, DCTERMS.created, now)
+                let updatedParticipation = addDatetime(newParticipation, DCTERMS.created, now)
                 updatedParticipation = addUrl(updatedParticipation, 'http://www.w3.org/2005/01/wf/flow#participant', "https://test1234asw.inrupt.net/profile/card#me")
                 updatedParticipation = addStringNoLocale(updatedParticipation, 'http://www.w3.org/ns/ui#background', "#c9c8e6")
                 const myChangedDataset = setThing(myDataset, updatedParticipation);
@@ -203,11 +215,11 @@ async function addChat(webId, text) {
 
                 let updatedParticipant = addUrl(indexThis, 'http://www.w3.org/2005/01/wf/flow#participation', updatedParticipation)
                 const myChangedDataset2 = setThing(myDataset, updatedParticipant);
-                await saveSolidDatasetAt(url, myChangedDataset2, { fetch: fetch }); 
+                await saveSolidDatasetAt(url, myChangedDataset2, { fetch: fetch });
             });
-             
+
             getSolidDataset(webId.slice(0, -15) + 'inbox/' + urlParam + '/' + date + '/chat.ttl', { fetch: fetch }).then(async function (myDataset) {
-                const index = await getThing(myDataset, webId.slice(0, -15) + 'inbox/' + urlParam +  '/index.ttl#this')
+                const index = await getThing(myDataset, webId.slice(0, -15) + 'inbox/' + urlParam + '/index.ttl#this')
                 const newMessage = await createThing(myDataset)
                 var now = new Date();
                 let updatedMessage = addDatetime(newMessage, DCTERMS.created, now)
