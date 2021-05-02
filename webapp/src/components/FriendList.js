@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-
-import userLogo from "../img/userLogo.jpg";
+import Dropdown from "react-bootstrap/Dropdown";
+import lupa from "../img/lupa.png";
+import { Link } from "react-router-dom";
+import userLogo from "../img/userLogo.png";
 import {  Value, List, withWebId } from "@solid/react";
 import { useSession } from "@inrupt/solid-ui-react";
 import { getNearbyFriends } from "../api/api";
@@ -189,6 +191,7 @@ const Friends = () => {
     }, [activeProfile]);
 
     return(
+      <div class="bgcenter">
       <div className="ml-3">
         <h2 style={{marginTop: "0.625em", marginLeft: "2.5em"}}>Nearby friends</h2>
         <div id="nearbyFriends">
@@ -213,6 +216,7 @@ const Friends = () => {
             </List>
           </div>
         }
+      </div>
       </div>
     );
 };

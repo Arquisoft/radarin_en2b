@@ -1,0 +1,11 @@
+p, li{
+        font-size: 1em;
+        color: white;
+}
+.jumbo{
+        border-style: solid;
+        border-radius: 3em;
+        border-color: white;
+        padding: 2em;
+        background:linear-gradient( #2ebf91, #25b7c4)
+}

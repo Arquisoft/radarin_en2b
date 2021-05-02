@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useSession } from "@inrupt/solid-ui-react";
 import MyNavBar from "./components/MyNavBar";
 import LogIn from "./components/LogIn";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
+import './Custom.css';
 
 export default function App () {
   const {session, sessionRequestInProgress} = useSession();
@@ -16,7 +17,8 @@ export default function App () {
       <Container className="min-vh-100 d-flex">
         <Row className="m-auto align-self-center">
           <Col>
-            <h1>Loading...</h1>
+            <h1 style={{color:"white", fontSize:"53px"}}>Loading<Spinner animation="grow" size="sm" variant="light"/>
+            <Spinner animation="grow" variant="light"/></h1>
           </Col>
         </Row>
       </Container>
@@ -27,5 +29,9 @@ export default function App () {
     return <LogIn/>;
   } 
 
-  return <MyNavBar/>;
-}
+  return (
+  <>
+  <MyNavBar rotation={20} timing={200}/>
+  )
+</>);
+};
