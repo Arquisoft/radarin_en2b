@@ -30,7 +30,6 @@ async function getName(webId) {
 }
 
 async function addLocation(webId, lat, long) {
-    console.log("hola")
     getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
         const profile = getThing(myDataset, webId);
         var date = new Date();
@@ -169,7 +168,6 @@ async function getChats(myWebId, webId) {
                                     const date = await getDatetime(message, DCTERMS.created);
                                     result.add({ content: messageContent, creator: creator, date: date });
                                 }
-                                console.log(webId, urlParam)
                                 if (!names.has(urlParam)) {
                                     const finalResult = { maker: webId, chatName: urlParam, chats: result };
                                     resultToReturn.add(finalResult);

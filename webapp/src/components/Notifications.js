@@ -15,7 +15,6 @@ const Notifications = (originWebId) => {
             let myChats = await getChats(originWebId.webId, originWebId.webId).then(function (chats) {
                 return chats;
             });
-            console.log(myChats)
             let friends = await getFriends(originWebId.webId).then(function (list) {
                 return list;
             });
@@ -25,21 +24,10 @@ const Notifications = (originWebId) => {
                 var allchats = [];
                 await allchats.push(myChats);
                 await friendChats.forEach(chat => allchats.push(chat));
-                console.log(allchats)
                 var myHtmlItems = []
                 await allchats.forEach(async function (chat) {
-                    console.log(chat)
-                    console.log(chat.keys())
-                    console.log("hi")
-                    console.log(Array.from(chat))
-                    const iterator1 = chat.entries();
-                    console.log(iterator1)
-                    for (const entry of iterator1){
-                        console.log(entry);
-                    }
                     
                     await chat.forEach(async function (singleChat) {
-                        await console.log(singleChat.chatName)
                         myHtmlItems.push(
                             <div>
                                 <Card style={{ width: "18rem" }}>
@@ -69,7 +57,7 @@ const Notifications = (originWebId) => {
         fetchMessages();
 
     }, [setChats, originWebId.webId, setHtmlItems]);
-
+    console.log(chats);
     return (
         <div className="bgcenter">
             <>
