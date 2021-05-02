@@ -41,7 +41,7 @@ router.post("/users/add", async (req, res) => {
     let webId = req.body.webId; // supposed to be unique
     let location = req.body.location;
     //Check if the user is already in the db
-    let user = await User.findOne({ webId: webId });
+    var user = await User.findOne({ webId: webId });
     if (user){
         user.location = location;
         user.updatedAt = new Date();
@@ -78,10 +78,9 @@ router.post("/users/location/near", async (req, res) => {
                                                                             }   
                                                                         }
                                                         });      
-                        console.log(near)  
+
                         if(near != null){
                             if(near.updatedAt.toISOString() >= nowMinus15Minutes.toISOString()){
-                                console.log(near)
                                 userNearByFriends.push(near);
                             }
                         }
