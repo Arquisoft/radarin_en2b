@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
-import { useState, useEffect } from "react";
+import { useState/*, useEffect*/ } from "react";
 //import { getChats } from "../services/crudPod";
 //import { getFriends } from "../services/crudPod";
 
