@@ -35,7 +35,7 @@ const MyLocations = () => {
         updateTable();
     }
 
-    return (<div class="bgcenter">
+    return (<div className="bgcenter">
         <Button variant="danger" block onClick={handleDeleteAll}>Delete All Locations</Button>
         <Table striped bordered hover>
             <thead>

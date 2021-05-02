@@ -31,8 +31,8 @@ import { getNearbyFriends } from "../api/api";
 import MyTags from "./MyTags";
 import TagsMap from "./TagsMap";
 import "../NavBar.css";
-import { animated } from 'react-spring';
-import useBoop from '../hooks/useBoop.js';
+import { animated } from "react-spring";
+import useBoop from "../hooks/useBoop.js";
 import LocationsMap from "./LocationsMap";
 import Notifications from "./Notifications";
 import Prometheus from "./Prometheus";
@@ -92,9 +92,9 @@ const MyNavBar = ({ ...boopConfig }) => {
     return (
         <Router>
             <ToastContainer />
-            <div class="grad">
+            <div className="grad">
                 <Navbar variant="dark">
-                    <Link to="/" class="otherLink" >
+                    <Link to="/" className="otherLink" >
                         <Navbar.Brand>
                             <img src={logo} alt="logo"
                                 className="App-logo d-inline-block align-top"
@@ -104,17 +104,17 @@ const MyNavBar = ({ ...boopConfig }) => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto justify-content-center container-fluid" fill>
-                            <Link to="/" class="otherLink" >
+                            <Link to="/" className="otherLink" >
                                 <Navbar.Brand>
                                     Radarin
-                                            </Navbar.Brand>
+                                </Navbar.Brand>
                             </Link>
                             <Nav className="mr-auto">
                                 {(() => {
                                     if (role === null || role !== "Admin") {
                                         return (
                                             <React.Fragment>
-                                                <Link to="/notifications">
+                                                <Link data-testid="link-notifications" to="/notifications">
                                                     <Navbar.Brand>
                                                         <animated.span onMouseEnter={trigger} style={style}>
                                                             <img src={bell} alt="notifications"
@@ -125,8 +125,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                                                         </animated.span>
                                                     </Navbar.Brand>
                                                 </Link>
-
-                                                <Link to="/friendList">
+                                                <Link data-testid="link-friend-list" to="/friendList">
                                                     <Navbar.Brand>
                                                         <animated.span onMouseEnter={trigger2} style={style2}>
                                                             <img src={friends} alt="friends"
@@ -137,7 +136,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                                                         </animated.span>
                                                     </Navbar.Brand>
                                                 </Link>
-                                                <Link to="/map">
+                                                <Link data-testid="link-map" to="/map">
                                                     <Navbar.Brand href="/map">
                                                         <animated.span onMouseEnter={trigger3} style={style3}>
                                                             <img src={map} alt="map"
@@ -148,47 +147,45 @@ const MyNavBar = ({ ...boopConfig }) => {
                                                         </animated.span>
                                                     </Navbar.Brand>
                                                 </Link>
-
                                                 <Navbar.Brand>
                                                     <ButtonGroup aria-label="Basic example">
-                                                        <Button variant="link"><Link to="/myLocations" class="otherLink">My Locations</Link></Button>
-                                                        <Button variant="link"><Link to="/myTags" class="otherLink">My Tags</Link></Button>
-                                                        <Button variant="link"><Link to="/tagsMap" class="otherLink">Tags map </Link></Button>
-                                                        <Button variant="link"><Link to="/locationMap" class="otherLink">Locations Map</Link></Button>
-                                                        <Button variant="link"><Link to="/aboutUs" class="otherLink">About us</Link></Button>
+                                                        <Button variant="link"><Link data-testid="link-my-locations" to="/myLocations" className="otherLink">My Locations</Link></Button>
+                                                        <Button variant="link"><Link data-testid="link-my-tags" to="/myTags" className="otherLink">My Tags</Link></Button>
+                                                        <Button variant="link"><Link data-testid="link-tags-map" to="/tagsMap" className="otherLink">Tags map</Link></Button>
+                                                        <Button variant="link"><Link data-testid="link-locations-map" to="/locationMap" className="otherLink">Locations Map</Link></Button>
+                                                        <Button variant="link"><Link data-testid="link-about-us" to="/aboutUs" className="otherLink">About us</Link></Button>
                                                     </ButtonGroup>
                                                 </Navbar.Brand>
-                                            </React.Fragment>);
+                                            </React.Fragment>
+                                        );
                                     }
                                 })()}
-                                {
-                                    (() => {
-                                        if (role !== null && role === "Admin") {
-                                            return (
-                                                <React.Fragment>
-                                                    <Link id="linkAdminManageUsers" to="/adminManageUsers">
-                                                        <Navbar.Brand>
-                                                            Manage users
-                                        </Navbar.Brand>
-                                                    </Link>
-                                                    <Link id="linkPrometheus" to="/prometheus">
-                                                        <Navbar.Brand>
-                                                            Prometheus
-                                        </Navbar.Brand>
-                                                    </Link>
-                                                    <Link id="linkGrafana" to="" onClick={() => { window.open("https://radarinen2bgrafana.herokuapp.com/", "_blank"); }}>
-                                                        <Navbar.Brand>
-                                                            Grafana
-                                        </Navbar.Brand>
-                                                    </Link>
-                                                </React.Fragment>
-                                            );
-                                        }
-                                    })()
-                                }
+                                {(() => {
+                                    if (role !== null && role === "Admin") {
+                                        return (
+                                            <React.Fragment>
+                                                <Link id="linkAdminManageUsers" to="/adminManageUsers">
+                                                    <Navbar.Brand>
+                                                        Manage users
+                                                    </Navbar.Brand>
+                                                </Link>
+                                                <Link id="linkPrometheus" to="/prometheus">
+                                                    <Navbar.Brand>
+                                                        Prometheus
+                                                    </Navbar.Brand>
+                                                </Link>
+                                                <Link id="linkGrafana" to="" onClick={() => { window.open("https://radarinen2bgrafana.herokuapp.com/", "_blank"); }}>
+                                                    <Navbar.Brand>
+                                                        Grafana
+                                                    </Navbar.Brand>
+                                                </Link>
+                                            </React.Fragment>
+                                        );
+                                    }
+                                })()}
                             </Nav>
                             <div className="mr-sm-2">
-                                <Navbar.Text class="loggedText">Logged in as {name ? name : webId}</Navbar.Text></div>
+                                <Navbar.Text className="loggedText">Logged in as {name ? name : webId}</Navbar.Text></div>
                             <Nav.Item>
                                 <LogoutButton>
                                     <Button variant="dark">Log Out</Button>

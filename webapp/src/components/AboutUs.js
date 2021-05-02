@@ -3,8 +3,8 @@ import "../AboutUs.css"
 
 const AboutUs = () => {
     return (
-            <div class="center" >
-            <Jumbotron class="jumbo" style={{background:"linear-gradient( #2ebf91, #25b7c4)", borderStyle: "solid",
+            <div className="center" >
+            <Jumbotron className="jumbo" style={{background:"linear-gradient( #2ebf91, #25b7c4)", borderStyle: "solid",
         borderRadius: "3em",
         borderColor: "black",
         padding: "2em"}}>
@@ -24,7 +24,7 @@ const AboutUs = () => {
                 </ul>
 
                 <h4>Company</h4>
-                <p>RadarinEn2b: students enrolling Sotware Architecture course in Computer Software Engineering,University of Oviedo</p>
+                <p>RadarinEn2b: students enrolling Sotware Architecture course in Computer Software Engineering, University of Oviedo</p>
 
                 <p>
                     <Button variant="primary" onClick={() => window.open("http://radarinen2bwebapp.herokuapp.com/docs/")}>Learn more</Button>

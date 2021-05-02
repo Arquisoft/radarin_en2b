@@ -50,8 +50,8 @@ const MyTags = () => {
         }
     });
 
-    return (<div class="bigcenter">
-        <div class="contenedor">
+    return (<div className="bigcenter">
+        <div className="contenedor">
         <h2>Create a tag location</h2>
         <div>
             <ListGroup horizontal>
@@ -87,7 +87,7 @@ const MyTags = () => {
             </ListGroup> 
         </div>
         </div>
-        <div class="contenedor">
+        <div className="contenedor">
         <h2>Tag locations list</h2>
         <Table striped bordered hover>
             <thead>
@@ -111,7 +111,7 @@ const MyTags = () => {
             </tbody>
         </Table>
         </div>
-        <div class="contenedor">
+        <div className="contenedor">
         <h2>Search tags</h2>
         <div>
             <ListGroup horizontal>
