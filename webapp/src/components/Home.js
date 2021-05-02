@@ -12,7 +12,7 @@ const Home = () => {
         <div className="center">
         <Carousel >
         <Carousel.Item interval={7000}>
-            <div style={{padding:"20px", display:"block", marginLeft:"auto", marginRight:"auto"}}>
+            <div style={{padding:"1.25em", display:"block", marginLeft:"auto", marginRight:"auto"}}>
                 
             <div className="gradient-border"><Carousel.Caption>
                 <div><img src={solid} className="item" alt="solid"></img><img src={inrupt} className="item" alt="inrupt"></img></div>
@@ -26,7 +26,7 @@ const Home = () => {
                 
             </Carousel.Item>
             <Carousel.Item interval={7000}>
-            <div style={{padding:"20px", display:"block", marginLeft:"auto", marginRight:"auto"}}>
+            <div style={{padding:"1.25em", display:"block", marginLeft:"auto", marginRight:"auto"}}>
             <div className="gradient-border">
                 <Carousel.Caption>
                 <img src={map} className="item" alt="map"></img>
@@ -40,7 +40,7 @@ const Home = () => {
             </div>
             </Carousel.Item>
             <Carousel.Item interval={7000}>
-            <div style={{padding:"20px", display:"block", marginLeft:"auto", marginRight:"auto"}}>
+            <div style={{padding:"1.25em", display:"block", marginLeft:"auto", marginRight:"auto"}}>
             <div className="gradient-border">
                 <Carousel.Caption>
                 <img src={friends} className="item" alt="friends"></img>
@@ -53,7 +53,7 @@ const Home = () => {
             </div>
             </Carousel.Item>
             <Carousel.Item interval={7000}>
-            <div style={{padding:"20px", display:"block", marginLeft:"auto", marginRight:"auto"}}>
+            <div style={{padding:"1.25em", display:"block", marginLeft:"auto", marginRight:"auto"}}>
             <div className="gradient-border">
                 <Carousel.Caption>
                 <img src={noti} className="item" alt="notifications"></img>
@@ -66,7 +66,7 @@ const Home = () => {
             </div>
             </Carousel.Item>
             <Carousel.Item interval={7000}>
-            <div style={{padding:"20px", display:"block", marginLeft:"auto", marginRight:"auto"}}>
+            <div style={{padding:"1.25em", display:"block", marginLeft:"auto", marginRight:"auto"}}>
             <div className="gradient-border">
                 <Carousel.Caption>
                 <img src={location} className="item" alt="location"></img>

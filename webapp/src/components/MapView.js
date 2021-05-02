@@ -19,7 +19,7 @@ const libraries = ["places"];
 const mapContainerStyle = {
     width: "100vw", 
     height: "90vh", 
-    padding: "20px"
+    padding: "1.25em"
 };
 const options = {
     styles: mapStyles,
@@ -48,8 +48,8 @@ const MapView = (props) => {
     }
 
     return isLoaded ? (
-        <div data-testid="wholeDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
-            <h1>My current location and friends</h1>
+        <div data-testid="wholeDiv" style={{width: "100vw", height: "90vh", padding: "1.25em"}}>
+            <h1 style={{color:"white"}}>My current location and friends</h1>
             <div data-testid="mapDiv">
                 <GoogleMap 
                     mapContainerStyle={mapContainerStyle} 
@@ -118,7 +118,7 @@ const MapView = (props) => {
                 </GoogleMap>
         </div>
         </div>
-    ): (<div data-testid="wholeDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
+    ): (<div data-testid="wholeDiv" style={{width: "100vw", height: "90vh", padding: "1.25em"}}>
         <h1>My current location and friends</h1>
         <p>{loadError}</p>
         </div>);

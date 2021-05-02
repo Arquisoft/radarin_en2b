@@ -33,7 +33,7 @@ class AdminManageUsers extends React.Component{
 
     render() {
         return (
-            <div>
+            <div className="bgcenter">
                 <h2>UsersList</h2>
                     {this.state.usersList.map((user) => 
                         {return (<ListGroup horizontal style={{ margin: "20px" }}>

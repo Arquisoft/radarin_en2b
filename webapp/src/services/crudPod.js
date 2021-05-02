@@ -17,20 +17,20 @@ import {
     asUrl
 } from "@inrupt/solid-client";
 import { fetch } from "@inrupt/solid-client-authn-browser";
-import { FOAF, VCARD, DCTERMS } from "@inrupt/vocab-common-rdf";
+import { FOAF, DCTERMS } from "@inrupt/vocab-common-rdf";
 
 async function getName(webId) {
     const myDataset = await getSolidDataset(webId.slice(0, -3));
 
     const profile = getThing(myDataset, webId);
 
-    const fn = getStringNoLocale(profile, VCARD.fn);
+    const fn = getStringNoLocale(profile, FOAF.name);
 
     return fn;
 }
 
 async function addLocation(webId, lat, long) {
-    var success = getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+    getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
         const profile = getThing(myDataset, webId);
         var date = new Date();
         let updatedProfile = addStringNoLocale(profile, FOAF.interest, lat + ", " + long + ", " + date.toLocaleString());
@@ -38,8 +38,7 @@ async function addLocation(webId, lat, long) {
         const myChangedDataset = setThing(myDataset, updatedProfile);
         await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
         return true;
-    });
-    if (!success) {
+    }).catch(function (){
         getSolidDataset(webId.slice(0, -3), { fetch: fetch }).then(async function (myDataset) {
             const profile = getThing(myDataset, webId);
             var date = new Date();
@@ -48,34 +47,31 @@ async function addLocation(webId, lat, long) {
             const myChangedDataset = setThing(myDataset, updatedProfile);
             await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
         });
-    }
+    })
 }
 
 async function getLocations(webId) {
-    var myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
+    let locations = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
 
-    var acquaintances = new Promise((resolve) => {
-        resolve(getStringNoLocaleAll(profile, FOAF.interest));
+        var acquaintances = new Promise((resolve) => {
+            resolve(getStringNoLocaleAll(profile, FOAF.interest));
+        });
+
+        return await acquaintances;
     });
-
-    return await acquaintances;
+    return locations;
 }
 
 async function deleteLocation(webId, location) {
-    var myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
-    var updatedProfile = removeStringNoLocale(profile, FOAF.interest, location);
+    await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
+        var updatedProfile = removeStringNoLocale(profile, FOAF.interest, location);
 
-    const myChangedDataset = setThing(myDataset, updatedProfile);
+        const myChangedDataset = setThing(myDataset, updatedProfile);
 
-    await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+        await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+    });
 }
 
 async function getFriends(webId) {
@@ -90,52 +86,47 @@ async function getFriends(webId) {
 }
 
 async function addTagLocation(webId, name, description, lat, long) {
-    let myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
-    var date = new Date();
-    var updatedProfile = "";
-    if (description !== "" && description.length > 0) {
-        updatedProfile = addStringNoLocale(profile, FOAF.publications, name + ", " + description + ", " + lat + ", " + long + ", " + date.toLocaleString());
-    } else {
-        updatedProfile = addStringNoLocale(profile, FOAF.publications, name + ", no description, " + lat + ", " + long + ", " + date.toLocaleString());
-    }
+    await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
+        var date = new Date();
+        var updatedProfile = "";
+        if (description !== "" && description.length > 0) {
+            updatedProfile = addStringNoLocale(profile, FOAF.publications, name + ", " + description + ", " + lat + ", " + long + ", " + date.toLocaleString());
+        } else {
+            updatedProfile = addStringNoLocale(profile, FOAF.publications, name + ", no description, " + lat + ", " + long + ", " + date.toLocaleString());
+        }
 
-    const myChangedDataset = setThing(myDataset, updatedProfile);
+        const myChangedDataset = setThing(myDataset, updatedProfile);
 
-    await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+        await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+    });
 }
 
 async function getTagLocations(webId) {
-    let myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
+    let success = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
 
-    let acquaintances = new Promise((resolve) => {
-        resolve(getStringNoLocaleAll(profile, FOAF.publications));
+        let acquaintances = new Promise((resolve) => {
+            resolve(getStringNoLocaleAll(profile, FOAF.publications));
+        });
+
+        return await acquaintances;
     });
-
-    return await acquaintances;
+    return success;
 }
 
 async function deleteTagLocation(webId, tag) {
-    let myDataset = await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch });
-    if (myDataset === null) {
-        myDataset = await getSolidDataset(webId.slice(0, -3), { fetch: fetch });
-    }
-    const profile = getThing(myDataset, webId);
-    let updatedProfile = removeStringNoLocale(profile, FOAF.publications, tag);
+    await getSolidDataset(webId.slice(0, -15) + "private/radarin.txt", { fetch: fetch }).then(async function (myDataset) {
+        const profile = getThing(myDataset, webId);
+        let updatedProfile = removeStringNoLocale(profile, FOAF.publications, tag);
 
-    const myChangedDataset = setThing(myDataset, updatedProfile);
+        const myChangedDataset = setThing(myDataset, updatedProfile);
 
-    await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+        await saveSolidDatasetAt(webId.slice(0, -15) + "private/radarin.txt", myChangedDataset, { fetch: fetch });
+    });
 }
 
-async function getChats(webId) {
+async function getChats(myWebId, webId) {
     var chats = getSolidDataset(webId.slice(0, -15) + "inbox", { fetch: fetch }).then(async function (myDataset) {
         const inbox = await getThingAll(myDataset);
         var resultToReturn = new Set();
@@ -152,28 +143,44 @@ async function getChats(webId) {
                 const day = utcDay.length === 1 ? "0" + utcDay : utcDay;
                 const date = year + "/" + month + "/" + day;
 
-                getSolidDataset(webId.slice(0, -15) + "inbox/" + urlParam + "/" + date + "/chat.ttl", { fetch: fetch }).then(async function (myDataset) {
-                    const chat = await getThing(myDataset, webId.slice(0, -15) + "inbox/" + urlParam + "/index.ttl#this");
-                    const messages = await getUrlAll(chat, "http://www.w3.org/2005/01/wf/flow#message");
-                    var result = new Set();
-                    messages.forEach(async function (elem) {
-                        const message = await getThing(myDataset, elem);
-                        if (message !== null) {
-                            const messageContent = await getStringNoLocale(message, "http://rdfs.org/sioc/ns#content")
-                            const creator = await getUrl(message, FOAF.maker);
-                            const date = await getDatetime(message, DCTERMS.created);
-                            result.add({ content: messageContent, creator: creator, date: date });
+                getSolidDataset(webId.slice(0, -15) + "inbox/" + urlParam + "/index.ttl", { fetch: fetch }).then(async function (myDataset) {
+                    const participations = await getThingAll(myDataset, "http://www.w3.org/2005/01/wf/flow#participation");
+                    let participants = []
+                    participations.forEach(async function (participation) {
+                        let participant = await getUrl(participation, "http://www.w3.org/2005/01/wf/flow#participant");
+                        if (participant !== null && !participants.includes(participant)) {
+                            participants.push(participant);
                         }
-                        if (!names.has(urlParam)) {
-                            const finalResult = { maker: webId, chatName: urlParam, chats: result };
-                            resultToReturn.add(finalResult);
-                            names.add(urlParam);
-                        }
-                    });
+                    })
+                    let author = await getThing(myDataset, "http://purl.org/dc/elements/1.1/author");
+                    if (author !== null)
+                        participants.push(author);
+                    if (participants.includes(myWebId)) {
+                        getSolidDataset(webId.slice(0, -15) + "inbox/" + urlParam + "/" + date + "/chat.ttl", { fetch: fetch }).then(async function (myDataset) {
+                            const chat = await getThing(myDataset, webId.slice(0, -15) + "inbox/" + urlParam + "/index.ttl#this");
+                            const messages = await getUrlAll(chat, "http://www.w3.org/2005/01/wf/flow#message");
+                            var result = new Set();
+                            messages.forEach(async function (elem) {
+                                const message = await getThing(myDataset, elem)
+                                if (message !== null) {
+                                    const messageContent = await getStringNoLocale(message, "http://rdfs.org/sioc/ns#content")
+                                    const creator = await getUrl(message, FOAF.maker);
+                                    const date = await getDatetime(message, DCTERMS.created);
+                                    result.add({ content: messageContent, creator: creator, date: date });
+                                }
+                                if (!names.has(urlParam)) {
+                                    const finalResult = { maker: webId, chatName: urlParam, chats: result };
+                                    resultToReturn.add(finalResult);
+                                    names.add(urlParam);
+                                }
+                            });
+                        });
+                    }
                 });
             });
         }
         return resultToReturn;
+
     });
     return chats;
 }

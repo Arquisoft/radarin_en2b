@@ -14,7 +14,7 @@ const libraries = ["places"];
 const mapContainerStyle = {
     width: "100vw", 
     height: "90vh", 
-    padding: "20px"
+    padding: "1.25em"
 };
 const options = {
     styles: mapStyles,
@@ -86,8 +86,8 @@ const TagsMap = (props) => {
     };*/
 
     return isLoaded ? (
-        <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
-            <h1>My tags</h1>
+        <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "1.25em"}}>
+            <h1  style={{color:"white"}}>My tags</h1>
             <GoogleMap 
                 mapContainerStyle={mapContainerStyle} 
                 center={center}
@@ -122,7 +122,7 @@ const TagsMap = (props) => {
                 ))}
             </GoogleMap>
         </div>
-    ): <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "20px"}}>
+    ): <div data-testid="mainDiv" style={{width: "100vw", height: "90vh", padding: "1.25em"}}>
         <h1>My tags</h1>
         {loadError}</div>;
 };
