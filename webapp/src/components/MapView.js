@@ -85,7 +85,7 @@ const MapView = (props) => {
                                 var nearbyFriends = [];
 
                                 for await (const name of pod.knows){
-                                    var webId = `${name}profile/card#me`;
+                                    var webId = `${name}`;
                                     friendsOfUser.push({webId});
                                 }
                                 friends = await friendsOfUser.filter(onlyUnique);

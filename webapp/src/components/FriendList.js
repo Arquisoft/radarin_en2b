@@ -89,16 +89,15 @@ const Friends = () => {
       
         navigator.geolocation.getCurrentPosition(async function (position) {
           var friendsOfUser = [];
-          var friends = [];
 
           //Put all friends inside a list
           for await (const name of pod.knows){
             var webId = `${name}`;
-            friendsOfUser.push({webId});
+            friendsOfUser.push({webId}); 
           }
           //friends = await friendsOfUser.filter(onlyUnique);
 
-          await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friends).then((user) => nearbyFriends.push(user));
+          await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsOfUser).then((user) => nearbyFriends.push(user));
 
           // If there are no nearby friends
           if(nearbyFriends[0].length === 0){
