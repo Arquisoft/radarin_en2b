@@ -38,15 +38,13 @@ Here is the test report from a github workflow
 
 image::e2e-test-report.png[]
 
-image:11_2_acceptance_test.PNG[]
-
 e2e is using Cucumber <<cucumber>> for describing the features and Pupeteer <<pupeteer>> to control the browser when using Jest <<jest>>.
 
 === Code coverage result
 
 As we can see in the next picture all the project is deployed correctly. Apart from the low code coverage that was explained before, we have to mention that the code quality is B with a final codacy 48%.
 
-image:11_3_result.PNG[]
+image:11_3_result.png[]
 
 === Load tests
 
