@@ -21,7 +21,22 @@ The unitary tests are using Jest <<jest>> with web application tests and Superte
 
 === Acceptance tests
 
+We have a very small sets of acceptance tests that are executed during CI for pull requests and whenever we push to our master branch, required to be passing before being deployed to Heroku.
 
+The tests only cover the very basics, creating an account in a local pod and login in to our application with it, doing the same with an already existing account and some navigation though the app.
+
+We have a set of scripts to aid development that can quickly restart and readd the default users to the local pod server, add custom ones, etc.
+
+We are covering the following scenarios:
+
+- The user does not have a solid pod
+- The user wants a local solid pod
+- User with a pod logs in to radarin
+- A logged in user navigates to myLocations
+
+Here is the test report from a github workflow
+
+image::e2e-test-report.png[]
 
 image:11_2_acceptance_test.PNG[]
 
