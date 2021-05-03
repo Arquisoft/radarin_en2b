@@ -53,7 +53,7 @@ const MyNavBar = ({ ...boopConfig }) => {
                 return list;
             });
             var friendsWithWebId = [];
-            await friends.forEach((friend) => friendsWithWebId.push({ webId: friend + "/profile/card#me" }));
+            await friends.forEach((friend) => friendsWithWebId.push({ webId: friend}));
             let nearby = await getNearbyFriends({ type: "Point", coordinates: [position.coords.latitude, position.coords.longitude] }, friendsWithWebId).then(function (list) {
                 return list;
             });
