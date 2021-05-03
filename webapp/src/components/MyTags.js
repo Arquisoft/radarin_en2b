@@ -71,7 +71,7 @@ const MyTags = () => {
                             />
                     </InputGroup>
                 </ListGroup.Item>
-                <ListGroup.Item style={{ minWidth: "46.875em"}}>
+                <ListGroup.Item>
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
                         <InputGroup.Text id="basic-addon2">Description (optional)</InputGroup.Text>
