@@ -7,7 +7,7 @@ There are unitary tests to check the web application and the restapi.
 
 The first ones only check the view of the web application components because to check all the functionaly of the code we have to log in (authenticate) by code and we do not know how to do it.
 
-We have done 24 tests that are executing in less thatn 35 seconds and as we can see in the next image they are working correctly. 
+We have done 24 tests that are executing in less than 35 seconds and as we can see in the next image they are working correctly. 
 
 image:11_1_webapp_tests.PNG[]
 
