@@ -49,4 +49,7 @@ Potentially more columns in case you need translations.
 | [[bootstrap]] Bootstrap | It is a multiplatform library or an open source tool group to design web pages and web applications.
 | [[cors]] CORS | Cross-origin resource sharing is a mechanism that allows to do requests to restricted resources in a web page from a different domain where the request has been made.
 | [[mongoose]] Mongoose | JavaScript library that helps with building the definition of schemas for the MongoDB database, providing a lot of functionality for that purpose. 
+| [[jest]] Jest | Javascript testing framework made by Facebook, that focuses on simplicity and support for big web applications.
+| [[cucumber]] Cucumber | Tool for running automated tests written in plain language so they can be readable by anyone.
+| [[pupeteer]] Pupeteer | Node library that provides an API which controls the automation of actions over Google navigators.
 |===

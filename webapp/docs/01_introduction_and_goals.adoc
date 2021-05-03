@@ -25,7 +25,7 @@ What is Radarin?
 
 Radarin is a system to facilitate meetings between friends using new technologies.
 
-To carry out the project's aim, the application needs the location of the users. They must voluntarily activate it and allow the application to use it. It also needs the users to have a SOLID <<solid>> pod <<pods>>, whose URL will be asked to log in. A notification will be sent in case some SOLID <<solid>> friend has accessed Radarin and is nearby too, so they can get in contact. There is a possibility of sending messages to those friends that are nearby.
+To carry out the project's aim, the application needs the location of the users. They must voluntarily activate it and allow the application to use it. It also needs the users to have a SOLID <<solid>> pod <<pods>>, whose URL will be asked to log in. A notification will be sent in case some SOLID <<solid>> friend has accessed Radarin and is nearby too, so they can get in contact.
 
 
 === Requirements Overview

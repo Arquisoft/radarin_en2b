@@ -3,18 +3,58 @@
 
 === Unit tests
 
+There are unitary tests to check the web application and the restapi.
 
+The first ones only check the view of the web application components because to check all the functionaly of the code we have to log in (authenticate) by code and we do not know how to do it.
+
+We have done 24 tests that are executing in less thatn 35 seconds and as we can see in the next image they are working correctly. 
+
+image:11_1_webapp_tests.PNG[]
+
+The restapi unitary tests cover all the functionality of the restapi and they works perfectly.
+
+image:11_1_restapi_tests.PNG[]
+
+Because of the previous reasons the code coverage is low.
+
+The unitary tests are using Jest <<jest>> with web application tests and Supertest <<supertest>> with restapi tests.
 
 === Acceptance tests
 
 
 
+image:11_2_acceptance_test.PNG[]
+
+e2e is using Cucumber <<cucumber>> for describing the features and Pupeteer <<pupeteer>> to control the browser when using Jest <<jest>>.
+
 === Code coverage result
 
+As we can see in the next picture all the project is deployed correctly. Apart from the low code coverage that was explained before, we have to mention that the code quality is B with a final codacy 48%.
 
+image:11_3_result.PNG[]
 
 === Load tests
 
-
+We have done a list of 26 loading tests with gatling. They cover the complete project functionality and all the requests that are made.
 
 ==== Load tests report
+
+From the 26 loading tests done 24 of them works perfectly, but 4 of them have KO requests and they are:
+
+* MapViewOnlyMyLocation -> 2% of KOs.
+
+* NearbyFriendsInMapDisplayed -> 11%.
+
+* TagsMapEmpty -> 17%.
+
+* TagsMapInfo -> 13%.
+
+We have to highlight that from those tests with KOs the accept requests are executing in less than 800 milliseconds (ms).
+
+From all the loading tests done, all have the major percentage of request in the range of execution in less than 800 ms, only one has a low percentage between 800 ms and 1200 ms.
+
+image:11_4_1_loading_test.PNG[]
+
+You can check which tests we have done and which are their results https://github.com/Arquisoft/radarin_en2b/blob/master/webapp/gatling/info.txt[here].
+
+Loading tests are usign Gatling <<gatling>>.
