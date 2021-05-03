@@ -134,8 +134,8 @@ const MyTags = () => {
                 <ListGroup.Item style={{ borderColor: "white" }}>
                     <Button onClick={ () => search() }>
                         <img src={lupa} alt="submitSearch"
-                                width="1.875em"
-                                height="1.875em"
+                                width="40em"
+                                height="40em"
                                 className="Search d-inline-block align-top"
                         />
                     </Button>
